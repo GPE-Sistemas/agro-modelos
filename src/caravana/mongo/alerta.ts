@@ -4,7 +4,7 @@ import { IDispositivoDb, SDispositivo } from './dispositivo';
 export interface IAlertaDb extends Document {
     _id: Types.ObjectId;
     codigo: number;
-    deveui?: string;
+    deveui: string;
     fecha: Date;
     idAsignado?: string;
     //

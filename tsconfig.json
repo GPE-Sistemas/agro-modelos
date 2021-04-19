@@ -1,22 +1,16 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "noImplicitAny": true,
-      "removeComments": true,
-      "preserveConstEnums": true,
-      "noUnusedLocals": true,
-      "sourceMap": true,
-      "target": "es2018",
-      "lib": [ "es2018" ],
-      "outDir": "dist",
-      "esModuleInterop": true,
-    },
-    "exclude": [
-      "node_modules",
-      "dist",
-      ".vscode"
-    ],
-    "files": [
-      "src/index.ts"
-    ]
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    // "outDir": "./",               
+    "rootDir": "src",
+    "composite": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "dist",
+  },
 }

@@ -7,7 +7,7 @@ export interface IAlertaDTO {
     deveui: string;
     idAsignado?: string;
     //
-    dispositivo: IDispositivoDTO;
+    dispositivo?: IDispositivoDTO;
     //
     descripcion: string;
 }
