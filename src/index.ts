@@ -8,9 +8,11 @@ export * from './shared/token';
 export * from './shared/filtro';
 
 // Agro
+export * from './agro/in/categoria';
+export * from './agro/out/categoria';
+
 export * from './agro/out/animal';
 export * from './agro/out/baja';
-export * from './agro/out/categoria';
 export * from './agro/out/corral';
 export * from './agro/out/diagnostico';
 export * from './agro/out/especie';
