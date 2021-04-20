@@ -1,6 +1,6 @@
 import { ICoordenadas } from '../../';
 
-export interface IReporte {
+export interface IReporteCaravana {
     deveui: string;
     fecha: string;
     idAsignado: string;

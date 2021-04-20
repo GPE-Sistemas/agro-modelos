@@ -1,4 +1,4 @@
-// Agro
+// Shared
 export * from './shared/ack';
 export * from './shared/uplink';
 export * from './shared/metadatos';
@@ -6,6 +6,18 @@ export * from './shared/usuario';
 export * from './shared/coordenadas';
 export * from './shared/token';
 export * from './shared/filtro';
+//
+export * from './shared/in/dispositivo';
+export * from './shared/mongo/dispositivo';
+export * from './shared/out/dispositivo';
+//
+export * from './shared/in/comando';
+export * from './shared/mongo/comando';
+export * from './shared/out/comando';
+//
+export * from './shared/in/log-dispositivo';
+export * from './shared/mongo/log-dispositivo';
+export * from './shared/out/log-dispositivo';
 
 // Agro
 export * from './agro/in/categoria';
@@ -45,11 +57,16 @@ export * from './caravana/out/alerta';
 export * from './caravana/in/reporte';
 export * from './caravana/mongo/reporte';
 export * from './caravana/out/reporte';
+
+// Silobolsa
+export * from './silobolsa/in/dispositivo';
+export * from './silobolsa/mongo/dispositivo';
+export * from './silobolsa/out/dispositivo';
 //
-export * from './caravana/in/comando';
-export * from './caravana/mongo/comando';
-export * from './caravana/out/comando';
+export * from './silobolsa/in/alerta';
+export * from './silobolsa/mongo/alerta';
+export * from './silobolsa/out/alerta';
 //
-export * from './caravana/in/log-dispositivo';
-export * from './caravana/mongo/log-dispositivo';
-export * from './caravana/out/log-dispositivo';
+export * from './silobolsa/in/reporte';
+export * from './silobolsa/mongo/reporte';
+export * from './silobolsa/out/reporte';

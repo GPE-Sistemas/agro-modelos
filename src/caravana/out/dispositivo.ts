@@ -1,25 +1,14 @@
+import { IDispositivoDTO } from '../../shared/out/dispositivo';
 import { IAcelerometro } from '../acelerometro';
-import { IMetadatos } from '../../';
-import { IReporteDTO } from '../out/reporte';
+import { IReporteCaravanaDTO } from '../out/reporte';
 
-export interface IDispositivoDTO {
-    _id: string;
-    //
+export interface IDispositivoCaravanaDTO extends IDispositivoDTO {
     acelerometro: IAcelerometro;
-    adr: boolean;
-    deveui: string;
-    deviceName?: string;
-    dr: number;
-    fCnt: number;
     fechaAsignacion: string;
-    fechaUltimoUplink: string;
-    frecuenciaReporte?: string[];
     idAsignado: string;
     idUltimoReporte?: string;
-    metadatos: IMetadatos[];
-    red: string;
     // Populate
-    ultimoReporte?: IReporteDTO;
+    ultimoReporte?: IReporteCaravanaDTO;
     // Calculados
     bateria?: number;
     duracion?: string;

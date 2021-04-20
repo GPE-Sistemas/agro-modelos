@@ -1,12 +1,9 @@
 import { ICoordenadas } from '../../';
-// import { IDispositivoDTO } from './dispositivo';
 
-export interface IReporteDTO {
+export interface IReporteCaravanaDTO {
     _id: string;
     deveui: string;
     fecha: string;
     idAsignado?: string;
     ubicacion: ICoordenadas;
-    //
-    // dispositivo?: IDispositivoDTO;
 }

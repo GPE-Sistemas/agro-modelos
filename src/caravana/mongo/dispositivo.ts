@@ -1,29 +1,21 @@
 import { Document, Schema, Types } from 'mongoose';
 import { IAcelerometro } from '../acelerometro';
-import { IMetadatos } from '../../';
-import { IReporteDb } from './reporte';
+import { IReporteCaravanaDb } from './reporte';
+import { IDispositivoDb } from '../../shared/mongo/dispositivo';
 
 // Lo que devuelve la db
-export interface IDispositivoDb extends Document {
+export interface IDispositivoCaravanaDb extends Document, IDispositivoDb {
     _id: Types.ObjectId;
     acelerometro: IAcelerometro;
-    adr: boolean;
-    deveui: string;
-    deviceName: string;
-    dr: number;
-    fCnt: number;
     fechaAsignacion: Date;
-    fechaUltimoUplink: Date;
     frecuenciaReporte: string;
     idAsignado: string;
     idUltimoReporte: Types.ObjectId;
-    metadatos: IMetadatos[];
-    red: string;
     //
-    ultimoReporte: IReporteDb;
+    ultimoReporte: IReporteCaravanaDb;
 }
 
-export const SDispositivo = new Schema<IDispositivoDb>({
+export const SDispositivoCaravana = new Schema<IDispositivoCaravanaDb>({
     acelerometro: { type: Object },
     adr: { type: Boolean },
     deveui: { type: String, required: true, unique: true, trim: true, minlength: 16, maxlength: 16 },
@@ -39,13 +31,7 @@ export const SDispositivo = new Schema<IDispositivoDb>({
     red: { type: String, required: true },
 });
 
-// SDispositivo.index(
-//     { idExterno: 1 },
-//     { partialFilterExpression: { idExterno: { $type: "string" } } },
-//     // { partialFilterExpression: { idExterno: { $exists: true } } },
-// );
-
-SDispositivo.virtual('ultimoReporte', {
+SDispositivoCaravana.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,
     localField: 'idUltimoReporte',

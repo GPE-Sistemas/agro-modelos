@@ -1,13 +1,13 @@
-import { IDispositivoDTO } from './dispositivo';
+import { IDispositivoCaravanaDTO } from './dispositivo';
 
-export interface IAlertaDTO {
+export interface IAlertaCaravanaDTO {
     _id: string;
     codigo: number;
     fecha: string;
     deveui: string;
     idAsignado?: string;
     //
-    dispositivo?: IDispositivoDTO;
+    dispositivo?: IDispositivoCaravanaDTO;
     //
     descripcion: string;
 }
