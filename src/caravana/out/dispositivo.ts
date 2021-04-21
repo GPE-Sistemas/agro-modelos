@@ -19,12 +19,14 @@ export const IDispositivoCaravanaDTOValidation = joi.object<IDispositivoCaravana
     // Especificos Caravana
     acelerometro: joi.string(),
     fechaAsignacion: joi.date(),
+    frecuenciaReporte: joi.string(),
     idAsignado: joi.string(),
     idUltimoReporte: joi.string(),
     //
     ultimoReporte: IReporteCaravanaDTOValidation,
     //
-    bateria: joi.number()
+    bateria: joi.number(),
+    horasReporte: joi.array().items(joi.string()),
 });
 
 export const IDispositivoCaravanaDTOSwagger = j2s(IDispositivoCaravanaDTOValidation).swagger;
@@ -32,10 +34,12 @@ export const IDispositivoCaravanaDTOSwagger = j2s(IDispositivoCaravanaDTOValidat
 export interface IDispositivoCaravanaDTO extends IDispositivoDTO {
     acelerometro: IAcelerometro;
     fechaAsignacion: string;
+    frecuenciaReporte: string;
     idAsignado: string;
     idUltimoReporte?: string;
     // Populate
     ultimoReporte?: IReporteCaravanaDTO;
     // Calculados
     bateria?: number;
+    horasReporte?: string[]
 }

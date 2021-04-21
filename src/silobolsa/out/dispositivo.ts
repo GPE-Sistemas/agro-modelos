@@ -16,8 +16,9 @@ export const IDispositivoSilobolsaDTOValidation = joi.object<IDispositivoSilobol
     metadatos: joi.array().items(IMetadatosValidation),
     red: joi.string(),
     // Especificos Silobolsa
-    idUltimoReporte: joi.string(),
+    alarmaActiva: joi.boolean(),
     fechaAsignacion: joi.date(),
+    idUltimoReporte: joi.string(),
     idSilobolsa: joi.string(),
     posicion: joi.number(),
     //
@@ -27,8 +28,9 @@ export const IDispositivoSilobolsaDTOValidation = joi.object<IDispositivoSilobol
 export const IDispositivoSilobolsaDTOSwagger = j2s(IDispositivoSilobolsaDTOValidation).swagger;
 
 export interface IDispositivoSilobolsaDTO extends IDispositivoDTO {
-    idUltimoReporte: string;
+    alarmaActiva: boolean;
     fechaAsignacion: string;
+    idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
     // Populate

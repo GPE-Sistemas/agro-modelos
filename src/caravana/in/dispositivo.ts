@@ -17,6 +17,7 @@ export const IDispositivoCaravanaValidation = joi.object<IDispositivoCaravana>({
     // Especificos Caravana
     acelerometro: joi.string(),
     fechaAsignacion: joi.date(),
+    frecuenciaReporte: joi.string(),
     idAsignado: joi.string(),
     idUltimoReporte: joi.string(),
 });

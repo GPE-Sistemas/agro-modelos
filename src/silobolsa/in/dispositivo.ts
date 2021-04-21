@@ -14,6 +14,7 @@ export const IDispositivoSilobolsaValidation = joi.object<IDispositivoSilobolsa>
     metadatos: joi.array().items(IMetadatosValidation),
     red: joi.string(),
     // Especificos Silobolsa
+    alarmaActiva: joi.boolean(),
     idUltimoReporte: joi.string(),
     fechaAsignacion: joi.date(),
     idSilobolsa: joi.string(),
@@ -24,8 +25,8 @@ export const IDispositivoSilobolsaSwagger = j2s(IDispositivoSilobolsaValidation)
 
 export interface IDispositivoSilobolsa extends IDispositivo {
     alarmaActiva: boolean;
-    idUltimoReporte: string;
     fechaAsignacion: string;
+    idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
 }

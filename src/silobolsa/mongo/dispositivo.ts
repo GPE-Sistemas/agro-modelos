@@ -6,10 +6,8 @@ import { IDispositivoDb } from '../../shared/mongo/dispositivo';
 export interface IDispositivoSilobolsaDb extends Document, IDispositivoDb {
     _id: Types.ObjectId;
     alarmaActiva: boolean;
-    idUltimoReporte: Types.ObjectId;
-    // Carga manual
-    idExterno: string;
     fechaAsignacion: Date;
+    idUltimoReporte: Types.ObjectId;
     idSilobolsa: string;
     posicion: number;
     // Populate
@@ -17,18 +15,19 @@ export interface IDispositivoSilobolsaDb extends Document, IDispositivoDb {
 }
 
 export const SDispositivoSilobolsa = new Schema<IDispositivoSilobolsaDb>({
+    // Base
     adr: { type: Boolean },
-    dr: { type: Number },
     deveui: { type: String, required: true, unique: true, trim: true, minlength: 16, maxlength: 16 },
+    deviceName: { type: String, unique: true, sparse: true },
+    dr: { type: Number },
     fCnt: { type: Number },
+    fechaUltimoUplink: { type: Date },
     metadatos: { type: Array },
     red: { type: String, required: true },
-    idUltimoReporte: { type: Types.ObjectId, ref: 'reportes' },
-    fechaUltimoUplink: { type: Date },
+    // Especificos Silobolsa
     alarmaActiva: { type: Boolean },
-    // Carga manual
-    deviceName: { type: String, unique: true, sparse: true },
     fechaAsignacion: { type: Date },
+    idUltimoReporte: { type: Types.ObjectId },
     idSilobolsa: { type: String },
     posicion: { type: Number },
 });

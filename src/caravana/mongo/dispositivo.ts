@@ -16,19 +16,21 @@ export interface IDispositivoCaravanaDb extends Document, IDispositivoDb {
 }
 
 export const SDispositivoCaravana = new Schema<IDispositivoCaravanaDb>({
-    acelerometro: { type: Object },
+    // Base
     adr: { type: Boolean },
     deveui: { type: String, required: true, unique: true, trim: true, minlength: 16, maxlength: 16 },
     deviceName: { type: String, unique: true, sparse: true },
     dr: { type: Number },
     fCnt: { type: Number },
-    fechaAsignacion: { type: Date },
     fechaUltimoUplink: { type: Date },
+    metadatos: { type: Array },
+    red: { type: String, required: true },
+    // Especificos Caravana
+    acelerometro: { type: Object },
+    fechaAsignacion: { type: Date },
     frecuenciaReporte: { type: String },
     idAsignado: { type: String },
     idUltimoReporte: { type: Types.ObjectId, ref: 'reportes' },
-    metadatos: { type: Array },
-    red: { type: String, required: true },
 });
 
 SDispositivoCaravana.virtual('ultimoReporte', {
