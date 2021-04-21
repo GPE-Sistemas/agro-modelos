@@ -38,8 +38,8 @@ export interface IAnimalDb extends Document {
     establecimiento?: IEstablecimientoDb;
     grupos?: IGrupoDb[];
     lote?: ILoteAnimalDb;
-    madre?: IAnimalDb;
-    padre?: IAnimalDb;
+    // madre?: IAnimalDb;
+    // padre?: IAnimalDb;
     raza?: IRazaDb;
     subcategoria?: ISubcategoriaDb;
 }
