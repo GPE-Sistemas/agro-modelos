@@ -25,66 +25,87 @@ export * from './shared/out/log-dispositivo';
 ////////// AGRO //////////
 //////////////////////////
 export * from './agro/in/animal';
+export * from './agro/mongo/animal';
 export * from './agro/out/animal';
 //
 export * from './agro/in/baja';
+export * from './agro/mongo/baja';
 export * from './agro/out/baja';
 //
 export * from './agro/in/categoria';
+export * from './agro/mongo/categoria';
 export * from './agro/out/categoria';
 //
 export * from './agro/in/corral';
+export * from './agro/mongo/corral';
 export * from './agro/out/corral';
 //
 export * from './agro/in/diagnostico';
+export * from './agro/mongo/diagnostico';
 export * from './agro/out/diagnostico';
 //
 export * from './agro/in/especie';
+export * from './agro/mongo/especie';
 export * from './agro/out/especie';
 //
 export * from './agro/in/establecimiento';
+export * from './agro/mongo/establecimiento';
 export * from './agro/out/establecimiento';
 //
 export * from './agro/in/eventoEspecifico';
+export * from './agro/mongo/eventoEspecifico';
 export * from './agro/out/eventoEspecifico';
 //
 export * from './agro/in/grupo';
+export * from './agro/mongo/grupo';
 export * from './agro/out/grupo';
 //
 export * from './agro/in/lote-animal';
+export * from './agro/mongo/lote-animal';
 export * from './agro/out/lote-animal';
 //
 export * from './agro/in/lote-silobolsa';
+export * from './agro/mongo/lote-silobolsa';
 export * from './agro/out/lote-silobolsa';
 //
 export * from './agro/in/pesaje';
+export * from './agro/mongo/pesaje';
 export * from './agro/out/pesaje';
 //
 export * from './agro/in/raza';
+export * from './agro/mongo/raza';
 export * from './agro/out/raza';
 //
 export * from './agro/in/servicio';
+export * from './agro/mongo/servicio';
 export * from './agro/out/servicio';
 //
 export * from './agro/in/silobolsa';
+export * from './agro/mongo/silobolsa';
 export * from './agro/out/silobolsa';
 //
 export * from './agro/in/subcategoria';
+export * from './agro/mongo/subcategoria';
 export * from './agro/out/subcategoria';
 //
 export * from './agro/in/tipoBaja';
+export * from './agro/mongo/tipoBaja';
 export * from './agro/out/tipoBaja';
 //
 export * from './agro/in/tipoTratamiento';
+export * from './agro/mongo/tipoTratamiento';
 export * from './agro/out/tipoTratamiento';
 //
 export * from './agro/in/tipoVacuna';
+export * from './agro/mongo/tipoVacuna';
 export * from './agro/out/tipoVacuna';
 //
 export * from './agro/in/tratamiento';
+export * from './agro/mongo/tratamiento';
 export * from './agro/out/tratamiento';
 //
 export * from './agro/in/vacunacion';
+export * from './agro/mongo/vacunacion';
 export * from './agro/out/vacunacion';
 //
 
