@@ -3,6 +3,7 @@
 ////////////////////////////
 export * from './shared/ack';
 export * from './shared/uplink';
+export * from './shared/downlink';
 export * from './shared/metadatos';
 export * from './shared/usuario';
 export * from './shared/coordenadas';
