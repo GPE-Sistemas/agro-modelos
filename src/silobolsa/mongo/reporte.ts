@@ -9,6 +9,12 @@ export interface IReporteSilobolsaDb extends Document {
     temperatura: number;
     humedad: number;
     bateria: number;
+    // Calculados
+    bateriaPorc: number;
+    co2Porc: number;
+    humedadPorc: number;
+    temperaturaGrados: number;
+    humedadEquilibrio?: number;
 }
 
 export const SReporteSilobolsa = new Schema<IReporteSilobolsaDb>({
@@ -19,6 +25,12 @@ export const SReporteSilobolsa = new Schema<IReporteSilobolsaDb>({
     temperatura: { type: Number },
     humedad: { type: Number },
     bateria: { type: Number },
+    // Calculados
+    bateriaPorc: { type: Number },
+    co2Porc: { type: Number },
+    humedadPorc: { type: Number },
+    temperaturaGrados: { type: Number },
+    humedadEquilibrio: { type: Number },
 });
 
 SReporteSilobolsa.virtual('dispositivo', {
