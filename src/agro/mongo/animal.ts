@@ -12,7 +12,7 @@ import { ISubcategoriaDb } from './subcategoria';
 export interface IAnimalDb extends Document {
     _id: Types.ObjectId;
     caravana: string;
-    deveuiDispositivo?: Types.ObjectId;
+    deveuiDispositivo?: string;
     dientes: number;
     fechaNacimiento?: string;
     fechaAlta?: string;
