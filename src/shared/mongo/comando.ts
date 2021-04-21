@@ -9,7 +9,10 @@ export interface IComandoDb extends Document {
     payload: string;
     puerto: number;
     timestamp: Date;
-    usuario: any;
+    usuario: {
+        _id: string,
+        email: string,
+    };
 }
 
 export const SComando = new Schema<IComandoDb>({

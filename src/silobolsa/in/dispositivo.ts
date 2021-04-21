@@ -1,11 +1,26 @@
 import joi from 'joi';
+import j2s from 'joi-to-swagger';
 import { IDispositivo } from '../../shared/in/dispositivo';
+import { IMetadatosValidation } from '../../shared/metadatos';
 
 export const IDispositivoSilobolsaValidation = joi.object<IDispositivoSilobolsa>({
-    deveui: joi.string().length(16).required(),
-    idSilobolsa: joi.string().length(16),
-    deviceName: joi.string().required(),
+    // Base
+    adr: joi.boolean(),
+    deveui: joi.string().required(),
+    deviceName: joi.string(),
+    dr: joi.number(),
+    fCnt: joi.number(),
+    fechaUltimoUplink: joi.date(),
+    metadatos: joi.array().items(IMetadatosValidation),
+    red: joi.string(),
+    // Especificos Silobolsa
+    idUltimoReporte: joi.string(),
+    fechaAsignacion: joi.date(),
+    idSilobolsa: joi.string(),
+    posicion: joi.number(),
 });
+
+export const IDispositivoSilobolsaSwagger = j2s(IDispositivoSilobolsaValidation).swagger;
 
 export interface IDispositivoSilobolsa extends IDispositivo {
     alarmaActiva: boolean;

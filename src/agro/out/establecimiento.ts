@@ -1,5 +1,5 @@
 import joi from 'joi';
-// import j2s from 'joi-to-swagger';
+import j2s from 'joi-to-swagger';
 import { ICoordenadas, ICoordenadasValidation } from '../../shared/coordenadas';
 
 export const IEstablecimientoDTOValidation = joi.object<IEstablecimientoDTO>().keys({
@@ -7,6 +7,8 @@ export const IEstablecimientoDTOValidation = joi.object<IEstablecimientoDTO>().k
     nombre: joi.string().required(),
     coordenadas: joi.array().items(joi.array().items(ICoordenadasValidation)),
 });
+
+export const IEstablecimientoDTOSwagger = j2s(IEstablecimientoDTOValidation).swagger;
 
 export interface IEstablecimientoDTO {
     _id: string;

@@ -1,5 +1,5 @@
 import joi from 'joi';
-// import j2s from 'joi-to-swagger';
+import j2s from 'joi-to-swagger';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
 
 export const ILoteSilobolsaDTOValidation = joi.object<ILoteSilobolsaDTO>().keys({
@@ -10,7 +10,7 @@ export const ILoteSilobolsaDTOValidation = joi.object<ILoteSilobolsaDTO>().keys(
     establecimiento: IEstablecimientoDTOValidation
 });
 
-// export const ILoteDTOSchema = j2s(ILoteDTOValidation).swagger;
+export const ILoteSilobolsaDTOSwagger = j2s(ILoteSilobolsaDTOValidation).swagger;
 
 export interface ILoteSilobolsaDTO {
     _id: string;

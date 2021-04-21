@@ -1,3 +1,21 @@
+import joi from 'joi';
+import j2s from 'joi-to-swagger';
+
+export const IMetadatosValidation = joi.object<IMetadatos>({
+    gatewayID: joi.string().required(),
+    name: joi.string(),
+    timestamp: joi.date(),
+    rssi: joi.number(),
+    loRaSNR: joi.number(),
+    location: joi.object({
+        altitude: joi.number(),
+        latitude: joi.number(),
+        longitude: joi.number(),
+    }),
+});
+
+export const IMetadatosSchema = j2s(IMetadatosValidation).swagger;
+
 export interface IMetadatos {
     gatewayID: string;
     name: string;

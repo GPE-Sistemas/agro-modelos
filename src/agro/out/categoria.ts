@@ -1,13 +1,19 @@
-import { IEspecieDTO } from './especie';
-// import joi from 'joi';
-// import j2s from 'joi-to-swagger';
+import joi from 'joi';
+import j2s from 'joi-to-swagger';
+import { IEspecieDTO, IEspecieDTOValidation } from './especie';
 
-// export const ICategoriaDTOValidation = joi.object<ICategoriaDTO>({
-//     _id: joi.string(),
-//     especie: joi.string(),
-// });
+export const ICategoriaDTOValidation = joi.object<ICategoriaDTO>({
+    _id: joi.string(),
+    nombre: joi.string(),
+    idEspecie: joi.string(),
+    sexo: joi.boolean(),
+    edadMinMeses: joi.number(),
+    edadMaxMeses: joi.number(),
+    //
+    especie: IEspecieDTOValidation
+});
 
-// export const ICategoriaDTOSchema = j2s(ICategoriaDTOValidation).swagger;
+export const ICategoriaDTOSchema = j2s(ICategoriaDTOValidation).swagger;
 
 export interface ICategoriaDTO {
     _id: string;

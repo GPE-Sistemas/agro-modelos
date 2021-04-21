@@ -1,6 +1,5 @@
 import joi from 'joi';
-import { IDispositivoSilobolsaDTO } from './dispositivo';
-// import j2s from 'joi-to-swagger';
+import j2s from 'joi-to-swagger';
 
 export const IReporteSilobolsaDTOValidation = joi.object<IReporteSilobolsaDTO>({
     _id: joi.string().required(),
@@ -12,10 +11,10 @@ export const IReporteSilobolsaDTOValidation = joi.object<IReporteSilobolsaDTO>({
     humedad: joi.number(),
     bateria: joi.number(),
     //
-    dispositivo: joi.object(),
+    // dispositivo: IDispositivoSilobolsaDTOValidation, (circular)
 });
 
-// export const IReporteSilobolsaDTOSchema = j2s(IReporteSilobolsaDTOValidation).swagger;
+export const IReporteSilobolsaDTOSwagger = j2s(IReporteSilobolsaDTOValidation).swagger;
 
 export interface IReporteSilobolsaDTO {
     _id: string;
@@ -27,5 +26,5 @@ export interface IReporteSilobolsaDTO {
     humedad: number;
     bateria: number;
     //
-    dispositivo?: IDispositivoSilobolsaDTO;
+    // dispositivo?: IDispositivoSilobolsaDTO;
 }

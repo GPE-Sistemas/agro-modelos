@@ -1,6 +1,6 @@
 import joi from 'joi';
-import { IDispositivoSilobolsaDTO } from './dispositivo';
-// import j2s from 'joi-to-swagger';
+import j2s from 'joi-to-swagger';
+import { IDispositivoSilobolsaDTO, IDispositivoSilobolsaDTOValidation } from './dispositivo';
 
 export const IAlertaSilobolsaDTOValidation = joi.object<IAlertaSilobolsaDTO>({
     _id: joi.string(),
@@ -11,10 +11,13 @@ export const IAlertaSilobolsaDTOValidation = joi.object<IAlertaSilobolsaDTO>({
     deveui: joi.string(),
     idSilobolsa: joi.string(),
     archivada: joi.boolean(),
+    //
+    dispositivo: IDispositivoSilobolsaDTOValidation,
+    //
+    descripcion: joi.string(),
 });
 
-// export const IAlertaSilobolsaDTOSchema = j2s(IAlertaSilobolsaDTOValidation).swagger;
-
+export const IAlertaSilobolsaDTOSwagger = j2s(IAlertaSilobolsaDTOValidation).swagger;
 
 export interface IAlertaSilobolsaDTO {
     _id: string;
