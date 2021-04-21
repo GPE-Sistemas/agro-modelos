@@ -1,16 +1,18 @@
-import {
-    IBajaDTO, ICorralDTO, IEstablecimientoDTO, IEventoEspecificoDTO, IGrupoDTO, ILoteDTO,
-    IPesajeDTO, IServicioDTO, ISubcategoriaDTO, ITratamientoDTO, IVacunacionDTO, ICategoriaDTO,
-    IEspecieDTO, IRazaDTO, IDispositivoDTO
-} from '../../';
+import joi from 'joi';
 
-// import joi from 'joi';
+import {
+    IBajaDTO, ICorralDTO, IEstablecimientoDTO, IEventoEspecificoDTO, IGrupoDTO,
+    IPesajeDTO, IServicioDTO, ISubcategoriaDTO, ITratamientoDTO, IVacunacionDTO, ICategoriaDTO,
+    IEspecieDTO, IRazaDTO
+} from '../../';
+import { IDispositivoCaravanaDTO } from '../../caravana/out/dispositivo';
+import { ILoteAnimalDTO } from './lote-animal';
 // import j2s from 'joi-to-swagger';
 
-// export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
-//     _id: joi.string(),
-//     especie: joi.string(),
-// });
+export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
+    _id: joi.string(),
+    especie: joi.string(),
+});
 
 // export const IAnimalDTOSchema = j2s(IAnimalDTOValidation).swagger;
 
@@ -38,11 +40,11 @@ export interface IAnimalDTO {
     baja?: IBajaDTO;
     categoria?: ICategoriaDTO;
     corral?: ICorralDTO;
-    dispositivo?: IDispositivoDTO;
+    dispositivo?: IDispositivoCaravanaDTO;
     especie: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
     grupos?: IGrupoDTO[];
-    lote?: ILoteDTO;
+    lote?: ILoteAnimalDTO;
     madre?: IAnimalDTO;
     padre?: IAnimalDTO;
     raza?: IRazaDTO;

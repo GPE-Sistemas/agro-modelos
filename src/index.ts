@@ -7,9 +7,9 @@ export * from './shared/coordenadas';
 export * from './shared/token';
 export * from './shared/filtro';
 //
-export * from './shared/in/dispositivo';
-export * from './shared/mongo/dispositivo';
-export * from './shared/out/dispositivo';
+// export * from './shared/in/dispositivo';
+// export * from './shared/mongo/dispositivo';
+// export * from './shared/out/dispositivo';
 //
 export * from './shared/in/comando';
 export * from './shared/mongo/comando';
@@ -31,10 +31,12 @@ export * from './agro/out/especie';
 export * from './agro/out/establecimiento';
 export * from './agro/out/eventoEspecifico';
 export * from './agro/out/grupo';
-export * from './agro/out/lote';
+export * from './agro/out/lote-animal';
+export * from './agro/out/lote-silobolsa';
 export * from './agro/out/pesaje';
 export * from './agro/out/raza';
 export * from './agro/out/servicio';
+export * from './agro/out/silobolsa';
 export * from './agro/out/subcategoria';
 export * from './agro/out/tipoBaja';
 export * from './agro/out/tipoTratamiento';

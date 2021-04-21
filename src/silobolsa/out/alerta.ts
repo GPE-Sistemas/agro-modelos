@@ -30,4 +30,6 @@ export interface IAlertaSilobolsaDTO {
     archivada: boolean;
     // Populate
     dispositivo?: IDispositivoSilobolsaDTO;
+    //
+    descripcion: string;
 }
