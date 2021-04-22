@@ -5,7 +5,6 @@ export * from './shared/ack';
 export * from './shared/uplink';
 export * from './shared/downlink';
 export * from './shared/metadatos';
-export * from './shared/usuario';
 export * from './shared/coordenadas';
 export * from './shared/token';
 export * from './shared/filtro';
@@ -21,6 +20,26 @@ export * from './shared/out/comando';
 export * from './shared/in/log-dispositivo';
 export * from './shared/mongo/log-dispositivo';
 export * from './shared/out/log-dispositivo';
+
+//////////////////////////
+////////// ADMIN /////////
+//////////////////////////
+export * from './admin/in/cliente';
+export * from './admin/mongo/cliente';
+export * from './admin/out/cliente';
+//
+export * from './admin/in/dispositivo';
+export * from './admin/mongo/dispositivo';
+export * from './admin/out/dispositivo';
+//
+export * from './admin/in/lote-dispositivo';
+export * from './admin/mongo/lote-dispositivo';
+export * from './admin/out/lote-dispositivo';
+//
+export * from './admin/in/usuario';
+export * from './admin/mongo/usuario';
+export * from './admin/out/usuario';
+//
 
 //////////////////////////
 ////////// AGRO //////////
