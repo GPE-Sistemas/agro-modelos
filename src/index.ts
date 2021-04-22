@@ -41,10 +41,12 @@ export * from './chirpstack/in/gateway';
 export * from './chirpstack/in/integration-http';
 //
 export * from './chirpstack/in/network-server';
+export * from './chirpstack/out/network-server';
 //
 export * from './chirpstack/in/organization';
 //
 export * from './chirpstack/in/service-profile';
+export * from './chirpstack/out/service-profile';
 //
 
 //////////////////////////

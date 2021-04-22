@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IDeviceProfileChirpstackDTOValidation = joi.object<IDeviceProfileChirpstackDTO>({
+export const IServiceProfileChirpstackDTOValidation = joi.object<IServiceProfileChirpstackDTO>({
     result: joi.object({
         createdAt: joi.string(),
         id: joi.string(),
@@ -14,7 +14,7 @@ export const IDeviceProfileChirpstackDTOValidation = joi.object<IDeviceProfileCh
     totalCount: joi.string(),
 });
 
-export const IDeviceProfileChirpstackDTOSwagger = j2s(IDeviceProfileChirpstackDTOValidation).swagger;
+export const IServiceProfileChirpstackDTOSwagger = j2s(IServiceProfileChirpstackDTOValidation).swagger;
 
 interface apiServiceProfileListItem  {
     createdAt: string;
@@ -26,7 +26,7 @@ interface apiServiceProfileListItem  {
     updatedAt: string;
 }
 
-export interface IDeviceProfileChirpstackDTO {
+export interface IServiceProfileChirpstackDTO {
     result: apiServiceProfileListItem [];
     totalCount: string;
 }
