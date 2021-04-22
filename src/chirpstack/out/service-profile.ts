@@ -16,7 +16,7 @@ export const IDeviceProfileChirpstackDTOValidation = joi.object<IDeviceProfileCh
 
 export const IDeviceProfileChirpstackDTOSwagger = j2s(IDeviceProfileChirpstackDTOValidation).swagger;
 
-interface apiDeviceProfileListItem  {
+interface apiServiceProfileListItem  {
     createdAt: string;
     id: string;
     name: string;
@@ -27,6 +27,6 @@ interface apiDeviceProfileListItem  {
 }
 
 export interface IDeviceProfileChirpstackDTO {
-    result: apiDeviceProfileListItem[];
+    result: apiServiceProfileListItem [];
     totalCount: string;
 }

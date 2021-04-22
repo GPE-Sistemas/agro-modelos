@@ -15,7 +15,7 @@ export const IApplicationChirpstackDTOValidation = joi.object<IApplicationChirps
 
 export const IApplicationChirpstackDTOSwagger = j2s(IApplicationChirpstackDTOValidation).swagger;
 
-interface apiApplicationChirpstackListItem {
+interface apiApplicationListItem  {
     description: string;
     id: string;
     name: string;
@@ -25,6 +25,6 @@ interface apiApplicationChirpstackListItem {
 }
 
 export interface IApplicationChirpstackDTO {
-    result: apiApplicationChirpstackListItem[];
+    result: apiApplicationListItem [];
     totalCount: string;
 }

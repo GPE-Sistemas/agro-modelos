@@ -31,24 +31,24 @@ export const IGatewayChirpstackSwagger = j2s(IGatewayChirpstackValidation).swagg
 export interface IGatewayChirpstack {
     gateway: {
         boards: {
-            fineTimestampKey: string,
+            fineTimestampKey: string;
             fpgaID: string
-        }[],
-        description: string,
-        discoveryEnabled: boolean,
-        gatewayProfileID: string,
-        id: string,
+        }[];
+        description: string;
+        discoveryEnabled: boolean;
+        gatewayProfileID: string;
+        id: string;
         location: {
-            accuracy: number,
-            altitude: number,
-            latitude: number,
-            longitude: number,
+            accuracy: number;
+            altitude: number;
+            latitude: number;
+            longitude: number;
             source: 'UNKNOWN' | 'GPS' | 'CONFIG' | 'GEO_RESOLVER_TDOA' | 'GEO_RESOLVER_RSSI' | 'GEO_RESOLVER_GNSS' | 'GEO_RESOLVER_WIFI'
-        },
-        metadata: Record<string, string>,
-        name: string,
-        networkServerID: string,
-        organizationID: string,
-        tags: Record<string, string>
+        };
+        metadata: Record<string, string>;
+        name: string;
+        networkServerID: string;
+        organizationID: string;
+        tags: Record<string, string>;
     }
 }

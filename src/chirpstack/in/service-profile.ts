@@ -33,28 +33,28 @@ export const IServiceProfileChirpstackSwagger = j2s(IServiceProfileChirpstackVal
 
 export interface IServiceProfileChirpstack {
     serviceProfile: {
-        addGWMetaData: boolean,
-        channelMask: string,
-        devStatusReqFreq: number,
-        dlBucketSize: number,
-        dlRate: number,
-        dlRatePolicy: 'DROP' | 'MARK',
-        drMax: number,
-        drMin: number,
-        hrAllowed: boolean,
-        id: string,
-        minGWDiversity: number,
-        name: string,
-        networkServerID: string,
-        nwkGeoLoc: boolean,
-        organizationID: string,
-        prAllowed: boolean,
-        raAllowed: boolean,
-        reportDevStatusBattery: boolean,
-        reportDevStatusMargin: boolean,
-        targetPER: number,
-        ulBucketSize: number,
-        ulRate: number,
-        ulRatePolicy: 'DROP' | 'MARK',
+        addGWMetaData: boolean;
+        channelMask: string;
+        devStatusReqFreq: number;
+        dlBucketSize: number;
+        dlRate: number;
+        dlRatePolicy: 'DROP' | 'MARK';
+        drMax: number;
+        drMin: number;
+        hrAllowed: boolean;
+        id: string;
+        minGWDiversity: number;
+        name: string;
+        networkServerID: string;
+        nwkGeoLoc: boolean;
+        organizationID: string;
+        prAllowed: boolean;
+        raAllowed: boolean;
+        reportDevStatusBattery: boolean;
+        reportDevStatusMargin: boolean;
+        targetPER: number;
+        ulBucketSize: number;
+        ulRate: number;
+        ulRatePolicy: 'DROP' | 'MARK';
     }
 }

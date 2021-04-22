@@ -20,15 +20,15 @@ export const IDeviceChirpstackSwagger = j2s(IDeviceChirpstackValidation).swagger
 
 export interface IDeviceChirpstack {
     device: {
-        applicationID: string,
-        description: string,
-        devEUI: string,
-        deviceProfileID: string,
-        isDisabled: boolean,
-        name: string,
-        referenceAltitude: number,
-        skipFCntCheck: boolean,
-        tags: Record<string, string>,
-        variables: Record<string, string>,
+        applicationID: string;
+        description: string;
+        devEUI: string;
+        deviceProfileID: string;
+        isDisabled: boolean;
+        name: string;
+        referenceAltitude: number;
+        skipFCntCheck: boolean;
+        tags: Record<string, string>;
+        variables: Record<string, string>;
     }
 }

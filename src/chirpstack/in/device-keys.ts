@@ -14,9 +14,9 @@ export const IDeviceKeysChirpstackSwagger = j2s(IDeviceKeysChirpstackValidation)
 
 export interface IDeviceKeysChirpstack {
     deviceKeys: {
-        appKey: string,
-        devEUI: string,
-        genAppKey: string,
-        nwkKey: string,
+        appKey: string;
+        devEUI: string;
+        genAppKey: string;
+        nwkKey: string;
     }
 }

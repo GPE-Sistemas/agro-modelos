@@ -22,17 +22,17 @@ export const IGatewayProfileChirpstackSwagger = j2s(IGatewayProfileChirpstackVal
 
 export interface IGatewayProfileChirpstack {
     gatewayProfile: {
-        channels: number[],
+        channels: number[];
         extraChannels: {
-            bandwidth: number,
-            bitrate: number,
-            frequency: number,
-            modulation: 'LORA' | 'FSK',
-            spreadingFactors: number[],
-        }[],
-        id: string,
-        name: string,
-        networkServerID: string,
-        statsInterval: string,
+            bandwidth: number;
+            bitrate: number;
+            frequency: number;
+            modulation: 'LORA' | 'FSK';
+            spreadingFactors: number[];
+        }[];
+        id: string;
+        name: string;
+        networkServerID: string;
+        statsInterval: string;
     }
 }

@@ -16,11 +16,11 @@ export const IOrganizationChirpstackSwagger = j2s(IOrganizationChirpstackValidat
 
 export interface IOrganizationChirpstack {
     organization: {
-        canHaveGateways: boolean,
-        displayName: string,
-        id: string,
-        maxDeviceCount: number,
-        maxGatewayCount: number,
-        name: string,
+        canHaveGateways: boolean;
+        displayName: string;
+        id: string;
+        maxDeviceCount: number;
+        maxGatewayCount: number;
+        name: string;
     }
 }
