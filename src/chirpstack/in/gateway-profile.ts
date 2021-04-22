@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IGatewayProfileValidation = joi.object<IGatewayProfile>({
+export const IGatewayProfileChirpstackValidation = joi.object<IGatewayProfileChirpstack>({
     gatewayProfile: joi.object({
         channels: joi.array().items(joi.number()),
         extraChannels: joi.array().items(joi.object({
@@ -18,9 +18,9 @@ export const IGatewayProfileValidation = joi.object<IGatewayProfile>({
     }),
 });
 
-export const IGatewayProfileSwagger = j2s(IGatewayProfileValidation).swagger;
+export const IGatewayProfileChirpstackSwagger = j2s(IGatewayProfileChirpstackValidation).swagger;
 
-export interface IGatewayProfile {
+export interface IGatewayProfileChirpstack {
     gatewayProfile: {
         channels: number[],
         extraChannels: {

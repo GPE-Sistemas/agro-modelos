@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IIntegrationHTTPValidation = joi.object<IIntegrationHTTP>({
+export const IIntegrationHTTPChirpstackValidation = joi.object<IIntegrationHTTPChirpstack>({
     integration: joi.object({
         ackNotificationURL: joi.string(),
         applicationID: joi.string(),
@@ -21,9 +21,9 @@ export const IIntegrationHTTPValidation = joi.object<IIntegrationHTTP>({
     }),
 });
 
-export const IIntegrationHTTPSwagger = j2s(IIntegrationHTTPValidation).swagger;
+export const IIntegrationHTTPChirpstackSwagger = j2s(IIntegrationHTTPChirpstackValidation).swagger;
 
-export interface IIntegrationHTTP {
+export interface IIntegrationHTTPChirpstack {
     integration: {
         ackNotificationURL: string,
         applicationID: string,

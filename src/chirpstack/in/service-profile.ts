@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IServiceProfileValidation = joi.object<IServiceProfile>({
+export const IServiceProfileChirpstackValidation = joi.object<IServiceProfileChirpstack>({
     serviceProfile: joi.object({
         addGWMetaData: joi.boolean(),
         channelMask: joi.string(),
@@ -29,9 +29,9 @@ export const IServiceProfileValidation = joi.object<IServiceProfile>({
     }),
 });
 
-export const IServiceProfileSwagger = j2s(IServiceProfileValidation).swagger;
+export const IServiceProfileChirpstackSwagger = j2s(IServiceProfileChirpstackValidation).swagger;
 
-export interface IServiceProfile {
+export interface IServiceProfileChirpstack {
     serviceProfile: {
         addGWMetaData: boolean,
         channelMask: string,

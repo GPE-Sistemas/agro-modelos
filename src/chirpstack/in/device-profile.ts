@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IDeviceProfileValidation = joi.object<IDeviceProfile>({
+export const IDeviceProfileChirpstackValidation = joi.object<IDeviceProfileChirpstack>({
     deviceProfile: joi.object({
         classBTimeout: joi.number(),
         classCTimeout: joi.number(),
@@ -36,9 +36,9 @@ export const IDeviceProfileValidation = joi.object<IDeviceProfile>({
     }),
 });
 
-export const IDeviceProfileSwagger = j2s(IDeviceProfileValidation).swagger;
+export const IDeviceProfileChirpstackSwagger = j2s(IDeviceProfileChirpstackValidation).swagger;
 
-export interface IDeviceProfile {
+export interface IDeviceProfileChirpstack {
     deviceProfile: {
         classBTimeout: number,
         classCTimeout: number,

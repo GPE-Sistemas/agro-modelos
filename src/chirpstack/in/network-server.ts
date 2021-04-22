@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const INetworkServerValidation = joi.object<INetworkServer>({
+export const INetworkServerChirpstackValidation = joi.object<INetworkServerChirpstack>({
     networkServer: joi.object({
         caCert: joi.string(),
         gatewayDiscoveryDR: joi.number(),
@@ -19,9 +19,9 @@ export const INetworkServerValidation = joi.object<INetworkServer>({
     }),
 });
 
-export const INetworkServerSwagger = j2s(INetworkServerValidation).swagger;
+export const INetworkServerChirpstackSwagger = j2s(INetworkServerChirpstackValidation).swagger;
 
-export interface INetworkServer {
+export interface INetworkServerChirpstack {
     networkServer: {
         caCert: string,
         gatewayDiscoveryDR: number,

@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IApplicationDTOValidation = joi.object<IApplicationDTO>({
+export const IApplicationChirpstackDTOValidation = joi.object<IApplicationChirpstackDTO>({
     result: joi.object({
         description: joi.string(),
         id: joi.string(),
@@ -13,9 +13,9 @@ export const IApplicationDTOValidation = joi.object<IApplicationDTO>({
     totalCount: joi.string(),
 });
 
-export const IApplicationDTOSwagger = j2s(IApplicationDTOValidation).swagger;
+export const IApplicationChirpstackDTOSwagger = j2s(IApplicationChirpstackDTOValidation).swagger;
 
-interface apiApplicationListItem {
+interface apiApplicationChirpstackListItem {
     description: string;
     id: string;
     name: string;
@@ -24,7 +24,7 @@ interface apiApplicationListItem {
     serviceProfileName: string;
 }
 
-export interface IApplicationDTO {
-    result: apiApplicationListItem[];
+export interface IApplicationChirpstackDTO {
+    result: apiApplicationChirpstackListItem[];
     totalCount: string;
 }

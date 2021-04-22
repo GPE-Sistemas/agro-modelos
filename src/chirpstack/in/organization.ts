@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IOrganizationValidation = joi.object<IOrganization>({
+export const IOrganizationChirpstackValidation = joi.object<IOrganizationChirpstack>({
     organization: joi.object({
         canHaveGateways: joi.boolean(),
         displayName: joi.string(),
@@ -12,9 +12,9 @@ export const IOrganizationValidation = joi.object<IOrganization>({
     }),
 });
 
-export const IOrganizationSwagger = j2s(IOrganizationValidation).swagger;
+export const IOrganizationChirpstackSwagger = j2s(IOrganizationChirpstackValidation).swagger;
 
-export interface IOrganization {
+export interface IOrganizationChirpstack {
     organization: {
         canHaveGateways: boolean,
         displayName: string,

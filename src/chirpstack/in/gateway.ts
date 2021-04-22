@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IGatewayValidation = joi.object<IGateway>({
+export const IGatewayChirpstackValidation = joi.object<IGatewayChirpstack>({
     gateway: joi.object({
         boards: joi.array().items(joi.object({
             fineTimestampKey: joi.string(),
@@ -26,9 +26,9 @@ export const IGatewayValidation = joi.object<IGateway>({
     }),
 });
 
-export const IGatewaySwagger = j2s(IGatewayValidation).swagger;
+export const IGatewayChirpstackSwagger = j2s(IGatewayChirpstackValidation).swagger;
 
-export interface IGateway {
+export interface IGatewayChirpstack {
     gateway: {
         boards: {
             fineTimestampKey: string,

@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IApplicationValidation = joi.object<IApplication>({
+export const IApplicationChirpstackValidation = joi.object<IApplicationChirpstack>({
     application: joi.object({
         description: joi.string(),
         id: joi.string(),
@@ -14,9 +14,9 @@ export const IApplicationValidation = joi.object<IApplication>({
     }),
 });
 
-export const IApplicationSwagger = j2s(IApplicationValidation).swagger;
+export const IApplicationChirpstackSwagger = j2s(IApplicationChirpstackValidation).swagger;
 
-export interface IApplication {
+export interface IApplicationChirpstack {
     application: {
         description: string,
         id: string,
