@@ -21,9 +21,37 @@ export * from './shared/in/log-dispositivo';
 export * from './shared/mongo/log-dispositivo';
 export * from './shared/out/log-dispositivo';
 
+///////////////////////////////
+////////// CHIRPSTACK /////////
+///////////////////////////////
+export * from './chirpstack/in/application';
+export * from './chirpstack/out/application';
+//
+export * from './chirpstack/in/device-profile';
+export * from './chirpstack/out/device-profile';
+//
+export * from './chirpstack/in/device';
+//
+export * from './chirpstack/in/gateway-profile';
+//
+export * from './chirpstack/in/gateway';
+//
+export * from './chirpstack/in/integration-http';
+//
+export * from './chirpstack/in/network-server';
+//
+export * from './chirpstack/in/organization';
+//
+export * from './chirpstack/in/service-profile';
+//
+
 //////////////////////////
 ////////// ADMIN /////////
 //////////////////////////
+export * from './admin/in/application-server';
+export * from './admin/mongo/application-server';
+export * from './admin/out/application-server';
+//
 export * from './admin/in/cliente';
 export * from './admin/mongo/cliente';
 export * from './admin/out/cliente';
