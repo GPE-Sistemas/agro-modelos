@@ -27,6 +27,8 @@ export * from './shared/out/log-dispositivo';
 export * from './chirpstack/in/application';
 export * from './chirpstack/out/application';
 //
+export * from './chirpstack/in/device-keys';
+//
 export * from './chirpstack/in/device-profile';
 export * from './chirpstack/out/device-profile';
 //
