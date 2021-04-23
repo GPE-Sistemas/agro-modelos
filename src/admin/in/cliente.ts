@@ -3,6 +3,7 @@ import j2s from 'joi-to-swagger';
 
 export const IClienteValidation = joi.object<ICliente>({
     nombre: joi.string(),
+    applicationServerId: joi.string(),
     networkServerId: joi.string(),
     organizationId: joi.string(),
     // applications: joi.array().items(joi.object({
@@ -23,6 +24,7 @@ export const IClienteSwagger = j2s(IClienteValidation).swagger;
 
 export interface ICliente {
     nombre: string;
+    applicationServerId: string;
     networkServerId?: string;
     organizationId?: string;
     applications?: { applicationId: string, applicationName: string }[];

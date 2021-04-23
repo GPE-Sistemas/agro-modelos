@@ -4,6 +4,7 @@ import j2s from 'joi-to-swagger';
 export const IClienteDTOValidation = joi.object<IClienteDTO>({
     _id: joi.string(),
     nombre: joi.string(),
+    applicationServerId: joi.string(),
     networkServerId: joi.string(),
     organizationId: joi.string(),
     applications: joi.array().items(joi.object({
@@ -25,6 +26,7 @@ export const IClienteDTOSwagger = j2s(IClienteDTOValidation).swagger;
 export interface IClienteDTO {
     _id: string;
     nombre: string;
+    applicationServerId: string;
     networkServerId: string;
     organizationId: string;
     applications: { applicationId: string, applicationName: string }[];
