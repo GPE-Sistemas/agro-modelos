@@ -6,6 +6,7 @@ export const IClienteValidation = joi.object<ICliente>({
     applicationServerId: joi.string(),
     networkServerId: joi.string(),
     organizationId: joi.string(),
+    serviceProfileId: joi.string(),
     // applications: joi.array().items(joi.object({
     //     applicationId: joi.string(),
     //     applicationName: joi.string(),
@@ -27,9 +28,9 @@ export interface ICliente {
     applicationServerId: string;
     networkServerId?: string;
     organizationId?: string;
+    serviceProfileId?: string;
     applications?: { applicationId: string, applicationName: string }[];
     deviceProfiles?: { deviceProfileId: string, deviceProfile: string }[];
     gateways?: { gatewayId: string, gateway: string }[];
-    // serviceProfileId: string; // Se puede consultar con organizationId
     // gatewayProfileId: string; // Se puede consultar con networkServerId
 }
