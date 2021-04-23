@@ -2,7 +2,7 @@ import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
 export const IClienteValidation = joi.object<ICliente>({
-    nombre: joi.string(),
+    nombre: joi.string().required(),
     applicationServerId: joi.string(),
     networkServerId: joi.string(),
     organizationId: joi.string(),
@@ -25,7 +25,7 @@ export const IClienteSwagger = j2s(IClienteValidation).swagger;
 
 export interface ICliente {
     nombre: string;
-    applicationServerId: string;
+    applicationServerId?: string;
     networkServerId?: string;
     organizationId?: string;
     serviceProfileId?: string;

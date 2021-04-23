@@ -2,6 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
+    applicationServerId: string;
     deviceName: string;
     deveui: string;
     tipo: string;
@@ -12,6 +13,7 @@ export interface IDispositivoAdminDb extends Document {
 }
 
 export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
+    applicationServerId: { type: String },
     deviceName: { type: String, required: true, unique: true },
     deveui: { type: String, required: true, unique: true },
     tipo: { type: String, required: true },
