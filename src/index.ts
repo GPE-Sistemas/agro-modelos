@@ -52,6 +52,10 @@ export * from './chirpstack/out/service-profile';
 //////////////////////////
 ////////// ADMIN /////////
 //////////////////////////
+export * from './admin/in/aplicacion';
+export * from './admin/mongo/aplicacion';
+export * from './admin/out/aplicacion';
+//
 export * from './admin/in/application-server';
 export * from './admin/mongo/application-server';
 export * from './admin/out/application-server';
