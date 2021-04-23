@@ -23,18 +23,18 @@ export const INetworkServerChirpstackSwagger = j2s(INetworkServerChirpstackValid
 
 export interface INetworkServerChirpstack {
     networkServer: {
-        caCert: string;
-        gatewayDiscoveryDR: number;
-        gatewayDiscoveryEnabled: boolean;
-        gatewayDiscoveryInterval: number;
-        gatewayDiscoveryTXFrequency: number;
-        id: string;
+        caCert?: string;
+        gatewayDiscoveryDR?: number;
+        gatewayDiscoveryEnabled?: boolean;
+        gatewayDiscoveryInterval?: number;
+        gatewayDiscoveryTXFrequency?: number;
+        id?: string;
         name: string;
-        routingProfileCACert: string;
-        routingProfileTLSCert: string;
-        routingProfileTLSKey: string;
+        routingProfileCACert?: string;
+        routingProfileTLSCert?: string;
+        routingProfileTLSKey?: string;
         server: string;
-        tlsCert: string;
-        tlsKey: string;
+        tlsCert?: string;
+        tlsKey?: string;
     }
 }

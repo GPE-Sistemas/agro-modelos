@@ -19,12 +19,12 @@ export const IApplicationChirpstackSwagger = j2s(IApplicationChirpstackValidatio
 export interface IApplicationChirpstack {
     application: {
         description: string;
-        id: string;
+        id?: string;
         name: string;
         organizationID: string;
-        payloadCodec: string;
-        payloadDecoderScript: string;
-        payloadEncoderScript: string;
+        payloadCodec?: string;
+        payloadDecoderScript?: string;
+        payloadEncoderScript?: string;
         serviceProfileID: string;
     }
 }

@@ -25,20 +25,20 @@ export const IIntegrationHTTPChirpstackSwagger = j2s(IIntegrationHTTPChirpstackV
 
 export interface IIntegrationHTTPChirpstack {
     integration: {
-        ackNotificationURL: string;
+        ackNotificationURL?: string;
         applicationID: string;
-        errorNotificationURL: string;
+        errorNotificationURL?: string;
         eventEndpointURL: string;
-        headers: {
+        headers?: {
             key: string;
             value: string;
         }[];
-        integrationNotificationURL: string;
-        joinNotificationURL: string;
-        locationNotificationURL: string;
-        marshaler: 'JSON' | 'PROTOBUF' | 'JSON_V3';
-        statusNotificationURL: string;
-        txAckNotificationURL: string;
-        uplinkDataURL: string;
+        integrationNotificationURL?: string;
+        joinNotificationURL?: string;
+        locationNotificationURL?: string;
+        marshaler?: 'JSON' | 'PROTOBUF' | 'JSON_V3';
+        statusNotificationURL?: string;
+        txAckNotificationURL?: string;
+        uplinkDataURL?: string;
     }
 }

@@ -19,6 +19,6 @@ export interface IDispositivoAdmin {
     tipo: string;
     idLote: string;
     idCliente: string;
-    applicationId: string;
-    deviceProfileId: string;
+    applicationId?: string;
+    deviceProfileId?: string;
 }

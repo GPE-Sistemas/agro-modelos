@@ -24,11 +24,11 @@ export interface IDeviceChirpstack {
         description: string;
         devEUI: string;
         deviceProfileID: string;
-        isDisabled: boolean;
+        isDisabled?: boolean;
         name: string;
-        referenceAltitude: number;
-        skipFCntCheck: boolean;
-        tags: Record<string, string>;
-        variables: Record<string, string>;
+        referenceAltitude?: number;
+        skipFCntCheck?: boolean;
+        tags?: Record<string, string>;
+        variables?: Record<string, string>;
     }
 }

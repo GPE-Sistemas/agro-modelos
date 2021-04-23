@@ -30,15 +30,15 @@ export const IGatewayChirpstackSwagger = j2s(IGatewayChirpstackValidation).swagg
 
 export interface IGatewayChirpstack {
     gateway: {
-        boards: {
+        boards?: {
             fineTimestampKey: string;
             fpgaID: string
         }[];
         description: string;
-        discoveryEnabled: boolean;
-        gatewayProfileID: string;
+        discoveryEnabled?: boolean;
+        gatewayProfileID?: string;
         id: string;
-        location: {
+        location?: {
             accuracy: number;
             altitude: number;
             latitude: number;
@@ -49,6 +49,6 @@ export interface IGatewayChirpstack {
         name: string;
         networkServerID: string;
         organizationID: string;
-        tags: Record<string, string>;
+        tags?: Record<string, string>;
     }
 }
