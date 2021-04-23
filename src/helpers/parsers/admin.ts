@@ -3,7 +3,7 @@ import { IAplicacionDb, IAplicacionDTO, IApplicationServerDb, IApplicationServer
 
 export class AdminParserService {
 
-    public usuario(dato: LeanDocument<IUsuarioDb>): IUsuarioDTO {
+    static usuario(dato: LeanDocument<IUsuarioDb>): IUsuarioDTO {
         const dto: IUsuarioDTO = {
             _id: dato._id?.toHexString(),
             idCliente: dato.idCliente.toHexString(),
@@ -12,7 +12,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public usuarios(datos: LeanDocument<IUsuarioDb>[]): IUsuarioDTO[] {
+    static usuarios(datos: LeanDocument<IUsuarioDb>[]): IUsuarioDTO[] {
         const dto: IUsuarioDTO[] = [];
         for (const dato of datos) {
             dto.push(this.usuario(dato));
@@ -20,7 +20,7 @@ export class AdminParserService {
         return dto;
     }
 
-    public cliente(dato: LeanDocument<IClienteDb>): IClienteDTO {
+    static cliente(dato: LeanDocument<IClienteDb>): IClienteDTO {
         const dto: IClienteDTO = {
             _id: dato._id?.toHexString(),
             applicationServerId: dato.applicationServerId,
@@ -34,7 +34,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public clientes(datos: LeanDocument<IClienteDb>[]): IClienteDTO[] {
+    static clientes(datos: LeanDocument<IClienteDb>[]): IClienteDTO[] {
         const dto: IClienteDTO[] = [];
         for (const dato of datos) {
             dto.push(this.cliente(dato));
@@ -42,7 +42,7 @@ export class AdminParserService {
         return dto;
     }
 
-    public aplicacion(dato: LeanDocument<IAplicacionDb>): IAplicacionDTO {
+    static aplicacion(dato: LeanDocument<IAplicacionDb>): IAplicacionDTO {
         const dto: IAplicacionDTO = {
             _id: dato._id?.toHexString(),
             nombre: dato.nombre,
@@ -52,7 +52,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public aplicaciones(datos: LeanDocument<IAplicacionDb>[]): IAplicacionDTO[] {
+    static aplicaciones(datos: LeanDocument<IAplicacionDb>[]): IAplicacionDTO[] {
         const dto: IAplicacionDTO[] = [];
         for (const dato of datos) {
             dto.push(this.aplicacion(dato));
@@ -60,7 +60,7 @@ export class AdminParserService {
         return dto;
     }
 
-    public applicationServer(dato: LeanDocument<IApplicationServerDb>): IApplicationServerDTO {
+    static applicationServer(dato: LeanDocument<IApplicationServerDb>): IApplicationServerDTO {
         const dto: IApplicationServerDTO = {
             _id: dato._id?.toHexString(),
             nombre: dato.nombre,
@@ -71,7 +71,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public applicationServers(datos: LeanDocument<IApplicationServerDb>[]): IApplicationServerDTO[] {
+    static applicationServers(datos: LeanDocument<IApplicationServerDb>[]): IApplicationServerDTO[] {
         const dto: IApplicationServerDTO[] = [];
         for (const dato of datos) {
             dto.push(this.applicationServer(dato));
@@ -79,7 +79,7 @@ export class AdminParserService {
         return dto;
     }
 
-    public dispositivoAdmin(dato: LeanDocument<IDispositivoAdminDb>): IDispositivoAdminDTO {
+    static dispositivoAdmin(dato: LeanDocument<IDispositivoAdminDb>): IDispositivoAdminDTO {
         const dto: IDispositivoAdminDTO = {
             _id: dato._id?.toHexString(),
             applicationServerId: dato.applicationServerId,
@@ -94,7 +94,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public dispositivosAdmin(datos: LeanDocument<IDispositivoAdminDb>[]): IDispositivoAdminDTO[] {
+    static dispositivosAdmin(datos: LeanDocument<IDispositivoAdminDb>[]): IDispositivoAdminDTO[] {
         const dto: IDispositivoAdminDTO[] = [];
         for (const dato of datos) {
             dto.push(this.dispositivoAdmin(dato));
@@ -102,7 +102,7 @@ export class AdminParserService {
         return dto;
     }
 
-    public loteDispositvo(dato: LeanDocument<ILoteDispositivoDb>): ILoteDispositivoDTO {
+    static loteDispositvo(dato: LeanDocument<ILoteDispositivoDb>): ILoteDispositivoDTO {
         const dto: ILoteDispositivoDTO = {
             _id: dato._id?.toHexString(),
             nombre: dato.nombre,
@@ -110,7 +110,7 @@ export class AdminParserService {
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
     }
-    public lotesDispositvo(datos: LeanDocument<ILoteDispositivoDb>[]): ILoteDispositivoDTO[] {
+    static lotesDispositvo(datos: LeanDocument<ILoteDispositivoDb>[]): ILoteDispositivoDTO[] {
         const dto: ILoteDispositivoDTO[] = [];
         for (const dato of datos) {
             dto.push(this.loteDispositvo(dato));
