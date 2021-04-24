@@ -1,7 +1,7 @@
 import { LeanDocument } from 'mongoose';
 import { IAlertaCaravanaDb, IAlertaCaravanaDTO, IComandoDb, IComandoDTO, IDispositivoCaravanaDb, IDispositivoCaravanaDTO, ILogDispositivoDb, ILogDispositivoDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
 
-export class ParserService {
+export class CaravanaParserService {
 
     static reporte(dato: LeanDocument<IReporteCaravanaDb>): IReporteCaravanaDTO {
         const dto: IReporteCaravanaDTO = {
