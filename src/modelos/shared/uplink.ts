@@ -1,14 +1,15 @@
 import { IMetadatos } from '../';
 
 export interface IUplink {
+    aplicacion: string;
+    idCliente: string;
+    red: string;
     deveui: string;
     puerto: number;
     payload: string;
     metadatos: IMetadatos[];
     adr?: boolean;
     dr?: number;
-    red: string;
-    aplicacion: string;
-    idCliente: string;
     fCnt: number;
+    tags?: {[key: string]: string};
 }

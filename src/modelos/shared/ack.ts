@@ -4,5 +4,6 @@ export interface IAck {
     deveui: string;
     acknowledged: boolean;
     fCnt: number;
-    tags: any;
+    red: string;
+    tags?: {[key: string]: string};
 }
