@@ -4,8 +4,8 @@ import j2s from 'joi-to-swagger';
 export const IDispositivoAdminValidation = joi.object<IDispositivoAdmin>({
     applicationServerId: joi.string(),
     deviceName: joi.string().required(),
-    deveui: joi.string().required(),
-    tipo: joi.string().required(),
+    deveui: joi.string().length(16).required(),
+    tipo: joi.string().required().valid('Silobolsa', 'Caravana'),
     idLote: joi.string().required(),
     idCliente: joi.string(),
     applicationId: joi.string(),
@@ -18,7 +18,7 @@ export interface IDispositivoAdmin {
     applicationServerId?: string;
     deviceName: string;
     deveui: string;
-    tipo: string;
+    tipo: 'Silobolsa' | 'Caravana';
     idLote: string;
     idCliente?: string;
     applicationId?: string;

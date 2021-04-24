@@ -5,7 +5,7 @@ export interface IDispositivoAdminDb extends Document {
     applicationServerId: string;
     deviceName: string;
     deveui: string;
-    tipo: string;
+    tipo: 'Silobolsa' | 'Caravana';
     idLote: Types.ObjectId;
     idCliente: Types.ObjectId;
     applicationId: string;

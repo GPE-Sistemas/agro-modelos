@@ -4,7 +4,7 @@ export interface IApplicationServerDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
     url: string;
-    tipo: string;
+    tipo: 'Chirpstack' | 'Orbiwise' | 'Actility' | 'WMC';
     config: { [key: string]: string };
 }
 

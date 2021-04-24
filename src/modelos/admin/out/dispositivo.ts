@@ -6,7 +6,7 @@ export const IDispositivoAdminDTOValidation = joi.object<IDispositivoAdminDTO>({
     applicationServerId: joi.string(),
     deviceName: joi.string().required(),
     deveui: joi.string().required(),
-    tipo: joi.string().required(),
+    tipo: joi.string().required().valid('Silobolsa', 'Caravana'),
     idLote: joi.string().required(),
     idCliente: joi.string(),
     applicationId: joi.string(),
@@ -20,7 +20,7 @@ export interface IDispositivoAdminDTO {
     applicationServerId: string;
     deviceName: string;
     deveui: string;
-    tipo: string;
+    tipo: 'Silobolsa' | 'Caravana';
     idLote: string;
     idCliente: string;
     applicationId: string;
