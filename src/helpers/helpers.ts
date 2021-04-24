@@ -1,6 +1,6 @@
 import { ObjectSchema, ValidationResult } from 'joi';
 import { Types } from 'mongoose';
-import { IFiltro } from '../modelos';
+import { IAck, IFiltro, IUplink } from '../modelos';
 
 export function validateSchema(dato: any, schema: ObjectSchema): void {
     const result: ValidationResult = schema.validate(dato);
@@ -63,4 +63,28 @@ export function filtroBusqueda(filtro?: IFiltro) {
         }
     }
     return filtroDb;
+}
+
+export function uplinkLabels(uplink: IUplink) {
+    const labels = {
+        aplicacion: uplink.aplicacion,
+        deveui: uplink.deveui,
+        idCliente: uplink.idCliente,
+        payload: uplink.payload,
+        puerto: uplink.puerto + '',
+        tipo: 'uplink',
+    };
+    return labels;
+}
+
+export function ackLabels(ack: IAck) {
+    const labels = {
+        aplicacion: ack.aplicacion,
+        ack: ack.acknowledged ? 'true' : 'false',
+        deveui: ack.deveui,
+        fCnt: ack.fCnt + '',
+        idCliente: ack.idCliente,
+        tipo: 'ack',
+    };
+    return labels;
 }
