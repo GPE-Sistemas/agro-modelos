@@ -85,7 +85,7 @@ export interface IAnimalDTO {
     categoria?: ICategoriaDTO;
     corral?: ICorralDTO;
     dispositivo?: IDispositivoCaravanaDTO;
-    especie: IEspecieDTO;
+    especie?: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
     grupos?: IGrupoDTO[];
     lote?: ILoteAnimalDTO;

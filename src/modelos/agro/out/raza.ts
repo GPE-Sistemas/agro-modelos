@@ -17,5 +17,5 @@ export interface IRazaDTO {
     nombre: string;
     idEspecie: string;
     //
-    especie: IEspecieDTO;
+    especie?: IEspecieDTO;
 }

@@ -23,5 +23,5 @@ export interface ICategoriaDTO {
     edadMinMeses?: number;
     edadMaxMeses?: number;
     //
-    especie: IEspecieDTO;
+    especie?: IEspecieDTO;
 }
