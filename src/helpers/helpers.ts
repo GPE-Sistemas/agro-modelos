@@ -1,6 +1,6 @@
 import { ObjectSchema, ValidationResult } from 'joi';
 import { Types } from 'mongoose';
-import { IAck, IFiltro, IUplink } from '../modelos';
+import { IAck, IDownlink, IFiltro, IUplink } from '../modelos';
 
 export function validateSchema(dato: any, schema: ObjectSchema): void {
     const result: ValidationResult = schema.validate(dato);
@@ -85,6 +85,17 @@ export function ackLabels(ack: IAck) {
         fCnt: ack.fCnt + '',
         idCliente: ack.idCliente,
         tipo: 'ack',
+    };
+    return labels;
+}
+
+export function downlinkLabels(downlink: IDownlink) {
+    const labels = {
+        deveui: downlink.deveui,
+        payload: downlink.payload,
+        puerto: downlink.puerto + '',
+        red: downlink.red,
+        tipo: 'downlink',
     };
     return labels;
 }
