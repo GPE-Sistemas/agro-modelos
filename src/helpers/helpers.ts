@@ -118,7 +118,7 @@ export function crearTokenChirpstack(username: string, jwtSecret: string) {
     return jwt.sign(tokenInfo, jwtSecret);
 }
 
-export async function httpRequest<T>(url: string, method: string, queryParams?: Record<string, string | number | boolean>, headers?: Record<string, string>, body?: Record<string, string> | string): Promise<{ body: T, headers: any }> {
+export async function httpRequest<T>(url: string, method: string, queryParams?: Record<string, string | number | boolean>, headers?: Record<string, string>, body?: Record<string, any> | string): Promise<{ body: T, headers: any }> {
     try {
         const options: Options = {
             timeout: 10000,
