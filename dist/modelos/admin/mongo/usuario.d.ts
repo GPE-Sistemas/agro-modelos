@@ -9,7 +9,7 @@ export interface IUsuarioDb extends Document {
     apellido: string;
     notificacionesActivas: boolean;
     notificaciones: {
-        telegram: boolean;
+        telegram: string;
         whatsapp: boolean;
         email: boolean;
     };

@@ -10,7 +10,7 @@ export interface IUsuarioDb extends Document {
     apellido: string;
     notificacionesActivas: boolean;
     notificaciones: {
-        telegram: boolean;
+        telegram: string;
         whatsapp: boolean;
         email: boolean;
     };
@@ -28,7 +28,7 @@ export const SUsuario = new Schema<IUsuarioDb>({
     apellido: { type: String },
     notificacionesActivas: { type: Boolean },
     notificaciones: {
-        telegram: { type: Boolean },
+        telegram: { type: String },
         whatsapp: { type: Boolean },
         email: { type: Boolean },
     },

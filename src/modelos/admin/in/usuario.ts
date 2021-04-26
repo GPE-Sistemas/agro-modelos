@@ -9,7 +9,7 @@ export const IUsuarioValidation = joi.object<IUsuario>({
     apellido: joi.string(),
     notificacionesActivas: joi.boolean(),
     notificaciones: {
-        telegram: joi.boolean(),
+        telegram: joi.string(),
         whatsapp: joi.boolean(),
         email: joi.boolean(),
     },
@@ -27,7 +27,7 @@ export interface IUsuario {
     apellido: string;
     notificacionesActivas: boolean;
     notificaciones: {
-        telegram: boolean;
+        telegram: string;
         whatsapp: boolean;
         email: boolean;
     };

@@ -9,7 +9,7 @@ export interface IUsuario {
     apellido: string;
     notificacionesActivas: boolean;
     notificaciones: {
-        telegram: boolean;
+        telegram: string;
         whatsapp: boolean;
         email: boolean;
     };

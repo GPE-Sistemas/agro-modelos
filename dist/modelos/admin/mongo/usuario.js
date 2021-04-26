@@ -10,7 +10,7 @@ exports.SUsuario = new mongoose_1.Schema({
     apellido: { type: String },
     notificacionesActivas: { type: Boolean },
     notificaciones: {
-        telegram: { type: Boolean },
+        telegram: { type: String },
         whatsapp: { type: Boolean },
         email: { type: Boolean },
     },
