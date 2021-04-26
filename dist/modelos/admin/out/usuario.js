@@ -13,6 +13,14 @@ exports.IUsuarioDTOValidation = joi_1.default.object({
     idCliente: joi_1.default.string().required(),
     nombre: joi_1.default.string(),
     apellido: joi_1.default.string(),
+    notificacionesActivas: joi_1.default.boolean(),
+    notificaciones: {
+        telegram: joi_1.default.boolean(),
+        whatsapp: joi_1.default.boolean(),
+        email: joi_1.default.boolean(),
+    },
+    email: joi_1.default.string(),
+    telefono: joi_1.default.string(),
     //
     cliente: cliente_1.IClienteDTOValidation,
 });

@@ -8,6 +8,14 @@ export interface IUsuarioDTO {
     idCliente: string;
     nombre: string;
     apellido: string;
+    notificacionesActivas: boolean;
+    notificaciones: {
+        telegram: boolean;
+        whatsapp: boolean;
+        email: boolean;
+    };
+    email: string;
+    telefono: string;
     cliente?: IClienteDTO;
 }
 //# sourceMappingURL=usuario.d.ts.map

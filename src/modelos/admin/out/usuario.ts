@@ -8,6 +8,14 @@ export const IUsuarioDTOValidation = joi.object<IUsuarioDTO>({
     idCliente: joi.string().required(),
     nombre: joi.string(),
     apellido: joi.string(),
+    notificacionesActivas: joi.boolean(),
+    notificaciones: {
+        telegram: joi.boolean(),
+        whatsapp: joi.boolean(),
+        email: joi.boolean(),
+    },
+    email: joi.string(),
+    telefono: joi.string(),
     //
     cliente: IClienteDTOValidation,
 });
@@ -20,6 +28,14 @@ export interface IUsuarioDTO {
     idCliente: string;
     nombre: string;
     apellido: string;
+    notificacionesActivas: boolean;
+    notificaciones: {
+        telegram: boolean;
+        whatsapp: boolean;
+        email: boolean;
+    };
+    email: string;
+    telefono: string;
     //
     cliente?: IClienteDTO;
 }

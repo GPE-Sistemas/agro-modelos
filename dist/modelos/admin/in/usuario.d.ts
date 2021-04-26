@@ -7,5 +7,13 @@ export interface IUsuario {
     idCliente: string;
     nombre: string;
     apellido: string;
+    notificacionesActivas: boolean;
+    notificaciones: {
+        telegram: boolean;
+        whatsapp: boolean;
+        email: boolean;
+    };
+    email: string;
+    telefono: string;
 }
 //# sourceMappingURL=usuario.d.ts.map

@@ -10,6 +10,10 @@ export class AdminParserService {
             usuario: dato.usuario,
             apellido: dato.apellido,
             nombre: dato.nombre,
+            email: dato.email,
+            notificaciones: dato.notificaciones,
+            notificacionesActivas: dato.notificacionesActivas,
+            telefono: dato.telefono,
             //
             cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
         };
