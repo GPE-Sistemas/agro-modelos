@@ -2,13 +2,13 @@ import { LeanDocument } from 'mongoose';
 import { IClientDb, IClientDTO, ITokenDb, ITokenDTO } from '../../modelos';
 import { AdminParserService } from './admin';
 
-export class CaravanaParserService {
+export class OauthParserService {
 
     static token(dato: LeanDocument<ITokenDb>): ITokenDTO {
         const dto: ITokenDTO = {
             accessToken: dato.accessToken,
             accessTokenExpiresAt: dato.accessTokenExpiresAt,
-            client: CaravanaParserService.client(dato.client),
+            client: OauthParserService.client(dato.client),
             refreshToken: dato.refreshToken,
             refreshTokenExpiresAt: dato.refreshTokenExpiresAt,
             scope: dato.scope,
