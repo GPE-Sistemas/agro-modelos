@@ -38,11 +38,11 @@ class AgroParserService {
         return dto;
     }
     static categoria(dato) {
-        var _a;
+        var _a, _b;
         const dto = {
-            _id: dato._id.toHexString(),
+            _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             nombre: dato.nombre,
-            idEspecie: (_a = dato.idEspecie) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            idEspecie: (_b = dato.idEspecie) === null || _b === void 0 ? void 0 : _b.toHexString(),
             sexo: dato.sexo,
             edadMaxMeses: dato.edadMaxMeses,
             edadMinMeses: dato.edadMinMeses,
@@ -60,26 +60,26 @@ class AgroParserService {
         return dto;
     }
     static animal(dato, vacunaciones, tratamientos, eventosEspecificos, pesajes, servicios, madre, padre) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         const dto = {
-            _id: dato._id.toHexString(),
+            _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             caravana: dato.caravana,
             deveuiDispositivo: dato.deveuiDispositivo,
             dientes: dato.dientes,
             fechaAlta: dato.fechaAlta,
             fechaNacimiento: dato.fechaNacimiento,
             foto: dato.foto,
-            idBaja: (_a = dato.idBaja) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            idCategoria: (_b = dato.idCategoria) === null || _b === void 0 ? void 0 : _b.toHexString(),
-            idCorral: (_c = dato.idCorral) === null || _c === void 0 ? void 0 : _c.toHexString(),
-            idEspecie: (_d = dato.idEspecie) === null || _d === void 0 ? void 0 : _d.toHexString(),
-            idEstablecimiento: (_e = dato.idEstablecimiento) === null || _e === void 0 ? void 0 : _e.toHexString(),
-            idGrupos: (_f = dato.idGrupos) === null || _f === void 0 ? void 0 : _f.map(e => e.toHexString()),
-            idLote: (_g = dato.idLote) === null || _g === void 0 ? void 0 : _g.toHexString(),
-            idMadre: (_h = dato.idMadre) === null || _h === void 0 ? void 0 : _h.toHexString(),
-            idPadre: (_j = dato.idPadre) === null || _j === void 0 ? void 0 : _j.toHexString(),
-            idSubcategoria: (_k = dato.idSubcategoria) === null || _k === void 0 ? void 0 : _k.toHexString(),
-            idRaza: (_l = dato.idRaza) === null || _l === void 0 ? void 0 : _l.toHexString(),
+            idBaja: (_b = dato.idBaja) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idCategoria: (_c = dato.idCategoria) === null || _c === void 0 ? void 0 : _c.toHexString(),
+            idCorral: (_d = dato.idCorral) === null || _d === void 0 ? void 0 : _d.toHexString(),
+            idEspecie: (_e = dato.idEspecie) === null || _e === void 0 ? void 0 : _e.toHexString(),
+            idEstablecimiento: (_f = dato.idEstablecimiento) === null || _f === void 0 ? void 0 : _f.toHexString(),
+            idGrupos: (_g = dato.idGrupos) === null || _g === void 0 ? void 0 : _g.map(e => e === null || e === void 0 ? void 0 : e.toHexString()),
+            idLote: (_h = dato.idLote) === null || _h === void 0 ? void 0 : _h.toHexString(),
+            idMadre: (_j = dato.idMadre) === null || _j === void 0 ? void 0 : _j.toHexString(),
+            idPadre: (_k = dato.idPadre) === null || _k === void 0 ? void 0 : _k.toHexString(),
+            idSubcategoria: (_l = dato.idSubcategoria) === null || _l === void 0 ? void 0 : _l.toHexString(),
+            idRaza: (_m = dato.idRaza) === null || _m === void 0 ? void 0 : _m.toHexString(),
             sexo: dato.sexo,
             // Populate
             baja: dato.baja ? this.baja(dato.baja) : undefined,
@@ -87,7 +87,7 @@ class AgroParserService {
             corral: dato.corral ? this.corral(dato.corral) : undefined,
             especie: dato.especie ? this.especie(dato.especie) : undefined,
             establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-            grupos: ((_m = dato.grupos) === null || _m === void 0 ? void 0 : _m.length) ? this.grupos(dato.grupos) : undefined,
+            grupos: ((_o = dato.grupos) === null || _o === void 0 ? void 0 : _o.length) ? this.grupos(dato.grupos) : undefined,
             lote: dato.lote ? this.loteAnimal(dato.lote) : undefined,
             madre,
             padre,

@@ -9,3 +9,9 @@ exports.SUsuario = new mongoose_1.Schema({
     nombre: { type: String },
     apellido: { type: String },
 });
+exports.SUsuario.virtual('cliente', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idCliente',
+    ref: 'clientes',
+});

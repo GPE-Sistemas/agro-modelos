@@ -3,13 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminParserService = void 0;
 class AdminParserService {
     static usuario(dato) {
-        var _a;
+        var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            idCliente: dato.idCliente.toHexString(),
+            idCliente: (_b = dato.idCliente) === null || _b === void 0 ? void 0 : _b.toHexString(),
             usuario: dato.usuario,
             apellido: dato.apellido,
-            nombre: dato.nombre
+            nombre: dato.nombre,
+            //
+            cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -81,7 +83,7 @@ class AdminParserService {
         return dto;
     }
     static dispositivoAdmin(dato) {
-        var _a, _b;
+        var _a, _b, _c, _d;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             applicationServerId: (_b = dato.applicationServerId) === null || _b === void 0 ? void 0 : _b.toHexString(),
@@ -89,8 +91,8 @@ class AdminParserService {
             deveui: dato.deveui,
             deviceName: dato.deviceName,
             deviceProfileId: dato.deviceProfileId,
-            idCliente: dato.idCliente.toHexString(),
-            idLote: dato.idCliente.toHexString(),
+            idCliente: (_c = dato.idCliente) === null || _c === void 0 ? void 0 : _c.toHexString(),
+            idLote: (_d = dato.idCliente) === null || _d === void 0 ? void 0 : _d.toHexString(),
             tipo: dato.tipo,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
