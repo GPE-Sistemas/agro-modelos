@@ -6,10 +6,12 @@ export class AdminParserService {
     static usuario(dato: LeanDocument<IUsuarioDb>): IUsuarioDTO {
         const dto: IUsuarioDTO = {
             _id: dato._id?.toHexString(),
-            idCliente: dato.idCliente.toHexString(),
+            idCliente: dato.idCliente?.toHexString(),
             usuario: dato.usuario,
             apellido: dato.apellido,
-            nombre: dato.nombre
+            nombre: dato.nombre,
+            //
+            cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
@@ -89,8 +91,8 @@ export class AdminParserService {
             deveui: dato.deveui,
             deviceName: dato.deviceName,
             deviceProfileId: dato.deviceProfileId,
-            idCliente: dato.idCliente.toHexString(),
-            idLote: dato.idCliente.toHexString(),
+            idCliente: dato.idCliente?.toHexString(),
+            idLote: dato.idCliente?.toHexString(),
             tipo: dato.tipo,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});

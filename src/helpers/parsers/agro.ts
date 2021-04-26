@@ -40,7 +40,7 @@ export class AgroParserService {
 
     static categoria(dato: LeanDocument<ICategoriaDb>): ICategoriaDTO {
         const dto: ICategoriaDTO = {
-            _id: dato._id.toHexString(),
+            _id: dato._id?.toHexString(),
             nombre: dato.nombre,
             idEspecie: dato.idEspecie?.toHexString(),
             sexo: dato.sexo,
@@ -64,7 +64,7 @@ export class AgroParserService {
         eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[], 
         madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO {
         const dto: IAnimalDTO = {
-            _id: dato._id.toHexString(),
+            _id: dato._id?.toHexString(),
             caravana: dato.caravana,
             deveuiDispositivo: dato.deveuiDispositivo,
             dientes: dato.dientes,
@@ -76,7 +76,7 @@ export class AgroParserService {
             idCorral: dato.idCorral?.toHexString(),
             idEspecie: dato.idEspecie?.toHexString(),
             idEstablecimiento: dato.idEstablecimiento?.toHexString(),
-            idGrupos: dato.idGrupos?.map(e => e.toHexString()),
+            idGrupos: dato.idGrupos?.map(e => e?.toHexString()),
             idLote: dato.idLote?.toHexString(),
             idMadre: dato.idMadre?.toHexString(),
             idPadre: dato.idPadre?.toHexString(),

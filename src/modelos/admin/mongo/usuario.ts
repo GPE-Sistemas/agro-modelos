@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IClienteDb } from './cliente';
 
 export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
@@ -7,6 +8,8 @@ export interface IUsuarioDb extends Document {
     idCliente: Types.ObjectId;
     nombre: string;
     apellido: string;
+    //
+    cliente?: IClienteDb;
 }
 
 export const SUsuario = new Schema<IUsuarioDb>({
@@ -15,4 +18,11 @@ export const SUsuario = new Schema<IUsuarioDb>({
     idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
     nombre: { type: String },
     apellido: { type: String },
+});
+
+SUsuario.virtual('cliente', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idCliente',
+    ref: 'clientes',
 });
