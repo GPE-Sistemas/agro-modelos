@@ -6,7 +6,7 @@ export interface ITokenDb extends Document {
     _id: Types.ObjectId;
     accessToken: string;
     accessTokenExpiresAt?: Date;
-    refreshToken?: string;
+    refreshToken: string;
     refreshTokenExpiresAt?: Date;
     scope?: string | string[];
     client: IClientDb;

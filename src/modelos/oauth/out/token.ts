@@ -4,7 +4,7 @@ import { IClientDTO } from './client';
 export interface ITokenDTO {
     accessToken: string;
     accessTokenExpiresAt?: Date;
-    refreshToken?: string;
+    refreshToken: string;
     refreshTokenExpiresAt?: Date;
     scope?: string | string[];
     client: IClientDTO;
