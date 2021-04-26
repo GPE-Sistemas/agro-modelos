@@ -3,7 +3,6 @@ export * from './uplink';
 export * from './downlink';
 export * from './metadatos';
 export * from './coordenadas';
-export * from './token';
 export * from './filtro';
 //
 // export * from './in/dispositivo';
