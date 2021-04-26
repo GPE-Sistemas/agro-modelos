@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import got from 'got';
+import bcrypt from 'bcryptjs';
 import { ObjectSchema, ValidationResult } from 'joi';
 import { Types } from 'mongoose';
 import { IAck, IDownlink, IFiltro, IUplink } from '../modelos';
@@ -194,4 +195,12 @@ export async function httpRequest<T>(url: string, method: string, queryParams?: 
             }
         }
     }
+}
+
+export async function hashClave(clave: string): Promise<string> {
+    return await bcrypt.hash(clave, 10);
+}
+
+export async function compareClave(clave: string, hash: string): Promise<boolean> {
+    return await bcrypt.compare(clave, hash);
 }
