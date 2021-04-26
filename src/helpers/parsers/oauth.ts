@@ -26,8 +26,7 @@ export class OauthParserService {
 
     static client(dato: LeanDocument<IClientDb>): IClientDTO {
         const dto: IClientDTO = {
-            _id: dato._id.toHexString(),
-            clientId: dato.clientId,
+            id: dato.clientId,
             grants: dato.grants,
             redirectUris: dato.redirectUris,
         };
