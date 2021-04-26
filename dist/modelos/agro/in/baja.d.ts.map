@@ -1,0 +1,1 @@
+{"version":3,"file":"baja.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/in/baja.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,eAAe,yBAI1B,CAAC;AAEH,eAAO,MAAM,YAAY,wCAA+B,CAAC;AAEzD,MAAM,WAAW,KAAK;IAClB,KAAK,EAAE,MAAM,CAAC;IACd,UAAU,EAAE,MAAM,CAAC;IACnB,aAAa,EAAE,MAAM,CAAC;CACzB"}

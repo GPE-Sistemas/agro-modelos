@@ -1,0 +1,42 @@
+import { Document, Schema, Types } from 'mongoose';
+import { IBajaDb } from './baja';
+import { ICategoriaDb } from './categoria';
+import { ICorralDb } from './corral';
+import { IEspecieDb } from './especie';
+import { IEstablecimientoDb } from './establecimiento';
+import { IGrupoDb } from './grupo';
+import { ILoteAnimalDb } from './lote-animal';
+import { IRazaDb } from './raza';
+import { ISubcategoriaDb } from './subcategoria';
+export interface IAnimalDb extends Document {
+    _id: Types.ObjectId;
+    caravana: string;
+    deveuiDispositivo?: string;
+    dientes: number;
+    fechaNacimiento?: string;
+    fechaAlta?: string;
+    foto?: string;
+    idBaja?: Types.ObjectId;
+    idCategoria?: Types.ObjectId;
+    idCorral?: Types.ObjectId;
+    idEspecie: Types.ObjectId;
+    idEstablecimiento?: Types.ObjectId;
+    idGrupos?: Types.ObjectId[];
+    idLote?: Types.ObjectId;
+    idMadre?: Types.ObjectId;
+    idPadre?: Types.ObjectId;
+    idRaza?: Types.ObjectId;
+    idSubcategoria?: Types.ObjectId;
+    sexo?: boolean;
+    baja?: IBajaDb;
+    categoria?: ICategoriaDb;
+    corral?: ICorralDb;
+    especie: IEspecieDb;
+    establecimiento?: IEstablecimientoDb;
+    grupos?: IGrupoDb[];
+    lote?: ILoteAnimalDb;
+    raza?: IRazaDb;
+    subcategoria?: ISubcategoriaDb;
+}
+export declare const SAnimal: Schema<IBajaDb, import("mongoose").Model<any, any>, undefined>;
+//# sourceMappingURL=animal.d.ts.map

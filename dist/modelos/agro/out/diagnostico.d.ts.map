@@ -1,0 +1,1 @@
+{"version":3,"file":"diagnostico.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/out/diagnostico.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,yBAAyB,mCAGpC,CAAC;AAEH,eAAO,MAAM,sBAAsB,wCAAyC,CAAC;AAE7E,MAAM,WAAW,eAAe;IAC5B,GAAG,EAAE,MAAM,CAAC;IACZ,MAAM,EAAE,MAAM,CAAC;CAClB"}

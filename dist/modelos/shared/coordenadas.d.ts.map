@@ -1,0 +1,1 @@
+{"version":3,"file":"coordenadas.d.ts","sourceRoot":"","sources":["../../../src/modelos/shared/coordenadas.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,sBAAsB,gCAGjC,CAAC;AAEH,MAAM,WAAW,YAAY;IACzB,GAAG,EAAE,MAAM,CAAC;IACZ,GAAG,EAAE,MAAM,CAAC;CACf"}

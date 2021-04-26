@@ -1,0 +1,1 @@
+{"version":3,"file":"pesaje.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/in/pesaje.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,iBAAiB,2BAK5B,CAAC;AAEH,eAAO,MAAM,cAAc,wCAAiC,CAAC;AAE7D,MAAM,WAAW,OAAO;IACpB,QAAQ,EAAE,MAAM,CAAC;IACjB,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,MAAM,CAAC;IACb,aAAa,EAAE,MAAM,CAAC;CACzB"}

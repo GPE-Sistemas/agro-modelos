@@ -6,10 +6,10 @@
     "declarationMap": true,
     // "outDir": "./",               
     "rootDir": "src",
-    "composite": true,
+    // "composite": true,
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "outDir": "dist",
-  },
+  }
 }

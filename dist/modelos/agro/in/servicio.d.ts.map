@@ -1,0 +1,1 @@
+{"version":3,"file":"servicio.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/in/servicio.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,mBAAmB,6BAK9B,CAAC;AAEH,eAAO,MAAM,eAAe,wCAAmC,CAAC;AAEhE,MAAM,WAAW,SAAS;IACtB,QAAQ,EAAE,MAAM,CAAC;IACjB,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,OAAO,CAAC;IAChB,aAAa,EAAE,MAAM,CAAC;CACzB"}

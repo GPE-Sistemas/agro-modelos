@@ -1,0 +1,1 @@
+{"version":3,"file":"downlink.d.ts","sourceRoot":"","sources":["../../../src/modelos/shared/downlink.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,SAAS;IACtB,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,EAAE,MAAM,CAAC;IACf,OAAO,EAAE,MAAM,CAAC;IAChB,OAAO,EAAE;QACL,GAAG,CAAC,EAAE,MAAM,CAAC;QACb,KAAK,EAAE,MAAM,CAAC;KACjB,CAAC;IACF,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,GAAG,CAAC,EAAE,MAAM,CAAC;CAChB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"lote-dispositivo.d.ts","sourceRoot":"","sources":["../../../../src/modelos/admin/out/lote-dispositivo.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,6BAA6B,uCAGxC,CAAC;AAEH,eAAO,MAAM,0BAA0B,wCAA6C,CAAC;AAErF,MAAM,WAAW,mBAAmB;IAChC,GAAG,EAAE,MAAM,CAAC;IACZ,MAAM,EAAE,MAAM,CAAC;CAClB"}

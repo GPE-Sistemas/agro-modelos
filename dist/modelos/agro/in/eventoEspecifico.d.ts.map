@@ -1,0 +1,1 @@
+{"version":3,"file":"eventoEspecifico.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/in/eventoEspecifico.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,2BAA2B,qCAKtC,CAAC;AAEH,eAAO,MAAM,wBAAwB,wCAA2C,CAAC;AAEjF,MAAM,WAAW,iBAAiB;IAC9B,QAAQ,EAAE,MAAM,CAAC;IACjB,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,CAAC;IACf,aAAa,EAAE,MAAM,CAAC;CACzB"}

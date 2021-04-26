@@ -1,0 +1,48 @@
+import { LeanDocument } from 'mongoose';
+import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+export declare class AgroParserService {
+    static especie(dato: LeanDocument<IEspecieDb>): IEspecieDTO;
+    static especies(datos: LeanDocument<IEspecieDb>[]): IEspecieDTO[];
+    static raza(dato: LeanDocument<IRazaDb>): IRazaDTO;
+    static razas(datos: LeanDocument<IRazaDb>[]): IRazaDTO[];
+    static categoria(dato: LeanDocument<ICategoriaDb>): ICategoriaDTO;
+    static categorias(datos: LeanDocument<ICategoriaDb>[]): ICategoriaDTO[];
+    static animal(dato: LeanDocument<IAnimalDb>, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[], eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[], madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO;
+    static animales(datos: LeanDocument<IAnimalDb>[]): IAnimalDTO[];
+    static tipoBaja(dato: LeanDocument<ITipoBajaDb>): ITipoBajaDTO;
+    static tiposBajas(datos: LeanDocument<ITipoBajaDb>[]): ITipoBajaDTO[];
+    static baja(dato: LeanDocument<IBajaDb>): IBajaDTO;
+    static bajas(datos: LeanDocument<IBajaDb>[]): IBajaDTO[];
+    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
+    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
+    static loteAnimal(dato: LeanDocument<ILoteAnimalDb>): ILoteAnimalDTO;
+    static lotesAnimales(datos: LeanDocument<ILoteAnimalDb>[]): ILoteAnimalDTO[];
+    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
+    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
+    static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO;
+    static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[];
+    static diagnostico(dato: LeanDocument<IDiagnosticoDb>): IDiagnosticoDTO;
+    static diagnosticos(datos: LeanDocument<IDiagnosticoDb>[]): IDiagnosticoDTO[];
+    static subcategoria(dato: LeanDocument<ISubcategoriaDb>): ISubcategoriaDTO;
+    static subcategorias(datos: LeanDocument<ISubcategoriaDb>[]): ISubcategoriaDTO[];
+    static tipoTratamiento(dato: LeanDocument<ITipoTratamientoDb>): ITipoTratamientoDTO;
+    static tipoTratamientos(datos: LeanDocument<ITipoTratamientoDb>[]): ITipoTratamientoDTO[];
+    static tipoVacuna(dato: LeanDocument<ITipoVacunaDb>): ITipoVacunaDTO;
+    static tipoVacunas(datos: LeanDocument<ITipoVacunaDb>[]): ITipoVacunaDTO[];
+    static tratamiento(dato: LeanDocument<ITratamientoDb>): ITratamientoDTO;
+    static tratamientos(datos: LeanDocument<ITratamientoDb>[]): ITratamientoDTO[];
+    static vacunacion(dato: LeanDocument<IVacunacionDb>): IVacunacionDTO;
+    static vacunaciones(datos: LeanDocument<IVacunacionDb>[]): IVacunacionDTO[];
+    static eventoEspecifico(dato: LeanDocument<IEventoEspecificoDb>): IEventoEspecificoDTO;
+    static eventosEspecificos(datos: LeanDocument<IEventoEspecificoDb>[]): IEventoEspecificoDTO[];
+    static pesaje(dato: LeanDocument<IPesajeDb>): IPesajeDTO;
+    static pesajes(datos: LeanDocument<IPesajeDb>[]): IPesajeDTO[];
+    static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
+    static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
+    static horasAHexa(horas: string[]): string;
+    static hexaAHoras(hexa: string): string[];
+    static getBateria(cantReportesDiarios: number, mensajesEnviados: number): number | undefined;
+    static getDuracion(cantReportesDiarios: number, mensajesEnviados: number): string | undefined;
+    static getDescripcionAlerta(codigo: number): string;
+}
+//# sourceMappingURL=agro.d.ts.map
