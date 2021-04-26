@@ -10,5 +10,7 @@ exports.IUsuarioDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     usuario: joi_1.default.string().required(),
     idCliente: joi_1.default.string().required(),
+    nombre: joi_1.default.string(),
+    apellido: joi_1.default.string()
 });
 exports.IUsuarioDTOSwagger = joi_to_swagger_1.default(exports.IUsuarioDTOValidation).swagger;

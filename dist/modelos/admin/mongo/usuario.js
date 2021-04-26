@@ -6,4 +6,6 @@ exports.SUsuario = new mongoose_1.Schema({
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
     idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
+    nombre: { type: String },
+    apellido: { type: String },
 });

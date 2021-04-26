@@ -4,6 +4,8 @@ export interface IUsuarioDb extends Document {
     usuario: string;
     clave: string;
     idCliente: Types.ObjectId;
+    nombre: string;
+    apellido: string;
 }
 export declare const SUsuario: Schema<IUsuarioDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=usuario.d.ts.map

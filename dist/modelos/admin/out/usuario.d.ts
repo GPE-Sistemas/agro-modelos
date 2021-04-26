@@ -5,5 +5,7 @@ export interface IUsuarioDTO {
     _id: string;
     usuario: string;
     idCliente: string;
+    nombre: string;
+    apellido: string;
 }
 //# sourceMappingURL=usuario.d.ts.map

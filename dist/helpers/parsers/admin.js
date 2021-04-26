@@ -8,6 +8,8 @@ class AdminParserService {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             idCliente: dato.idCliente.toHexString(),
             usuario: dato.usuario,
+            apellido: dato.apellido,
+            nombre: dato.nombre
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
