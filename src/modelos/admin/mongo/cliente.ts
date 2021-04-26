@@ -3,7 +3,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IClienteDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
-    applicationServerId: string;
+    applicationServerId: Types.ObjectId;
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string,
@@ -14,7 +14,7 @@ export interface IClienteDb extends Document {
 
 export const SCliente = new Schema<IClienteDb>({
     nombre: { type: String, required: true, unique: true },
-    applicationServerId: { type: String },
+    applicationServerId: { type: Types.ObjectId, ref: 'applicationServers' },
     networkServerId: { type: String },
     organizationId: { type: String },
     serviceProfileId: { type: String },

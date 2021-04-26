@@ -1,7 +1,7 @@
 import { Document, Schema, Types } from 'mongoose';
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
-    applicationServerId: string;
+    applicationServerId: Types.ObjectId;
     deviceName: string;
     deveui: string;
     tipo: 'Silobolsa' | 'Caravana';

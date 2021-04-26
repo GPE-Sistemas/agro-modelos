@@ -20,10 +20,10 @@ class AdminParserService {
         return dto;
     }
     static cliente(dato) {
-        var _a;
+        var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            applicationServerId: dato.applicationServerId,
+            applicationServerId: (_b = dato.applicationServerId) === null || _b === void 0 ? void 0 : _b.toHexString(),
             nombre: dato.nombre,
             applications: dato.applications,
             gateways: dato.gateways,
@@ -79,10 +79,10 @@ class AdminParserService {
         return dto;
     }
     static dispositivoAdmin(dato) {
-        var _a;
+        var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            applicationServerId: dato.applicationServerId,
+            applicationServerId: (_b = dato.applicationServerId) === null || _b === void 0 ? void 0 : _b.toHexString(),
             applicationId: dato.applicationId,
             deveui: dato.deveui,
             deviceName: dato.deviceName,

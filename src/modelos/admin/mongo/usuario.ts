@@ -10,5 +10,5 @@ export interface IUsuarioDb extends Document {
 export const SUsuario = new Schema<IUsuarioDb>({
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
-    idCliente: { type: String, required: true, ref: 'clientes' },
+    idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
 });

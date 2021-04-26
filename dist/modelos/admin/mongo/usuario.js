@@ -5,5 +5,5 @@ const mongoose_1 = require("mongoose");
 exports.SUsuario = new mongoose_1.Schema({
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
-    idCliente: { type: String, required: true, ref: 'clientes' },
+    idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
 });

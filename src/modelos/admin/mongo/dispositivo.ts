@@ -2,7 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
-    applicationServerId: string;
+    applicationServerId: Types.ObjectId;
     deviceName: string;
     deveui: string;
     tipo: 'Silobolsa' | 'Caravana';
@@ -13,12 +13,12 @@ export interface IDispositivoAdminDb extends Document {
 }
 
 export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
-    applicationServerId: { type: String },
+    applicationServerId: { type: Types.ObjectId, ref: 'applicationServers' },
     deviceName: { type: String, required: true, unique: true },
     deveui: { type: String, required: true, unique: true },
     tipo: { type: String, required: true },
-    idLote: { type: String, required: true, ref: 'lotes' },
-    idCliente: { type: String, required: true, ref: 'clientes' },
+    idLote: { type: Types.ObjectId, required: true, ref: 'lotes' },
+    idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
     applicationId: { type: String },
     deviceProfileId: { type: String },
 });
