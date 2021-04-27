@@ -3,23 +3,20 @@ export declare const IAplicacionValidation: joi.ObjectSchema<IAplicacion>;
 export declare const IAplicacionSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IAplicacion {
     nombre: string;
-    urlsApiAplicacion: {
-        evento: string;
+    urlsApiAplicacion?: {
         uplink: string;
         ack: string;
-        join: string;
-        [key: string]: string;
+        join?: string;
     };
-    urlsApiEntrada: {
-        chirpstack: {
+    urlsApiEntrada?: {
+        chirpstack?: {
             evento: string;
         };
-        orbiwise: {
-            uplink: string;
-            ack: string;
+        orbiwise?: {
+            uplink?: string;
+            ack?: string;
             join: string;
         };
-        [tipoAppServer: string]: Record<string, string>;
     };
 }
 //# sourceMappingURL=aplicacion.d.ts.map

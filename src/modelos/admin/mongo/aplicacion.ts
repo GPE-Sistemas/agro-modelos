@@ -3,23 +3,20 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IAplicacionDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
-    urlsApiAplicacion: {
-        evento: string;
+    urlsApiAplicacion?: {
         uplink: string;
         ack: string;
-        join: string;
-        [key: string]: string;
+        join?: string;
     };
-    urlsApiEntrada: {
-        chirpstack: {
+    urlsApiEntrada?: {
+        chirpstack?: {
             evento: string;
         }
-        orbiwise: {
-            uplink: string,
-            ack: string,
+        orbiwise?: {
+            uplink?: string,
+            ack?: string,
             join: string,
         },
-        [tipoAppServer: string]: Record<string, string>
     };
 }
 
