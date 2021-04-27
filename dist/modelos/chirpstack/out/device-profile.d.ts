@@ -1,7 +1,7 @@
 import joi from 'joi';
 export declare const IDeviceProfileChirpstackDTOValidation: joi.ObjectSchema<IDeviceProfileChirpstackDTO>;
 export declare const IDeviceProfileChirpstackDTOSwagger: import("joi-to-swagger").SwaggerSchema;
-interface apiDeviceProfileListItem {
+export interface apiDeviceProfileListItem {
     createdAt: string;
     id: string;
     name: string;
@@ -14,5 +14,4 @@ export interface IDeviceProfileChirpstackDTO {
     result: apiDeviceProfileListItem[];
     totalCount: string;
 }
-export {};
 //# sourceMappingURL=device-profile.d.ts.map

@@ -16,7 +16,7 @@ export const IServiceProfileChirpstackDTOValidation = joi.object<IServiceProfile
 
 export const IServiceProfileChirpstackDTOSwagger = j2s(IServiceProfileChirpstackDTOValidation).swagger;
 
-interface apiServiceProfileListItem  {
+export interface apiServiceProfileListItem  {
     createdAt: string;
     id: string;
     name: string;

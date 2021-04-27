@@ -14,7 +14,7 @@ export const INetworkServerChirpstackDTOValidation = joi.object<INetworkServerCh
 
 export const INetworkServerChirpstackDTOSwagger = j2s(INetworkServerChirpstackDTOValidation).swagger;
 
-interface apiListNetworkServerResponse {
+export interface apiListNetworkServerResponse {
     createdAt: string;
     id: string;
     name: string;
