@@ -5,6 +5,7 @@ export interface IUplink {
     idCliente: string;
     red: string;
     deveui: string;
+    deviceName?: string;
     puerto: number;
     payload: string;
     metadatos: IMetadatos[];
