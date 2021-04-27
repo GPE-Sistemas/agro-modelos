@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaSilobolsaDb, IAlertaSilobolsaDTO, IComandoDb, IComandoDTO, IDispositivoSilobolsaDb, IDispositivoSilobolsaDTO, ILogDispositivoDb, ILogDispositivoDTO, IReporteSilobolsaDb, IReporteSilobolsaDTO } from '../../modelos';
+import { IComandoDb, IComandoDTO, IDispositivoSilobolsaDb, IDispositivoSilobolsaDTO, IReporteSilobolsaDb, IReporteSilobolsaDTO } from '../../modelos';
 
 export class SilobolsaParserService {
 
@@ -62,32 +62,6 @@ export class SilobolsaParserService {
         return dto;
     }
 
-    static alerta(dato: LeanDocument<IAlertaSilobolsaDb>): IAlertaSilobolsaDTO {
-        const dto: IAlertaSilobolsaDTO = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            idSilobolsa: dato.idSilobolsa,
-            fecha: dato.fecha.toISOString(),
-            codigo: dato.codigo,
-            archivada: dato.archivada,
-            nivel: dato.nivel,
-            valor: dato.valor,
-            //
-            descripcion: this.getDescripcionAlerta(dato.codigo),
-            //
-            dispositivo: dato.dispositivo ? this.dispositivo(dato.dispositivo) : undefined,
-        };
-        Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static alertas(datos: LeanDocument<IAlertaSilobolsaDb>[]): IAlertaSilobolsaDTO[] {
-        const dto: IAlertaSilobolsaDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.alerta(dato));
-        }
-        return dto;
-    }
-
     static comando(dato: LeanDocument<IComandoDb>): IComandoDTO {
         const dto: IComandoDTO = {
             _id: dato._id.toHexString(),
@@ -110,27 +84,6 @@ export class SilobolsaParserService {
         const dto: IComandoDTO[] = [];
         for (const dato of datos) {
             dto.push(this.comando(dato));
-        }
-        return dto;
-    }
-
-    static logDispositivo(dato: LeanDocument<ILogDispositivoDb>): ILogDispositivoDTO {
-        const dto: ILogDispositivoDTO = {
-            _id: dato._id.toHexString(),
-            contenido: dato.contenido,
-            deveui: dato.deveui,
-            evento: dato.evento,
-            fecha: dato.fecha.toISOString(),
-            payload: dato.payload,
-            puerto: dato.puerto,
-        };
-        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static logsDispositivos(datos: LeanDocument<ILogDispositivoDb>[]): ILogDispositivoDTO[] {
-        const dto: ILogDispositivoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.logDispositivo(dato));
         }
         return dto;
     }

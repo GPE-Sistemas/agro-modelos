@@ -9,6 +9,10 @@ export * from './filtro';
 // export * from './mongo/dispositivo';
 // export * from './out/dispositivo';
 //
+export * from './in/alerta';
+export * from './mongo/alerta';
+export * from './out/alerta';
+//
 export * from './in/comando';
 export * from './mongo/comando';
 export * from './out/comando';

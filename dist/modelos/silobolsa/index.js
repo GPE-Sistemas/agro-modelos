@@ -14,10 +14,6 @@ __exportStar(require("./in/dispositivo"), exports);
 __exportStar(require("./mongo/dispositivo"), exports);
 __exportStar(require("./out/dispositivo"), exports);
 //
-__exportStar(require("./in/alerta"), exports);
-__exportStar(require("./mongo/alerta"), exports);
-__exportStar(require("./out/alerta"), exports);
-//
 __exportStar(require("./in/reporte"), exports);
 __exportStar(require("./mongo/reporte"), exports);
 __exportStar(require("./out/reporte"), exports);

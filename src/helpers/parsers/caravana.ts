@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaCaravanaDb, IAlertaCaravanaDTO, IComandoDb, IComandoDTO, IDispositivoCaravanaDb, IDispositivoCaravanaDTO, ILogDispositivoDb, ILogDispositivoDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
+import { IComandoDb, IComandoDTO, IDispositivoCaravanaDb, IDispositivoCaravanaDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
 
 export class CaravanaParserService {
 
@@ -56,29 +56,6 @@ export class CaravanaParserService {
         return dto;
     }
 
-    static alerta(dato: LeanDocument<IAlertaCaravanaDb>): IAlertaCaravanaDTO {
-        const dto: IAlertaCaravanaDTO = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            idAsignado: dato.idAsignado,
-            fecha: dato.fecha.toISOString(),
-            codigo: dato.codigo,
-            //
-            descripcion: this.getDescripcionAlerta(dato.codigo),
-            //
-            dispositivo: dato.dispositivo ? this.dispositivo(dato.dispositivo) : undefined,
-        };
-        Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static alertas(datos: LeanDocument<IAlertaCaravanaDb>[]): IAlertaCaravanaDTO[] {
-        const dto: IAlertaCaravanaDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.alerta(dato));
-        }
-        return dto;
-    }
-
     static comando(dato: LeanDocument<IComandoDb>): IComandoDTO {
         const dto: IComandoDTO = {
             _id: dato._id.toHexString(),
@@ -100,27 +77,6 @@ export class CaravanaParserService {
         const dto: IComandoDTO[] = [];
         for (const dato of datos) {
             dto.push(this.comando(dato));
-        }
-        return dto;
-    }
-
-    static logDispositivo(dato: LeanDocument<ILogDispositivoDb>): ILogDispositivoDTO {
-        const dto: ILogDispositivoDTO = {
-            _id: dato._id.toHexString(),
-            contenido: dato.contenido,
-            deveui: dato.deveui,
-            evento: dato.evento,
-            fecha: dato.fecha.toISOString(),
-            payload: dato.payload,
-            puerto: dato.puerto,
-        };
-        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static logsDispositivos(datos: LeanDocument<ILogDispositivoDb>[]): ILogDispositivoDTO[] {
-        const dto: ILogDispositivoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.logDispositivo(dato));
         }
         return dto;
     }

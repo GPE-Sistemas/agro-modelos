@@ -54,28 +54,6 @@ class CaravanaParserService {
         }
         return dto;
     }
-    static alerta(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            idAsignado: dato.idAsignado,
-            fecha: dato.fecha.toISOString(),
-            codigo: dato.codigo,
-            //
-            descripcion: this.getDescripcionAlerta(dato.codigo),
-            //
-            dispositivo: dato.dispositivo ? this.dispositivo(dato.dispositivo) : undefined,
-        };
-        Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
-        return dto;
-    }
-    static alertas(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.alerta(dato));
-        }
-        return dto;
-    }
     static comando(dato) {
         const dto = {
             _id: dato._id.toHexString(),
@@ -97,26 +75,6 @@ class CaravanaParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(this.comando(dato));
-        }
-        return dto;
-    }
-    static logDispositivo(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            contenido: dato.contenido,
-            deveui: dato.deveui,
-            evento: dato.evento,
-            fecha: dato.fecha.toISOString(),
-            payload: dato.payload,
-            puerto: dato.puerto,
-        };
-        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
-        return dto;
-    }
-    static logsDispositivos(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.logDispositivo(dato));
         }
         return dto;
     }

@@ -21,6 +21,10 @@ __exportStar(require("./filtro"), exports);
 // export * from './mongo/dispositivo';
 // export * from './out/dispositivo';
 //
+__exportStar(require("./in/alerta"), exports);
+__exportStar(require("./mongo/alerta"), exports);
+__exportStar(require("./out/alerta"), exports);
+//
 __exportStar(require("./in/comando"), exports);
 __exportStar(require("./mongo/comando"), exports);
 __exportStar(require("./out/comando"), exports);
