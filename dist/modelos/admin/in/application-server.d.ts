@@ -6,7 +6,24 @@ export interface IApplicationServer {
     url: string;
     tipo: 'Chirpstack' | 'Orbiwise' | 'Actility' | 'WMC';
     config: {
-        [key: string]: string;
+        chirpstack?: {
+            user: string;
+            jwtSecret: string;
+        };
+        orbiwise?: {
+            user: string;
+            pass: string;
+        };
+        wmc?: {
+            user: string;
+            pass: string;
+            jwtSecret: string;
+        };
+        actility?: {
+            AS_ID: string;
+            LrcAskey: string;
+            Token: string;
+        };
     };
 }
 //# sourceMappingURL=application-server.d.ts.map
