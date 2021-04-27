@@ -5,7 +5,26 @@ export interface IApplicationServerDb extends Document {
     nombre: string;
     url: string;
     tipo: 'Chirpstack' | 'Orbiwise' | 'Actility' | 'WMC';
-    config: { [key: string]: string };
+    config: {
+        chirpstack?: {
+            user: string;
+            jwtSecret: string;
+        };
+        orbiwise?: {
+            user: string;
+            pass: string;
+        };
+        wmc?: {
+            user: string;
+            pass: string;
+            jwtSecret: string;
+        };
+        actility?: {
+            AS_ID: string;
+            LrcAskey: string;
+            Token: string;
+        };
+    };
 }
 
 export const SApplicationServer = new Schema<IApplicationServerDb>({

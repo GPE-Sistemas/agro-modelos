@@ -6,7 +6,26 @@ export const IApplicationServerDTOValidation = joi.object<IApplicationServerDTO>
     nombre: joi.string().required(),
     url: joi.string().required(),
     tipo: joi.string().required().valid('Chirpstack', 'Orbiwise', 'Actility', 'WMC'),
-    config: joi.object(),
+    config: joi.object({
+        chirpstack: joi.object({
+            user: joi.string(),
+            jwtSecret: joi.string(),
+        }),
+        orbiwise: joi.object({
+            user: joi.string(),
+            pass: joi.string(),
+        }),
+        wmc: joi.object({
+            user: joi.string(),
+            pass: joi.string(),
+            jwtSecret: joi.string(),
+        }),
+        actility: joi.object({
+            AS_ID: joi.string(),
+            LrcAskey: joi.string(),
+            Token: joi.string(),
+        }),
+    }),
 });
 
 export const IApplicationServerDTOSwagger = j2s(IApplicationServerDTOValidation).swagger;
@@ -16,5 +35,24 @@ export interface IApplicationServerDTO {
     nombre: string;
     url: string;
     tipo: 'Chirpstack' | 'Orbiwise' | 'Actility' | 'WMC';
-    config: { [key: string]: string };
+    config: {
+        chirpstack?: {
+            user: string;
+            jwtSecret: string;
+        };
+        orbiwise?: {
+            user: string;
+            pass: string;
+        };
+        wmc?: {
+            user: string;
+            pass: string;
+            jwtSecret: string;
+        };
+        actility?: {
+            AS_ID: string;
+            LrcAskey: string;
+            Token: string;
+        };
+     };
 }
