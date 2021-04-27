@@ -23,6 +23,7 @@ export * from './in/network-server';
 export * from './out/network-server';
 //
 export * from './in/organization';
+export * from './out/organization';
 //
 export * from './in/service-profile';
 export * from './out/service-profile';
