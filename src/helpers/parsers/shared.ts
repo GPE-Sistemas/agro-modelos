@@ -46,6 +46,7 @@ export class SharedParserService {
             estadoActual: dato.estadoActual,
             fecha: dato.fecha.toISOString(),
             mensaje: dato.mensaje,
+            mensajeCorto: dato.mensajeCorto,
             nivel: dato.nivel,
             archivada: dato.archivada,
             comentarios: dato.comentarios ? SharedParserService.comentarios(dato.comentarios) : undefined,

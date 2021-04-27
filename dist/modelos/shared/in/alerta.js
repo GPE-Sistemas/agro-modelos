@@ -7,8 +7,9 @@ exports.IAlertaSwagger = exports.IAlertaValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IAlertaValidation = joi_1.default.object({
-    mensaje: joi_1.default.number(),
     aplicacion: joi_1.default.string(),
+    mensaje: joi_1.default.string(),
+    mensajeCorto: joi_1.default.string(),
     nivel: joi_1.default.number(),
     valor: joi_1.default.string(),
     deveui: joi_1.default.string(),

@@ -2,8 +2,9 @@ import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
 export const IAlertaValidation = joi.object<IAlerta>({
-    mensaje: joi.number(),
     aplicacion: joi.string(),
+    mensaje: joi.string(),
+    mensajeCorto: joi.string(),
     nivel: joi.number(),
     valor: joi.string(),
     deveui: joi.string(),
@@ -34,21 +35,28 @@ export interface IAlerta {
      * 'silobolsa'
      * 'caravana'
      */
-    mensaje: number;
+    aplicacion?: string;
     /** nivel de gravedad de la alerta <br>
      * @example 
      * 1 - leve
      * 2 - media
      * 3 - grave
      * */
-    aplicacion: string;
+    nivel?: number;
     /** Indica el tipo de alerta 
      * @example
      * 'Temperatura elevada' 
      * 'CO2 elevado'
      * 'Fuera del corral'
      * */
-    nivel: number;
+    mensaje: string;
+    /** Nombre corto de la alerta
+     * @example
+     * 'TEMP'
+     * 'CO2'
+     * 'FC'
+     */
+    mensajeCorto?: string
     /** Valor que genero la alerta 
      * @example
      * '38 °C'
@@ -57,7 +65,7 @@ export interface IAlerta {
     */
     valor?: string;
     deveui: string;
-    deviceName: string;
+    deviceName?: string;
     /** ID al que está asignado el dispositivo que originó la alerta */
     idAsignado?: string;
     /** Nombre para mostrar de la entidad asignada
@@ -73,7 +81,7 @@ export interface IAlerta {
         comentario: string;
     }[];
     fecha: string;
-    estadoActual: string;
+    estadoActual?: string;
     estados?: {
         fecha: string;
         usuario: string;

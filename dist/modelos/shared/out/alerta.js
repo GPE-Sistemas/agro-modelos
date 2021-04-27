@@ -8,9 +8,10 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IAlertaDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
-    mensaje: joi_1.default.number(),
     aplicacion: joi_1.default.string(),
     nivel: joi_1.default.number(),
+    mensaje: joi_1.default.string(),
+    mensajeCorto: joi_1.default.string(),
     valor: joi_1.default.string(),
     deveui: joi_1.default.string(),
     deviceName: joi_1.default.string(),

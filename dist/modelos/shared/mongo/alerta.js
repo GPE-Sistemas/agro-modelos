@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SAlerta = void 0;
 const mongoose_1 = require("mongoose");
 exports.SAlerta = new mongoose_1.Schema({
-    mensaje: { type: String },
     aplicacion: { type: String },
     nivel: { type: Number },
+    mensaje: { type: String },
+    mensajeCorto: { type: String },
     valor: { type: String },
     deveui: { type: String },
     deviceName: { type: String },

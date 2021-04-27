@@ -8,21 +8,28 @@ export interface IAlertaDb extends Document {
      * 'silobolsa'
      * 'caravana'
      */
-    mensaje: number;
+    aplicacion?: string;
     /** nivel de gravedad de la alerta <br>
      * @example 
      * 1 - leve
      * 2 - media
      * 3 - grave
      * */
-    aplicacion: string;
+    nivel?: number;
     /** Indica el tipo de alerta 
      * @example
      * 'Temperatura elevada' 
      * 'CO2 elevado'
      * 'Fuera del corral'
      * */
-    nivel: number;
+    mensaje: string;
+    /** Nombre corto de la alerta
+     * @example
+     * 'TEMP'
+     * 'CO2'
+     * 'FC'
+     */
+    mensajeCorto?: string
     /** Valor que genero la alerta 
      * @example
      * '38 °C'
@@ -31,7 +38,7 @@ export interface IAlertaDb extends Document {
     */
     valor?: string;
     deveui: string;
-    deviceName: string;
+    deviceName?: string;
     /** ID al que está asignado el dispositivo que originó la alerta */
     idAsignado?: string;
     /** Nombre para mostrar de la entidad asignada
@@ -47,7 +54,7 @@ export interface IAlertaDb extends Document {
         comentario: string;
     }[];
     fecha: Date;
-    estadoActual: string;
+    estadoActual?: string;
     estados?: {
         fecha: Date;
         usuario: string;
@@ -56,9 +63,10 @@ export interface IAlertaDb extends Document {
 }
 
 export const SAlerta = new Schema<IAlertaDb>({
-    mensaje: { type: String },
     aplicacion: { type: String },
     nivel: { type: Number },
+    mensaje: { type: String },
+    mensajeCorto: { type: String },
     valor: { type: String },
     deveui: { type: String },
     deviceName: { type: String },
