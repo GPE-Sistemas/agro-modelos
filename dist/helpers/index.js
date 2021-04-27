@@ -14,5 +14,6 @@ __exportStar(require("./parsers/admin"), exports);
 __exportStar(require("./parsers/agro"), exports);
 __exportStar(require("./parsers/caravana"), exports);
 __exportStar(require("./parsers/oauth"), exports);
+__exportStar(require("./parsers/shared"), exports);
 __exportStar(require("./parsers/silobolsa"), exports);
 __exportStar(require("./helpers"), exports);
