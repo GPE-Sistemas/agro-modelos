@@ -8,7 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IUsuarioValidation = joi_1.default.object({
     usuario: joi_1.default.string().required(),
-    clave: joi_1.default.string().required(),
+    clave: joi_1.default.string(),
     idCliente: joi_1.default.string().required(),
     nombre: joi_1.default.string(),
     apellido: joi_1.default.string(),
