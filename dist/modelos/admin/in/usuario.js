@@ -18,7 +18,7 @@ exports.IUsuarioValidation = joi_1.default.object({
         whatsapp: joi_1.default.boolean(),
         email: joi_1.default.boolean(),
     },
-    email: joi_1.default.string(),
-    telefono: joi_1.default.string(),
+    email: joi_1.default.string().allow(''),
+    telefono: joi_1.default.string().allow(''),
 });
 exports.IUsuarioSwagger = joi_to_swagger_1.default(exports.IUsuarioValidation).swagger;

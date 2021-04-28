@@ -3,10 +3,10 @@ import j2s from 'joi-to-swagger';
 
 export const IClienteValidation = joi.object<ICliente>({
     nombre: joi.string().required(),
-    applicationServerId: joi.string(),
-    networkServerId: joi.string(),
-    organizationId: joi.string(),
-    serviceProfileId: joi.string(),
+    applicationServerId: joi.string().allow(''),
+    networkServerId: joi.string().allow(''),
+    organizationId: joi.string().allow(''),
+    serviceProfileId: joi.string().allow(''),
     // applications: joi.array().items(joi.object({
     //     applicationId: joi.string(),
     //     applicationName: joi.string(),

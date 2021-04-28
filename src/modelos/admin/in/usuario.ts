@@ -13,8 +13,8 @@ export const IUsuarioValidation = joi.object<IUsuario>({
         whatsapp: joi.boolean(),
         email: joi.boolean(),
     },
-    email: joi.string(),
-    telefono: joi.string(),
+    email: joi.string().allow(''),
+    telefono: joi.string().allow(''),
 });
 
 export const IUsuarioSwagger = j2s(IUsuarioValidation).swagger;

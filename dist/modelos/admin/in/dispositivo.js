@@ -12,8 +12,8 @@ exports.IDispositivoAdminValidation = joi_1.default.object({
     deveui: joi_1.default.string().length(16).required(),
     tipo: joi_1.default.string().required().valid('Silobolsa', 'Caravana'),
     idLote: joi_1.default.string().required(),
-    idCliente: joi_1.default.string(),
-    applicationId: joi_1.default.string(),
+    idCliente: joi_1.default.string().allow(''),
+    applicationId: joi_1.default.string().allow(''),
     deviceProfileId: joi_1.default.string(),
 });
 exports.IDispositivoAdminSwagger = joi_to_swagger_1.default(exports.IDispositivoAdminValidation).swagger;

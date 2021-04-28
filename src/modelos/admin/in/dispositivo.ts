@@ -7,8 +7,8 @@ export const IDispositivoAdminValidation = joi.object<IDispositivoAdmin>({
     deveui: joi.string().length(16).required(),
     tipo: joi.string().required().valid('Silobolsa', 'Caravana'),
     idLote: joi.string().required(),
-    idCliente: joi.string(),
-    applicationId: joi.string(),
+    idCliente: joi.string().allow(''),
+    applicationId: joi.string().allow(''),
     deviceProfileId: joi.string(),
 });
 
