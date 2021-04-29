@@ -11,3 +11,21 @@ exports.SDispositivoAdmin = new mongoose_1.Schema({
     idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
     deviceProfileId: { type: String },
 });
+exports.SDispositivoAdmin.virtual('applicationServer', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'applicationServerId',
+    ref: 'applicationServers',
+});
+exports.SDispositivoAdmin.virtual('lote', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idLote',
+    ref: 'lotes',
+});
+exports.SDispositivoAdmin.virtual('cliente', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idCliente',
+    ref: 'clientes',
+});

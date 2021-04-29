@@ -1,5 +1,9 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { IApplicationServerDTO, IClienteDTO } from '../';
+import { IApplicationServerDTOValidation } from './application-server';
+import { IClienteDTOValidation } from './cliente';
+import { ILoteDispositivoDTO, ILoteDispositivoDTOValidation } from './lote-dispositivo';
 
 export const IDispositivoAdminDTOValidation = joi.object<IDispositivoAdminDTO>({
     _id: joi.string(),
@@ -10,6 +14,10 @@ export const IDispositivoAdminDTOValidation = joi.object<IDispositivoAdminDTO>({
     idLote: joi.string().required(),
     idCliente: joi.string(),
     deviceProfileId: joi.string(),
+    //
+    applicationServer: IApplicationServerDTOValidation,
+    lote: ILoteDispositivoDTOValidation,
+    cliente: IClienteDTOValidation,
 });
 
 export const IDispositivoAdminDTOSwagger = j2s(IDispositivoAdminDTOValidation).swagger;
@@ -23,4 +31,7 @@ export interface IDispositivoAdminDTO {
     idLote: string;
     idCliente: string;
     deviceProfileId: string;
+    applicationServer?: IApplicationServerDTO;
+    lote?: ILoteDispositivoDTO,
+    cliente?: IClienteDTO,
 }

@@ -97,6 +97,10 @@ export class AdminParserService {
             idCliente: dato.idCliente?.toHexString(),
             idLote: dato.idCliente?.toHexString(),
             tipo: dato.tipo,
+            //
+            applicationServer: dato.applicationServer? AdminParserService.applicationServer(dato.applicationServer) : undefined,
+            cliente: dato.cliente? AdminParserService.cliente(dato.cliente) : undefined,
+            lote: dato.lote? AdminParserService.loteDispositvo(dato.lote) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;

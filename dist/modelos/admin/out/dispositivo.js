@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IDispositivoAdminDTOSwagger = exports.IDispositivoAdminDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const application_server_1 = require("./application-server");
+const cliente_1 = require("./cliente");
+const lote_dispositivo_1 = require("./lote-dispositivo");
 exports.IDispositivoAdminDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     applicationServerId: joi_1.default.string(),
@@ -15,5 +18,9 @@ exports.IDispositivoAdminDTOValidation = joi_1.default.object({
     idLote: joi_1.default.string().required(),
     idCliente: joi_1.default.string(),
     deviceProfileId: joi_1.default.string(),
+    //
+    applicationServer: application_server_1.IApplicationServerDTOValidation,
+    lote: lote_dispositivo_1.ILoteDispositivoDTOValidation,
+    cliente: cliente_1.IClienteDTOValidation,
 });
 exports.IDispositivoAdminDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoAdminDTOValidation).swagger;
