@@ -3,22 +3,24 @@ import j2s from 'joi-to-swagger';
 
 export const IDispositivoAdminValidation = joi.object<IDispositivoAdmin>({
     applicationServerId: joi.string(),
-    deviceName: joi.string().required(),
     deveui: joi.string().length(16).required(),
-    tipo: joi.string().required().valid('Silobolsa', 'Caravana'),
+    deviceName: joi.string().required(),
+    appkey: joi.string().allow(...['', null]),
+    tipo: joi.string().required(),
     idLote: joi.string().required(),
     idCliente: joi.string().allow(''),
     applicationId: joi.string().allow(''),
-    deviceProfileId: joi.string(),
+    deviceProfileId: joi.string().allow(''),
 });
 
 export const IDispositivoAdminSwagger = j2s(IDispositivoAdminValidation).swagger;
 
 export interface IDispositivoAdmin {
     applicationServerId?: string;
-    deviceName: string;
     deveui: string;
-    tipo: 'Silobolsa' | 'Caravana';
+    deviceName: string;
+    appkey: string;
+    tipo: string;
     idLote: string;
     idCliente?: string;
     applicationId?: string;
