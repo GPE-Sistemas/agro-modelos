@@ -3,12 +3,12 @@ export declare const IDispositivoAdminValidation: joi.ObjectSchema<IDispositivoA
 export declare const IDispositivoAdminSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IDispositivoAdmin {
     applicationServerId?: string;
-    deviceName: string;
     deveui: string;
-    tipo: 'Silobolsa' | 'Caravana';
+    deviceName: string;
+    appkey: string;
+    tipo: string;
     idLote: string;
     idCliente?: string;
-    applicationId?: string;
     deviceProfileId?: string;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

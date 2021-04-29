@@ -9,7 +9,6 @@ export const IDispositivoAdminValidation = joi.object<IDispositivoAdmin>({
     tipo: joi.string().required(),
     idLote: joi.string().required(),
     idCliente: joi.string().allow(''),
-    applicationId: joi.string().allow(''),
     deviceProfileId: joi.string().allow(''),
 });
 
@@ -23,6 +22,5 @@ export interface IDispositivoAdmin {
     tipo: string;
     idLote: string;
     idCliente?: string;
-    applicationId?: string;
     deviceProfileId?: string;
 }

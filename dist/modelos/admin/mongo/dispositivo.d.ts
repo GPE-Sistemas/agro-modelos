@@ -4,10 +4,9 @@ export interface IDispositivoAdminDb extends Document {
     applicationServerId: Types.ObjectId;
     deviceName: string;
     deveui: string;
-    tipo: 'Silobolsa' | 'Caravana';
+    tipo: string;
     idLote: Types.ObjectId;
     idCliente: Types.ObjectId;
-    applicationId: string;
     deviceProfileId: string;
 }
 export declare const SDispositivoAdmin: Schema<IDispositivoAdminDb, import("mongoose").Model<any, any>, undefined>;

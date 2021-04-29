@@ -8,12 +8,12 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IDispositivoAdminValidation = joi_1.default.object({
     applicationServerId: joi_1.default.string(),
-    deviceName: joi_1.default.string().required(),
     deveui: joi_1.default.string().length(16).required(),
-    tipo: joi_1.default.string().required().valid('Silobolsa', 'Caravana'),
+    deviceName: joi_1.default.string().required(),
+    appkey: joi_1.default.string().allow(...['', null]),
+    tipo: joi_1.default.string().required(),
     idLote: joi_1.default.string().required(),
     idCliente: joi_1.default.string().allow(''),
-    applicationId: joi_1.default.string().allow(''),
-    deviceProfileId: joi_1.default.string(),
+    deviceProfileId: joi_1.default.string().allow(''),
 });
 exports.IDispositivoAdminSwagger = joi_to_swagger_1.default(exports.IDispositivoAdminValidation).swagger;

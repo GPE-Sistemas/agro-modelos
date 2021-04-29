@@ -91,7 +91,6 @@ export class AdminParserService {
         const dto: IDispositivoAdminDTO = {
             _id: dato._id?.toHexString(),
             applicationServerId: dato.applicationServerId?.toHexString(),
-            applicationId: dato.applicationId,
             deveui: dato.deveui,
             deviceName: dato.deviceName,
             deviceProfileId: dato.deviceProfileId,

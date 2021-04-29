@@ -6,10 +6,9 @@ export interface IDispositivoAdminDTO {
     applicationServerId: string;
     deviceName: string;
     deveui: string;
-    tipo: 'Silobolsa' | 'Caravana';
+    tipo: string;
     idLote: string;
     idCliente: string;
-    applicationId: string;
     deviceProfileId: string;
 }
 //# sourceMappingURL=dispositivo.d.ts.map
