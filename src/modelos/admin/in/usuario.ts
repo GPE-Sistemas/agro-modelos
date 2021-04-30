@@ -9,10 +9,11 @@ export const IUsuarioValidation = joi.object<IUsuario>({
     apellido: joi.string(),
     notificacionesActivas: joi.boolean(),
     notificaciones: {
-        telegram: joi.string(),
-        whatsapp: joi.boolean(),
-        email: joi.boolean(),
+        telegram: joi.array().items(joi.string()),
+        whatsapp: joi.array().items(joi.string()),
+        email: joi.array().items(joi.string()),
     },
+    telegramChatId: joi.string().allow(''),
     email: joi.string().allow(''),
     telefono: joi.string().allow(''),
 });
@@ -27,10 +28,11 @@ export interface IUsuario {
     apellido: string;
     notificacionesActivas?: boolean;
     notificaciones?: {
-        telegram?: string;
-        whatsapp?: boolean;
-        email?: boolean;
+        telegram?: string[];
+        whatsapp?: string[];
+        email?: string[];
     };
+    telegramChatId?: string;
     email?: string;
     telefono?: string;
 }

@@ -4,18 +4,19 @@ import { IClienteDb } from './cliente';
 export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
     usuario: string;
-    clave: string;
+    clave?: string;
     idCliente: Types.ObjectId;
     nombre: string;
     apellido: string;
-    notificacionesActivas: boolean;
-    notificaciones: {
-        telegram: string;
-        whatsapp: boolean;
-        email: boolean;
+    notificacionesActivas?: boolean;
+    notificaciones?: {
+        telegram?: string[];
+        whatsapp?: string[];
+        email?: string[];
     };
-    email: string;
-    telefono: string;
+    telegramChatId?: string;
+    email?: string;
+    telefono?: string;
     //
     cliente?: IClienteDb;
 }
@@ -28,10 +29,11 @@ export const SUsuario = new Schema<IUsuarioDb>({
     apellido: { type: String },
     notificacionesActivas: { type: Boolean },
     notificaciones: {
-        telegram: { type: String },
-        whatsapp: { type: Boolean },
-        email: { type: Boolean },
+        telegram: [{ type: String }],
+        whatsapp: [{ type: String }],
+        email: [{ type: String }],
     },
+    telegramChatId: { type: String },
     email: { type: String },
     telefono: { type: String },
 });

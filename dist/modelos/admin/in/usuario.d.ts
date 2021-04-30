@@ -9,10 +9,11 @@ export interface IUsuario {
     apellido: string;
     notificacionesActivas?: boolean;
     notificaciones?: {
-        telegram?: string;
-        whatsapp?: boolean;
-        email?: boolean;
+        telegram?: string[];
+        whatsapp?: string[];
+        email?: string[];
     };
+    telegramChatId?: string;
     email?: string;
     telefono?: string;
 }

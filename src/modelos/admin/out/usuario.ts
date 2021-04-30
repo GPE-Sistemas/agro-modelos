@@ -25,17 +25,19 @@ export const IUsuarioDTOSwagger = j2s(IUsuarioDTOValidation).swagger;
 export interface IUsuarioDTO {
     _id: string;
     usuario: string;
+    clave?: string;
     idCliente: string;
     nombre: string;
     apellido: string;
-    notificacionesActivas: boolean;
-    notificaciones: {
-        telegram: string;
-        whatsapp: boolean;
-        email: boolean;
+    notificacionesActivas?: boolean;
+    notificaciones?: {
+        telegram?: string[];
+        whatsapp?: string[];
+        email?: string[];
     };
-    email: string;
-    telefono: string;
+    telegramChatId?: string;
+    email?: string;
+    telefono?: string;
     //
     cliente?: IClienteDTO;
 }

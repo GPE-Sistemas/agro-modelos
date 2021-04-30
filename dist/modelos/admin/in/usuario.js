@@ -14,10 +14,11 @@ exports.IUsuarioValidation = joi_1.default.object({
     apellido: joi_1.default.string(),
     notificacionesActivas: joi_1.default.boolean(),
     notificaciones: {
-        telegram: joi_1.default.string(),
-        whatsapp: joi_1.default.boolean(),
-        email: joi_1.default.boolean(),
+        telegram: joi_1.default.array().items(joi_1.default.string()),
+        whatsapp: joi_1.default.array().items(joi_1.default.string()),
+        email: joi_1.default.array().items(joi_1.default.string()),
     },
+    telegramChatId: joi_1.default.string().allow(''),
     email: joi_1.default.string().allow(''),
     telefono: joi_1.default.string().allow(''),
 });
