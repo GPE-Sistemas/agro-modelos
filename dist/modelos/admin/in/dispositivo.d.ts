@@ -2,7 +2,7 @@ import joi from 'joi';
 export declare const IDispositivoAdminValidation: joi.ObjectSchema<IDispositivoAdmin>;
 export declare const IDispositivoAdminSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IDispositivoAdmin {
-    applicationServerId?: string;
+    idApplicationServer?: string;
     deveui: string;
     deviceName: string;
     appkey: string;

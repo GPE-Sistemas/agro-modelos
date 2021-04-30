@@ -32,7 +32,7 @@ export class AdminParserService {
     static cliente(dato: LeanDocument<IClienteDb>): IClienteDTO {
         const dto: IClienteDTO = {
             _id: dato._id?.toHexString(),
-            applicationServerId: dato.applicationServerId?.toHexString(),
+            idApplicationServer: dato.idApplicationServer?.toHexString(),
             nombre: dato.nombre,
             applications: dato.applications,
             gateways: dato.gateways,
@@ -91,7 +91,7 @@ export class AdminParserService {
     static dispositivoAdmin(dato: LeanDocument<IDispositivoAdminDb>): IDispositivoAdminDTO {
         const dto: IDispositivoAdminDTO = {
             _id: dato._id?.toHexString(),
-            applicationServerId: dato.applicationServerId?.toHexString(),
+            idApplicationServer: dato.idApplicationServer?.toHexString(),
             deveui: dato.deveui,
             deviceName: dato.deviceName,
             deviceProfileId: dato.deviceProfileId,

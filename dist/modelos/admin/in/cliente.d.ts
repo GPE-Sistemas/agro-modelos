@@ -3,7 +3,7 @@ export declare const IClienteValidation: joi.ObjectSchema<ICliente>;
 export declare const IClienteSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface ICliente {
     nombre: string;
-    applicationServerId?: string;
+    idApplicationServer?: string;
     networkServerId?: string;
     organizationId?: string;
     serviceProfileId?: string;

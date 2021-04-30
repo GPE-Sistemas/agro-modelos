@@ -4,7 +4,7 @@ export declare const IClienteDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IClienteDTO {
     _id: string;
     nombre: string;
-    applicationServerId: string;
+    idApplicationServer: string;
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string;

@@ -62,7 +62,13 @@ export function filtroBusqueda(filtro?: IFiltro) {
         }
         for (const key in filtro) {
             if (!keysIgnorar.includes(key)) {
-                filtroDb[key] = filtro[key];
+                if (!keysIgnorar.includes(key)) {
+                    if (key.substr(0,2) === 'id') {
+                        filtroDb[key] = Types.ObjectId(filtro[key]);
+                    } else {
+                        filtroDb[key] = filtro[key];
+                    }
+                }
             }
         }
     }

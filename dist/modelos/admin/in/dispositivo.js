@@ -7,7 +7,7 @@ exports.IDispositivoAdminSwagger = exports.IDispositivoAdminValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IDispositivoAdminValidation = joi_1.default.object({
-    applicationServerId: joi_1.default.string(),
+    idApplicationServer: joi_1.default.string(),
     deveui: joi_1.default.string().length(16).required(),
     deviceName: joi_1.default.string().required(),
     appkey: joi_1.default.string().allow(...['', null]),

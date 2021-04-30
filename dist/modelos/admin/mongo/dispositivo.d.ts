@@ -4,7 +4,7 @@ import { IClienteDb } from './cliente';
 import { ILoteDispositivoDb } from './lote-dispositivo';
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
-    applicationServerId: Types.ObjectId;
+    idApplicationServer: Types.ObjectId;
     deviceName: string;
     deveui: string;
     tipo: string;

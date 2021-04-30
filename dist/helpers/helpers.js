@@ -79,7 +79,14 @@ function filtroBusqueda(filtro) {
         }
         for (const key in filtro) {
             if (!keysIgnorar.includes(key)) {
-                filtroDb[key] = filtro[key];
+                if (!keysIgnorar.includes(key)) {
+                    if (key.substr(0, 2) === 'id') {
+                        filtroDb[key] = mongoose_1.Types.ObjectId(filtro[key]);
+                    }
+                    else {
+                        filtroDb[key] = filtro[key];
+                    }
+                }
             }
         }
     }

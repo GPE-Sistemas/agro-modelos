@@ -32,7 +32,7 @@ class AdminParserService {
         var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            applicationServerId: (_b = dato.applicationServerId) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idApplicationServer: (_b = dato.idApplicationServer) === null || _b === void 0 ? void 0 : _b.toHexString(),
             nombre: dato.nombre,
             applications: dato.applications,
             gateways: dato.gateways,
@@ -91,7 +91,7 @@ class AdminParserService {
         var _a, _b, _c, _d;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            applicationServerId: (_b = dato.applicationServerId) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idApplicationServer: (_b = dato.idApplicationServer) === null || _b === void 0 ? void 0 : _b.toHexString(),
             deveui: dato.deveui,
             deviceName: dato.deviceName,
             deviceProfileId: dato.deviceProfileId,

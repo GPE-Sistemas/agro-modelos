@@ -2,7 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IClienteDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
-    applicationServerId: Types.ObjectId;
+    idApplicationServer: Types.ObjectId;
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string;

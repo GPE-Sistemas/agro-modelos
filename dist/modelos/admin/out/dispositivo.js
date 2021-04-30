@@ -11,7 +11,7 @@ const cliente_1 = require("./cliente");
 const lote_dispositivo_1 = require("./lote-dispositivo");
 exports.IDispositivoAdminDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
-    applicationServerId: joi_1.default.string(),
+    idApplicationServer: joi_1.default.string(),
     deviceName: joi_1.default.string().required(),
     deveui: joi_1.default.string().required(),
     tipo: joi_1.default.string().required(),

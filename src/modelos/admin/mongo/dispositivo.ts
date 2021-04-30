@@ -5,7 +5,7 @@ import { ILoteDispositivoDb } from './lote-dispositivo';
 
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
-    applicationServerId: Types.ObjectId;
+    idApplicationServer: Types.ObjectId;
     deviceName: string;
     deveui: string;
     tipo: string;
@@ -19,7 +19,7 @@ export interface IDispositivoAdminDb extends Document {
 }
 
 export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
-    applicationServerId: { type: Types.ObjectId, ref: 'applicationServers' },
+    idApplicationServer: { type: Types.ObjectId, ref: 'applicationServers' },
     deveui: { type: String, required: true, unique: true },
     deviceName: { type: String, required: true, unique: true },
     tipo: { type: String, required: true },
@@ -31,7 +31,7 @@ export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
 SDispositivoAdmin.virtual('applicationServer', {
     foreignField: '_id',
     justOne: true,
-    localField: 'applicationServerId',
+    localField: 'idApplicationServer',
     ref: 'applicationServers',
 });
 

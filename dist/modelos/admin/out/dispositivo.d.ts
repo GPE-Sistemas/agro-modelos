@@ -5,7 +5,7 @@ export declare const IDispositivoAdminDTOValidation: joi.ObjectSchema<IDispositi
 export declare const IDispositivoAdminDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IDispositivoAdminDTO {
     _id: string;
-    applicationServerId: string;
+    idApplicationServer: string;
     deviceName: string;
     deveui: string;
     tipo: string;
