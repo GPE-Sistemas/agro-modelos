@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IApplicationServerDb } from './application-server';
 
 export interface IClienteDb extends Document {
     _id: Types.ObjectId;
@@ -10,6 +11,8 @@ export interface IClienteDb extends Document {
     organizationId: string;
     serviceProfileId: string,
     gatewayIds: string[];
+    //
+    applicationServer?: IApplicationServerDb;
 }
 
 export const SCliente = new Schema<IClienteDb>({
@@ -23,4 +26,11 @@ export const SCliente = new Schema<IClienteDb>({
     admin: { type: Boolean },
     activo: { type: Boolean },
     gatewayIds: [{ type: String }],
+});
+
+SCliente.virtual('applicationServer', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idApplicationServer',
+    ref: 'applicationServers',
 });

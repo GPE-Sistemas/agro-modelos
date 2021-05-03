@@ -14,3 +14,9 @@ exports.SCliente = new mongoose_1.Schema({
     activo: { type: Boolean },
     gatewayIds: [{ type: String }],
 });
+exports.SCliente.virtual('applicationServer', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idApplicationServer',
+    ref: 'applicationServers',
+});

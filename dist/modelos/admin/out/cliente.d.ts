@@ -1,4 +1,5 @@
 import joi from 'joi';
+import { IApplicationServerDTO } from './application-server';
 export declare const IClienteDTOValidation: joi.ObjectSchema<IClienteDTO>;
 export declare const IClienteDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IClienteDTO {
@@ -11,5 +12,6 @@ export interface IClienteDTO {
     organizationId: string;
     serviceProfileId: string;
     gatewayIds?: string[];
+    applicationServer?: IApplicationServerDTO;
 }
 //# sourceMappingURL=cliente.d.ts.map
