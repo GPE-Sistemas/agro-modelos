@@ -4,5 +4,6 @@ export declare const ILoteDispositivoDTOSwagger: import("joi-to-swagger").Swagge
 export interface ILoteDispositivoDTO {
     _id: string;
     nombre: string;
+    key: string;
 }
 //# sourceMappingURL=lote-dispositivo.d.ts.map

@@ -4,4 +4,5 @@ exports.SLoteDispositivo = void 0;
 const mongoose_1 = require("mongoose");
 exports.SLoteDispositivo = new mongoose_1.Schema({
     nombre: { type: String, required: true, unique: true },
+    key: { type: String, required: true },
 });

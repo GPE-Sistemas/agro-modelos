@@ -9,5 +9,6 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.ILoteDispositivoDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     nombre: joi_1.default.string(),
+    key: joi_1.default.string(),
 });
 exports.ILoteDispositivoDTOSwagger = joi_to_swagger_1.default(exports.ILoteDispositivoDTOValidation).swagger;

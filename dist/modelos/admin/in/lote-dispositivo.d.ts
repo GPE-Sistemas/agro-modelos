@@ -3,5 +3,6 @@ export declare const ILoteDispositivoValidation: joi.ObjectSchema<ILoteDispositi
 export declare const ILoteDispositivoSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface ILoteDispositivo {
     nombre: string;
+    key: string;
 }
 //# sourceMappingURL=lote-dispositivo.d.ts.map

@@ -118,6 +118,7 @@ export class AdminParserService {
         const dto: ILoteDispositivoDTO = {
             _id: dato._id?.toHexString(),
             nombre: dato.nombre,
+            key: dato.key,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
