@@ -138,7 +138,7 @@ class AdminParserService {
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             description: dato.description,
-            gategayId: dato.gategayId,
+            gatewayId: dato.gatewayId,
             idApplicationServer: dato.idApplicationServer,
             name: dato.name,
             networkServerId: dato.networkServerId,

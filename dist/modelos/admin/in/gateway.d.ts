@@ -4,7 +4,7 @@ export declare const IGatewaySwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IGateway {
     idApplicationServer: string;
     name: string;
-    gategayId: string;
+    gatewayId: string;
     description: string;
     organizationId: string;
     networkServerId: string;

@@ -11,7 +11,7 @@ exports.IGatewayDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     idApplicationServer: joi_1.default.string(),
     name: joi_1.default.string(),
-    gategayId: joi_1.default.string(),
+    gatewayId: joi_1.default.string(),
     description: joi_1.default.string(),
     organizationId: joi_1.default.string(),
     networkServerId: joi_1.default.string(),

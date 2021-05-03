@@ -138,7 +138,7 @@ export class AdminParserService {
         const dto: IGatewayDTO = {
             _id: dato._id?.toHexString(),
             description: dato.description,
-            gategayId: dato.gategayId,
+            gatewayId: dato.gatewayId,
             idApplicationServer: dato.idApplicationServer,
             name: dato.name,
             networkServerId: dato.networkServerId,

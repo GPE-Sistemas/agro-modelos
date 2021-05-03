@@ -9,7 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IGatewayValidation = joi_1.default.object({
     idApplicationServer: joi_1.default.string(),
     name: joi_1.default.string(),
-    gategayId: joi_1.default.string(),
+    gatewayId: joi_1.default.string(),
     description: joi_1.default.string(),
     organizationId: joi_1.default.string(),
     networkServerId: joi_1.default.string(),

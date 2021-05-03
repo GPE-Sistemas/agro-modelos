@@ -6,7 +6,7 @@ export interface IGatewayDTO {
     _id: string;
     idApplicationServer: string;
     name: string;
-    gategayId: string;
+    gatewayId: string;
     description: string;
     organizationId: string;
     networkServerId: string;

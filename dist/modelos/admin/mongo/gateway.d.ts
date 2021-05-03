@@ -4,7 +4,7 @@ export interface IGatewayDb extends Document {
     _id: Types.ObjectId;
     idApplicationServer: string;
     name: string;
-    gategayId: string;
+    gatewayId: string;
     description: string;
     organizationId: string;
     networkServerId: string;
