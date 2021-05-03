@@ -10,3 +10,9 @@ exports.SGateway = new mongoose_1.Schema({
     organizationId: { type: String, required: true },
     networkServerId: { type: String, required: true },
 });
+exports.SGateway.virtual('applicationServer', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idApplicationServer',
+    ref: 'applicationServers',
+});

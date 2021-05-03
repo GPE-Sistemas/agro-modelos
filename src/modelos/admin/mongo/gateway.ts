@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IApplicationServerDb } from './application-server';
 
 export interface IGatewayDb extends Document {
     _id: Types.ObjectId;
@@ -8,6 +9,8 @@ export interface IGatewayDb extends Document {
     description: string;
     organizationId: string;
     networkServerId: string;
+    //
+    applicationServer: IApplicationServerDb;
 }
 
 export const SGateway = new Schema<IGatewayDb>({
@@ -17,4 +20,11 @@ export const SGateway = new Schema<IGatewayDb>({
     description: { type: String, required: true },
     organizationId: { type: String, required: true },
     networkServerId: { type: String, required: true },
+});
+
+SGateway.virtual('applicationServer', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idApplicationServer',
+    ref: 'applicationServers',
 });
