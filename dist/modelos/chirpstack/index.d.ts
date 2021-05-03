@@ -10,6 +10,7 @@ export * from './out/device-profile';
 export * from './in/device';
 export * from './in/gateway-profile';
 export * from './in/gateway';
+export * from './out/gateway';
 export * from './in/integration-http';
 export * from './in/network-server';
 export * from './out/network-server';

@@ -27,6 +27,7 @@ __exportStar(require("./in/device"), exports);
 __exportStar(require("./in/gateway-profile"), exports);
 //
 __exportStar(require("./in/gateway"), exports);
+__exportStar(require("./out/gateway"), exports);
 //
 __exportStar(require("./in/integration-http"), exports);
 //
