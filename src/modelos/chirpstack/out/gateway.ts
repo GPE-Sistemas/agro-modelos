@@ -1,19 +1,13 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IGatewayChirpstackDTOValidation = joi.object<IGatewayChirpstackDTO>({
-    result: joi.object({
-        canHaveGateways: joi.boolean(),
-        createdAt: joi.string(),
-        displayName: joi.string(),
-        id: joi.string(),
-        name: joi.string(),
-        updatedAt: joi.string(),
-    }),
-    totalCount: joi.string(),
+export const ICommonLocationValidation = joi.object<commonLocation>({
+    accuracy: joi.number(),
+    altitude: joi.number(),
+    latitude: joi.number(),
+    longitude: joi.number(),
+    source: joi.string().valid('UNKNOWN', 'GPS', 'CONFIG', 'GEO_RESOLVER_TDOA', 'GEO_RESOLVER_RSSI', 'GEO_RESOLVER_GNSS', 'GEO_RESOLVER_WIFI'),
 });
-
-export const IGatewayChirpstackDTOSwagger = j2s(IGatewayChirpstackDTOValidation).swagger;
 
 export interface commonLocation {
     accuracy: number;
@@ -22,6 +16,25 @@ export interface commonLocation {
     longitude: number;
     source: 'UNKNOWN' | 'GPS' | 'CONFIG' | 'GEO_RESOLVER_TDOA' | 'GEO_RESOLVER_RSSI' | 'GEO_RESOLVER_GNSS' | 'GEO_RESOLVER_WIFI';
 }
+
+export const IGatewayChirpstackDTOValidation = joi.object<IGatewayChirpstackDTO>({
+    result: joi.object({
+        createdAt: joi.string(),
+        description: joi.string(),
+        firstSeenAt: joi.string(),
+        id: joi.string(),
+        lastSeenAt: joi.string(),
+        location: ICommonLocationValidation,
+        name: joi.string(),
+        networkServerID: joi.string(),
+        networkServerName: joi.string(),
+        organizationID: joi.string(),
+        updatedAt: joi.string(),
+    }),
+    totalCount: joi.string(),
+});
+
+export const IGatewayChirpstackDTOSwagger = j2s(IGatewayChirpstackDTOValidation).swagger;
 
 export interface apiGatewayListItem {
     createdAt: string;

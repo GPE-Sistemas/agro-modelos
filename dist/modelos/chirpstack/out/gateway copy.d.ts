@@ -1,5 +1,6 @@
 import joi from 'joi';
-export declare const ICommonLocationValidation: joi.ObjectSchema<commonLocation>;
+export declare const IGatewayChirpstackDTOValidation: joi.ObjectSchema<IGatewayChirpstackDTO>;
+export declare const IGatewayChirpstackDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface commonLocation {
     accuracy: number;
     altitude: number;
@@ -7,8 +8,6 @@ export interface commonLocation {
     longitude: number;
     source: 'UNKNOWN' | 'GPS' | 'CONFIG' | 'GEO_RESOLVER_TDOA' | 'GEO_RESOLVER_RSSI' | 'GEO_RESOLVER_GNSS' | 'GEO_RESOLVER_WIFI';
 }
-export declare const IGatewayChirpstackDTOValidation: joi.ObjectSchema<IGatewayChirpstackDTO>;
-export declare const IGatewayChirpstackDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface apiGatewayListItem {
     createdAt: string;
     description: string;
@@ -26,4 +25,4 @@ export interface IGatewayChirpstackDTO {
     result: apiGatewayListItem[];
     totalCount: string;
 }
-//# sourceMappingURL=gateway.d.ts.map
+//# sourceMappingURL=gateway copy.d.ts.map
