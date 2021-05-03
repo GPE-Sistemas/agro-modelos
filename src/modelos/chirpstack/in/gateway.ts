@@ -38,11 +38,11 @@ export interface IGatewayChirpstack {
         discoveryEnabled?: boolean;
         gatewayProfileID?: string;
         id: string;
-        location?: {
-            accuracy: number;
-            altitude: number;
-            latitude: number;
-            longitude: number;
+        location: {
+            accuracy?: number;
+            altitude?: number;
+            latitude?: number;
+            longitude?: number;
             source: 'UNKNOWN' | 'GPS' | 'CONFIG' | 'GEO_RESOLVER_TDOA' | 'GEO_RESOLVER_RSSI' | 'GEO_RESOLVER_GNSS' | 'GEO_RESOLVER_WIFI'
         };
         metadata?: Record<string, string>;
