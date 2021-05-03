@@ -36,8 +36,12 @@ __exportStar(require("./in/integration-http"), exports);
 __exportStar(require("./in/network-server"), exports);
 __exportStar(require("./out/network-server"), exports);
 //
+__exportStar(require("./out/network-server-detail"), exports);
+//
 __exportStar(require("./in/organization"), exports);
 __exportStar(require("./out/organization"), exports);
+//
+__exportStar(require("./out/organization-detail"), exports);
 //
 __exportStar(require("./in/service-profile"), exports);
 __exportStar(require("./out/service-profile"), exports);
