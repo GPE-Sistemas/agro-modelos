@@ -9,7 +9,7 @@ exports.SDispositivoAdmin = new mongoose_1.Schema({
     descripcion: { type: String },
     tipo: { type: String, required: true },
     idLote: { type: mongoose_1.Types.ObjectId, required: true, ref: 'lotes' },
-    idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
+    idCliente: { type: mongoose_1.Types.ObjectId, ref: 'clientes' },
     deviceProfileId: { type: String },
 });
 exports.SDispositivoAdmin.virtual('applicationServer', {

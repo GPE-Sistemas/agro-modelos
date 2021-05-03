@@ -26,7 +26,7 @@ export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
     descripcion: { type: String },
     tipo: { type: String, required: true },
     idLote: { type: Types.ObjectId, required: true, ref: 'lotes' },
-    idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
+    idCliente: { type: Types.ObjectId, ref: 'clientes' },
     deviceProfileId: { type: String },
 });
 
