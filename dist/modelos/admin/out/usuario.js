@@ -9,6 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 const cliente_1 = require("./cliente");
 exports.IUsuarioDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
+    activo: joi_1.default.boolean(),
     usuario: joi_1.default.string().required(),
     idCliente: joi_1.default.string().required(),
     nombre: joi_1.default.string(),

@@ -2,6 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 import { IClienteDb } from './cliente';
 export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
+    activo: boolean;
     usuario: string;
     clave?: string;
     idCliente: Types.ObjectId;

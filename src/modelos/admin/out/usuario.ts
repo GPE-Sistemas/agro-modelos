@@ -4,6 +4,7 @@ import { IClienteDTO, IClienteDTOValidation } from './cliente';
 
 export const IUsuarioDTOValidation = joi.object<IUsuarioDTO>({
     _id: joi.string(),
+    activo: joi.boolean(),
     usuario: joi.string().required(),
     idCliente: joi.string().required(),
     nombre: joi.string(),
@@ -24,6 +25,7 @@ export const IUsuarioDTOSwagger = j2s(IUsuarioDTOValidation).swagger;
 
 export interface IUsuarioDTO {
     _id: string;
+    activo: boolean;
     usuario: string;
     clave?: string;
     idCliente: string;

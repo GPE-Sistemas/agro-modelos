@@ -6,6 +6,7 @@ class AdminParserService {
         var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            activo: dato.activo,
             idCliente: (_b = dato.idCliente) === null || _b === void 0 ? void 0 : _b.toHexString(),
             usuario: dato.usuario,
             apellido: dato.apellido,
@@ -32,6 +33,8 @@ class AdminParserService {
         var _a, _b;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            activo: dato.activo,
+            admin: dato.admin,
             idApplicationServer: (_b = dato.idApplicationServer) === null || _b === void 0 ? void 0 : _b.toHexString(),
             nombre: dato.nombre,
             applications: dato.applications,

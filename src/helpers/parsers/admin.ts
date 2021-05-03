@@ -6,6 +6,7 @@ export class AdminParserService {
     static usuario(dato: LeanDocument<IUsuarioDb>): IUsuarioDTO {
         const dto: IUsuarioDTO = {
             _id: dato._id?.toHexString(),
+            activo: dato.activo,
             idCliente: dato.idCliente?.toHexString(),
             usuario: dato.usuario,
             apellido: dato.apellido,
@@ -32,6 +33,8 @@ export class AdminParserService {
     static cliente(dato: LeanDocument<IClienteDb>): IClienteDTO {
         const dto: IClienteDTO = {
             _id: dato._id?.toHexString(),
+            activo: dato.activo,
+            admin: dato.admin,
             idApplicationServer: dato.idApplicationServer?.toHexString(),
             nombre: dato.nombre,
             applications: dato.applications,

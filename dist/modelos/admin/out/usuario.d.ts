@@ -4,6 +4,7 @@ export declare const IUsuarioDTOValidation: joi.ObjectSchema<IUsuarioDTO>;
 export declare const IUsuarioDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IUsuarioDTO {
     _id: string;
+    activo: boolean;
     usuario: string;
     clave?: string;
     idCliente: string;

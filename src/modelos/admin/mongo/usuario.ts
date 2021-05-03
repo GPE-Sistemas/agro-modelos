@@ -3,6 +3,7 @@ import { IClienteDb } from './cliente';
 
 export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
+    activo: boolean;
     usuario: string;
     clave?: string;
     idCliente: Types.ObjectId;
@@ -22,6 +23,7 @@ export interface IUsuarioDb extends Document {
 }
 
 export const SUsuario = new Schema<IUsuarioDb>({
+    activo: { type: Boolean },
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
     idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },

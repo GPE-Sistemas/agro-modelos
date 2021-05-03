@@ -2,6 +2,8 @@ import { Document, Schema, Types } from 'mongoose';
 
 export interface IClienteDb extends Document {
     _id: Types.ObjectId;
+    admin: boolean;
+    activo: boolean;
     nombre: string;
     idApplicationServer: Types.ObjectId;
     networkServerId: string;
@@ -9,7 +11,6 @@ export interface IClienteDb extends Document {
     serviceProfileId: string,
     applications: { applicationId: string, applicationName: string }[];
     gateways: { gatewayId: string, gateway: string }[];
-    // deviceProfiles: { deviceProfileId: string, deviceProfile: string }[];
 }
 
 export const SCliente = new Schema<IClienteDb>({
@@ -20,5 +21,6 @@ export const SCliente = new Schema<IClienteDb>({
     serviceProfileId: { type: String },
     applications: [{ type: Object }],
     gateways: [{ type: Object }],
-    // deviceProfiles: [{ type: Object }],
+    admin: { type: Boolean },
+    activo: { type: Boolean },
 });

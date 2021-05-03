@@ -10,4 +10,6 @@ exports.SCliente = new mongoose_1.Schema({
     serviceProfileId: { type: String },
     applications: [{ type: Object }],
     gateways: [{ type: Object }],
+    admin: { type: Boolean },
+    activo: { type: Boolean },
 });
