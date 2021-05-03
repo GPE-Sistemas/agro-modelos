@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAplicacionDb, IAplicacionDTO, IApplicationServerDb, IApplicationServerDTO, IClienteDb, IClienteDTO, IDispositivoAdminDb, IDispositivoAdminDTO, ILoteDispositivoDb, ILoteDispositivoDTO, IUsuarioDb, IUsuarioDTO } from '../../modelos';
+import { IAplicacionDb, IAplicacionDTO, IApplicationServerDb, IApplicationServerDTO, IClienteDb, IClienteDTO, IDispositivoAdminDb, IDispositivoAdminDTO, IGatewayDb, IGatewayDTO, ILoteDispositivoDb, ILoteDispositivoDTO, IUsuarioDb, IUsuarioDTO } from '../../modelos';
 
 export class AdminParserService {
 
@@ -131,6 +131,27 @@ export class AdminParserService {
         const dto: ILoteDispositivoDTO[] = [];
         for (const dato of datos) {
             dto.push(this.loteDispositvo(dato));
+        }
+        return dto;
+    }
+
+    static gateway(dato: LeanDocument<IGatewayDb>): IGatewayDTO {
+        const dto: IGatewayDTO = {
+            _id: dato._id?.toHexString(),
+            description: dato.description,
+            gategayId: dato.gategayId,
+            idApplicationServer: dato.idApplicationServer,
+            name: dato.name,
+            networkServerId: dato.networkServerId,
+            organizationId: dato.organizationId,
+        };
+        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
+        return dto;
+    }
+    static gateways(datos: LeanDocument<IGatewayDb>[]): IGatewayDTO[] {
+        const dto: IGatewayDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.gateway(dato));
         }
         return dto;
     }

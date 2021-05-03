@@ -33,4 +33,5 @@ export declare function httpRequest<T>(url: string, method: string, queryParams?
 }>;
 export declare function hashClave(clave: string): Promise<string>;
 export declare function compareClave(clave: string, hash: string): Promise<boolean>;
+export declare function deveuiValido(deveui: string): boolean;
 //# sourceMappingURL=helpers.d.ts.map

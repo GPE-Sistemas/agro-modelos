@@ -1,1 +1,0 @@
-{"version":3,"file":"alerta.d.ts","sourceRoot":"","sources":["../../../../src/modelos/caravana/in/alerta.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,yBAAyB,mCAKpC,CAAC;AAEH,eAAO,MAAM,sBAAsB,wCAAyC,CAAC;AAE7E,MAAM,WAAW,eAAe;IAC5B,MAAM,EAAE,MAAM,CAAC;IACf,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,MAAM,EAAE,MAAM,CAAC;IACf,UAAU,CAAC,EAAE,MAAM,CAAC;CACvB"}

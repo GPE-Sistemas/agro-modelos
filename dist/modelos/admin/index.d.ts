@@ -16,4 +16,7 @@ export * from './out/lote-dispositivo';
 export * from './in/usuario';
 export * from './mongo/usuario';
 export * from './out/usuario';
+export * from './in/gateway';
+export * from './mongo/gateway';
+export * from './out/gateway';
 //# sourceMappingURL=index.d.ts.map

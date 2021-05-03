@@ -134,5 +134,26 @@ class AdminParserService {
         }
         return dto;
     }
+    static gateway(dato) {
+        var _a;
+        const dto = {
+            _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            description: dato.description,
+            gategayId: dato.gategayId,
+            idApplicationServer: dato.idApplicationServer,
+            name: dato.name,
+            networkServerId: dato.networkServerId,
+            organizationId: dato.organizationId,
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static gateways(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.gateway(dato));
+        }
+        return dto;
+    }
 }
 exports.AdminParserService = AdminParserService;

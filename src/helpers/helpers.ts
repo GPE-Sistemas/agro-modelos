@@ -63,7 +63,7 @@ export function filtroBusqueda(filtro?: IFiltro) {
         for (const key in filtro) {
             if (!keysIgnorar.includes(key)) {
                 if (!keysIgnorar.includes(key)) {
-                    if (key.substr(0,2) === 'id') {
+                    if (key.substr(0, 2) === 'id') {
                         filtroDb[key] = Types.ObjectId(filtro[key]);
                     } else {
                         filtroDb[key] = filtro[key];
@@ -209,4 +209,18 @@ export async function hashClave(clave: string): Promise<string> {
 
 export async function compareClave(clave: string, hash: string): Promise<boolean> {
     return await bcrypt.compare(clave, hash);
+}
+
+export function deveuiValido(deveui: string): boolean {
+    function esHexadecimal(numeroHexadecimal: string): boolean {
+        return /^[0-9A-F]+$/gi.test(numeroHexadecimal);
+    }
+    if (deveui) {
+        if (esHexadecimal(deveui)) {
+            if (deveui.length === 16) {
+                return true;
+            }
+        }
+    }
+    return false;
 }

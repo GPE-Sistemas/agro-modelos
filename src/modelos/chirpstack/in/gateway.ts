@@ -34,7 +34,7 @@ export interface IGatewayChirpstack {
             fineTimestampKey: string;
             fpgaID: string
         }[];
-        description: string;
+        description?: string;
         discoveryEnabled?: boolean;
         gatewayProfileID?: string;
         id: string;
@@ -45,7 +45,7 @@ export interface IGatewayChirpstack {
             longitude: number;
             source: 'UNKNOWN' | 'GPS' | 'CONFIG' | 'GEO_RESOLVER_TDOA' | 'GEO_RESOLVER_RSSI' | 'GEO_RESOLVER_GNSS' | 'GEO_RESOLVER_WIFI'
         };
-        metadata: Record<string, string>;
+        metadata?: Record<string, string>;
         name: string;
         networkServerID: string;
         organizationID: string;

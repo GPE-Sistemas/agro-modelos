@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAplicacionDb, IAplicacionDTO, IApplicationServerDb, IApplicationServerDTO, IClienteDb, IClienteDTO, IDispositivoAdminDb, IDispositivoAdminDTO, ILoteDispositivoDb, ILoteDispositivoDTO, IUsuarioDb, IUsuarioDTO } from '../../modelos';
+import { IAplicacionDb, IAplicacionDTO, IApplicationServerDb, IApplicationServerDTO, IClienteDb, IClienteDTO, IDispositivoAdminDb, IDispositivoAdminDTO, IGatewayDb, IGatewayDTO, ILoteDispositivoDb, ILoteDispositivoDTO, IUsuarioDb, IUsuarioDTO } from '../../modelos';
 export declare class AdminParserService {
     static usuario(dato: LeanDocument<IUsuarioDb>): IUsuarioDTO;
     static usuarios(datos: LeanDocument<IUsuarioDb>[]): IUsuarioDTO[];
@@ -13,5 +13,7 @@ export declare class AdminParserService {
     static dispositivosAdmin(datos: LeanDocument<IDispositivoAdminDb>[]): IDispositivoAdminDTO[];
     static loteDispositvo(dato: LeanDocument<ILoteDispositivoDb>): ILoteDispositivoDTO;
     static lotesDispositvo(datos: LeanDocument<ILoteDispositivoDb>[]): ILoteDispositivoDTO[];
+    static gateway(dato: LeanDocument<IGatewayDb>): IGatewayDTO;
+    static gateways(datos: LeanDocument<IGatewayDb>[]): IGatewayDTO[];
 }
 //# sourceMappingURL=admin.d.ts.map

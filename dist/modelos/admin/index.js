@@ -34,3 +34,7 @@ __exportStar(require("./in/usuario"), exports);
 __exportStar(require("./mongo/usuario"), exports);
 __exportStar(require("./out/usuario"), exports);
 //
+__exportStar(require("./in/gateway"), exports);
+__exportStar(require("./mongo/gateway"), exports);
+__exportStar(require("./out/gateway"), exports);
+//

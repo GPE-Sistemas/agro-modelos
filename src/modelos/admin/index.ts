@@ -22,3 +22,7 @@ export * from './in/usuario';
 export * from './mongo/usuario';
 export * from './out/usuario';
 //
+export * from './in/gateway';
+export * from './mongo/gateway';
+export * from './out/gateway';
+//
