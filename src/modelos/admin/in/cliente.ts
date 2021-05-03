@@ -13,8 +13,8 @@ export const IClienteValidation = joi.object<ICliente>({
 export const IClienteSwagger = j2s(IClienteValidation).swagger;
 
 export interface ICliente {
-    admin: boolean;
-    activo: boolean;
+    admin?: boolean;
+    activo?: boolean;
     nombre: string;
     idApplicationServer?: string;
     networkServerId?: string;
