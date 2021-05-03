@@ -9,6 +9,7 @@ export const IDispositivoAdminDTOValidation = joi.object<IDispositivoAdminDTO>({
     _id: joi.string(),
     idApplicationServer: joi.string(),
     deviceName: joi.string().required(),
+    descripcion: joi.string(),
     deveui: joi.string().required(),
     tipo: joi.string().required(),
     idLote: joi.string().required(),
@@ -25,8 +26,9 @@ export const IDispositivoAdminDTOSwagger = j2s(IDispositivoAdminDTOValidation).s
 export interface IDispositivoAdminDTO {
     _id: string;
     idApplicationServer: string;
-    deviceName: string;
     deveui: string;
+    deviceName: string;
+    descripcion: string;
     tipo: string;
     idLote: string;
     idCliente: string;

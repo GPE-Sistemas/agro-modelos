@@ -5,6 +5,7 @@ export interface IDispositivoAdmin {
     idApplicationServer?: string;
     deveui: string;
     deviceName: string;
+    descripcion: string;
     appkey: string;
     tipo: string;
     idLote: string;

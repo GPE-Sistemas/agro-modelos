@@ -10,6 +10,7 @@ exports.IDispositivoAdminValidation = joi_1.default.object({
     idApplicationServer: joi_1.default.string(),
     deveui: joi_1.default.string().length(16).required(),
     deviceName: joi_1.default.string().required(),
+    descripcion: joi_1.default.string(),
     appkey: joi_1.default.string().allow(...['', null]),
     tipo: joi_1.default.string().required(),
     idLote: joi_1.default.string().required(),

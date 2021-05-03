@@ -6,6 +6,7 @@ exports.SDispositivoAdmin = new mongoose_1.Schema({
     idApplicationServer: { type: mongoose_1.Types.ObjectId, ref: 'applicationServers' },
     deveui: { type: String, required: true, unique: true },
     deviceName: { type: String, required: true, unique: true },
+    descripcion: { type: String },
     tipo: { type: String, required: true },
     idLote: { type: mongoose_1.Types.ObjectId, required: true, ref: 'lotes' },
     idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },

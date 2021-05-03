@@ -94,6 +94,7 @@ export class AdminParserService {
             idApplicationServer: dato.idApplicationServer?.toHexString(),
             deveui: dato.deveui,
             deviceName: dato.deviceName,
+            descripcion: dato.descripcion,
             deviceProfileId: dato.deviceProfileId,
             idCliente: dato.idCliente?.toHexString(),
             idLote: dato.idCliente?.toHexString(),

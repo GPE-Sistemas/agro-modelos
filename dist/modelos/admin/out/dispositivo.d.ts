@@ -6,8 +6,9 @@ export declare const IDispositivoAdminDTOSwagger: import("joi-to-swagger").Swagg
 export interface IDispositivoAdminDTO {
     _id: string;
     idApplicationServer: string;
-    deviceName: string;
     deveui: string;
+    deviceName: string;
+    descripcion: string;
     tipo: string;
     idLote: string;
     idCliente: string;

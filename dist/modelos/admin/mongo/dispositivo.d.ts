@@ -5,8 +5,9 @@ import { ILoteDispositivoDb } from './lote-dispositivo';
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
     idApplicationServer: Types.ObjectId;
-    deviceName: string;
     deveui: string;
+    deviceName: string;
+    descripcion: string;
     tipo: string;
     idLote: Types.ObjectId;
     idCliente: Types.ObjectId;

@@ -6,8 +6,9 @@ import { ILoteDispositivoDb } from './lote-dispositivo';
 export interface IDispositivoAdminDb extends Document {
     _id: Types.ObjectId;
     idApplicationServer: Types.ObjectId;
-    deviceName: string;
     deveui: string;
+    deviceName: string;
+    descripcion: string;
     tipo: string;
     idLote: Types.ObjectId;
     idCliente: Types.ObjectId;
@@ -22,6 +23,7 @@ export const SDispositivoAdmin = new Schema<IDispositivoAdminDb>({
     idApplicationServer: { type: Types.ObjectId, ref: 'applicationServers' },
     deveui: { type: String, required: true, unique: true },
     deviceName: { type: String, required: true, unique: true },
+    descripcion: { type: String },
     tipo: { type: String, required: true },
     idLote: { type: Types.ObjectId, required: true, ref: 'lotes' },
     idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
