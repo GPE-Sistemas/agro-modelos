@@ -21,6 +21,7 @@ export const IUsuarioValidation = joi.object<IUsuario>({
 export const IUsuarioSwagger = j2s(IUsuarioValidation).swagger;
 
 export interface IUsuario {
+    activo: boolean;
     usuario: string;
     clave?: string;
     idCliente: string;
