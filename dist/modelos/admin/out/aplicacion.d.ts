@@ -9,15 +9,6 @@ export interface IAplicacionDTO {
         ack: string;
         join?: string;
     };
-    urlsApiEntrada?: {
-        chirpstack?: {
-            evento: string;
-        };
-        orbiwise?: {
-            uplink?: string;
-            ack?: string;
-            join: string;
-        };
-    };
+    urlApiEntrada?: string;
 }
 //# sourceMappingURL=aplicacion.d.ts.map

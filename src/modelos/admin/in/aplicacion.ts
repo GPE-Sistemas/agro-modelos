@@ -8,16 +8,7 @@ export const IAplicacionValidation = joi.object<IAplicacion>({
         ack: joi.string(),
         join: joi.string(),
     }),
-    urlsApiEntrada: joi.object({
-        chirpstack: joi.object({
-            evento: joi.string(),
-        }),
-        orbiwise: joi.object({
-            uplinks: joi.string(),
-            ack: joi.string(),
-            join: joi.string(),
-        }),
-    })
+    urlApiEntrada: joi.string()
 });
 
 export const IAplicacionSwagger = j2s(IAplicacionValidation).swagger;
@@ -29,14 +20,5 @@ export interface IAplicacion {
         ack: string;
         join?: string;
     };
-    urlsApiEntrada?: {
-        chirpstack?: {
-            evento: string;
-        }
-        orbiwise?: {
-            uplink?: string,
-            ack?: string,
-            join: string,
-        },
-    };
+    urlApiEntrada?: string;
 }

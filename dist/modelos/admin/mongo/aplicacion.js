@@ -5,5 +5,5 @@ const mongoose_1 = require("mongoose");
 exports.SAplicacion = new mongoose_1.Schema({
     nombre: { type: String, required: true, unique: true },
     urlsApiAplicacion: { type: Object },
-    urlsApiEntrada: { type: Object },
+    urlApiEntrada: { type: String },
 });

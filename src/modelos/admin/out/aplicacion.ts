@@ -9,16 +9,7 @@ export const IAplicacionDTOValidation = joi.object<IAplicacionDTO>({
         ack: joi.string(),
         join: joi.string(),
     }),
-    urlsApiEntrada: joi.object({
-        chirpstack: joi.object({
-            evento: joi.string(),
-        }),
-        orbiwise: joi.object({
-            uplink: joi.string(),
-            ack: joi.string(),
-            join: joi.string(),
-        }),
-    })
+    urlApiEntrada: joi.object(),
 });
 
 export const IAplicacionDTOSwagger = j2s(IAplicacionDTOValidation).swagger;
@@ -31,14 +22,5 @@ export interface IAplicacionDTO {
         ack: string;
         join?: string;
     };
-    urlsApiEntrada?: {
-        chirpstack?: {
-            evento: string;
-        }
-        orbiwise?: {
-            uplink?: string,
-            ack?: string,
-            join: string,
-        },
-    };
+    urlApiEntrada?: string;
 }

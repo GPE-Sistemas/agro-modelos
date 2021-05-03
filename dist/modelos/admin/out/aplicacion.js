@@ -14,15 +14,6 @@ exports.IAplicacionDTOValidation = joi_1.default.object({
         ack: joi_1.default.string(),
         join: joi_1.default.string(),
     }),
-    urlsApiEntrada: joi_1.default.object({
-        chirpstack: joi_1.default.object({
-            evento: joi_1.default.string(),
-        }),
-        orbiwise: joi_1.default.object({
-            uplink: joi_1.default.string(),
-            ack: joi_1.default.string(),
-            join: joi_1.default.string(),
-        }),
-    })
+    urlApiEntrada: joi_1.default.object(),
 });
 exports.IAplicacionDTOSwagger = joi_to_swagger_1.default(exports.IAplicacionDTOValidation).swagger;

@@ -60,7 +60,7 @@ export class AdminParserService {
             _id: dato._id?.toHexString(),
             nombre: dato.nombre,
             urlsApiAplicacion: dato.urlsApiAplicacion,
-            urlsApiEntrada: dato.urlsApiEntrada,
+            urlApiEntrada: dato.urlApiEntrada,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;

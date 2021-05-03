@@ -7,16 +7,7 @@ export interface IAplicacionDb extends Document {
         ack: string;
         join?: string;
     };
-    urlsApiEntrada?: {
-        chirpstack?: {
-            evento: string;
-        };
-        orbiwise?: {
-            uplink?: string;
-            ack?: string;
-            join: string;
-        };
-    };
+    urlApiEntrada?: string;
 }
 export declare const SAplicacion: Schema<IAplicacionDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=aplicacion.d.ts.map
