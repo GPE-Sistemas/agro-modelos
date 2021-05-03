@@ -9,5 +9,5 @@ export const ILoteDispositivoSwagger = j2s(ILoteDispositivoValidation).swagger;
 
 export interface ILoteDispositivo {
     nombre: string;
-    key: string;
+    key?: string;
 }
