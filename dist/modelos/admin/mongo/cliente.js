@@ -12,4 +12,5 @@ exports.SCliente = new mongoose_1.Schema({
     gateways: [{ type: Object }],
     admin: { type: Boolean },
     activo: { type: Boolean },
+    gatewayIds: [{ type: String }],
 });

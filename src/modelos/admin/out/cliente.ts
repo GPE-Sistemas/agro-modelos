@@ -10,18 +10,7 @@ export const IClienteDTOValidation = joi.object<IClienteDTO>({
     networkServerId: joi.string(),
     organizationId: joi.string(),
     serviceProfileId: joi.string(),
-    applications: joi.array().items(joi.object({
-        applicationId: joi.string(),
-        applicationName: joi.string(),
-    })),
-    gateways: joi.array().items(joi.object({
-        gatewayId: joi.string(),
-        gateway: joi.string(),
-    })),
-    // deviceProfiles: joi.array().items(joi.object({
-    //     deviceProfileId: joi.string(),
-    //     deviceProfile: joi.string(),
-    // })),
+    gatewayIds: joi.array().items(joi.string()),
 });
 
 export const IClienteDTOSwagger = j2s(IClienteDTOValidation).swagger;
@@ -35,7 +24,5 @@ export interface IClienteDTO {
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string;
-    applications: { applicationId: string, applicationName: string }[];
-    gateways: { gatewayId: string, gateway: string }[];
-    // deviceProfiles: { deviceProfileId: string, deviceProfile: string }[];
+    gatewayIds?: string[];
 }

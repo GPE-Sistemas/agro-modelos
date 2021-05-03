@@ -37,11 +37,10 @@ class AdminParserService {
             admin: dato.admin,
             idApplicationServer: (_b = dato.idApplicationServer) === null || _b === void 0 ? void 0 : _b.toHexString(),
             nombre: dato.nombre,
-            applications: dato.applications,
-            gateways: dato.gateways,
             networkServerId: dato.networkServerId,
             organizationId: dato.organizationId,
-            serviceProfileId: dato.serviceProfileId
+            serviceProfileId: dato.serviceProfileId,
+            gatewayIds: dato.gatewayIds,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;

@@ -37,11 +37,10 @@ export class AdminParserService {
             admin: dato.admin,
             idApplicationServer: dato.idApplicationServer?.toHexString(),
             nombre: dato.nombre,
-            applications: dato.applications,
-            gateways: dato.gateways,
             networkServerId: dato.networkServerId,
             organizationId: dato.organizationId,
-            serviceProfileId: dato.serviceProfileId
+            serviceProfileId: dato.serviceProfileId,
+            gatewayIds: dato.gatewayIds,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;

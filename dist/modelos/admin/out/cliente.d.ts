@@ -10,13 +10,6 @@ export interface IClienteDTO {
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string;
-    applications: {
-        applicationId: string;
-        applicationName: string;
-    }[];
-    gateways: {
-        gatewayId: string;
-        gateway: string;
-    }[];
+    gatewayIds?: string[];
 }
 //# sourceMappingURL=cliente.d.ts.map

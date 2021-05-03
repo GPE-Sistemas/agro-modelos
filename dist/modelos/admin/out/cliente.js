@@ -15,13 +15,6 @@ exports.IClienteDTOValidation = joi_1.default.object({
     networkServerId: joi_1.default.string(),
     organizationId: joi_1.default.string(),
     serviceProfileId: joi_1.default.string(),
-    applications: joi_1.default.array().items(joi_1.default.object({
-        applicationId: joi_1.default.string(),
-        applicationName: joi_1.default.string(),
-    })),
-    gateways: joi_1.default.array().items(joi_1.default.object({
-        gatewayId: joi_1.default.string(),
-        gateway: joi_1.default.string(),
-    })),
+    gatewayIds: joi_1.default.array().items(joi_1.default.string()),
 });
 exports.IClienteDTOSwagger = joi_to_swagger_1.default(exports.IClienteDTOValidation).swagger;

@@ -9,17 +9,6 @@ export interface ICliente {
     networkServerId?: string;
     organizationId?: string;
     serviceProfileId?: string;
-    applications?: {
-        applicationId: string;
-        applicationName: string;
-    }[];
-    deviceProfiles?: {
-        deviceProfileId: string;
-        deviceProfile: string;
-    }[];
-    gateways?: {
-        gatewayId: string;
-        gateway: string;
-    }[];
+    gatewayIds?: string[];
 }
 //# sourceMappingURL=cliente.d.ts.map

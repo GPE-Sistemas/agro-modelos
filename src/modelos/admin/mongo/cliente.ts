@@ -9,8 +9,7 @@ export interface IClienteDb extends Document {
     networkServerId: string;
     organizationId: string;
     serviceProfileId: string,
-    applications: { applicationId: string, applicationName: string }[];
-    gateways: { gatewayId: string, gateway: string }[];
+    gatewayIds: string[];
 }
 
 export const SCliente = new Schema<IClienteDb>({
@@ -23,4 +22,5 @@ export const SCliente = new Schema<IClienteDb>({
     gateways: [{ type: Object }],
     admin: { type: Boolean },
     activo: { type: Boolean },
+    gatewayIds: [{ type: String }],
 });
