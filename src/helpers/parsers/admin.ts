@@ -41,6 +41,8 @@ export class AdminParserService {
             organizationId: dato.organizationId,
             serviceProfileId: dato.serviceProfileId,
             gatewayIds: dato.gatewayIds,
+            //
+            applicationServer: dato.applicationServer? AdminParserService.applicationServer(dato.applicationServer) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
