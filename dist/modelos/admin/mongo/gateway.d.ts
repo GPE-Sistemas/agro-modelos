@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { ICoordenadas } from '../../shared';
 import { IApplicationServerDb } from './application-server';
 export interface IGatewayDb extends Document {
     _id: Types.ObjectId;
@@ -8,6 +9,8 @@ export interface IGatewayDb extends Document {
     description: string;
     organizationId: string;
     networkServerId: string;
+    coordenadas: ICoordenadas;
+    gpsDiferencial: boolean;
     applicationServer: IApplicationServerDb;
 }
 export declare const SGateway: Schema<IGatewayDb, import("mongoose").Model<any, any>, undefined>;

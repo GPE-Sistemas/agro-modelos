@@ -9,6 +9,11 @@ exports.SGateway = new mongoose_1.Schema({
     description: { type: String, required: true },
     organizationId: { type: String, required: true },
     networkServerId: { type: String, required: true },
+    ubicacion: {
+        lat: { type: Number, required: true },
+        lng: { type: Number, required: true },
+    },
+    gpsDiferencial: { type: Boolean },
 });
 exports.SGateway.virtual('applicationServer', {
     foreignField: '_id',

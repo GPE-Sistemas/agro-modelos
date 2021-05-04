@@ -145,6 +145,8 @@ class AdminParserService {
             name: dato.name,
             networkServerId: dato.networkServerId,
             organizationId: dato.organizationId,
+            coordenadas: dato.coordenadas,
+            gpsDiferencial: dato.gpsDiferencial,
             //
             applicationServer: dato.applicationServer ? AdminParserService.applicationServer(dato.applicationServer) : undefined,
         };
