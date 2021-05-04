@@ -16,37 +16,34 @@ __exportStar(require("./status"), exports);
 __exportStar(require("./uplink"), exports);
 __exportStar(require("./in/application"), exports);
 __exportStar(require("./out/application"), exports);
+__exportStar(require("./out/application-detail"), exports);
 //
 __exportStar(require("./in/device-keys"), exports);
 //
 __exportStar(require("./in/device-profile"), exports);
 __exportStar(require("./out/device-profile"), exports);
-//
 __exportStar(require("./out/device-profile-detail"), exports);
 //
 __exportStar(require("./in/device"), exports);
-//
 __exportStar(require("./out/device-detail"), exports);
 //
 __exportStar(require("./in/gateway-profile"), exports);
 //
 __exportStar(require("./in/gateway"), exports);
 __exportStar(require("./out/gateway"), exports);
-//
 __exportStar(require("./out/gateway-detail"), exports);
 //
 __exportStar(require("./in/integration-http"), exports);
 //
 __exportStar(require("./in/network-server"), exports);
 __exportStar(require("./out/network-server"), exports);
-//
 __exportStar(require("./out/network-server-detail"), exports);
 //
 __exportStar(require("./in/organization"), exports);
 __exportStar(require("./out/organization"), exports);
-//
 __exportStar(require("./out/organization-detail"), exports);
 //
 __exportStar(require("./in/service-profile"), exports);
 __exportStar(require("./out/service-profile"), exports);
+__exportStar(require("./out/service-profile-detail"), exports);
 //

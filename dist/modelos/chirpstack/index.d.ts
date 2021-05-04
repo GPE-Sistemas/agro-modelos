@@ -4,6 +4,7 @@ export * from './status';
 export * from './uplink';
 export * from './in/application';
 export * from './out/application';
+export * from './out/application-detail';
 export * from './in/device-keys';
 export * from './in/device-profile';
 export * from './out/device-profile';
@@ -23,4 +24,5 @@ export * from './out/organization';
 export * from './out/organization-detail';
 export * from './in/service-profile';
 export * from './out/service-profile';
+export * from './out/service-profile-detail';
 //# sourceMappingURL=index.d.ts.map
