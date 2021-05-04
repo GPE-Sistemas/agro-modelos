@@ -20,7 +20,7 @@ export interface IDispositivoAdmin {
     deveui: string;
     deviceName: string;
     descripcion: string;
-    appkey: string;
+    appkey?: string;
     tipo: string;
     idLote: string;
     idCliente?: string;
