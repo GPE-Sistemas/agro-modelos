@@ -23,7 +23,7 @@ export const SGateway = new Schema<IGatewayDb>({
     description: { type: String, required: true },
     organizationId: { type: String, required: true },
     networkServerId: { type: String, required: true },
-    ubicacion: {
+    coordenadas: {
         lat: { type: Number, required: true },
         lng: { type: Number, required: true },
     },
