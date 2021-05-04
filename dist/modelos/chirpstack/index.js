@@ -22,7 +22,11 @@ __exportStar(require("./in/device-keys"), exports);
 __exportStar(require("./in/device-profile"), exports);
 __exportStar(require("./out/device-profile"), exports);
 //
+__exportStar(require("./out/device-profile-detail"), exports);
+//
 __exportStar(require("./in/device"), exports);
+//
+__exportStar(require("./out/device-detail"), exports);
 //
 __exportStar(require("./in/gateway-profile"), exports);
 //

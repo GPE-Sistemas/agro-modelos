@@ -11,7 +11,11 @@ export * from './in/device-keys';
 export * from './in/device-profile';
 export * from './out/device-profile';
 //
+export * from './out/device-profile-detail';
+//
 export * from './in/device';
+//
+export * from './out/device-detail';
 //
 export * from './in/gateway-profile';
 //
