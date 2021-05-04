@@ -101,7 +101,7 @@ class AdminParserService {
             descripcion: dato.descripcion,
             deviceProfileId: dato.deviceProfileId,
             idCliente: (_c = dato.idCliente) === null || _c === void 0 ? void 0 : _c.toHexString(),
-            idLote: (_d = dato.idCliente) === null || _d === void 0 ? void 0 : _d.toHexString(),
+            idLote: (_d = dato.idLote) === null || _d === void 0 ? void 0 : _d.toHexString(),
             tipo: dato.tipo,
             //
             applicationServer: dato.applicationServer ? AdminParserService.applicationServer(dato.applicationServer) : undefined,
