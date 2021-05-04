@@ -32,6 +32,7 @@ __exportStar(require("./in/gateway-profile"), exports);
 __exportStar(require("./in/gateway"), exports);
 __exportStar(require("./out/gateway"), exports);
 __exportStar(require("./out/gateway-detail"), exports);
+__exportStar(require("./out/gateway-stats"), exports);
 //
 __exportStar(require("./in/integration-http"), exports);
 //

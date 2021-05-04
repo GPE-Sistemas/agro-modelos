@@ -21,6 +21,7 @@ export * from './in/gateway-profile';
 export * from './in/gateway';
 export * from './out/gateway';
 export * from './out/gateway-detail';
+export * from './out/gateway-stats';
 //
 export * from './in/integration-http';
 //
