@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { ICoordenadas, ICoordenadasValidation } from '../../shared';
 import { IApplicationServerDTO, IApplicationServerDTOValidation } from './application-server';
 
 export const IGatewayDTOValidation = joi.object<IGatewayDTO>({
@@ -10,6 +11,9 @@ export const IGatewayDTOValidation = joi.object<IGatewayDTO>({
     description: joi.string(),
     organizationId: joi.string(),
     networkServerId: joi.string(),
+    coordenadas: ICoordenadasValidation,
+    gpsDiferencial: joi.boolean(),
+    //
     applicationServer: IApplicationServerDTOValidation,
 });
 
@@ -23,6 +27,8 @@ export interface IGatewayDTO {
     description: string;
     organizationId: string;
     networkServerId: string;
+    coordenadas: ICoordenadas;
+    gpsDiferencial: boolean;
     //
     applicationServer?: IApplicationServerDTO;
 }
