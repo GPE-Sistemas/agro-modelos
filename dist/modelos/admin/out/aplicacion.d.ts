@@ -4,11 +4,7 @@ export declare const IAplicacionDTOSwagger: import("joi-to-swagger").SwaggerSche
 export interface IAplicacionDTO {
     _id: string;
     nombre: string;
-    urlsApiAplicacion?: {
-        uplink: string;
-        ack: string;
-        join?: string;
-    };
+    urlApiAplicacion: string;
     urlApiEntrada?: string;
 }
 //# sourceMappingURL=aplicacion.d.ts.map

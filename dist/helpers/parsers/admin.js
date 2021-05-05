@@ -59,7 +59,7 @@ class AdminParserService {
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             nombre: dato.nombre,
-            urlsApiAplicacion: dato.urlsApiAplicacion,
+            urlApiAplicacion: dato.urlApiAplicacion,
             urlApiEntrada: dato.urlApiEntrada,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});

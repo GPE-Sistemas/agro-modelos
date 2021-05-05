@@ -9,11 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IAplicacionDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     nombre: joi_1.default.string(),
-    urlsApiAplicacion: joi_1.default.object({
-        uplink: joi_1.default.string(),
-        ack: joi_1.default.string(),
-        join: joi_1.default.string(),
-    }),
+    urlApiAplicacion: joi_1.default.string(),
     urlApiEntrada: joi_1.default.object(),
 });
 exports.IAplicacionDTOSwagger = joi_to_swagger_1.default(exports.IAplicacionDTOValidation).swagger;
