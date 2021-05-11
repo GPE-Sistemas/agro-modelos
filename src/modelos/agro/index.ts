@@ -82,3 +82,7 @@ export * from './in/vacunacion';
 export * from './mongo/vacunacion';
 export * from './out/vacunacion';
 //
+export * from './in/correctora';
+export * from './mongo/correctora';
+export * from './out/correctora';
+//

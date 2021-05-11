@@ -94,3 +94,7 @@ __exportStar(require("./in/vacunacion"), exports);
 __exportStar(require("./mongo/vacunacion"), exports);
 __exportStar(require("./out/vacunacion"), exports);
 //
+__exportStar(require("./in/correctora"), exports);
+__exportStar(require("./mongo/correctora"), exports);
+__exportStar(require("./out/correctora"), exports);
+//
