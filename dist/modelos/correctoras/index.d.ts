@@ -4,4 +4,7 @@ export * from './out/dispositivo';
 export * from './in/reporte';
 export * from './mongo/reporte';
 export * from './out/reporte';
+export * from './in/pedido-reporte';
+export * from './mongo/pedido-reporte';
+export * from './out/pedido-reporte';
 //# sourceMappingURL=index.d.ts.map

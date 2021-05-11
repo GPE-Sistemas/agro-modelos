@@ -17,3 +17,7 @@ __exportStar(require("./out/dispositivo"), exports);
 __exportStar(require("./in/reporte"), exports);
 __exportStar(require("./mongo/reporte"), exports);
 __exportStar(require("./out/reporte"), exports);
+//
+__exportStar(require("./in/pedido-reporte"), exports);
+__exportStar(require("./mongo/pedido-reporte"), exports);
+__exportStar(require("./out/pedido-reporte"), exports);
