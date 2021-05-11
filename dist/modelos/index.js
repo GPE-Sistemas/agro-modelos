@@ -17,3 +17,4 @@ __exportStar(require("./chirpstack"), exports);
 __exportStar(require("./oauth"), exports);
 __exportStar(require("./shared"), exports);
 __exportStar(require("./silobolsa"), exports);
+__exportStar(require("./correctoras"), exports);

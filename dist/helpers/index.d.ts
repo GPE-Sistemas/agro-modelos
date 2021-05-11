@@ -4,5 +4,6 @@ export * from './parsers/caravana';
 export * from './parsers/oauth';
 export * from './parsers/shared';
 export * from './parsers/silobolsa';
+export * from './parsers/correctora';
 export * from './helpers';
 //# sourceMappingURL=index.d.ts.map
