@@ -23,8 +23,8 @@ export const IDispositivoCorrectoraValidation = joi.object<IDispositivoCorrector
 export const IDispositivoCorrectoraSwagger = j2s(IDispositivoCorrectoraValidation).swagger;
 
 export interface IDispositivoCorrectora extends IDispositivo {
-    firmware: string;
-    fechaAsignacion: string;
-    numeroSerieCorrectora: string;
-    idUltimoReporte: string;
+    firmware?: string;
+    fechaAsignacion?: string;
+    numeroSerieCorrectora?: string;
+    idUltimoReporte?: string;
 }
