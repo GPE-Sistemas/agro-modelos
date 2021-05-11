@@ -1,5 +1,6 @@
 import { LeanDocument } from 'mongoose';
 import { IComandoDb, IComandoDTO, IDispositivoCaravanaDb, IDispositivoCaravanaDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
+import { getEstadoComando } from '../helpers';
 
 export class CaravanaParserService {
 
@@ -149,23 +150,6 @@ export class CaravanaParserService {
         }
     }
 
-    static getDescripcionAlerta(codigo: number): string {
-        const alertas: { [key: number]: string } = {
-            1: 'Animal fuera del establecimiento',
-            2: 'Animal fuera del corral',
-            33: 'GPS no lockeado',
-            70: 'Movimiento brusco',
-            71: 'Caida libre',
-            72: 'Sin movimiento',
-            73: 'Desplazamiento rápido',
-        };
-        let desc = alertas[codigo];
-        if (!desc) {
-            desc = 'Alerta no identificada';
-        }
-        return desc;
-    }
-
     static getNombreComando(puerto: number) {
         const comandos: { [key: number]: string } = {
             82: 'DataRate',
@@ -179,14 +163,4 @@ export class CaravanaParserService {
         }
     }
 
-}
-
-function getEstadoComando(ejecutado: boolean, error: boolean) {
-    if (ejecutado) {
-        return 'Ejecutado';
-    } else if (error) {
-        return 'Falló';
-    } else {
-        return 'Pendiente';
-    }
 }

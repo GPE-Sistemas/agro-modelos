@@ -1,5 +1,6 @@
 import { LeanDocument } from 'mongoose';
 import { IComandoDb, IComandoDTO, IDispositivoSilobolsaDb, IDispositivoSilobolsaDTO, IReporteSilobolsaDb, IReporteSilobolsaDTO } from '../../modelos';
+import { getEstadoComando } from '../helpers';
 
 export class SilobolsaParserService {
 
@@ -90,20 +91,6 @@ export class SilobolsaParserService {
 
     // //
 
-    static getDescripcionAlerta(codigo: number): string {
-        const alertas: { [key: number]: string } = {
-            1: 'BAT',
-            2: 'CO2',
-            3: 'HUM',
-            10: 'ACEL',
-        };
-        let desc = alertas[codigo];
-        if (!desc) {
-            desc = 'IND';
-        }
-        return desc;
-    }
-
     static getNombreComando(puerto: number) {
         const comandos: { [key: number]: string } = {
             1: 'Activacion Acel',
@@ -117,12 +104,3 @@ export class SilobolsaParserService {
 
 }
 
-function getEstadoComando(ejecutado: boolean, error: boolean) {
-    if (ejecutado) {
-        return 'Ejecutado';
-    } else if (error) {
-        return 'Falló';
-    } else {
-        return 'Pendiente';
-    }
-}

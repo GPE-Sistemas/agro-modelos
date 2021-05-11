@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deveuiValido = exports.compareClave = exports.hashClave = exports.httpRequest = exports.crearTokenChirpstack = exports.downlinkLabels = exports.ackLabels = exports.uplinkLabels = exports.filtroBusqueda = exports.getFiltroFromQuery = exports.validateSchema = void 0;
+exports.getEstadoComando = exports.deveuiValido = exports.compareClave = exports.hashClave = exports.httpRequest = exports.crearTokenChirpstack = exports.downlinkLabels = exports.ackLabels = exports.uplinkLabels = exports.filtroBusqueda = exports.getFiltroFromQuery = exports.validateSchema = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const got_1 = __importDefault(require("got"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
@@ -252,3 +252,15 @@ function deveuiValido(deveui) {
     return false;
 }
 exports.deveuiValido = deveuiValido;
+function getEstadoComando(ejecutado, error) {
+    if (ejecutado) {
+        return 'Ejecutado';
+    }
+    else if (error) {
+        return 'Falló';
+    }
+    else {
+        return 'Pendiente';
+    }
+}
+exports.getEstadoComando = getEstadoComando;

@@ -224,3 +224,13 @@ export function deveuiValido(deveui: string): boolean {
     }
     return false;
 }
+
+export function getEstadoComando(ejecutado: boolean, error: boolean) {
+    if (ejecutado) {
+        return 'Ejecutado';
+    } else if (error) {
+        return 'Falló';
+    } else {
+        return 'Pendiente';
+    }
+}

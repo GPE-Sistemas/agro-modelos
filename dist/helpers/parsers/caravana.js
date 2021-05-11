@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CaravanaParserService = void 0;
+const helpers_1 = require("../helpers");
 class CaravanaParserService {
     static reporte(dato) {
         const dto = {
@@ -61,7 +62,7 @@ class CaravanaParserService {
             comando: this.getNombreComando(dato.puerto),
             ejecutado: dato.ejecutado,
             error: dato.error,
-            estado: getEstadoComando(dato.ejecutado, dato.error),
+            estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,
@@ -146,22 +147,6 @@ class CaravanaParserService {
             }
         }
     }
-    static getDescripcionAlerta(codigo) {
-        const alertas = {
-            1: 'Animal fuera del establecimiento',
-            2: 'Animal fuera del corral',
-            33: 'GPS no lockeado',
-            70: 'Movimiento brusco',
-            71: 'Caida libre',
-            72: 'Sin movimiento',
-            73: 'Desplazamiento rápido',
-        };
-        let desc = alertas[codigo];
-        if (!desc) {
-            desc = 'Alerta no identificada';
-        }
-        return desc;
-    }
     static getNombreComando(puerto) {
         const comandos = {
             82: 'DataRate',
@@ -177,14 +162,3 @@ class CaravanaParserService {
     }
 }
 exports.CaravanaParserService = CaravanaParserService;
-function getEstadoComando(ejecutado, error) {
-    if (ejecutado) {
-        return 'Ejecutado';
-    }
-    else if (error) {
-        return 'Falló';
-    }
-    else {
-        return 'Pendiente';
-    }
-}

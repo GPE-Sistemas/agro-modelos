@@ -1,5 +1,6 @@
 import { LeanDocument } from 'mongoose';
-import { IDispositivoCorrectoraDb, IDispositivoCorrectoraDTO, IPedidoReporteDb, IPedidoReporteDTO, IReporteCorrectoraDb, IReporteCorrectoraDTO } from '../../modelos';
+import { IComandoDb, IComandoDTO, IDispositivoCorrectoraDb, IDispositivoCorrectoraDTO, IPedidoReporteDb, IPedidoReporteDTO, IReporteCorrectoraDb, IReporteCorrectoraDTO } from '../../modelos';
+import { getEstadoComando } from '../helpers';
 
 export class CorrectoraParserService {
 
@@ -70,6 +71,42 @@ export class CorrectoraParserService {
             dto.push(this.dispositivo(dato));
         }
         return dto;
+    }
+
+    static comando(dato: LeanDocument<IComandoDb>): IComandoDTO {
+        const dto: IComandoDTO = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            comando: this.getNombreComando(dato.puerto),
+            ejecutado: dato.ejecutado,
+            error: dato.error,
+            estado: getEstadoComando(dato.ejecutado, dato.error),
+            fCnt: dato.fCnt,
+            payload: dato.payload,
+            puerto: dato.puerto,
+            timestamp: dato.timestamp.toISOString(),
+            usuario: dato.usuario,
+        };
+        Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
+        return dto;
+    }
+    static comandos(datos: LeanDocument<IComandoDb>[]): IComandoDTO[] {
+        const dto: IComandoDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.comando(dato));
+        }
+        return dto;
+    }
+
+    static getNombreComando(puerto: number) {
+        const comandos: { [key: number]: string } = {
+            5: 'Solicitud Reporte',
+        };
+        if (comandos[puerto]) {
+            return comandos[puerto];
+        } else {
+            return `No Identificado, Puerto ${puerto}`;
+        }
     }
 
 }

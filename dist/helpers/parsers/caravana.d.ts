@@ -10,7 +10,6 @@ export declare class CaravanaParserService {
     static hexaAHoras(hexa: string): string[];
     static getBateria(cantReportesDiarios: number | undefined, mensajesEnviados: number): number | undefined;
     static getDuracion(cantReportesDiarios: number, mensajesEnviados: number): string | undefined;
-    static getDescripcionAlerta(codigo: number): string;
     static getNombreComando(puerto: number): string;
 }
 //# sourceMappingURL=caravana.d.ts.map

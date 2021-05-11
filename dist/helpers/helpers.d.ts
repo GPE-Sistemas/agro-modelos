@@ -34,4 +34,5 @@ export declare function httpRequest<T>(url: string, method: string, queryParams?
 export declare function hashClave(clave: string): Promise<string>;
 export declare function compareClave(clave: string, hash: string): Promise<boolean>;
 export declare function deveuiValido(deveui: string): boolean;
+export declare function getEstadoComando(ejecutado: boolean, error: boolean): "Ejecutado" | "Falló" | "Pendiente";
 //# sourceMappingURL=helpers.d.ts.map

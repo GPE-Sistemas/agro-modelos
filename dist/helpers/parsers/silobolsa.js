@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SilobolsaParserService = void 0;
+const helpers_1 = require("../helpers");
 class SilobolsaParserService {
     static reporte(dato) {
         const dto = {
@@ -73,7 +74,7 @@ class SilobolsaParserService {
             usuario: dato.usuario,
             // Calculado
             comando: this.getNombreComando(dato.puerto),
-            estado: getEstadoComando(dato.ejecutado, dato.error),
+            estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
         };
         Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
         return dto;
@@ -86,19 +87,6 @@ class SilobolsaParserService {
         return dto;
     }
     // //
-    static getDescripcionAlerta(codigo) {
-        const alertas = {
-            1: 'BAT',
-            2: 'CO2',
-            3: 'HUM',
-            10: 'ACEL',
-        };
-        let desc = alertas[codigo];
-        if (!desc) {
-            desc = 'IND';
-        }
-        return desc;
-    }
     static getNombreComando(puerto) {
         const comandos = {
             1: 'Activacion Acel',
@@ -112,14 +100,3 @@ class SilobolsaParserService {
     }
 }
 exports.SilobolsaParserService = SilobolsaParserService;
-function getEstadoComando(ejecutado, error) {
-    if (ejecutado) {
-        return 'Ejecutado';
-    }
-    else if (error) {
-        return 'Falló';
-    }
-    else {
-        return 'Pendiente';
-    }
-}

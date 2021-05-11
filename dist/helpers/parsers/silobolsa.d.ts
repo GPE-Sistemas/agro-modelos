@@ -7,7 +7,6 @@ export declare class SilobolsaParserService {
     static dispositivos(datos: LeanDocument<IDispositivoSilobolsaDb>[]): IDispositivoSilobolsaDTO[];
     static comando(dato: LeanDocument<IComandoDb>): IComandoDTO;
     static comandos(datos: LeanDocument<IComandoDb>[]): IComandoDTO[];
-    static getDescripcionAlerta(codigo: number): string;
     static getNombreComando(puerto: number): string;
 }
 //# sourceMappingURL=silobolsa.d.ts.map
