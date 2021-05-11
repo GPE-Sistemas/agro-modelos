@@ -2,6 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CorrectoraParserService = void 0;
 class CorrectoraParserService {
+    static pedidoReporte(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            numeroSerie: dato.numeroSerie,
+            timestamp: dato.timestamp.toISOString(),
+            aplicado: dato.aplicado,
+            fechaCreacion: dato.fechaCreacion.toISOString(),
+        };
+        return dto;
+    }
+    static pedidosReportes(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.pedidoReporte(dato));
+        }
+        return dto;
+    }
     static reporte(dato) {
         const dto = {
             _id: dato._id.toHexString(),

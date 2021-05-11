@@ -1,7 +1,25 @@
 import { LeanDocument } from 'mongoose';
-import { IDispositivoCorrectoraDb, IDispositivoCorrectoraDTO, IReporteCorrectoraDb, IReporteCorrectoraDTO } from '../../modelos';
+import { IDispositivoCorrectoraDb, IDispositivoCorrectoraDTO, IPedidoReporteDb, IPedidoReporteDTO, IReporteCorrectoraDb, IReporteCorrectoraDTO } from '../../modelos';
 
 export class CorrectoraParserService {
+
+    static pedidoReporte(dato: LeanDocument<IPedidoReporteDb>): IPedidoReporteDTO {
+        const dto: IPedidoReporteDTO = {
+            _id: dato._id.toHexString(),
+            numeroSerie: dato.numeroSerie,
+            timestamp: dato.timestamp.toISOString(),
+            aplicado: dato.aplicado,
+            fechaCreacion: dato.fechaCreacion.toISOString(),
+        };
+        return dto;
+    }
+    static pedidosReportes(datos: LeanDocument<IPedidoReporteDb>[]): IPedidoReporteDTO[] {
+        const dto: IPedidoReporteDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.pedidoReporte(dato));
+        }
+        return dto;
+    }
 
     static reporte(dato: LeanDocument<IReporteCorrectoraDb>): IReporteCorrectoraDTO {
         const dto: IReporteCorrectoraDTO = {
