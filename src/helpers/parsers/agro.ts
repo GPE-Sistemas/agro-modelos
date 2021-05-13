@@ -1,7 +1,63 @@
 import { LeanDocument } from 'mongoose';
-import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 
 export class AgroParserService {
+
+    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO {
+        const dto: ICorralDTO = {
+            _id: dato._id.toHexString(),
+            color: dato.color,
+            coordenadas: dato.coordenadas,
+            nombre: dato.nombre,
+            idEstablecimiento: dato.idEstablecimiento,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
+        return dto;
+    }
+    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[] {
+        const dto: ICorralDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.corral(dato));
+        }
+        return dto;
+    }
+    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO {
+        const dto: IGrupoDTO = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            idEstablecimiento: dato.idEstablecimiento,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
+        return dto;
+    }
+    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[] {
+        const dto: IGrupoDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.grupo(dato));
+        }
+        return dto;
+    }
+    static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO {
+        const dto: IEstablecimientoDTO = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            coordenadas: dato.coordenadas?.map(c1 => c1?.map(c2 => c2)),
+        };
+        return dto;
+    }
+    static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[] {
+        const dto: IEstablecimientoDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.establecimiento(dato));
+        }
+        return dto;
+    }
+
+    // Animales
 
     static especie(dato: LeanDocument<IEspecieDb>): IEspecieDTO {
         const dto: IEspecieDTO = {
@@ -61,7 +117,7 @@ export class AgroParserService {
     }
 
     static animal(dato: LeanDocument<IAnimalDb>, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[],
-        eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[], 
+        eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[],
         madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO {
         const dto: IAnimalDTO = {
             _id: dato._id?.toHexString(),
@@ -149,27 +205,6 @@ export class AgroParserService {
         return dto;
     }
 
-    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO {
-        const dto: ICorralDTO = {
-            _id: dato._id.toHexString(),
-            color: dato.color,
-            coordenadas: dato.coordenadas,
-            nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
-            //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[] {
-        const dto: ICorralDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.corral(dato));
-        }
-        return dto;
-    }
-
     static loteAnimal(dato: LeanDocument<ILoteAnimalDb>): ILoteAnimalDTO {
         const dto: ILoteAnimalDTO = {
             _id: dato._id.toHexString(),
@@ -185,41 +220,6 @@ export class AgroParserService {
         const dto: ILoteAnimalDTO[] = [];
         for (const dato of datos) {
             dto.push(this.loteAnimal(dato));
-        }
-        return dto;
-    }
-
-    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO {
-        const dto: IGrupoDTO = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
-            //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[] {
-        const dto: IGrupoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.grupo(dato));
-        }
-        return dto;
-    }
-
-    static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO {
-        const dto: IEstablecimientoDTO = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            coordenadas: dato.coordenadas?.map(c1 => c1?.map(c2 => c2)),
-        };
-        return dto;
-    }
-    static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[] {
-        const dto: IEstablecimientoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.establecimiento(dato));
         }
         return dto;
     }
@@ -397,7 +397,54 @@ export class AgroParserService {
         return dto;
     }
 
-    //
+    // Silobolsa
+
+    static silobolsa(dato: LeanDocument<ISilobolsaDb>, dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO {
+        const dto: ISilobolsaDTO = {
+            _id: dato._id.toHexString(),
+            cosecha: dato.cosecha,
+            deveuiDispositivos: dato.deveuiDispositivos,
+            especie: dato.especie,
+            fechaConfeccion: dato.fechaConfeccion.toISOString(),
+            idEstablecimiento: dato.idEstablecimiento,
+            idLote: dato.idLote,
+            metros: dato.metros,
+            numero: dato.numero,
+            producto: dato.producto,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? this.loteSilobolsa(dato.lote) : undefined,
+            dispositivos,
+        };
+        return dto;
+    }
+    static silobolsas(datos: LeanDocument<ISilobolsaDb>[]): ISilobolsaDTO[] {
+        const dto: ISilobolsaDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.silobolsa(dato));
+        }
+        return dto;
+    }
+
+    static loteSilobolsa(dato: LeanDocument<ILoteSilobolsaDb>): ILoteSilobolsaDTO {
+        const dto: ILoteSilobolsaDTO = {
+            _id: dato._id.toHexString(),
+            idEstablecimiento: dato.idEstablecimiento,
+            nombre: dato.nombre,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        return dto;
+    }
+    static loteSilobolsas(datos: LeanDocument<ILoteSilobolsaDb>[]): ILoteSilobolsaDTO[] {
+        const dto: ILoteSilobolsaDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.loteSilobolsa(dato));
+        }
+        return dto;
+    }
+
+    // Otras funciones
 
     static horasAHexa(horas: string[]): string {
         const horasArr = Array.from(new Array(144), () => '0');

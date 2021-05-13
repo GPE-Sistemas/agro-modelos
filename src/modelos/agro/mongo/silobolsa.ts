@@ -14,7 +14,6 @@ export interface ISilobolsaDb extends Document {
     producto: string;
     fechaConfeccion: Date;
     //
-    // dispositivos?: IDispositivoDb[];
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteSilobolsaDb;
 }
@@ -22,7 +21,7 @@ export interface ISilobolsaDb extends Document {
 export const SSilobolsa = new Schema<ISilobolsaDb>({
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos', required: true },
     idLote: { type: Types.ObjectId, ref: 'lotes-silobolsas', required: true },
-    deveuiDispositivos: [{ type: String }],
+    deveuiDispositivos: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
     metros: { type: Number },
     especie: { type: String, required: true },
@@ -44,3 +43,10 @@ SSilobolsa.virtual('lote', {
     localField: 'idLote',
     ref: 'lotes-silobolsas',
 });
+
+// SSilobolsa.virtual('dispositivos', {
+//     foreignField: 'deveui',
+//     justOne: false,
+//     localField: 'deveuiDispositivos',
+//     ref: 'dispositivos',
+// });
