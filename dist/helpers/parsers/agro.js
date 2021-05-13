@@ -56,6 +56,38 @@ class AgroParserService {
         }
         return dto;
     }
+    static alerta(dato) {
+        var _a, _b;
+        const dto = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            fecha: dato.fecha.toISOString(),
+            mensaje: dato.mensaje,
+            aplicacion: dato.aplicacion,
+            archivada: dato.archivada,
+            comentarios: (_a = dato.comentarios) === null || _a === void 0 ? void 0 : _a.map(c => {
+                return { fecha: c.fecha.toISOString(), usuario: c.usuario, comentario: c.comentario };
+            }),
+            deviceName: dato.deviceName,
+            estadoActual: dato.estadoActual,
+            estados: (_b = dato.estados) === null || _b === void 0 ? void 0 : _b.map(e => {
+                return { fecha: e.fecha.toISOString(), usuario: e.usuario, estado: e.estado };
+            }),
+            idAsignado: dato.idAsignado,
+            mensajeCorto: dato.mensajeCorto,
+            nivel: dato.nivel,
+            nombreAsignado: dato.nombreAsignado,
+            valor: dato.valor
+        };
+        return dto;
+    }
+    static alertas(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.alerta(dato));
+        }
+        return dto;
+    }
     // Animales
     static especie(dato) {
         var _a;

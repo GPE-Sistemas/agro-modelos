@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 
 export class AgroParserService {
 
@@ -56,6 +56,38 @@ export class AgroParserService {
         }
         return dto;
     }
+    static alerta(dato: LeanDocument<IAlertaDb>): IAlertaDTO {
+        const dto: IAlertaDTO = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            fecha: dato.fecha.toISOString(),
+            mensaje: dato.mensaje,
+            aplicacion: dato.aplicacion,
+            archivada: dato.archivada,
+            comentarios: dato.comentarios?.map( c => {
+                return { fecha: c.fecha.toISOString(), usuario: c.usuario, comentario: c.comentario};
+            }),
+            deviceName: dato.deviceName,
+            estadoActual: dato.estadoActual,
+            estados: dato.estados?.map(e => {
+                return { fecha: e.fecha.toISOString(), usuario: e.usuario, estado: e.estado };
+            }),
+            idAsignado: dato.idAsignado,
+            mensajeCorto: dato.mensajeCorto,
+            nivel: dato.nivel,
+            nombreAsignado: dato.nombreAsignado,
+            valor: dato.valor
+        };
+        return dto;
+    }
+    static alertas(datos: LeanDocument<IAlertaDb>[]): IAlertaDTO[] {
+        const dto: IAlertaDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.alerta(dato));
+        }
+        return dto;
+    }
+
 
     // Animales
 
