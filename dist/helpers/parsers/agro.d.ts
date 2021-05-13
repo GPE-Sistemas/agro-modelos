@@ -1,6 +1,12 @@
 import { LeanDocument } from 'mongoose';
-import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 export declare class AgroParserService {
+    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
+    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
+    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
+    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
+    static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO;
+    static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[];
     static especie(dato: LeanDocument<IEspecieDb>): IEspecieDTO;
     static especies(datos: LeanDocument<IEspecieDb>[]): IEspecieDTO[];
     static raza(dato: LeanDocument<IRazaDb>): IRazaDTO;
@@ -13,14 +19,8 @@ export declare class AgroParserService {
     static tiposBajas(datos: LeanDocument<ITipoBajaDb>[]): ITipoBajaDTO[];
     static baja(dato: LeanDocument<IBajaDb>): IBajaDTO;
     static bajas(datos: LeanDocument<IBajaDb>[]): IBajaDTO[];
-    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
-    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
     static loteAnimal(dato: LeanDocument<ILoteAnimalDb>): ILoteAnimalDTO;
     static lotesAnimales(datos: LeanDocument<ILoteAnimalDb>[]): ILoteAnimalDTO[];
-    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
-    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
-    static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO;
-    static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[];
     static diagnostico(dato: LeanDocument<IDiagnosticoDb>): IDiagnosticoDTO;
     static diagnosticos(datos: LeanDocument<IDiagnosticoDb>[]): IDiagnosticoDTO[];
     static subcategoria(dato: LeanDocument<ISubcategoriaDb>): ISubcategoriaDTO;
@@ -39,6 +39,10 @@ export declare class AgroParserService {
     static pesajes(datos: LeanDocument<IPesajeDb>[]): IPesajeDTO[];
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
     static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
+    static silobolsa(dato: LeanDocument<ISilobolsaDb>, dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO;
+    static silobolsas(datos: LeanDocument<ISilobolsaDb>[]): ISilobolsaDTO[];
+    static loteSilobolsa(dato: LeanDocument<ILoteSilobolsaDb>): ILoteSilobolsaDTO;
+    static loteSilobolsas(datos: LeanDocument<ILoteSilobolsaDb>[]): ILoteSilobolsaDTO[];
     static horasAHexa(horas: string[]): string;
     static hexaAHoras(hexa: string): string[];
     static getBateria(cantReportesDiarios: number, mensajesEnviados: number): number | undefined;

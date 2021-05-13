@@ -2,6 +2,61 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgroParserService = void 0;
 class AgroParserService {
+    static corral(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            color: dato.color,
+            coordenadas: dato.coordenadas,
+            nombre: dato.nombre,
+            idEstablecimiento: dato.idEstablecimiento,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static corrales(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.corral(dato));
+        }
+        return dto;
+    }
+    static grupo(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            idEstablecimiento: dato.idEstablecimiento,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static grupos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.grupo(dato));
+        }
+        return dto;
+    }
+    static establecimiento(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            coordenadas: (_a = dato.coordenadas) === null || _a === void 0 ? void 0 : _a.map(c1 => c1 === null || c1 === void 0 ? void 0 : c1.map(c2 => c2)),
+        };
+        return dto;
+    }
+    static establecimientos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.establecimiento(dato));
+        }
+        return dto;
+    }
+    // Animales
     static especie(dato) {
         var _a;
         const dto = {
@@ -144,26 +199,6 @@ class AgroParserService {
         }
         return dto;
     }
-    static corral(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            color: dato.color,
-            coordenadas: dato.coordenadas,
-            nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
-            //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
-        return dto;
-    }
-    static corrales(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.corral(dato));
-        }
-        return dto;
-    }
     static loteAnimal(dato) {
         const dto = {
             _id: dato._id.toHexString(),
@@ -179,40 +214,6 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(this.loteAnimal(dato));
-        }
-        return dto;
-    }
-    static grupo(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
-            //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
-        return dto;
-    }
-    static grupos(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.grupo(dato));
-        }
-        return dto;
-    }
-    static establecimiento(dato) {
-        var _a;
-        const dto = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            coordenadas: (_a = dato.coordenadas) === null || _a === void 0 ? void 0 : _a.map(c1 => c1 === null || c1 === void 0 ? void 0 : c1.map(c2 => c2)),
-        };
-        return dto;
-    }
-    static establecimientos(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.establecimiento(dato));
         }
         return dto;
     }
@@ -380,7 +381,51 @@ class AgroParserService {
         }
         return dto;
     }
-    //
+    // Silobolsa
+    static silobolsa(dato, dispositivos) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            cosecha: dato.cosecha,
+            deveuiDispositivos: dato.deveuiDispositivos,
+            especie: dato.especie,
+            fechaConfeccion: dato.fechaConfeccion.toISOString(),
+            idEstablecimiento: dato.idEstablecimiento,
+            idLote: dato.idLote,
+            metros: dato.metros,
+            numero: dato.numero,
+            producto: dato.producto,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? this.loteSilobolsa(dato.lote) : undefined,
+            dispositivos,
+        };
+        return dto;
+    }
+    static silobolsas(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.silobolsa(dato));
+        }
+        return dto;
+    }
+    static loteSilobolsa(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            idEstablecimiento: dato.idEstablecimiento,
+            nombre: dato.nombre,
+            //
+            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+        };
+        return dto;
+    }
+    static loteSilobolsas(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.loteSilobolsa(dato));
+        }
+        return dto;
+    }
+    // Otras funciones
     static horasAHexa(horas) {
         const horasArr = Array.from(new Array(144), () => '0');
         for (const hora of horas) {
