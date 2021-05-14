@@ -2,6 +2,7 @@ export interface IAck {
     aplicacion: string;
     idCliente: string;
     deveui: string;
+    deviceName: string;
     acknowledged: boolean;
     fCnt: number;
     red: string;
