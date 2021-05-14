@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CaravanaParserService = void 0;
-const helpers_1 = require("../helpers");
 class CaravanaParserService {
     static reporte(dato) {
         const dto = {
@@ -52,30 +51,6 @@ class CaravanaParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(this.dispositivo(dato));
-        }
-        return dto;
-    }
-    static comando(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            comando: this.getNombreComando(dato.puerto),
-            ejecutado: dato.ejecutado,
-            error: dato.error,
-            estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
-            fCnt: dato.fCnt,
-            payload: dato.payload,
-            puerto: dato.puerto,
-            timestamp: dato.timestamp.toISOString(),
-            usuario: dato.usuario,
-        };
-        Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
-        return dto;
-    }
-    static comandos(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(this.comando(dato));
         }
         return dto;
     }
@@ -145,19 +120,6 @@ class CaravanaParserService {
             else {
                 return;
             }
-        }
-    }
-    static getNombreComando(puerto) {
-        const comandos = {
-            82: 'DataRate',
-            80: 'Acelerómetro',
-            68: 'Frecuencia Reporte'
-        };
-        if (comandos[puerto]) {
-            return comandos[puerto];
-        }
-        else {
-            return `No Identificado, Puerto ${puerto}`;
         }
     }
 }

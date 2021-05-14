@@ -11,16 +11,13 @@ exports.IComandoDTOValidation = joi_1.default.object({
     deveui: joi_1.default.string(),
     payload: joi_1.default.string(),
     puerto: joi_1.default.number(),
-    ejecutado: joi_1.default.boolean(),
-    error: joi_1.default.boolean(),
-    timestamp: joi_1.default.date(),
+    fecha: joi_1.default.date(),
     usuario: joi_1.default.object({
         _id: joi_1.default.string(),
         email: joi_1.default.string()
     }),
     fCnt: joi_1.default.string(),
-    //
-    estado: joi_1.default.string(),
-    comando: joi_1.default.string()
+    descripcion: joi_1.default.string(),
+    aplicacion: joi_1.default.string(),
 });
 exports.IComandoDTOSwagger = joi_to_swagger_1.default(exports.IComandoDTOValidation).swagger;

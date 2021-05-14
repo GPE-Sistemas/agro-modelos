@@ -7,12 +7,14 @@ export const IComandoValidation = joi.object<IComando>({
     puerto: joi.number(),
     ejecutado: joi.boolean(),
     error: joi.boolean(),
-    timestamp: joi.date(),
+    fecha: joi.date(),
     usuario: joi.object({
         _id: joi.string(),
         email: joi.string()
     }),
     fCnt: joi.string(),
+    descripcion: joi.string(),
+    aplicacion: joi.string(),
 });
 
 export const IComandoSwagger = j2s(IComandoValidation).swagger;
@@ -23,10 +25,12 @@ export interface IComando {
     puerto: number;
     ejecutado: boolean;
     error: boolean;
-    timestamp: string;
+    fecha: string;
     usuario: {
         _id: string,
         email: string,
     };
     fCnt: string;
+    descripcion: string;
+    aplicacion: string;
 }

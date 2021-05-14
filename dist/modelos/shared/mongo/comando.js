@@ -9,6 +9,8 @@ exports.SComando = new mongoose_1.Schema({
     fCnt: { type: String },
     payload: { type: String },
     puerto: { type: Number },
-    timestamp: { type: String },
+    fecha: { type: String },
     usuario: { type: Object },
+    descripcion: { type: String },
+    aplicacion: { type: String },
 });

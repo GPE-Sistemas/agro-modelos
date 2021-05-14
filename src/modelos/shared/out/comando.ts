@@ -6,18 +6,14 @@ export const IComandoDTOValidation = joi.object<IComandoDTO>({
     deveui: joi.string(),
     payload: joi.string(),
     puerto: joi.number(),
-    ejecutado: joi.boolean(),
-    error: joi.boolean(),
-    timestamp: joi.date(),
+    fecha: joi.date(),
     usuario: joi.object({
         _id: joi.string(),
         email: joi.string()
     }),
     fCnt: joi.string(),
-    //
-    estado: joi.string(),
-    comando: joi.string()
-
+    descripcion: joi.string(),
+    aplicacion: joi.string(),
 });
 
 export const IComandoDTOSwagger = j2s(IComandoDTOValidation).swagger;
@@ -27,15 +23,14 @@ export interface IComandoDTO {
     deveui: string;
     payload: string;
     puerto: number;
-    ejecutado: boolean;
-    error: boolean;
-    timestamp: string;
+    fecha: string;
     usuario: {
         _id: string,
         email: string,
     };
     fCnt: string;
+    descripcion: string;
+    aplicacion: string;
     //
     estado: string;
-    comando: string;
 }

@@ -1,6 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IComandoDb, IComandoDTO, IDispositivoCaravanaDb, IDispositivoCaravanaDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
-import { getEstadoComando } from '../helpers';
+import { IDispositivoCaravanaDb, IDispositivoCaravanaDTO, IReporteCaravanaDb, IReporteCaravanaDTO } from '../../modelos';
 
 export class CaravanaParserService {
 
@@ -57,30 +56,6 @@ export class CaravanaParserService {
         return dto;
     }
 
-    static comando(dato: LeanDocument<IComandoDb>): IComandoDTO {
-        const dto: IComandoDTO = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            comando: this.getNombreComando(dato.puerto),
-            ejecutado: dato.ejecutado,
-            error: dato.error,
-            estado: getEstadoComando(dato.ejecutado, dato.error),
-            fCnt: dato.fCnt,
-            payload: dato.payload,
-            puerto: dato.puerto,
-            timestamp: dato.timestamp.toISOString(),
-            usuario: dato.usuario,
-        };
-        Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static comandos(datos: LeanDocument<IComandoDb>[]): IComandoDTO[] {
-        const dto: IComandoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.comando(dato));
-        }
-        return dto;
-    }
 
     // //
 
@@ -147,19 +122,6 @@ export class CaravanaParserService {
             } else {
                 return;
             }
-        }
-    }
-
-    static getNombreComando(puerto: number) {
-        const comandos: { [key: number]: string } = {
-            82: 'DataRate',
-            80: 'Acelerómetro',
-            68: 'Frecuencia Reporte'
-        };
-        if (comandos[puerto]) {
-            return comandos[puerto];
-        } else {
-            return `No Identificado, Puerto ${puerto}`;
         }
     }
 

@@ -7,11 +7,13 @@ export interface IComandoDb extends Document {
     fCnt: string;
     payload: string;
     puerto: number;
-    timestamp: Date;
+    fecha: Date;
     usuario: {
         _id: string;
         email: string;
     };
+    descripcion: string;
+    aplicacion: string;
 }
 export declare const SComando: Schema<IComandoDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=comando.d.ts.map

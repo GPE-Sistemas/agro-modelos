@@ -1,6 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IComandoDb, IComandoDTO, IDispositivoSilobolsaDb, IDispositivoSilobolsaDTO, IReporteSilobolsaDb, IReporteSilobolsaDTO } from '../../modelos';
-import { getEstadoComando } from '../helpers';
+import { IDispositivoSilobolsaDb, IDispositivoSilobolsaDTO, IReporteSilobolsaDb, IReporteSilobolsaDTO } from '../../modelos';
 
 export class SilobolsaParserService {
 
@@ -62,45 +61,4 @@ export class SilobolsaParserService {
         }
         return dto;
     }
-
-    static comando(dato: LeanDocument<IComandoDb>): IComandoDTO {
-        const dto: IComandoDTO = {
-            _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            ejecutado: dato.ejecutado,
-            error: dato.error,
-            fCnt: dato.fCnt,
-            payload: dato.payload,
-            puerto: dato.puerto,
-            timestamp: dato.timestamp.toISOString(),
-            usuario: dato.usuario,
-            // Calculado
-            comando: this.getNombreComando(dato.puerto),
-            estado: getEstadoComando(dato.ejecutado, dato.error),
-        };
-        Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
-        return dto;
-    }
-    static comandos(datos: LeanDocument<IComandoDb>[]): IComandoDTO[] {
-        const dto: IComandoDTO[] = [];
-        for (const dato of datos) {
-            dto.push(this.comando(dato));
-        }
-        return dto;
-    }
-
-    // //
-
-    static getNombreComando(puerto: number) {
-        const comandos: { [key: number]: string } = {
-            1: 'Activacion Acel',
-        };
-        if (comandos[puerto]) {
-            return comandos[puerto];
-        } else {
-            return `No Identificado, Puerto ${puerto}`;
-        }
-    }
-
 }
-

@@ -7,11 +7,13 @@ export interface IComando {
     puerto: number;
     ejecutado: boolean;
     error: boolean;
-    timestamp: string;
+    fecha: string;
     usuario: {
         _id: string;
         email: string;
     };
     fCnt: string;
+    descripcion: string;
+    aplicacion: string;
 }
 //# sourceMappingURL=comando.d.ts.map

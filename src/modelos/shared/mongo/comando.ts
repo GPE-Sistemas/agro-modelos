@@ -8,11 +8,13 @@ export interface IComandoDb extends Document {
     fCnt: string;
     payload: string;
     puerto: number;
-    timestamp: Date;
+    fecha: Date;
     usuario: {
         _id: string,
         email: string,
     };
+    descripcion: string;
+    aplicacion: string;
 }
 
 export const SComando = new Schema<IComandoDb>({
@@ -22,6 +24,8 @@ export const SComando = new Schema<IComandoDb>({
     fCnt: { type: String },
     payload: { type: String },
     puerto: { type: Number },
-    timestamp: { type: String },
+    fecha: { type: String },
     usuario: { type: Object },
+    descripcion: { type: String },
+    aplicacion: { type: String },
 });

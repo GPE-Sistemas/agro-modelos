@@ -6,15 +6,14 @@ export interface IComandoDTO {
     deveui: string;
     payload: string;
     puerto: number;
-    ejecutado: boolean;
-    error: boolean;
-    timestamp: string;
+    fecha: string;
     usuario: {
         _id: string;
         email: string;
     };
     fCnt: string;
+    descripcion: string;
+    aplicacion: string;
     estado: string;
-    comando: string;
 }
 //# sourceMappingURL=comando.d.ts.map

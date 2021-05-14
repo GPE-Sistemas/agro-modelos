@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgroParserService = void 0;
+const helpers_1 = require("../helpers");
 class AgroParserService {
     static corral(dato) {
         const dto = {
@@ -130,6 +131,30 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(this.logDispositivo(dato));
+        }
+        return dto;
+    }
+    static comando(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            fCnt: dato.fCnt,
+            payload: dato.payload,
+            puerto: dato.puerto,
+            fecha: dato.fecha.toISOString(),
+            usuario: dato.usuario,
+            aplicacion: dato.aplicacion,
+            descripcion: dato.deveui,
+            // Calculado
+            estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
+        };
+        Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
+        return dto;
+    }
+    static comandos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.comando(dato));
         }
         return dto;
     }
