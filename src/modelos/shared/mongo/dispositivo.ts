@@ -12,6 +12,8 @@ export interface IDispositivoDb extends Document {
     fechaUltimoUplink: Date;
     metadatos: IMetadatos[];
     red: string;
+    //
+    tipo?: string;
 }
 
 export const SDispositivo = new Schema<IDispositivoDb>({
@@ -23,4 +25,6 @@ export const SDispositivo = new Schema<IDispositivoDb>({
     fechaUltimoUplink: { type: Date },
     metadatos: { type: Array },
     red: { type: String, required: true },
+    //
+    tipo: { type: String },
 });

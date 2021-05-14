@@ -12,6 +12,8 @@ export const IDispositivoDTOValidation = joi.object<IDispositivoDTO>({
     fechaUltimoUplink: joi.date(),
     metadatos: joi.array().items(IMetadatosValidation),
     red: joi.string(),
+    //
+    tipo: joi.string(),
 });
 
 export const IDispositivoDTOSwagger = j2s(IDispositivoDTOValidation).swagger;
@@ -27,4 +29,6 @@ export interface IDispositivoDTO {
     fechaUltimoUplink: string;
     metadatos: IMetadatos[];
     red: string;
+    //
+    tipo?: string;
 }

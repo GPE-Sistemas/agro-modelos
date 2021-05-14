@@ -10,6 +10,7 @@ export interface IDispositivoDb extends Document {
     fechaUltimoUplink: Date;
     metadatos: IMetadatos[];
     red: string;
+    tipo?: string;
 }
 export declare const SDispositivo: Schema<IDispositivoDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

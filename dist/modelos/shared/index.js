@@ -18,9 +18,9 @@ __exportStar(require("./coordenadas"), exports);
 __exportStar(require("./filtro"), exports);
 __exportStar(require("./socketMessage"), exports);
 //
-// export * from './in/dispositivo';
-// export * from './mongo/dispositivo';
-// export * from './out/dispositivo';
+__exportStar(require("./in/dispositivo"), exports);
+__exportStar(require("./mongo/dispositivo"), exports);
+__exportStar(require("./out/dispositivo"), exports);
 //
 __exportStar(require("./in/alerta"), exports);
 __exportStar(require("./mongo/alerta"), exports);

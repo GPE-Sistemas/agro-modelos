@@ -12,5 +12,6 @@ export interface IDispositivoDTO {
     fechaUltimoUplink: string;
     metadatos: IMetadatos[];
     red: string;
+    tipo?: string;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

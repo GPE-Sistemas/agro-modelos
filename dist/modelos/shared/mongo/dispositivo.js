@@ -11,4 +11,6 @@ exports.SDispositivo = new mongoose_1.Schema({
     fechaUltimoUplink: { type: Date },
     metadatos: { type: Array },
     red: { type: String, required: true },
+    //
+    tipo: { type: String },
 });
