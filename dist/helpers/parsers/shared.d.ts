@@ -1,5 +1,3 @@
-import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, ILogDispositivoDb, ILogDispositivoDTO } from '../../modelos';
 export declare class SharedParserService {
     static estado(dato: {
         fecha: Date;
@@ -37,9 +35,5 @@ export declare class SharedParserService {
         usuario: string;
         comentario: string;
     }[];
-    static alerta(dato: LeanDocument<IAlertaDb>): IAlertaDTO;
-    static alertas(datos: LeanDocument<IAlertaDb>[]): IAlertaDTO[];
-    static logDispositivo(dato: LeanDocument<ILogDispositivoDb>): ILogDispositivoDTO;
-    static logsDispositivos(datos: LeanDocument<ILogDispositivoDb>[]): ILogDispositivoDTO[];
 }
 //# sourceMappingURL=shared.d.ts.map

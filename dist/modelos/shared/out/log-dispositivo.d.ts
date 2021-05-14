@@ -9,5 +9,8 @@ export interface ILogDispositivoDTO {
     payload: string;
     evento: string;
     contenido: string;
+    fCnt: number;
+    deviceName: string;
+    aplicacion: string;
 }
 //# sourceMappingURL=log-dispositivo.d.ts.map

@@ -8,6 +8,9 @@ export const ILogDispositivoValidation = joi.object<ILogDispositivo>({
     payload: joi.string(),
     evento: joi.string(),
     contenido: joi.string(),
+    fCnt: joi.number(),
+    deviceName: joi.string(),
+    aplicacion: joi.string(),
 });
 
 export const ILogDispositivoSwagger = j2s(ILogDispositivoValidation).swagger;
@@ -19,4 +22,7 @@ export interface ILogDispositivo {
     payload: string;
     evento: string;
     contenido: string;
+    fCnt: number;
+    deviceName: string;
+    aplicacion: string;
 }

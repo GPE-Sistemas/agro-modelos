@@ -13,5 +13,8 @@ exports.ILogDispositivoValidation = joi_1.default.object({
     payload: joi_1.default.string(),
     evento: joi_1.default.string(),
     contenido: joi_1.default.string(),
+    fCnt: joi_1.default.number(),
+    deviceName: joi_1.default.string(),
+    aplicacion: joi_1.default.string(),
 });
 exports.ILogDispositivoSwagger = joi_to_swagger_1.default(exports.ILogDispositivoValidation).swagger;

@@ -9,4 +9,7 @@ exports.SLog = new mongoose_1.Schema({
     payload: { type: String },
     evento: { type: String },
     contenido: { type: String },
+    fCnt: { type: Number },
+    deviceName: { type: String },
+    aplicacion: { type: String },
 });

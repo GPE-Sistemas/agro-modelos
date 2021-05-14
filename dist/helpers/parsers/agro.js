@@ -110,6 +110,29 @@ class AgroParserService {
         }
         return dto;
     }
+    static logDispositivo(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            contenido: dato.contenido,
+            deveui: dato.deveui,
+            evento: dato.evento,
+            fecha: dato.fecha.toISOString(),
+            payload: dato.payload,
+            puerto: dato.puerto,
+            aplicacion: dato.aplicacion,
+            deviceName: dato.deviceName,
+            fCnt: dato.fCnt
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static logsDispositivos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.logDispositivo(dato));
+        }
+        return dto;
+    }
     // Animales
     static especie(dato) {
         var _a;

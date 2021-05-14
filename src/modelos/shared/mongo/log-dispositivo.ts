@@ -8,6 +8,9 @@ export interface ILogDispositivoDb extends Document {
     payload: string;
     evento: string;
     contenido: string;
+    fCnt: number;
+    deviceName: string;
+    aplicacion: string;
 }
 
 export const SLog = new Schema<ILogDispositivoDb>({
@@ -17,4 +20,7 @@ export const SLog = new Schema<ILogDispositivoDb>({
     payload: { type: String },
     evento: { type: String },
     contenido: { type: String },
+    fCnt: { type: Number },
+    deviceName: { type: String },
+    aplicacion: { type: String },
 });
