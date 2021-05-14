@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 
 export class AgroParserService {
 
@@ -84,6 +84,28 @@ export class AgroParserService {
         const dto: IAlertaDTO[] = [];
         for (const dato of datos) {
             dto.push(this.alerta(dato));
+        }
+        return dto;
+    }
+    static dispositivo(dato: LeanDocument<IDispositivoDb>): IDispositivoDTO {
+        const dto: IDispositivoDTO = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            adr: dato.adr,
+            dr: dato.dr,
+            fCnt: dato.fCnt,
+            fechaUltimoUplink: dato.fechaUltimoUplink.toISOString(),
+            metadatos: dato.metadatos,
+            red: dato.red,
+            deviceName: dato.deviceName,
+            tipo: dato.tipo
+        };
+        return dto;
+    }
+    static dispositivos(datos: LeanDocument<IDispositivoDb>[]): IDispositivoDTO[] {
+        const dto: IDispositivoDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.dispositivo(dato));
         }
         return dto;
     }

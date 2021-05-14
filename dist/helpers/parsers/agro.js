@@ -88,6 +88,28 @@ class AgroParserService {
         }
         return dto;
     }
+    static dispositivo(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            deveui: dato.deveui,
+            adr: dato.adr,
+            dr: dato.dr,
+            fCnt: dato.fCnt,
+            fechaUltimoUplink: dato.fechaUltimoUplink.toISOString(),
+            metadatos: dato.metadatos,
+            red: dato.red,
+            deviceName: dato.deviceName,
+            tipo: dato.tipo
+        };
+        return dto;
+    }
+    static dispositivos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.dispositivo(dato));
+        }
+        return dto;
+    }
     // Animales
     static especie(dato) {
         var _a;
