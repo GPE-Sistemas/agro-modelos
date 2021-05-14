@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 
 export class AgroParserService {
 
@@ -494,6 +494,31 @@ export class AgroParserService {
         const dto: ILoteSilobolsaDTO[] = [];
         for (const dato of datos) {
             dto.push(this.loteSilobolsa(dato));
+        }
+        return dto;
+    }
+
+    // Correctoras
+
+    static correctora(dato: LeanDocument<ICorrectoraDb>): ICorrectoraDTO {
+        const dto: ICorrectoraDTO = {
+            _id: dato._id.toHexString(),
+            bateria: dato.bateria,
+            fechaAsignacion: dato.fechaAsignacion.toISOString(),
+            deveui: dato.deveui,
+            firmware: dato.firmware,
+            idUltimoReporte: dato.idUltimoReporte?.toHexString(),
+            modelo: dato.modelo,
+            numeroSerie: dato.numeroSerie,
+            //
+            // ultimoReporte: dato.ultimoReporte ? this.establecimiento(dato.ultimoReporte) : undefined,
+        };
+        return dto;
+    }
+    static correctoras(datos: LeanDocument<ICorrectoraDb>[]): ICorrectoraDTO[] {
+        const dto: ICorrectoraDTO[] = [];
+        for (const dato of datos) {
+            dto.push(this.correctora(dato));
         }
         return dto;
     }

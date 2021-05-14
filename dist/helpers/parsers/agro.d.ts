@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 export declare class AgroParserService {
     static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
     static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
@@ -47,6 +47,8 @@ export declare class AgroParserService {
     static silobolsas(datos: LeanDocument<ISilobolsaDb>[]): ISilobolsaDTO[];
     static loteSilobolsa(dato: LeanDocument<ILoteSilobolsaDb>): ILoteSilobolsaDTO;
     static loteSilobolsas(datos: LeanDocument<ILoteSilobolsaDb>[]): ILoteSilobolsaDTO[];
+    static correctora(dato: LeanDocument<ICorrectoraDb>): ICorrectoraDTO;
+    static correctoras(datos: LeanDocument<ICorrectoraDb>[]): ICorrectoraDTO[];
     static horasAHexa(horas: string[]): string;
     static hexaAHoras(hexa: string): string[];
     static getBateria(cantReportesDiarios: number, mensajesEnviados: number): number | undefined;

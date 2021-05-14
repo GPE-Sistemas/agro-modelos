@@ -479,6 +479,28 @@ class AgroParserService {
         }
         return dto;
     }
+    // Correctoras
+    static correctora(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            bateria: dato.bateria,
+            fechaAsignacion: dato.fechaAsignacion.toISOString(),
+            deveui: dato.deveui,
+            firmware: dato.firmware,
+            idUltimoReporte: (_a = dato.idUltimoReporte) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            modelo: dato.modelo,
+            numeroSerie: dato.numeroSerie,
+        };
+        return dto;
+    }
+    static correctoras(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(this.correctora(dato));
+        }
+        return dto;
+    }
     // Otras funciones
     static horasAHexa(horas) {
         const horasArr = Array.from(new Array(144), () => '0');
