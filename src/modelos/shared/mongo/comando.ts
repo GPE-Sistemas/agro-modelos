@@ -10,8 +10,8 @@ export interface IComandoDb extends Document {
     puerto: number;
     fecha: Date;
     usuario: {
-        _id: string,
-        email: string,
+        _id?: string,
+        usuario: string,
     };
     descripcion: string;
     aplicacion: string;

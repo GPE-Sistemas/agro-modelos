@@ -9,8 +9,8 @@ export interface IComando {
     error: boolean;
     fecha: string;
     usuario: {
-        _id: string;
-        email: string;
+        _id?: string;
+        usuario: string;
     };
     fCnt: string;
     descripcion: string;

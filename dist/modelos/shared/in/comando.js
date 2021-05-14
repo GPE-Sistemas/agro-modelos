@@ -15,7 +15,7 @@ exports.IComandoValidation = joi_1.default.object({
     fecha: joi_1.default.date(),
     usuario: joi_1.default.object({
         _id: joi_1.default.string(),
-        email: joi_1.default.string()
+        usuario: joi_1.default.string()
     }),
     fCnt: joi_1.default.string(),
     descripcion: joi_1.default.string(),

@@ -10,7 +10,7 @@ export const IComandoValidation = joi.object<IComando>({
     fecha: joi.date(),
     usuario: joi.object({
         _id: joi.string(),
-        email: joi.string()
+        usuario: joi.string()
     }),
     fCnt: joi.string(),
     descripcion: joi.string(),
@@ -27,8 +27,8 @@ export interface IComando {
     error: boolean;
     fecha: string;
     usuario: {
-        _id: string,
-        email: string,
+        _id?: string,
+        usuario: string,
     };
     fCnt: string;
     descripcion: string;

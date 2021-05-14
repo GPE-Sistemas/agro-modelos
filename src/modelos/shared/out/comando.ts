@@ -25,8 +25,8 @@ export interface IComandoDTO {
     puerto: number;
     fecha: string;
     usuario: {
-        _id: string,
-        email: string,
+        _id?: string,
+        usuario: string,
     };
     fCnt: string;
     descripcion: string;
