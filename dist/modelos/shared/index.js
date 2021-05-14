@@ -16,6 +16,7 @@ __exportStar(require("./downlink"), exports);
 __exportStar(require("./metadatos"), exports);
 __exportStar(require("./coordenadas"), exports);
 __exportStar(require("./filtro"), exports);
+__exportStar(require("./socketMessage"), exports);
 //
 // export * from './in/dispositivo';
 // export * from './mongo/dispositivo';
