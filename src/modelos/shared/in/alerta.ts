@@ -80,7 +80,7 @@ export interface IAlerta {
         usuario: string;
         comentario: string;
     }[];
-    fecha: string;
+    fecha?: string;
     estadoActual?: string;
     estados?: {
         fecha: string;
