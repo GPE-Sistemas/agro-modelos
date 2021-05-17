@@ -99,7 +99,10 @@ export class AgroParserService {
             metadatos: dato.metadatos,
             red: dato.red,
             deviceName: dato.deviceName,
-            tipo: dato.tipo
+            tipo: dato.tipo,
+            idUltimoComando: dato.idUltimoComando?.toHexString(),
+            //
+            ultimoComando: dato.ultimoComando ? AgroParserService.comando(dato.ultimoComando) : undefined,
         };
         return dto;
     }

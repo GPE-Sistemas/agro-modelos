@@ -2,9 +2,9 @@ export interface IDownlink {
     deveui: string;
     puerto: number;
     payload: string;
-    usuario: {
+    usuario?: {
         _id?: string,
-        email: string,
+        usuario: string,
     };
     fCnt?: string;
     red?: string;

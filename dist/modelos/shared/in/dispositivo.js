@@ -16,7 +16,7 @@ exports.IDispositivoValidation = joi_1.default.object({
     fechaUltimoUplink: joi_1.default.date(),
     metadatos: joi_1.default.array().items(metadatos_1.IMetadatosValidation),
     red: joi_1.default.string(),
-    //
     tipo: joi_1.default.string(),
+    idUltimoComando: joi_1.default.string(),
 });
 exports.IDispositivoSwagger = joi_to_swagger_1.default(exports.IDispositivoValidation).swagger;

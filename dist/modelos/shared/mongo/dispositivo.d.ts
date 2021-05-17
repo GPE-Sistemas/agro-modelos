@@ -1,5 +1,6 @@
 import { Schema, Types, Document } from 'mongoose';
 import { IMetadatos } from '../metadatos';
+import { IComandoDb } from './comando';
 export interface IDispositivoDb extends Document {
     _id: Types.ObjectId;
     adr: boolean;
@@ -11,6 +12,8 @@ export interface IDispositivoDb extends Document {
     metadatos: IMetadatos[];
     red: string;
     tipo?: string;
+    idUltimoComando: Types.ObjectId;
+    ultimoComando: IComandoDb;
 }
 export declare const SDispositivo: Schema<IDispositivoDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

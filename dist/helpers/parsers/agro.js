@@ -90,6 +90,7 @@ class AgroParserService {
         return dto;
     }
     static dispositivo(dato) {
+        var _a;
         const dto = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
@@ -100,7 +101,10 @@ class AgroParserService {
             metadatos: dato.metadatos,
             red: dato.red,
             deviceName: dato.deviceName,
-            tipo: dato.tipo
+            tipo: dato.tipo,
+            idUltimoComando: (_a = dato.idUltimoComando) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            //
+            ultimoComando: dato.ultimoComando ? AgroParserService.comando(dato.ultimoComando) : undefined,
         };
         return dto;
     }

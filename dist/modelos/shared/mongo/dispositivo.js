@@ -11,6 +11,12 @@ exports.SDispositivo = new mongoose_1.Schema({
     fechaUltimoUplink: { type: Date },
     metadatos: { type: Array },
     red: { type: String, required: true },
-    //
     tipo: { type: String },
+    idUltimoComando: { type: mongoose_1.Types.ObjectId, ref: 'comandos' },
+});
+exports.SDispositivo.virtual('ultimoComando', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idUltimoComando',
+    ref: 'comandos',
 });
