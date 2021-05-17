@@ -20,7 +20,7 @@ export const SDispositivoSilobolsa = new Schema<IDispositivoSilobolsaDb>({
     deveui: { type: String, required: true, unique: true, trim: true, minlength: 16, maxlength: 16 },
     deviceName: { type: String, unique: true, sparse: true },
     dr: { type: Number },
-    fCnt: { type: Number },
+    fCnt: { type: String },
     fechaUltimoUplink: { type: Date },
     metadatos: { type: Array },
     red: { type: String, required: true },

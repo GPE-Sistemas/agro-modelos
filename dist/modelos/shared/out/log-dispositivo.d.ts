@@ -9,7 +9,7 @@ export interface ILogDispositivoDTO {
     payload: string;
     evento: string;
     contenido: string;
-    fCnt: number;
+    fCnt: string;
     deviceName: string;
     aplicacion: string;
 }

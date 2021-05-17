@@ -40,7 +40,7 @@ export class CaravanaParserService {
             red: dato.red,
             //
             horasReporte,
-            bateria: this.getBateria(horasReporte?.length, dato.fCnt),
+            bateria: this.getBateria(horasReporte?.length, +dato.fCnt),
             // duracion: this.getDuracion(frecuenciaReporte?.length, dato.fCnt),
             //
             ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,

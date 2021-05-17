@@ -4,7 +4,7 @@ export interface IAck {
     deveui: string;
     deviceName: string;
     acknowledged: boolean;
-    fCnt: number;
+    fCnt: string;
     red: string;
     tags?: {
         [key: string]: string;

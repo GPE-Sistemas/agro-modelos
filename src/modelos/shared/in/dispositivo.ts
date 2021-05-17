@@ -22,7 +22,7 @@ export interface IDispositivo {
     deveui: string;
     deviceName: string;
     dr: number;
-    fCnt: number;
+    fCnt: string;
     fechaUltimoUplink: string;
     metadatos: IMetadatos[];
     red: string;

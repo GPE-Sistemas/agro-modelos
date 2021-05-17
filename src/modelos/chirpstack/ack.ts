@@ -33,7 +33,7 @@ export interface IAckChirpstack {
         };
     };
     acknowledged: boolean;
-    fCnt: number;
+    fCnt: string;
     tags: {
         [key: string]: string;
     };

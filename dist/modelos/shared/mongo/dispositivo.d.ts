@@ -7,7 +7,7 @@ export interface IDispositivoDb extends Document {
     deveui: string;
     deviceName: string;
     dr: number;
-    fCnt: number;
+    fCnt: string;
     fechaUltimoUplink: Date;
     metadatos: IMetadatos[];
     red: string;

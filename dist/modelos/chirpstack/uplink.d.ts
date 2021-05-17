@@ -34,7 +34,7 @@ export interface IUplinkChirpstack {
     };
     adr: boolean;
     dr: number;
-    fCnt: number;
+    fCnt: string;
     fPort: number;
     data: string;
     objectJSON: string;

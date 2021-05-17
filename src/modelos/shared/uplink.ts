@@ -11,6 +11,6 @@ export interface IUplink {
     metadatos: IMetadatos[];
     adr?: boolean;
     dr?: number;
-    fCnt: number;
+    fCnt: string;
     tags?: {[key: string]: string};
 }

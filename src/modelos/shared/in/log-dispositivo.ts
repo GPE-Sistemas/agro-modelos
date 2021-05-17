@@ -22,7 +22,7 @@ export interface ILogDispositivo {
     payload: string;
     evento: string;
     contenido: string;
-    fCnt: number;
+    fCnt: string;
     deviceName: string;
     aplicacion: string;
 }

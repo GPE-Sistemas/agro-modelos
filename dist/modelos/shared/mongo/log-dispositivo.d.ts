@@ -7,7 +7,7 @@ export interface ILogDispositivoDb extends Document {
     payload: string;
     evento: string;
     contenido: string;
-    fCnt: number;
+    fCnt: string;
     deviceName: string;
     aplicacion: string;
 }
