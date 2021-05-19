@@ -128,7 +128,7 @@ export function crearTokenChirpstack(username: string, jwtSecret: string) {
 export async function httpRequest<T>(url: string, method: string, queryParams?: Record<string, string | number | boolean>, headers?: Record<string, string>, body?: Record<string, any> | string): Promise<{ body: T, headers: any }> {
     try {
         const options: Options = {
-            timeout: 10000,
+            timeout: 60000,
             method: method.toUpperCase() as Method,
             https: {
                 rejectUnauthorized: false,

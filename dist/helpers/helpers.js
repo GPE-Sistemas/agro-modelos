@@ -148,7 +148,7 @@ function httpRequest(url, method, queryParams, headers, body) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const options = {
-                timeout: 10000,
+                timeout: 60000,
                 method: method.toUpperCase(),
                 https: {
                     rejectUnauthorized: false,
