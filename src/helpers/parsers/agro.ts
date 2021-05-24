@@ -526,7 +526,7 @@ export class AgroParserService {
     static silobolsas(datos: LeanDocument<ISilobolsaDb>[], dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO[] {
         const dto: ISilobolsaDTO[] = [];
         for (const dato of datos) {
-            const dispositivosSilo = dispositivos?.filter( d => dato.deveuiDispositivos.includes(d._id));
+            const dispositivosSilo = dispositivos?.filter( d => dato.deveuiDispositivos.includes(d.deveui));
             dto.push(this.silobolsa(dato, dispositivosSilo));
         }
         return dto;

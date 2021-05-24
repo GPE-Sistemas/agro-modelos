@@ -510,7 +510,7 @@ class AgroParserService {
     static silobolsas(datos, dispositivos) {
         const dto = [];
         for (const dato of datos) {
-            const dispositivosSilo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.filter(d => dato.deveuiDispositivos.includes(d._id));
+            const dispositivosSilo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.filter(d => dato.deveuiDispositivos.includes(d.deveui));
             dto.push(this.silobolsa(dato, dispositivosSilo));
         }
         return dto;
