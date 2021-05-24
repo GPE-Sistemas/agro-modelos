@@ -48,7 +48,7 @@ export declare class AgroParserService {
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
     static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
     static silobolsa(dato: LeanDocument<ISilobolsaDb>, dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO;
-    static silobolsas(datos: LeanDocument<ISilobolsaDb>[]): ISilobolsaDTO[];
+    static silobolsas(datos: LeanDocument<ISilobolsaDb>[], dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO[];
     static loteSilobolsa(dato: LeanDocument<ILoteSilobolsaDb>): ILoteSilobolsaDTO;
     static loteSilobolsas(datos: LeanDocument<ILoteSilobolsaDb>[]): ILoteSilobolsaDTO[];
     static correctora(dato: LeanDocument<ICorrectoraDb>): ICorrectoraDTO;

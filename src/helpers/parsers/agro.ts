@@ -523,10 +523,11 @@ export class AgroParserService {
         };
         return dto;
     }
-    static silobolsas(datos: LeanDocument<ISilobolsaDb>[]): ISilobolsaDTO[] {
+    static silobolsas(datos: LeanDocument<ISilobolsaDb>[], dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO[] {
         const dto: ISilobolsaDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.silobolsa(dato));
+            const dispositivosSilo = dispositivos?.filter( d => dato.deveuiDispositivos.includes(d._id));
+            dto.push(this.silobolsa(dato, dispositivosSilo));
         }
         return dto;
     }
