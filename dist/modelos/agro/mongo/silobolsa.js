@@ -4,7 +4,7 @@ exports.SSilobolsa = void 0;
 const mongoose_1 = require("mongoose");
 exports.SSilobolsa = new mongoose_1.Schema({
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos', required: true },
-    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes-silobolsas', required: true },
+    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes-silobolsas' },
     deveuiDispositivos: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
     metros: { type: Number },
@@ -25,9 +25,9 @@ exports.SSilobolsa.virtual('lote', {
     localField: 'idLote',
     ref: 'lotes-silobolsas',
 });
-// SSilobolsa.virtual('dispositivos', {
-//     foreignField: 'deveui',
-//     justOne: false,
-//     localField: 'deveuiDispositivos',
-//     ref: 'dispositivos',
-// });
+exports.SSilobolsa.virtual('dispositivos', {
+    foreignField: 'deveui',
+    justOne: false,
+    localField: 'deveuiDispositivos',
+    ref: 'dispositivos',
+});

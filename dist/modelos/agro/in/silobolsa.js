@@ -8,7 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.ISilobolsaValidation = joi_1.default.object({
     idEstablecimiento: joi_1.default.string().required(),
-    idLote: joi_1.default.string().required(),
+    idLote: joi_1.default.string().allow(null),
     deveuiDispositivos: joi_1.default.array().items(joi_1.default.string()),
     numero: joi_1.default.string().required(),
     metros: joi_1.default.number().required(),

@@ -12,7 +12,7 @@ const lote_silobolsa_1 = require("./lote-silobolsa");
 exports.ISilobolsaDTOValidation = joi_1.default.object({
     _id: joi_1.default.string().required(),
     idEstablecimiento: joi_1.default.string().required(),
-    idLote: joi_1.default.string().required(),
+    idLote: joi_1.default.string(),
     deveuiDispositivos: joi_1.default.array().items(joi_1.default.string()),
     numero: joi_1.default.string().required(),
     metros: joi_1.default.number().required(),

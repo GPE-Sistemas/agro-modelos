@@ -3,7 +3,7 @@ import j2s from 'joi-to-swagger';
 
 export const ISilobolsaValidation = joi.object<ISilobolsa>({
     idEstablecimiento: joi.string().required(),
-    idLote: joi.string().required(),
+    idLote: joi.string().allow(null),
     deveuiDispositivos: joi.array().items(joi.string()),
     numero: joi.string().required(),
     metros: joi.number().required(),

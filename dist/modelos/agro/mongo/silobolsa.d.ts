@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
 import { ILoteSilobolsaDb } from './lote-silobolsa';
 export interface ISilobolsaDb extends Document {
@@ -14,6 +15,7 @@ export interface ISilobolsaDb extends Document {
     fechaConfeccion: Date;
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteSilobolsaDb;
+    dispositivos?: IDispositivoDb;
 }
 export declare const SSilobolsa: Schema<ISilobolsaDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=silobolsa.d.ts.map

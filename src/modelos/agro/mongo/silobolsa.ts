@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
 import { ILoteSilobolsaDb } from './lote-silobolsa';
 
@@ -16,11 +17,12 @@ export interface ISilobolsaDb extends Document {
     //
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteSilobolsaDb;
+    dispositivos?: IDispositivoDb;
 }
 
 export const SSilobolsa = new Schema<ISilobolsaDb>({
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos', required: true },
-    idLote: { type: Types.ObjectId, ref: 'lotes-silobolsas', required: true },
+    idLote: { type: Types.ObjectId, ref: 'lotes-silobolsas' },
     deveuiDispositivos: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
     metros: { type: Number },
@@ -44,9 +46,9 @@ SSilobolsa.virtual('lote', {
     ref: 'lotes-silobolsas',
 });
 
-// SSilobolsa.virtual('dispositivos', {
-//     foreignField: 'deveui',
-//     justOne: false,
-//     localField: 'deveuiDispositivos',
-//     ref: 'dispositivos',
-// });
+SSilobolsa.virtual('dispositivos', {
+    foreignField: 'deveui',
+    justOne: false,
+    localField: 'deveuiDispositivos',
+    ref: 'dispositivos',
+});

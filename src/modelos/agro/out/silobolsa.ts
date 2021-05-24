@@ -7,7 +7,7 @@ import { ILoteSilobolsaDTO, ILoteSilobolsaDTOValidation } from './lote-silobolsa
 export const ISilobolsaDTOValidation = joi.object<ISilobolsaDTO>({
     _id: joi.string().required(),
     idEstablecimiento: joi.string().required(),
-    idLote: joi.string().required(),
+    idLote: joi.string(),
     deveuiDispositivos: joi.array().items(joi.string()),
     numero: joi.string().required(),
     metros: joi.number().required(),
