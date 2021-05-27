@@ -65,14 +65,14 @@ export class AgroParserService {
             mensaje: dato.mensaje,
             aplicacion: dato.aplicacion,
             archivada: dato.archivada,
-            comentarios: dato.comentarios?.map( c => {
-                return { fecha: c.fecha.toISOString(), usuario: c.usuario, comentario: c.comentario};
-            }),
+            comentarios: dato.comentarios?.length ? dato.comentarios?.map( c => {
+                return { fecha: c.fecha?.toISOString(), usuario: c.usuario, comentario: c.comentario};
+            }) : [],
             deviceName: dato.deviceName,
             estadoActual: dato.estadoActual,
-            estados: dato.estados?.map(e => {
-                return { fecha: e.fecha.toISOString(), usuario: e.usuario, estado: e.estado };
-            }),
+            estados: dato.estados?.length ? dato.estados?.map(e => {
+                return { fecha: e.fecha?.toISOString(), usuario: e.usuario, estado: e.estado };
+            }) : [],
             idAsignado: dato.idAsignado,
             mensajeCorto: dato.mensajeCorto,
             nivel: dato.nivel,
