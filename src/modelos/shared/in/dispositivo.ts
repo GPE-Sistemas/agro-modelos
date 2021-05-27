@@ -27,5 +27,5 @@ export interface IDispositivo {
     metadatos: IMetadatos[];
     red: string;
     tipo?: string;
-    idUltimoComando: string;
+    idUltimoComando?: string;
 }
