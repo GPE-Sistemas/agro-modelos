@@ -20,9 +20,9 @@ exports.SAlerta = new mongoose_1.Schema({
         }],
     fecha: { type: Date },
     estadoActual: { type: String },
-    estados: {
-        fecha: { type: Date },
-        usuario: { type: String },
-        estado: { type: String },
-    }
+    estados: [{
+            fecha: { type: Date },
+            usuario: { type: String },
+            estado: { type: String },
+        }]
 });

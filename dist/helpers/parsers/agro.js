@@ -58,7 +58,7 @@ class AgroParserService {
         return dto;
     }
     static alerta(dato) {
-        var _a, _b;
+        var _a, _b, _c, _d;
         const dto = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
@@ -66,14 +66,16 @@ class AgroParserService {
             mensaje: dato.mensaje,
             aplicacion: dato.aplicacion,
             archivada: dato.archivada,
-            comentarios: (_a = dato.comentarios) === null || _a === void 0 ? void 0 : _a.map(c => {
-                return { fecha: c.fecha.toISOString(), usuario: c.usuario, comentario: c.comentario };
-            }),
+            comentarios: ((_a = dato.comentarios) === null || _a === void 0 ? void 0 : _a.length) ? (_b = dato.comentarios) === null || _b === void 0 ? void 0 : _b.map(c => {
+                var _a;
+                return { fecha: (_a = c.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(), usuario: c.usuario, comentario: c.comentario };
+            }) : [],
             deviceName: dato.deviceName,
             estadoActual: dato.estadoActual,
-            estados: (_b = dato.estados) === null || _b === void 0 ? void 0 : _b.map(e => {
-                return { fecha: e.fecha.toISOString(), usuario: e.usuario, estado: e.estado };
-            }),
+            estados: ((_c = dato.estados) === null || _c === void 0 ? void 0 : _c.length) ? (_d = dato.estados) === null || _d === void 0 ? void 0 : _d.map(e => {
+                var _a;
+                return { fecha: (_a = e.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(), usuario: e.usuario, estado: e.estado };
+            }) : [],
             idAsignado: dato.idAsignado,
             mensajeCorto: dato.mensajeCorto,
             nivel: dato.nivel,
