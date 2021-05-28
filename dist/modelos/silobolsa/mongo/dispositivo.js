@@ -19,6 +19,8 @@ exports.SDispositivoSilobolsa = new mongoose_1.Schema({
     idSilobolsa: { type: String },
     posicion: { type: Number },
 });
+exports.SDispositivoSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });
+exports.SDispositivoSilobolsa.index({ deveui: 1 });
 exports.SDispositivoSilobolsa.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,

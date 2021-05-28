@@ -33,6 +33,10 @@ export const SReporteSilobolsa = new Schema<IReporteSilobolsaDb>({
     humedadEquilibrio: { type: Number },
 });
 
+SReporteSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });
+SReporteSilobolsa.index({ fecha: 1 });
+SReporteSilobolsa.index({ deveui: 1 });
+
 SReporteSilobolsa.virtual('dispositivo', {
     foreignField: 'deveui',
     justOne: true,
