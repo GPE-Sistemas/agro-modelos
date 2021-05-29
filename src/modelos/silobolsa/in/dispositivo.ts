@@ -19,6 +19,7 @@ export const IDispositivoSilobolsaValidation = joi.object<IDispositivoSilobolsa>
     fechaAsignacion: joi.date(),
     idSilobolsa: joi.string(),
     posicion: joi.number(),
+    alerta: joi.number(),
 });
 
 export const IDispositivoSilobolsaSwagger = j2s(IDispositivoSilobolsaValidation).swagger;
@@ -29,4 +30,5 @@ export interface IDispositivoSilobolsa extends IDispositivo {
     idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
+    alerta?: number;
 }

@@ -18,6 +18,7 @@ exports.SDispositivoSilobolsa = new mongoose_1.Schema({
     idUltimoReporte: { type: mongoose_1.Types.ObjectId },
     idSilobolsa: { type: String },
     posicion: { type: Number },
+    alerta: { type: Number },
 });
 exports.SDispositivoSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });
 exports.SDispositivoSilobolsa.index({ deveui: 1 });

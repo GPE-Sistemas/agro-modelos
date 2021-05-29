@@ -25,6 +25,7 @@ exports.IDispositivoSilobolsaDTOValidation = joi_1.default.object({
     idUltimoReporte: joi_1.default.string(),
     idSilobolsa: joi_1.default.string(),
     posicion: joi_1.default.number(),
+    alerta: joi_1.default.number(),
     //
     ultimoReporte: reporte_1.IReporteSilobolsaDTOValidation,
 });

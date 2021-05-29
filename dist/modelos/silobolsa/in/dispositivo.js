@@ -23,5 +23,6 @@ exports.IDispositivoSilobolsaValidation = joi_1.default.object({
     fechaAsignacion: joi_1.default.date(),
     idSilobolsa: joi_1.default.string(),
     posicion: joi_1.default.number(),
+    alerta: joi_1.default.number(),
 });
 exports.IDispositivoSilobolsaSwagger = joi_to_swagger_1.default(exports.IDispositivoSilobolsaValidation).swagger;

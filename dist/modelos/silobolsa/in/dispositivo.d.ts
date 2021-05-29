@@ -8,5 +8,6 @@ export interface IDispositivoSilobolsa extends IDispositivo {
     idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
+    alerta?: number;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

@@ -9,6 +9,7 @@ export interface IDispositivoSilobolsaDTO extends IDispositivoDTO {
     idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
+    alerta: number;
     ultimoReporte?: IReporteSilobolsaDTO;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

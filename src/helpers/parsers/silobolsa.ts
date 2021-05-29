@@ -48,6 +48,7 @@ export class SilobolsaParserService {
             idUltimoReporte: dato.idUltimoReporte?.toHexString(),
             alarmaActiva: dato.alarmaActiva,
             posicion: dato.posicion,
+            alerta: dato.alerta,
             // Populate
             ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
         };

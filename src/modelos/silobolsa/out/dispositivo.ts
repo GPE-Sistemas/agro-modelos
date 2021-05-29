@@ -21,6 +21,7 @@ export const IDispositivoSilobolsaDTOValidation = joi.object<IDispositivoSilobol
     idUltimoReporte: joi.string(),
     idSilobolsa: joi.string(),
     posicion: joi.number(),
+    alerta: joi.number(),
     //
     ultimoReporte: IReporteSilobolsaDTOValidation,
 });
@@ -33,6 +34,7 @@ export interface IDispositivoSilobolsaDTO extends IDispositivoDTO {
     idUltimoReporte: string;
     idSilobolsa: string;
     posicion: number;
+    alerta: number;
     // Populate
     ultimoReporte?: IReporteSilobolsaDTO;
 }

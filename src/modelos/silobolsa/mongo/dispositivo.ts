@@ -10,6 +10,7 @@ export interface IDispositivoSilobolsaDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     idSilobolsa: string;
     posicion: number;
+    alerta: number;
     // Populate
     ultimoReporte?: IReporteSilobolsaDb;
 }
@@ -30,6 +31,7 @@ export const SDispositivoSilobolsa = new Schema<IDispositivoSilobolsaDb>({
     idUltimoReporte: { type: Types.ObjectId },
     idSilobolsa: { type: String },
     posicion: { type: Number },
+    alerta: { type: Number },
 });
 
 SDispositivoSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });

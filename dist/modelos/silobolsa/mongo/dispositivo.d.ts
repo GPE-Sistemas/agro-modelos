@@ -8,6 +8,7 @@ export interface IDispositivoSilobolsaDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     idSilobolsa: string;
     posicion: number;
+    alerta: number;
     ultimoReporte?: IReporteSilobolsaDb;
 }
 export declare const SDispositivoSilobolsa: Schema<IDispositivoSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
