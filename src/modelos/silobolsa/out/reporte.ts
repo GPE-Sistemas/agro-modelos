@@ -16,6 +16,9 @@ export const IReporteSilobolsaDTOValidation = joi.object<IReporteSilobolsaDTO>({
     humedadPorc: joi.number(),
     temperaturaGrados: joi.number(),
     humedadEquilibrio: joi.number(),
+    alertaBateria: joi.number(),
+    alertaCo2: joi.number(),
+    alertaHumedad: joi.number(),
 });
 
 export const IReporteSilobolsaDTOSwagger = j2s(IReporteSilobolsaDTOValidation).swagger;
@@ -35,4 +38,7 @@ export interface IReporteSilobolsaDTO {
     humedadPorc: number;
     temperaturaGrados: number;
     humedadEquilibrio?: number;
+    alertaBateria?: number;
+    alertaCo2?: number;
+    alertaHumedad?: number;
 }

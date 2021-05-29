@@ -21,5 +21,8 @@ exports.IReporteSilobolsaDTOValidation = joi_1.default.object({
     humedadPorc: joi_1.default.number(),
     temperaturaGrados: joi_1.default.number(),
     humedadEquilibrio: joi_1.default.number(),
+    alertaBateria: joi_1.default.number(),
+    alertaCo2: joi_1.default.number(),
+    alertaHumedad: joi_1.default.number(),
 });
 exports.IReporteSilobolsaDTOSwagger = joi_to_swagger_1.default(exports.IReporteSilobolsaDTOValidation).swagger;

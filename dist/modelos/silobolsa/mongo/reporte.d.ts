@@ -13,6 +13,9 @@ export interface IReporteSilobolsaDb extends Document {
     humedadPorc: number;
     temperaturaGrados: number;
     humedadEquilibrio?: number;
+    alertaBateria?: number;
+    alertaCo2?: number;
+    alertaHumedad?: number;
 }
 export declare const SReporteSilobolsa: Schema<IReporteSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
 //# sourceMappingURL=reporte.d.ts.map

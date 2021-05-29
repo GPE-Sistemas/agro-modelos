@@ -14,5 +14,8 @@ export interface IReporteSilobolsa {
     humedadPorc: number;
     temperaturaGrados: number;
     humedadEquilibrio?: number;
+    alertaBateria?: number;
+    alertaCo2?: number;
+    alertaHumedad?: number;
 }
 //# sourceMappingURL=reporte.d.ts.map

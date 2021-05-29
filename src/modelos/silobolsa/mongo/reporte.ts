@@ -15,6 +15,9 @@ export interface IReporteSilobolsaDb extends Document {
     humedadPorc: number;
     temperaturaGrados: number;
     humedadEquilibrio?: number;
+    alertaBateria?: number;
+    alertaCo2?: number;
+    alertaHumedad?: number;
 }
 
 export const SReporteSilobolsa = new Schema<IReporteSilobolsaDb>({
@@ -31,6 +34,9 @@ export const SReporteSilobolsa = new Schema<IReporteSilobolsaDb>({
     humedadPorc: { type: Number },
     temperaturaGrados: { type: Number },
     humedadEquilibrio: { type: Number },
+    alertaBateria: { type: Number },
+    alertaCo2: { type: Number },
+    alertaHumedad: { type: Number },
 });
 
 SReporteSilobolsa.index({ deveui: 1, fecha: 1 });

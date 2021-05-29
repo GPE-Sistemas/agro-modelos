@@ -18,7 +18,10 @@ export class SilobolsaParserService {
             co2Porc: dato.co2Porc,
             humedadPorc: dato.humedadPorc,
             temperaturaGrados: dato.temperaturaGrados,
-            humedadEquilibrio: dato.humedadEquilibrio
+            humedadEquilibrio: dato.humedadEquilibrio,
+            alertaBateria: dato.alertaBateria,
+            alertaCo2: dato.alertaCo2,
+            alertaHumedad: dato.alertaHumedad
         };
         return dto;
     }

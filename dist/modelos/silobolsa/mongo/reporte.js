@@ -16,6 +16,9 @@ exports.SReporteSilobolsa = new mongoose_1.Schema({
     humedadPorc: { type: Number },
     temperaturaGrados: { type: Number },
     humedadEquilibrio: { type: Number },
+    alertaBateria: { type: Number },
+    alertaCo2: { type: Number },
+    alertaHumedad: { type: Number },
 });
 exports.SReporteSilobolsa.index({ deveui: 1, fecha: 1 });
 exports.SReporteSilobolsa.index({ idSilobolsa: 1, fecha: 1 }, { sparse: true });
