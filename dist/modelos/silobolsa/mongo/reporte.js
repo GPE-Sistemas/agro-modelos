@@ -17,11 +17,9 @@ exports.SReporteSilobolsa = new mongoose_1.Schema({
     temperaturaGrados: { type: Number },
     humedadEquilibrio: { type: Number },
 });
-exports.SReporteSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });
-exports.SReporteSilobolsa.index({ fecha: 1 });
-exports.SReporteSilobolsa.index({ deveui: 1 });
 exports.SReporteSilobolsa.index({ deveui: 1, fecha: 1 });
 exports.SReporteSilobolsa.index({ idSilobolsa: 1, fecha: 1 }, { sparse: true });
+exports.SReporteSilobolsa.index({ idSilobolsa: 1, deveui: 1, fecha: 1 }, { sparse: true });
 exports.SReporteSilobolsa.virtual('dispositivo', {
     foreignField: 'deveui',
     justOne: true,
