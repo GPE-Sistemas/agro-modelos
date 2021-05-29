@@ -35,6 +35,8 @@ export const SDispositivoSilobolsa = new Schema<IDispositivoSilobolsaDb>({
 SDispositivoSilobolsa.index({ idSilobolsa: 1 }, { sparse: true });
 SDispositivoSilobolsa.index({ deveui: 1 });
 
+SDispositivoSilobolsa.index({ idSilobolsa: 1, deveui: 1 }, { sparse: true });
+
 SDispositivoSilobolsa.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,
