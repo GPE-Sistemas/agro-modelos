@@ -19,3 +19,7 @@ export const SCorrectora = new Schema<ICorrectoraDb>({
     fechaAsignacion: { type: Date },
     bateria: { type: Number },
 });
+
+SCorrectora.index({ numeroSerie: 1 });
+SCorrectora.index({ deveui: 1 });
+SCorrectora.index({ fechaAsignacion: -1 });

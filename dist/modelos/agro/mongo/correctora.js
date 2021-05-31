@@ -11,3 +11,6 @@ exports.SCorrectora = new mongoose_1.Schema({
     fechaAsignacion: { type: Date },
     bateria: { type: Number },
 });
+exports.SCorrectora.index({ numeroSerie: 1 });
+exports.SCorrectora.index({ deveui: 1 });
+exports.SCorrectora.index({ fechaAsignacion: -1 });

@@ -32,6 +32,10 @@ export const SDispositivo = new Schema<IDispositivoDb>({
     idUltimoComando: { type: Types.ObjectId, ref: 'comandos' },
 });
 
+SDispositivo.index({ fechaUltimoUplink: -1 });
+SDispositivo.index({ deviceName: 1 });
+SDispositivo.index({ tipo: 1 });
+
 SDispositivo.virtual('ultimoComando', {
     foreignField: '_id',
     justOne: true,

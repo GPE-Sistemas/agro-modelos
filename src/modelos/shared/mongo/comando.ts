@@ -29,3 +29,6 @@ export const SComando = new Schema<IComandoDb>({
     descripcion: { type: String },
     aplicacion: { type: String },
 });
+
+SComando.index({ fecha: -1 });
+SComando.index({ deveui: 1, fecha: -1 });

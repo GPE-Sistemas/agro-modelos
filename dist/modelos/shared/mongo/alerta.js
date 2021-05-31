@@ -26,3 +26,7 @@ exports.SAlerta = new mongoose_1.Schema({
             estado: { type: String },
         }]
 });
+exports.SAlerta.index({ archivada: 1, fecha: -1 });
+exports.SAlerta.index({ archivada: 1, estadoActual: 1 });
+exports.SAlerta.index({ archivada: 1, aplicacion: 1 });
+exports.SAlerta.index({ archivada: 1, mensajeCorto: 1 });

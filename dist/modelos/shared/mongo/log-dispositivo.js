@@ -13,3 +13,5 @@ exports.SLog = new mongoose_1.Schema({
     deviceName: { type: String },
     aplicacion: { type: String },
 });
+exports.SLog.index({ fecha: -1 });
+exports.SLog.index({ deveui: 1, fecha: -1 });

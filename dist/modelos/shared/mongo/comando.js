@@ -14,3 +14,5 @@ exports.SComando = new mongoose_1.Schema({
     descripcion: { type: String },
     aplicacion: { type: String },
 });
+exports.SComando.index({ fecha: -1 });
+exports.SComando.index({ deveui: 1, fecha: -1 });

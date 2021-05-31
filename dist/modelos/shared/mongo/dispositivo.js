@@ -14,6 +14,9 @@ exports.SDispositivo = new mongoose_1.Schema({
     tipo: { type: String },
     idUltimoComando: { type: mongoose_1.Types.ObjectId, ref: 'comandos' },
 });
+exports.SDispositivo.index({ fechaUltimoUplink: -1 });
+exports.SDispositivo.index({ deviceName: 1 });
+exports.SDispositivo.index({ tipo: 1 });
 exports.SDispositivo.virtual('ultimoComando', {
     foreignField: '_id',
     justOne: true,

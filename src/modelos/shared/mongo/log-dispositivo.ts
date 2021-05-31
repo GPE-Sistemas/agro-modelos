@@ -24,3 +24,6 @@ export const SLog = new Schema<ILogDispositivoDb>({
     deviceName: { type: String },
     aplicacion: { type: String },
 });
+
+SLog.index({ fecha: -1 });
+SLog.index({ deveui: 1, fecha: -1 });

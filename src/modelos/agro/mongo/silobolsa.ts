@@ -32,6 +32,9 @@ export const SSilobolsa = new Schema<ISilobolsaDb>({
     fechaConfeccion: { type: Date, required: true },
 });
 
+SSilobolsa.index({ numero: 1 });
+SSilobolsa.index({ fechaConfeccion: -1 });
+
 SSilobolsa.virtual('establecimiento', {
     foreignField: '_id',
     justOne: true,

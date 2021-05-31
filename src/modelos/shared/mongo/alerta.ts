@@ -86,3 +86,8 @@ export const SAlerta = new Schema<IAlertaDb>({
         estado: { type: String },
     }]
 });
+
+SAlerta.index({ archivada: 1, fecha: -1 });
+SAlerta.index({ archivada: 1, estadoActual: 1 });
+SAlerta.index({ archivada: 1, aplicacion: 1 });
+SAlerta.index({ archivada: 1, mensajeCorto: 1 });

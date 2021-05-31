@@ -13,6 +13,8 @@ exports.SSilobolsa = new mongoose_1.Schema({
     producto: { type: String, required: true },
     fechaConfeccion: { type: Date, required: true },
 });
+exports.SSilobolsa.index({ numero: 1 });
+exports.SSilobolsa.index({ fechaConfeccion: -1 });
 exports.SSilobolsa.virtual('establecimiento', {
     foreignField: '_id',
     justOne: true,
