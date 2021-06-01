@@ -8,7 +8,7 @@ export interface IDispositivoCaravanaDTO extends IDispositivoDTO {
     acelerometro: IAcelerometro;
     fechaAsignacion: string;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte?: string;
     ultimoReporte?: IReporteCaravanaDTO;
     bateria?: number;

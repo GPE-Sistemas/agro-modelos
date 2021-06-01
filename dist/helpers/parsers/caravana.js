@@ -6,9 +6,11 @@ class CaravanaParserService {
         const dto = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
-            idAsignado: dato.idAsignado,
+            idAnimal: dato.idAnimal,
             fecha: dato.fecha.toISOString(),
-            ubicacion: dato.ubicacion
+            ubicacion: dato.ubicacion,
+            dentroCorral: dato.dentroCorral,
+            dentroEstablecimiento: dato.dentroEstablecimiento
         };
         return dto;
     }
@@ -33,7 +35,7 @@ class CaravanaParserService {
             fechaAsignacion: (_a = dato.fechaAsignacion) === null || _a === void 0 ? void 0 : _a.toISOString(),
             fechaUltimoUplink: (_b = dato.fechaUltimoUplink) === null || _b === void 0 ? void 0 : _b.toISOString(),
             frecuenciaReporte: dato.frecuenciaReporte,
-            idAsignado: dato.idAsignado,
+            idAnimal: dato.idAnimal,
             idUltimoReporte: (_c = dato.idUltimoReporte) === null || _c === void 0 ? void 0 : _c.toHexString(),
             metadatos: dato.metadatos,
             red: dato.red,

@@ -9,7 +9,7 @@ export interface IDispositivoCaravanaDb extends Document, IDispositivoDb {
     acelerometro: IAcelerometro;
     fechaAsignacion: Date;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte: Types.ObjectId;
     //
     ultimoReporte: IReporteCaravanaDb;
@@ -29,9 +29,12 @@ export const SDispositivoCaravana = new Schema<IDispositivoCaravanaDb>({
     acelerometro: { type: Object },
     fechaAsignacion: { type: Date },
     frecuenciaReporte: { type: String },
-    idAsignado: { type: String },
+    idAnimal: { type: String },
     idUltimoReporte: { type: Types.ObjectId, ref: 'reportes' },
 });
+
+SDispositivoCaravana.index({ idAnimal: 1 }, { sparse: true });
+SDispositivoCaravana.index({ deveui: 1 });
 
 SDispositivoCaravana.virtual('ultimoReporte', {
     foreignField: '_id',

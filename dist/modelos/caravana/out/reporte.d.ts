@@ -6,7 +6,9 @@ export interface IReporteCaravanaDTO {
     _id: string;
     deveui: string;
     fecha: string;
-    idAsignado?: string;
+    idAnimal?: string;
     ubicacion: ICoordenadas;
+    dentroCorral?: boolean;
+    dentroEstablecimiento?: boolean;
 }
 //# sourceMappingURL=reporte.d.ts.map

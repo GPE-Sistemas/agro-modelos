@@ -10,7 +10,9 @@ const coordenadas_1 = require("../../shared/coordenadas");
 exports.IReporteCaravanaValidation = joi_1.default.object({
     deveui: joi_1.default.string().required(),
     fecha: joi_1.default.date().required(),
-    idAsignado: joi_1.default.string(),
+    idAnimal: joi_1.default.string(),
     ubicacion: coordenadas_1.ICoordenadasValidation,
+    dentroCorral: joi_1.default.boolean(),
+    dentroEstablecimiento: joi_1.default.boolean(),
 });
 exports.IReporteCaravanaSwagger = joi_to_swagger_1.default(exports.IReporteCaravanaValidation).swagger;

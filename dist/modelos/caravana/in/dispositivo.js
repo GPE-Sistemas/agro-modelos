@@ -21,7 +21,7 @@ exports.IDispositivoCaravanaValidation = joi_1.default.object({
     acelerometro: joi_1.default.string(),
     fechaAsignacion: joi_1.default.date(),
     frecuenciaReporte: joi_1.default.string(),
-    idAsignado: joi_1.default.string(),
+    idAnimal: joi_1.default.string(),
     idUltimoReporte: joi_1.default.string(),
 });
 exports.IDispositivoCaravanaSwagger = joi_to_swagger_1.default(exports.IDispositivoCaravanaValidation).swagger;

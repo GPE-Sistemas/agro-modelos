@@ -7,7 +7,7 @@ export interface IDispositivoCaravanaDb extends Document, IDispositivoDb {
     acelerometro: IAcelerometro;
     fechaAsignacion: Date;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte: Types.ObjectId;
     ultimoReporte: IReporteCaravanaDb;
 }

@@ -5,7 +5,9 @@ export declare const IReporteCaravanaSwagger: import("joi-to-swagger").SwaggerSc
 export interface IReporteCaravana {
     deveui: string;
     fecha: string;
-    idAsignado: string;
+    idAnimal: string;
     ubicacion: ICoordenadas;
+    dentroCorral?: boolean;
+    dentroEstablecimiento?: boolean;
 }
 //# sourceMappingURL=reporte.d.ts.map

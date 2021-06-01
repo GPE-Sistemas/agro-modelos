@@ -7,7 +7,7 @@ export interface IDispositivoCaravana extends IDispositivo {
     acelerometro: IAcelerometro;
     fechaAsignacion: string;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte: string;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

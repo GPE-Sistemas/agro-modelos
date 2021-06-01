@@ -20,7 +20,7 @@ export const IDispositivoCaravanaDTOValidation = joi.object<IDispositivoCaravana
     acelerometro: joi.string(),
     fechaAsignacion: joi.date(),
     frecuenciaReporte: joi.string(),
-    idAsignado: joi.string(),
+    idAnimal: joi.string(),
     idUltimoReporte: joi.string(),
     //
     ultimoReporte: IReporteCaravanaDTOValidation,
@@ -35,7 +35,7 @@ export interface IDispositivoCaravanaDTO extends IDispositivoDTO {
     acelerometro: IAcelerometro;
     fechaAsignacion: string;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte?: string;
     // Populate
     ultimoReporte?: IReporteCaravanaDTO;

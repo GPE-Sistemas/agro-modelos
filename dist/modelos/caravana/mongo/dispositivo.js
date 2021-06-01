@@ -16,9 +16,11 @@ exports.SDispositivoCaravana = new mongoose_1.Schema({
     acelerometro: { type: Object },
     fechaAsignacion: { type: Date },
     frecuenciaReporte: { type: String },
-    idAsignado: { type: String },
+    idAnimal: { type: String },
     idUltimoReporte: { type: mongoose_1.Types.ObjectId, ref: 'reportes' },
 });
+exports.SDispositivoCaravana.index({ idAnimal: 1 }, { sparse: true });
+exports.SDispositivoCaravana.index({ deveui: 1 });
 exports.SDispositivoCaravana.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,

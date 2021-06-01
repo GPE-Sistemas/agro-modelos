@@ -18,7 +18,7 @@ export const IDispositivoCaravanaValidation = joi.object<IDispositivoCaravana>({
     acelerometro: joi.string(),
     fechaAsignacion: joi.date(),
     frecuenciaReporte: joi.string(),
-    idAsignado: joi.string(),
+    idAnimal: joi.string(),
     idUltimoReporte: joi.string(),
 });
 
@@ -28,6 +28,6 @@ export interface IDispositivoCaravana extends IDispositivo {
     acelerometro: IAcelerometro;
     fechaAsignacion: string;
     frecuenciaReporte: string;
-    idAsignado: string;
+    idAnimal: string;
     idUltimoReporte: string;
 }

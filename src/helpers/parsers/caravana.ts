@@ -7,9 +7,11 @@ export class CaravanaParserService {
         const dto: IReporteCaravanaDTO = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
-            idAsignado: dato.idAsignado,
+            idAnimal: dato.idAnimal,
             fecha: dato.fecha.toISOString(),
-            ubicacion: dato.ubicacion
+            ubicacion: dato.ubicacion,
+            dentroCorral: dato.dentroCorral,
+            dentroEstablecimiento: dato.dentroEstablecimiento
         };
         return dto;
     }
@@ -34,7 +36,7 @@ export class CaravanaParserService {
             fechaAsignacion: dato.fechaAsignacion?.toISOString(),
             fechaUltimoUplink: dato.fechaUltimoUplink?.toISOString(),
             frecuenciaReporte: dato.frecuenciaReporte,
-            idAsignado: dato.idAsignado,
+            idAnimal: dato.idAnimal,
             idUltimoReporte: dato.idUltimoReporte?.toHexString(),
             metadatos: dato.metadatos,
             red: dato.red,
