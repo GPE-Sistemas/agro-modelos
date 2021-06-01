@@ -9,7 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IPedidoReporteDTOValidation = joi_1.default.object().keys({
     _id: joi_1.default.string().required(),
     numeroSerie: joi_1.default.string().required(),
-    timestamp: joi_1.default.date().required(),
+    fecha: joi_1.default.date().required(),
     aplicado: joi_1.default.boolean().required(),
     fechaCreacion: joi_1.default.date().required(),
 });

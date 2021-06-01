@@ -7,7 +7,6 @@ exports.SCorrectora = new mongoose_1.Schema({
     numeroSerie: { type: String, required: true, unique: true },
     deveui: { type: String },
     modelo: { type: String },
-    idUltimoReporte: { type: mongoose_1.Types.ObjectId },
     fechaAsignacion: { type: Date },
     bateria: { type: Number },
 });

@@ -4,7 +4,7 @@ export declare const IPedidoReporteDTOSchema: import("joi-to-swagger").SwaggerSc
 export interface IPedidoReporteDTO {
     _id: string;
     numeroSerie: string;
-    timestamp: string;
+    fecha: string;
     fechaCreacion?: string;
     aplicado?: boolean;
 }

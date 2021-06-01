@@ -6,7 +6,7 @@ class CorrectoraParserService {
         const dto = {
             _id: dato._id.toHexString(),
             numeroSerie: dato.numeroSerie,
-            timestamp: dato.timestamp.toISOString(),
+            fecha: dato.fecha.toISOString(),
             aplicado: dato.aplicado,
             fechaCreacion: dato.fechaCreacion.toISOString(),
         };

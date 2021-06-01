@@ -21,6 +21,10 @@ export const SReporteCorrectora = new Schema<IReporteCorrectoraDb>({
     temperatura: { type: Number },
 });
 
+SReporteCorrectora.index({ deveui: 1, fecha: 1 });
+SReporteCorrectora.index({ numeroSerieCorrectora: 1, fecha: 1 }, { sparse: true });
+SReporteCorrectora.index({ numeroSerieCorrectora: 1, deveui: 1, fecha: 1 }, { sparse: true });
+
 SReporteCorrectora.virtual('dispositivo', {
     foreignField: 'deveui',
     justOne: true,

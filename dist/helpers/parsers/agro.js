@@ -535,24 +535,25 @@ class AgroParserService {
         return dto;
     }
     // Correctoras
-    static correctora(dato) {
-        var _a;
+    static correctora(dato, dispositivo) {
         const dto = {
             _id: dato._id.toHexString(),
             bateria: dato.bateria,
             fechaAsignacion: dato.fechaAsignacion.toISOString(),
             deveui: dato.deveui,
             firmware: dato.firmware,
-            idUltimoReporte: (_a = dato.idUltimoReporte) === null || _a === void 0 ? void 0 : _a.toHexString(),
             modelo: dato.modelo,
             numeroSerie: dato.numeroSerie,
+            //
+            dispositivo,
         };
         return dto;
     }
-    static correctoras(datos) {
+    static correctoras(datos, dispositivos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.correctora(dato));
+            const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => d.deveui === dato.deveui);
+            dto.push(this.correctora(dato, dispositivo));
         }
         return dto;
     }

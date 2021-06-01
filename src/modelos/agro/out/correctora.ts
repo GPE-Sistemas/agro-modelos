@@ -1,6 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
-import { IReporteCorrectoraDTO, IReporteCorrectoraDTOValidation } from '../../correctoras';
+import { IDispositivoCorrectoraDTO, IDispositivoCorrectoraDTOValidation } from '../../correctoras';
 
 export const ICorrectoraDTOValidation = joi.object<ICorrectoraDTO>().keys({
     _id: joi.string().required(),
@@ -10,9 +10,8 @@ export const ICorrectoraDTOValidation = joi.object<ICorrectoraDTO>().keys({
     fechaAsignacion: joi.date(),
     firmware: joi.string(),
     bateria: joi.number(),
-    idUltimoReporte: joi.string(),
     //
-    ultimoReporte: IReporteCorrectoraDTOValidation
+    dispositivo: IDispositivoCorrectoraDTOValidation
 });
 
 export const ICorrectoraDTOSchema = j2s(ICorrectoraDTOValidation).swagger;
@@ -25,7 +24,6 @@ export interface ICorrectoraDTO {
     fechaAsignacion: string;
     firmware?: string;
     bateria: number;
-    idUltimoReporte?: string;
     //
-    ultimoReporte?: IReporteCorrectoraDTO;
+    dispositivo?: IDispositivoCorrectoraDTO;
 }

@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 import { getEstadoComando } from '../helpers';
 
 export class AgroParserService {
@@ -552,25 +552,25 @@ export class AgroParserService {
 
     // Correctoras
 
-    static correctora(dato: LeanDocument<ICorrectoraDb>): ICorrectoraDTO {
+    static correctora(dato: LeanDocument<ICorrectoraDb>, dispositivo?: IDispositivoCorrectoraDTO): ICorrectoraDTO {
         const dto: ICorrectoraDTO = {
             _id: dato._id.toHexString(),
             bateria: dato.bateria,
             fechaAsignacion: dato.fechaAsignacion.toISOString(),
             deveui: dato.deveui,
             firmware: dato.firmware,
-            idUltimoReporte: dato.idUltimoReporte?.toHexString(),
             modelo: dato.modelo,
             numeroSerie: dato.numeroSerie,
             //
-            // ultimoReporte: dato.ultimoReporte ? this.establecimiento(dato.ultimoReporte) : undefined,
+            dispositivo,
         };
         return dto;
     }
-    static correctoras(datos: LeanDocument<ICorrectoraDb>[]): ICorrectoraDTO[] {
+    static correctoras(datos: LeanDocument<ICorrectoraDb>[], dispositivos?: IDispositivoCorrectoraDTO[]): ICorrectoraDTO[] {
         const dto: ICorrectoraDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.correctora(dato));
+            const dispositivo = dispositivos?.find( d => d.deveui === dato.deveui);
+            dto.push(this.correctora(dato, dispositivo));
         }
         return dto;
     }

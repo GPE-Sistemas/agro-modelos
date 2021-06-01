@@ -15,8 +15,7 @@ exports.ICorrectoraDTOValidation = joi_1.default.object().keys({
     fechaAsignacion: joi_1.default.date(),
     firmware: joi_1.default.string(),
     bateria: joi_1.default.number(),
-    idUltimoReporte: joi_1.default.string(),
     //
-    ultimoReporte: correctoras_1.IReporteCorrectoraDTOValidation
+    dispositivo: correctoras_1.IDispositivoCorrectoraDTOValidation
 });
 exports.ICorrectoraDTOSchema = joi_to_swagger_1.default(exports.ICorrectoraDTOValidation).swagger;

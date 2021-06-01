@@ -1,5 +1,5 @@
 import joi from 'joi';
-import { IReporteCorrectoraDTO } from '../../correctoras';
+import { IDispositivoCorrectoraDTO } from '../../correctoras';
 export declare const ICorrectoraDTOValidation: joi.ObjectSchema<ICorrectoraDTO>;
 export declare const ICorrectoraDTOSchema: import("joi-to-swagger").SwaggerSchema;
 export interface ICorrectoraDTO {
@@ -10,7 +10,6 @@ export interface ICorrectoraDTO {
     fechaAsignacion: string;
     firmware?: string;
     bateria: number;
-    idUltimoReporte?: string;
-    ultimoReporte?: IReporteCorrectoraDTO;
+    dispositivo?: IDispositivoCorrectoraDTO;
 }
 //# sourceMappingURL=correctora.d.ts.map

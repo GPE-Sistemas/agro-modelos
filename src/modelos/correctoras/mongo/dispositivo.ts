@@ -30,6 +30,9 @@ export const SDispositivoCorrectora = new Schema<IDispositivoCorrectoraDb>({
     idUltimoReporte: { type: Types.ObjectId, ref: 'reportes' },
 });
 
+SDispositivoCorrectora.index({ numeroSerieCorrectora: 1 }, { sparse: true });
+SDispositivoCorrectora.index({ deveui: 1 });
+
 SDispositivoCorrectora.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,

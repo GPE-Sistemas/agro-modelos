@@ -8,7 +8,6 @@ export const ICorrectoraValidation = joi.object<ICorrectora>().keys({
     fechaAsignacion: joi.date(),
     firmware: joi.string(),
     bateria: joi.number(),
-    idUltimoReporte: joi.string(),
 });
 
 export const ICorrectoraSchema = j2s(ICorrectoraValidation).swagger;
@@ -20,5 +19,4 @@ export interface ICorrectora {
     fechaAsignacion: string;
     firmware?: string;
     bateria: number;
-    idUltimoReporte?: string;
 }

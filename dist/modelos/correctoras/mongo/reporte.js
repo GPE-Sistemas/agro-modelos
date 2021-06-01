@@ -11,6 +11,9 @@ exports.SReporteCorrectora = new mongoose_1.Schema({
     presion: { type: Number },
     temperatura: { type: Number },
 });
+exports.SReporteCorrectora.index({ deveui: 1, fecha: 1 });
+exports.SReporteCorrectora.index({ numeroSerieCorrectora: 1, fecha: 1 }, { sparse: true });
+exports.SReporteCorrectora.index({ numeroSerieCorrectora: 1, deveui: 1, fecha: 1 }, { sparse: true });
 exports.SReporteCorrectora.virtual('dispositivo', {
     foreignField: 'deveui',
     justOne: true,

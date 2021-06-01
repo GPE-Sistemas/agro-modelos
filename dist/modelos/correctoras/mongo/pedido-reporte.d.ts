@@ -1,7 +1,7 @@
 import { Schema, Document } from 'mongoose';
 export interface IPedidoReporteDb extends Document {
     numeroSerie: string;
-    timestamp: Date;
+    fecha: Date;
     fechaCreacion: Date;
     aplicado: boolean;
 }

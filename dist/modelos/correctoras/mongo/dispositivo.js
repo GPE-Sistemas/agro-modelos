@@ -18,6 +18,8 @@ exports.SDispositivoCorrectora = new mongoose_1.Schema({
     numeroSerieCorrectora: { type: String },
     idUltimoReporte: { type: mongoose_1.Types.ObjectId, ref: 'reportes' },
 });
+exports.SDispositivoCorrectora.index({ numeroSerieCorrectora: 1 }, { sparse: true });
+exports.SDispositivoCorrectora.index({ deveui: 1 });
 exports.SDispositivoCorrectora.virtual('ultimoReporte', {
     foreignField: '_id',
     justOne: true,

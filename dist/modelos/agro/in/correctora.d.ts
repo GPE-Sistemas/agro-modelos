@@ -8,6 +8,5 @@ export interface ICorrectora {
     fechaAsignacion: string;
     firmware?: string;
     bateria: number;
-    idUltimoReporte?: string;
 }
 //# sourceMappingURL=correctora.d.ts.map
