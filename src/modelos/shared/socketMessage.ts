@@ -7,4 +7,5 @@ export interface ISocketMessage {
     deviceName?: string;
     aplicacion?: string;
     mensaje?: string;
+    id?: string;
 }

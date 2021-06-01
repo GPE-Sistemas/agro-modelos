@@ -7,5 +7,6 @@ export interface ISocketMessage {
     deviceName?: string;
     aplicacion?: string;
     mensaje?: string;
+    id?: string;
 }
 //# sourceMappingURL=socketMessage.d.ts.map
