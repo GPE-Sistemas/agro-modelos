@@ -1,5 +1,5 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 import { getEstadoComando } from '../helpers';
 
 export class AgroParserService {
@@ -221,13 +221,14 @@ export class AgroParserService {
         return dto;
     }
 
-    static animal(dato: LeanDocument<IAnimalDb>, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[],
+    static animal(dato: LeanDocument<IAnimalDb>, dispositivo?: IDispositivoCaravanaDTO, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[],
         eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[],
         madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO {
         const dto: IAnimalDTO = {
             _id: dato._id?.toHexString(),
+            activo: dato.activo,
             caravana: dato.caravana,
-            deveuiDispositivo: dato.deveuiDispositivo,
+            deveui: dato.deveui,
             dientes: dato.dientes,
             fechaAlta: dato.fechaAlta,
             fechaNacimiento: dato.fechaNacimiento,
@@ -257,6 +258,7 @@ export class AgroParserService {
             subcategoria: dato.subcategoria ? this.subcategoria(dato.subcategoria) : undefined,
             raza: dato.raza ? this.raza(dato.raza) : undefined,
             //
+            dispositivo,
             vacunaciones,
             tratamientos,
             eventosEspecificos,
@@ -266,10 +268,11 @@ export class AgroParserService {
         Object.keys(dto).forEach(key => (dto as any)[key] === undefined ? delete (dto as any)[key] : {});
         return dto;
     }
-    static animales(datos: LeanDocument<IAnimalDb>[]): IAnimalDTO[] {
+    static animales(datos: LeanDocument<IAnimalDb>[], dispositivos?: IDispositivoCaravanaDTO[]): IAnimalDTO[] {
         const dto: IAnimalDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.animal(dato));
+            const dispositivo = dispositivos?.find( d => dato.deveui === d.deveui);
+            dto.push(this.animal(dato, dispositivo));
         }
         return dto;
     }

@@ -222,12 +222,13 @@ class AgroParserService {
         }
         return dto;
     }
-    static animal(dato, vacunaciones, tratamientos, eventosEspecificos, pesajes, servicios, madre, padre) {
+    static animal(dato, dispositivo, vacunaciones, tratamientos, eventosEspecificos, pesajes, servicios, madre, padre) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            activo: dato.activo,
             caravana: dato.caravana,
-            deveuiDispositivo: dato.deveuiDispositivo,
+            deveui: dato.deveui,
             dientes: dato.dientes,
             fechaAlta: dato.fechaAlta,
             fechaNacimiento: dato.fechaNacimiento,
@@ -257,6 +258,7 @@ class AgroParserService {
             subcategoria: dato.subcategoria ? this.subcategoria(dato.subcategoria) : undefined,
             raza: dato.raza ? this.raza(dato.raza) : undefined,
             //
+            dispositivo,
             vacunaciones,
             tratamientos,
             eventosEspecificos,
@@ -266,10 +268,11 @@ class AgroParserService {
         Object.keys(dto).forEach(key => dto[key] === undefined ? delete dto[key] : {});
         return dto;
     }
-    static animales(datos) {
+    static animales(datos, dispositivos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.animal(dato));
+            const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => dato.deveui === d.deveui);
+            dto.push(this.animal(dato, dispositivo));
         }
         return dto;
     }

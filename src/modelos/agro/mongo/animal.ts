@@ -11,8 +11,9 @@ import { ISubcategoriaDb } from './subcategoria';
 
 export interface IAnimalDb extends Document {
     _id: Types.ObjectId;
+    activo: boolean;
     caravana: string;
-    deveuiDispositivo?: string;
+    deveui?: string;
     dientes: number;
     fechaNacimiento?: string;
     fechaAlta?: string;
@@ -45,8 +46,9 @@ export interface IAnimalDb extends Document {
 }
 
 export const SAnimal = new Schema<IBajaDb>({
+    activo: { type: Boolean },
     caravana: { type: String, required: true, unique: true },
-    deveuiDispositivo: { type: String },
+    deveui: { type: String },
     dientes: { type: Number },
     fechaNacimiento: { type: Date },
     fechaAlta: { type: Date , required: true },
@@ -64,6 +66,10 @@ export const SAnimal = new Schema<IBajaDb>({
     idSubcategoria: { type: Types.ObjectId, ref: 'subcategorias' },
     sexo: { type: Boolean },
 });
+
+SAnimal.index({ caravana: 1 });
+SAnimal.index({ deveui: 1 });
+SAnimal.index({ activo: 1 });
 
 SAnimal.virtual('baja', {
     foreignField: '_id',

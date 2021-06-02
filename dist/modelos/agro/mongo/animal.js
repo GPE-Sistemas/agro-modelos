@@ -3,8 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SAnimal = void 0;
 const mongoose_1 = require("mongoose");
 exports.SAnimal = new mongoose_1.Schema({
+    activo: { type: Boolean },
     caravana: { type: String, required: true, unique: true },
-    deveuiDispositivo: { type: String },
+    deveui: { type: String },
     dientes: { type: Number },
     fechaNacimiento: { type: Date },
     fechaAlta: { type: Date, required: true },
@@ -22,6 +23,9 @@ exports.SAnimal = new mongoose_1.Schema({
     idSubcategoria: { type: mongoose_1.Types.ObjectId, ref: 'subcategorias' },
     sexo: { type: Boolean },
 });
+exports.SAnimal.index({ caravana: 1 });
+exports.SAnimal.index({ deveui: 1 });
+exports.SAnimal.index({ activo: 1 });
 exports.SAnimal.virtual('baja', {
     foreignField: '_id',
     justOne: true,

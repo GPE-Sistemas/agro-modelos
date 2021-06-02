@@ -7,8 +7,9 @@ exports.IAnimalSwagger = exports.IAnimalValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IAnimalValidation = joi_1.default.object({
+    activo: joi_1.default.boolean(),
     caravana: joi_1.default.string().required(),
-    deveuiDispositivo: joi_1.default.string(),
+    deveui: joi_1.default.string(),
     dientes: joi_1.default.number(),
     fechaNacimiento: joi_1.default.date(),
     fechaAlta: joi_1.default.date(),

@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-import { IDispositivoCaravanaDTO } from '../../caravana/out/dispositivo';
+import { IDispositivoCaravanaDTO, IDispositivoCaravanaDTOValidation } from '../../caravana/out/dispositivo';
 import { IBajaDTO, IBajaDTOValidation } from './baja';
 import { ICategoriaDTO, ICategoriaDTOValidation } from './categoria';
 import { ICorralDTO, ICorralDTOValidation } from './corral';
@@ -19,8 +19,9 @@ import { IVacunacionDTO } from './vacunacion';
 
 export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
     _id: joi.string().required(),
+    activo: joi.boolean(),
     caravana: joi.string().required(),
-    deveuiDispositivo: joi.string(),
+    deveui: joi.string(),
     dientes: joi.number(),
     fechaNacimiento: joi.date(),
     fechaAlta: joi.date(),
@@ -41,7 +42,7 @@ export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
     baja: IBajaDTOValidation,
     categoria: ICategoriaDTOValidation,
     corral: ICorralDTOValidation,
-    // dispositivo: IDispositivoCara
+    dispositivo: IDispositivoCaravanaDTOValidation,
     especie: IEspecieDTOValidation,
     establecimiento: IEstablecimientoDTOValidation,
     grupos: joi.array().items(IGrupoDTOValidation),
@@ -62,8 +63,9 @@ export const IAnimalDTOSwagger = j2s(IAnimalDTOValidation).swagger;
 
 export interface IAnimalDTO {
     _id: string;
+    activo: boolean;
     caravana: string;
-    deveuiDispositivo?: string;
+    deveui?: string;
     dientes: number;
     fechaNacimiento?: string;
     fechaAlta?: string;

@@ -2,8 +2,9 @@ import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
 export const IAnimalValidation = joi.object<IAnimal>({
+    activo: joi.boolean(),
     caravana: joi.string().required(),
-    deveuiDispositivo: joi.string(),
+    deveui: joi.string(),
     dientes: joi.number(),
     fechaNacimiento: joi.date(),
     fechaAlta: joi.date(),
@@ -25,8 +26,9 @@ export const IAnimalValidation = joi.object<IAnimal>({
 export const IAnimalSwagger = j2s(IAnimalValidation).swagger;
 
 export interface IAnimal {
+    activo: boolean;
     caravana: string;
-    deveuiDispositivo?: string;
+    deveui?: string;
     dientes?: number;
     fechaNacimiento?: string;
     fechaAlta?: string;

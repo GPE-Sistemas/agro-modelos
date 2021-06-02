@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IAnimalDTOSwagger = exports.IAnimalDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const dispositivo_1 = require("../../caravana/out/dispositivo");
 const baja_1 = require("./baja");
 const categoria_1 = require("./categoria");
 const corral_1 = require("./corral");
@@ -17,8 +18,9 @@ const raza_1 = require("./raza");
 const subcategoria_1 = require("./subcategoria");
 exports.IAnimalDTOValidation = joi_1.default.object({
     _id: joi_1.default.string().required(),
+    activo: joi_1.default.boolean(),
     caravana: joi_1.default.string().required(),
-    deveuiDispositivo: joi_1.default.string(),
+    deveui: joi_1.default.string(),
     dientes: joi_1.default.number(),
     fechaNacimiento: joi_1.default.date(),
     fechaAlta: joi_1.default.date(),
@@ -39,7 +41,7 @@ exports.IAnimalDTOValidation = joi_1.default.object({
     baja: baja_1.IBajaDTOValidation,
     categoria: categoria_1.ICategoriaDTOValidation,
     corral: corral_1.ICorralDTOValidation,
-    // dispositivo: IDispositivoCara
+    dispositivo: dispositivo_1.IDispositivoCaravanaDTOValidation,
     especie: especie_1.IEspecieDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     grupos: joi_1.default.array().items(grupo_1.IGrupoDTOValidation),

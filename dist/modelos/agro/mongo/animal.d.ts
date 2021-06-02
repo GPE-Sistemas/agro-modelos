@@ -10,8 +10,9 @@ import { IRazaDb } from './raza';
 import { ISubcategoriaDb } from './subcategoria';
 export interface IAnimalDb extends Document {
     _id: Types.ObjectId;
+    activo: boolean;
     caravana: string;
-    deveuiDispositivo?: string;
+    deveui?: string;
     dientes: number;
     fechaNacimiento?: string;
     fechaAlta?: string;

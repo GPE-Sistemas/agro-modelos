@@ -18,8 +18,9 @@ export declare const IAnimalDTOValidation: joi.ObjectSchema<IAnimalDTO>;
 export declare const IAnimalDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IAnimalDTO {
     _id: string;
+    activo: boolean;
     caravana: string;
-    deveuiDispositivo?: string;
+    deveui?: string;
     dientes: number;
     fechaNacimiento?: string;
     fechaAlta?: string;
