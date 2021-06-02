@@ -146,7 +146,7 @@ export class AgroParserService {
             fecha: dato.fecha?.toISOString?.(),
             usuario: dato.usuario,
             aplicacion: dato.aplicacion,
-            descripcion: dato.deveui,
+            descripcion: dato.descripcion,
             // Calculado
             estado: getEstadoComando(dato.ejecutado, dato.error),
         };
