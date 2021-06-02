@@ -24,7 +24,7 @@ export const SComando = new Schema<IComandoDb>({
     fCnt: { type: String },
     payload: { type: String },
     puerto: { type: Number },
-    fecha: { type: String },
+    fecha: { type: Date },
     usuario: { type: Object },
     descripcion: { type: String },
     aplicacion: { type: String },

@@ -143,7 +143,7 @@ export class AgroParserService {
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,
-            fecha: dato.fecha.toISOString(),
+            fecha: dato.fecha?.toISOString?.(),
             usuario: dato.usuario,
             aplicacion: dato.aplicacion,
             descripcion: dato.deveui,
