@@ -2,6 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IComandoDb extends Document {
     _id: Types.ObjectId;
     deveui: string;
+    deviceName: string;
     ejecutado: boolean;
     error: boolean;
     fCnt: string;

@@ -8,6 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IComandoValidation = joi_1.default.object({
     deveui: joi_1.default.string(),
+    deviceName: joi_1.default.string(),
     payload: joi_1.default.string(),
     puerto: joi_1.default.number(),
     ejecutado: joi_1.default.boolean(),

@@ -4,6 +4,7 @@ export declare const IComandoDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IComandoDTO {
     _id: string;
     deveui: string;
+    deviceName: string;
     payload: string;
     puerto: number;
     fecha: string;

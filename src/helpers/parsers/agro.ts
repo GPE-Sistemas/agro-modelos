@@ -140,6 +140,7 @@ export class AgroParserService {
         const dto: IComandoDTO = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
+            deviceName: dato.deviceName,
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,

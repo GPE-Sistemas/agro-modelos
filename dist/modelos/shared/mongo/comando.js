@@ -4,6 +4,7 @@ exports.SComando = void 0;
 const mongoose_1 = require("mongoose");
 exports.SComando = new mongoose_1.Schema({
     deveui: { type: String, required: true, ref: 'dispositivos' },
+    deviceName: { type: String },
     ejecutado: { type: Boolean },
     error: { type: Boolean },
     fCnt: { type: String },

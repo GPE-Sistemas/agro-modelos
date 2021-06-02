@@ -3,6 +3,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IComandoDb extends Document {
     _id: Types.ObjectId;
     deveui: string;
+    deviceName: string;
     ejecutado: boolean;
     error: boolean;
     fCnt: string;
@@ -19,6 +20,7 @@ export interface IComandoDb extends Document {
 
 export const SComando = new Schema<IComandoDb>({
     deveui: { type: String, required: true, ref: 'dispositivos' },
+    deviceName: { type: String },
     ejecutado: { type: Boolean },
     error: { type: Boolean },
     fCnt: { type: String },

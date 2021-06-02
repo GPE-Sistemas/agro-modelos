@@ -145,6 +145,7 @@ class AgroParserService {
         const dto = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
+            deviceName: dato.deviceName,
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,

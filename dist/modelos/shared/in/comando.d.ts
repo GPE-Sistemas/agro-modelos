@@ -3,6 +3,7 @@ export declare const IComandoValidation: joi.ObjectSchema<IComando>;
 export declare const IComandoSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IComando {
     deveui: string;
+    deviceName?: string;
     payload: string;
     puerto: number;
     ejecutado?: boolean;
