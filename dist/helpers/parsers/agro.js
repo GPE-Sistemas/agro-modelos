@@ -141,16 +141,17 @@ class AgroParserService {
         return dto;
     }
     static comando(dato) {
+        var _a, _b;
         const dto = {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,
-            fecha: dato.fecha.toISOString(),
+            fecha: (_b = (_a = dato.fecha) === null || _a === void 0 ? void 0 : _a.toISOString) === null || _b === void 0 ? void 0 : _b.call(_a),
             usuario: dato.usuario,
             aplicacion: dato.aplicacion,
-            descripcion: dato.deveui,
+            descripcion: dato.descripcion,
             // Calculado
             estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
         };
