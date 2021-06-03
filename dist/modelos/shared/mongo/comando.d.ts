@@ -3,6 +3,8 @@ export interface IComandoDb extends Document {
     _id: Types.ObjectId;
     deveui: string;
     deviceName: string;
+    idAsignado: string;
+    nombreAsignado: string;
     ejecutado: boolean;
     error: boolean;
     fCnt: string;

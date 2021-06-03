@@ -5,6 +5,8 @@ export interface IComandoDTO {
     _id: string;
     deveui: string;
     deviceName: string;
+    idAsignado: string;
+    nombreAsignado: string;
     payload: string;
     puerto: number;
     fecha: string;

@@ -5,6 +5,8 @@ export const IComandoDTOValidation = joi.object<IComandoDTO>({
     _id: joi.string(),
     deveui: joi.string(),
     deviceName: joi.string(),
+    idAsignado: joi.string(),
+    nombreAsignado: joi.string(),
     payload: joi.string(),
     puerto: joi.number(),
     fecha: joi.date(),
@@ -23,6 +25,8 @@ export interface IComandoDTO {
     _id: string;
     deveui: string;
     deviceName: string;
+    idAsignado: string;
+    nombreAsignado: string;
     payload: string;
     puerto: number;
     fecha: string;

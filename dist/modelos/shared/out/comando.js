@@ -10,6 +10,8 @@ exports.IComandoDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     deveui: joi_1.default.string(),
     deviceName: joi_1.default.string(),
+    idAsignado: joi_1.default.string(),
+    nombreAsignado: joi_1.default.string(),
     payload: joi_1.default.string(),
     puerto: joi_1.default.number(),
     fecha: joi_1.default.date(),

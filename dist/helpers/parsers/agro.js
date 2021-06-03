@@ -146,6 +146,8 @@ class AgroParserService {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
             deviceName: dato.deviceName,
+            idAsignado: dato.idAsignado,
+            nombreAsignado: dato.nombreAsignado,
             fCnt: dato.fCnt,
             payload: dato.payload,
             puerto: dato.puerto,
