@@ -17,10 +17,3 @@ export const SPedidoReporte = new Schema<IPedidoReporteDb>({
 SPedidoReporte.index({ fecha: 1 });
 SPedidoReporte.index({ numeroSerie: 1, fecha: 1 }, { unique: true });
 SPedidoReporte.index({ aplicado: 1, numeroSerie: 1, fecha: 1 });
-
-SPedidoReporte.virtual('correctora', {
-    foreignField: 'numeroSerie',
-    justOne: true,
-    localField: 'numeroSerie',
-    ref: 'correctoras',
-});

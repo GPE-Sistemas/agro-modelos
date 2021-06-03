@@ -11,9 +11,3 @@ exports.SPedidoReporte = new mongoose_1.Schema({
 exports.SPedidoReporte.index({ fecha: 1 });
 exports.SPedidoReporte.index({ numeroSerie: 1, fecha: 1 }, { unique: true });
 exports.SPedidoReporte.index({ aplicado: 1, numeroSerie: 1, fecha: 1 });
-exports.SPedidoReporte.virtual('correctora', {
-    foreignField: 'numeroSerie',
-    justOne: true,
-    localField: 'numeroSerie',
-    ref: 'correctoras',
-});

@@ -9,7 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IReporteCorrectoraDTOValidation = joi_1.default.object({
     _id: joi_1.default.string().required(),
     deveui: joi_1.default.string().required(),
-    numeroSerieCorrectora: joi_1.default.string(),
+    numeroSerie: joi_1.default.string(),
     fecha: joi_1.default.date().required(),
     corrected: joi_1.default.number(),
     uncorrected: joi_1.default.number(),

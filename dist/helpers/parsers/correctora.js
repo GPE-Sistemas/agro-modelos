@@ -24,7 +24,7 @@ class CorrectoraParserService {
             _id: dato._id.toHexString(),
             fecha: dato.fecha.toISOString(),
             deveui: dato.deveui,
-            numeroSerieCorrectora: dato.numeroSerieCorrectora,
+            numeroSerie: dato.numeroSerie,
             corrected: dato.corrected,
             presion: dato.presion,
             temperatura: dato.temperatura,

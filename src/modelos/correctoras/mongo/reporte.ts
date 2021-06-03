@@ -3,7 +3,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IReporteCorrectoraDb extends Document {
     _id: Types.ObjectId;
     deveui: string;
-    numeroSerieCorrectora: string;
+    numeroSerie: string;
     fecha: Date;
     corrected?: number;
     uncorrected?: number;
@@ -14,7 +14,7 @@ export interface IReporteCorrectoraDb extends Document {
 export const SReporteCorrectora = new Schema<IReporteCorrectoraDb>({
     fecha: { type: Date, required: true },
     deveui: { type: String, required: true, trim: true, minlength: 16, maxlength: 16 },
-    numeroSerieCorrectora: { type: String },
+    numeroSerie: { type: String },
     corrected: { type: Number },
     uncorrected: { type: Number },
     presion: { type: Number },
@@ -22,8 +22,8 @@ export const SReporteCorrectora = new Schema<IReporteCorrectoraDb>({
 });
 
 SReporteCorrectora.index({ deveui: 1, fecha: 1 });
-SReporteCorrectora.index({ numeroSerieCorrectora: 1, fecha: 1 }, { sparse: true });
-SReporteCorrectora.index({ numeroSerieCorrectora: 1, deveui: 1, fecha: 1 }, { sparse: true });
+SReporteCorrectora.index({ numeroSerie: 1, fecha: 1 }, { sparse: true, unique: true });
+SReporteCorrectora.index({ numeroSerie: 1, deveui: 1, fecha: 1 }, { sparse: true });
 
 SReporteCorrectora.virtual('dispositivo', {
     foreignField: 'deveui',
@@ -35,6 +35,6 @@ SReporteCorrectora.virtual('dispositivo', {
 SReporteCorrectora.virtual('correctora', {
     foreignField: 'numeroSerie',
     justOne: true,
-    localField: 'numeroSerieCorrectora',
+    localField: 'numeroSerie',
     ref: 'correctoras',
 });

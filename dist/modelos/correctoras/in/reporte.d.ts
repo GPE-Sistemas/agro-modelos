@@ -3,7 +3,7 @@ export declare const IReporteCorrectoraValidation: joi.ObjectSchema<IReporteCorr
 export declare const IReporteCorrectoraSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IReporteCorrectora {
     deveui: string;
-    numeroSerieCorrectora: string;
+    numeroSerie: string;
     fecha: string;
     corrected?: number;
     uncorrected?: number;

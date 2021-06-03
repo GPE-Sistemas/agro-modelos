@@ -3,7 +3,7 @@ import j2s from 'joi-to-swagger';
 
 export const IReporteCorrectoraValidation = joi.object<IReporteCorrectora>({
     deveui: joi.string().required(),
-    numeroSerieCorrectora: joi.string(),
+    numeroSerie: joi.string(),
     fecha: joi.date().required(),
     corrected: joi.number(),
     uncorrected: joi.number(),
@@ -15,7 +15,7 @@ export const IReporteCorrectoraSwagger = j2s(IReporteCorrectoraValidation).swagg
 
 export interface IReporteCorrectora {
     deveui: string;
-    numeroSerieCorrectora: string;
+    numeroSerie: string;
     fecha: string;
     corrected?: number;
     uncorrected?: number;

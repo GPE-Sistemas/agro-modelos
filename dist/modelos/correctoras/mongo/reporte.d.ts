@@ -2,7 +2,7 @@ import { Document, Schema, Types } from 'mongoose';
 export interface IReporteCorrectoraDb extends Document {
     _id: Types.ObjectId;
     deveui: string;
-    numeroSerieCorrectora: string;
+    numeroSerie: string;
     fecha: Date;
     corrected?: number;
     uncorrected?: number;

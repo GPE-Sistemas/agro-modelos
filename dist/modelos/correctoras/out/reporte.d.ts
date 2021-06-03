@@ -4,7 +4,7 @@ export declare const IReporteCorrectoraDTOSwagger: import("joi-to-swagger").Swag
 export interface IReporteCorrectoraDTO {
     _id: string;
     deveui: string;
-    numeroSerieCorrectora: string;
+    numeroSerie: string;
     fecha: string;
     corrected?: number;
     uncorrected?: number;
