@@ -150,6 +150,7 @@ export class AgroParserService {
             usuario: dato.usuario,
             aplicacion: dato.aplicacion,
             descripcion: dato.descripcion,
+            valor: dato.valor,
             // Calculado
             estado: getEstadoComando(dato.ejecutado, dato.error),
         };

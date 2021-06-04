@@ -17,6 +17,7 @@ export interface IComando {
     };
     fCnt?: string;
     descripcion?: string;
+    valor?: string;
     aplicacion: string;
 }
 //# sourceMappingURL=comando.d.ts.map

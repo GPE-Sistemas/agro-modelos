@@ -155,6 +155,7 @@ class AgroParserService {
             usuario: dato.usuario,
             aplicacion: dato.aplicacion,
             descripcion: dato.descripcion,
+            valor: dato.valor,
             // Calculado
             estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
         };

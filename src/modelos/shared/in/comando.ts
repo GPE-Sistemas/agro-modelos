@@ -17,6 +17,7 @@ export const IComandoValidation = joi.object<IComando>({
     }),
     fCnt: joi.string(),
     descripcion: joi.string(),
+    valor: joi.string(),
     aplicacion: joi.string(),
 });
 
@@ -38,5 +39,6 @@ export interface IComando {
     };
     fCnt?: string;
     descripcion?: string;
+    valor?: string;
     aplicacion: string;
 }

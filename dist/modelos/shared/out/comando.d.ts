@@ -16,6 +16,7 @@ export interface IComandoDTO {
     };
     fCnt: string;
     descripcion: string;
+    valor?: string;
     aplicacion: string;
     estado: string;
 }

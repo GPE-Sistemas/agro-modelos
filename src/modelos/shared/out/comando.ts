@@ -16,6 +16,7 @@ export const IComandoDTOValidation = joi.object<IComandoDTO>({
     }),
     fCnt: joi.string(),
     descripcion: joi.string(),
+    valor: joi.string(),
     aplicacion: joi.string(),
 });
 
@@ -36,6 +37,7 @@ export interface IComandoDTO {
     };
     fCnt: string;
     descripcion: string;
+    valor?: string;
     aplicacion: string;
     //
     estado: string;

@@ -16,6 +16,7 @@ export interface IComandoDb extends Document {
         usuario: string;
     };
     descripcion: string;
+    valor?: string;
     aplicacion: string;
 }
 export declare const SComando: Schema<IComandoDb, import("mongoose").Model<any, any>, undefined>;

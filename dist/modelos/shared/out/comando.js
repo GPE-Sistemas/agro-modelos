@@ -21,6 +21,7 @@ exports.IComandoDTOValidation = joi_1.default.object({
     }),
     fCnt: joi_1.default.string(),
     descripcion: joi_1.default.string(),
+    valor: joi_1.default.string(),
     aplicacion: joi_1.default.string(),
 });
 exports.IComandoDTOSwagger = joi_to_swagger_1.default(exports.IComandoDTOValidation).swagger;

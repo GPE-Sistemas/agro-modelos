@@ -17,6 +17,7 @@ export interface IComandoDb extends Document {
         usuario: string,
     };
     descripcion: string;
+    valor?: string;
     aplicacion: string;
 }
 
@@ -33,6 +34,7 @@ export const SComando = new Schema<IComandoDb>({
     fecha: { type: Date },
     usuario: { type: Object },
     descripcion: { type: String },
+    valor: { type: String },
     aplicacion: { type: String },
 });
 
