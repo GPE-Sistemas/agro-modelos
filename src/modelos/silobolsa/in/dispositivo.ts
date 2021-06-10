@@ -25,10 +25,10 @@ export const IDispositivoSilobolsaValidation = joi.object<IDispositivoSilobolsa>
 export const IDispositivoSilobolsaSwagger = j2s(IDispositivoSilobolsaValidation).swagger;
 
 export interface IDispositivoSilobolsa extends IDispositivo {
-    alarmaActiva: boolean;
-    fechaAsignacion: string;
-    idUltimoReporte: string;
-    idSilobolsa: string;
-    posicion: number;
+    alarmaActiva?: boolean;
+    fechaAsignacion?: string;
+    idUltimoReporte?: string;
+    idSilobolsa?: string;
+    posicion?: number;
     alerta?: number;
 }

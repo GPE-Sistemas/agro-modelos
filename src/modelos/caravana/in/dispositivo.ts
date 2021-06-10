@@ -25,9 +25,9 @@ export const IDispositivoCaravanaValidation = joi.object<IDispositivoCaravana>({
 export const IDispositivoCaravanaSwagger = j2s(IDispositivoCaravanaValidation).swagger;
 
 export interface IDispositivoCaravana extends IDispositivo {
-    acelerometro: IAcelerometro;
-    fechaAsignacion: string;
-    frecuenciaReporte: string;
-    idAnimal: string;
-    idUltimoReporte: string;
+    acelerometro?: IAcelerometro;
+    fechaAsignacion?: string;
+    frecuenciaReporte?: string;
+    idAnimal?: string;
+    idUltimoReporte?: string;
 }
