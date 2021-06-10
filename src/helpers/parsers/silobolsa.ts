@@ -28,7 +28,7 @@ export class SilobolsaParserService {
     static reportes(datos: LeanDocument<IReporteSilobolsaDb>[]): IReporteSilobolsaDTO[] {
         const dto: IReporteSilobolsaDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(SilobolsaParserService.reporte(dato));
         }
         return dto;
     }
@@ -53,7 +53,7 @@ export class SilobolsaParserService {
             posicion: dato.posicion,
             alerta: dato.alerta,
             // Populate
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? SilobolsaParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
         return dto;
@@ -61,7 +61,7 @@ export class SilobolsaParserService {
     static dispositivos(datos: LeanDocument<IDispositivoSilobolsaDb>[]): IDispositivoSilobolsaDTO[] {
         const dto: IDispositivoSilobolsaDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(SilobolsaParserService.dispositivo(dato));
         }
         return dto;
     }

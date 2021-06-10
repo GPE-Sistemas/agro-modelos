@@ -16,7 +16,7 @@ export class CorrectoraParserService {
     static pedidosReportes(datos: LeanDocument<IPedidoReporteDb>[]): IPedidoReporteDTO[] {
         const dto: IPedidoReporteDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.pedidoReporte(dato));
+            dto.push(CorrectoraParserService.pedidoReporte(dato));
         }
         return dto;
     }
@@ -37,7 +37,7 @@ export class CorrectoraParserService {
     static reportes(datos: LeanDocument<IReporteCorrectoraDb>[]): IReporteCorrectoraDTO[] {
         const dto: IReporteCorrectoraDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(CorrectoraParserService.reporte(dato));
         }
         return dto;
     }
@@ -59,7 +59,7 @@ export class CorrectoraParserService {
             numeroSerieCorrectora: dato.numeroSerieCorrectora,
             idUltimoReporte: dato.idUltimoReporte?.toHexString(),
             //
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? CorrectoraParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
         return dto;
@@ -67,7 +67,7 @@ export class CorrectoraParserService {
     static dispositivos(datos: LeanDocument<IDispositivoCorrectoraDb>[]): IDispositivoCorrectoraDTO[] {
         const dto: IDispositivoCorrectoraDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(CorrectoraParserService.dispositivo(dato));
         }
         return dto;
     }

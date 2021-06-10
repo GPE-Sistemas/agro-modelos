@@ -19,7 +19,7 @@ export class OauthParserService {
     static tokens(datos: LeanDocument<ITokenDb>[]): ITokenDTO[] {
         const dto: ITokenDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.token(dato));
+            dto.push(OauthParserService.token(dato));
         }
         return dto;
     }
@@ -35,7 +35,7 @@ export class OauthParserService {
     static clients(datos: LeanDocument<IClientDb>[]): IClientDTO[] {
         const dto: IClientDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.client(dato));
+            dto.push(OauthParserService.client(dato));
         }
         return dto;
     }

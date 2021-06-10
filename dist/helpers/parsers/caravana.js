@@ -17,13 +17,13 @@ class CaravanaParserService {
     static reportes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(CaravanaParserService.reporte(dato));
         }
         return dto;
     }
     static dispositivo(dato) {
         var _a, _b, _c;
-        const horasReporte = dato.frecuenciaReporte ? this.hexaAHoras(dato.frecuenciaReporte) : undefined;
+        const horasReporte = dato.frecuenciaReporte ? CaravanaParserService.hexaAHoras(dato.frecuenciaReporte) : undefined;
         const dto = {
             _id: dato._id.toHexString(),
             acelerometro: dato.acelerometro,
@@ -41,10 +41,10 @@ class CaravanaParserService {
             red: dato.red,
             //
             horasReporte,
-            bateria: this.getBateria(horasReporte === null || horasReporte === void 0 ? void 0 : horasReporte.length, +dato.fCnt),
-            // duracion: this.getDuracion(frecuenciaReporte?.length, dato.fCnt),
+            bateria: CaravanaParserService.getBateria(horasReporte === null || horasReporte === void 0 ? void 0 : horasReporte.length, +dato.fCnt),
+            // duracion: CaravanaParserService.getDuracion(frecuenciaReporte?.length, dato.fCnt),
             //
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? CaravanaParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
         return dto;
@@ -52,7 +52,7 @@ class CaravanaParserService {
     static dispositivos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(CaravanaParserService.dispositivo(dato));
         }
         return dto;
     }

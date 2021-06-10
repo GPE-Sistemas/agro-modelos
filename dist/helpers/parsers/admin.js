@@ -25,7 +25,7 @@ class AdminParserService {
     static usuarios(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.usuario(dato));
+            dto.push(AdminParserService.usuario(dato));
         }
         return dto;
     }
@@ -50,7 +50,7 @@ class AdminParserService {
     static clientes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.cliente(dato));
+            dto.push(AdminParserService.cliente(dato));
         }
         return dto;
     }
@@ -68,7 +68,7 @@ class AdminParserService {
     static aplicaciones(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.aplicacion(dato));
+            dto.push(AdminParserService.aplicacion(dato));
         }
         return dto;
     }
@@ -87,7 +87,7 @@ class AdminParserService {
     static applicationServers(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.applicationServer(dato));
+            dto.push(AdminParserService.applicationServer(dato));
         }
         return dto;
     }
@@ -114,7 +114,7 @@ class AdminParserService {
     static dispositivosAdmin(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.dispositivoAdmin(dato));
+            dto.push(AdminParserService.dispositivoAdmin(dato));
         }
         return dto;
     }
@@ -131,7 +131,7 @@ class AdminParserService {
     static lotesDispositvo(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.loteDispositvo(dato));
+            dto.push(AdminParserService.loteDispositvo(dato));
         }
         return dto;
     }
@@ -156,7 +156,7 @@ class AdminParserService {
     static gateways(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.gateway(dato));
+            dto.push(AdminParserService.gateway(dato));
         }
         return dto;
     }

@@ -18,7 +18,7 @@ class OauthParserService {
     static tokens(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.token(dato));
+            dto.push(OauthParserService.token(dato));
         }
         return dto;
     }
@@ -33,7 +33,7 @@ class OauthParserService {
     static clients(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.client(dato));
+            dto.push(OauthParserService.client(dato));
         }
         return dto;
     }

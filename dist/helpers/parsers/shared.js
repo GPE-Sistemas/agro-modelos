@@ -14,7 +14,7 @@ class SharedParserService {
     static estados(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.estado(dato));
+            dto.push(SharedParserService.estado(dato));
         }
         return dto;
     }
@@ -30,7 +30,7 @@ class SharedParserService {
     static comentarios(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.comentario(dato));
+            dto.push(SharedParserService.comentario(dato));
         }
         return dto;
     }

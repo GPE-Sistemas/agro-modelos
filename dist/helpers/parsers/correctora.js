@@ -15,7 +15,7 @@ class CorrectoraParserService {
     static pedidosReportes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.pedidoReporte(dato));
+            dto.push(CorrectoraParserService.pedidoReporte(dato));
         }
         return dto;
     }
@@ -35,7 +35,7 @@ class CorrectoraParserService {
     static reportes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(CorrectoraParserService.reporte(dato));
         }
         return dto;
     }
@@ -57,7 +57,7 @@ class CorrectoraParserService {
             numeroSerieCorrectora: dato.numeroSerieCorrectora,
             idUltimoReporte: (_c = dato.idUltimoReporte) === null || _c === void 0 ? void 0 : _c.toHexString(),
             //
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? CorrectoraParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
         return dto;
@@ -65,7 +65,7 @@ class CorrectoraParserService {
     static dispositivos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(CorrectoraParserService.dispositivo(dato));
         }
         return dto;
     }

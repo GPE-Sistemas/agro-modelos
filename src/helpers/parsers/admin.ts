@@ -25,7 +25,7 @@ export class AdminParserService {
     static usuarios(datos: LeanDocument<IUsuarioDb>[]): IUsuarioDTO[] {
         const dto: IUsuarioDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.usuario(dato));
+            dto.push(AdminParserService.usuario(dato));
         }
         return dto;
     }
@@ -50,7 +50,7 @@ export class AdminParserService {
     static clientes(datos: LeanDocument<IClienteDb>[]): IClienteDTO[] {
         const dto: IClienteDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.cliente(dato));
+            dto.push(AdminParserService.cliente(dato));
         }
         return dto;
     }
@@ -68,7 +68,7 @@ export class AdminParserService {
     static aplicaciones(datos: LeanDocument<IAplicacionDb>[]): IAplicacionDTO[] {
         const dto: IAplicacionDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.aplicacion(dato));
+            dto.push(AdminParserService.aplicacion(dato));
         }
         return dto;
     }
@@ -87,7 +87,7 @@ export class AdminParserService {
     static applicationServers(datos: LeanDocument<IApplicationServerDb>[]): IApplicationServerDTO[] {
         const dto: IApplicationServerDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.applicationServer(dato));
+            dto.push(AdminParserService.applicationServer(dato));
         }
         return dto;
     }
@@ -114,7 +114,7 @@ export class AdminParserService {
     static dispositivosAdmin(datos: LeanDocument<IDispositivoAdminDb>[]): IDispositivoAdminDTO[] {
         const dto: IDispositivoAdminDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.dispositivoAdmin(dato));
+            dto.push(AdminParserService.dispositivoAdmin(dato));
         }
         return dto;
     }
@@ -131,7 +131,7 @@ export class AdminParserService {
     static lotesDispositvo(datos: LeanDocument<ILoteDispositivoDb>[]): ILoteDispositivoDTO[] {
         const dto: ILoteDispositivoDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.loteDispositvo(dato));
+            dto.push(AdminParserService.loteDispositvo(dato));
         }
         return dto;
     }
@@ -156,7 +156,7 @@ export class AdminParserService {
     static gateways(datos: LeanDocument<IGatewayDb>[]): IGatewayDTO[] {
         const dto: IGatewayDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.gateway(dato));
+            dto.push(AdminParserService.gateway(dato));
         }
         return dto;
     }

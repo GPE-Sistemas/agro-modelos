@@ -12,7 +12,7 @@ export class SharedParserService {
     static estados(datos: {fecha: Date, usuario: string, estado: string}[]) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.estado(dato));
+            dto.push(SharedParserService.estado(dato));
         }
         return dto;
     }
@@ -29,7 +29,7 @@ export class SharedParserService {
     static comentarios(datos: {fecha: Date, usuario: string, comentario: string}[]) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.comentario(dato));
+            dto.push(SharedParserService.comentario(dato));
         }
         return dto;
     }

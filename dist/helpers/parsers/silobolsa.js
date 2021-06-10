@@ -27,7 +27,7 @@ class SilobolsaParserService {
     static reportes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(SilobolsaParserService.reporte(dato));
         }
         return dto;
     }
@@ -52,7 +52,7 @@ class SilobolsaParserService {
             posicion: dato.posicion,
             alerta: dato.alerta,
             // Populate
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? SilobolsaParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
         return dto;
@@ -60,7 +60,7 @@ class SilobolsaParserService {
     static dispositivos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(SilobolsaParserService.dispositivo(dato));
         }
         return dto;
     }

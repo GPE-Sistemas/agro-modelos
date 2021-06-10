@@ -18,13 +18,13 @@ export class CaravanaParserService {
     static reportes(datos: LeanDocument<IReporteCaravanaDb>[]): IReporteCaravanaDTO[] {
         const dto: IReporteCaravanaDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.reporte(dato));
+            dto.push(CaravanaParserService.reporte(dato));
         }
         return dto;
     }
 
     static dispositivo(dato: LeanDocument<IDispositivoCaravanaDb>): IDispositivoCaravanaDTO {
-        const horasReporte = dato.frecuenciaReporte ? this.hexaAHoras(dato.frecuenciaReporte) : undefined;
+        const horasReporte = dato.frecuenciaReporte ? CaravanaParserService.hexaAHoras(dato.frecuenciaReporte) : undefined;
         const dto: IDispositivoCaravanaDTO = {
             _id: dato._id.toHexString(),
             acelerometro: dato.acelerometro,
@@ -42,10 +42,10 @@ export class CaravanaParserService {
             red: dato.red,
             //
             horasReporte,
-            bateria: this.getBateria(horasReporte?.length, +dato.fCnt),
-            // duracion: this.getDuracion(frecuenciaReporte?.length, dato.fCnt),
+            bateria: CaravanaParserService.getBateria(horasReporte?.length, +dato.fCnt),
+            // duracion: CaravanaParserService.getDuracion(frecuenciaReporte?.length, dato.fCnt),
             //
-            ultimoReporte: dato.ultimoReporte ? this.reporte(dato.ultimoReporte) : undefined,
+            ultimoReporte: dato.ultimoReporte ? CaravanaParserService.reporte(dato.ultimoReporte) : undefined,
         };
         Object.keys(dto).forEach(key => (dto as any)[key] === null ? delete (dto as any)[key] : {});
         return dto;
@@ -53,7 +53,7 @@ export class CaravanaParserService {
     static dispositivos(datos: LeanDocument<IDispositivoCaravanaDb>[]): IDispositivoCaravanaDTO[] {
         const dto: IDispositivoCaravanaDTO[] = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(CaravanaParserService.dispositivo(dato));
         }
         return dto;
     }
