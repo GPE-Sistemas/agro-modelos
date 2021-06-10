@@ -11,7 +11,7 @@ class AgroParserService {
             nombre: dato.nombre,
             idEstablecimiento: dato.idEstablecimiento,
             //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -19,7 +19,7 @@ class AgroParserService {
     static corrales(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.corral(dato));
+            dto.push(AgroParserService.corral(dato));
         }
         return dto;
     }
@@ -29,7 +29,7 @@ class AgroParserService {
             nombre: dato.nombre,
             idEstablecimiento: dato.idEstablecimiento,
             //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -37,7 +37,7 @@ class AgroParserService {
     static grupos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.grupo(dato));
+            dto.push(AgroParserService.grupo(dato));
         }
         return dto;
     }
@@ -53,7 +53,7 @@ class AgroParserService {
     static establecimientos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.establecimiento(dato));
+            dto.push(AgroParserService.establecimiento(dato));
         }
         return dto;
     }
@@ -87,7 +87,7 @@ class AgroParserService {
     static alertas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.alerta(dato));
+            dto.push(AgroParserService.alerta(dato));
         }
         return dto;
     }
@@ -113,7 +113,7 @@ class AgroParserService {
     static dispositivos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.dispositivo(dato));
+            dto.push(AgroParserService.dispositivo(dato));
         }
         return dto;
     }
@@ -136,7 +136,7 @@ class AgroParserService {
     static logsDispositivos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.logDispositivo(dato));
+            dto.push(AgroParserService.logDispositivo(dato));
         }
         return dto;
     }
@@ -165,7 +165,7 @@ class AgroParserService {
     static comandos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.comando(dato));
+            dto.push(AgroParserService.comando(dato));
         }
         return dto;
     }
@@ -182,7 +182,7 @@ class AgroParserService {
     static especies(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.especie(dato));
+            dto.push(AgroParserService.especie(dato));
         }
         return dto;
     }
@@ -193,7 +193,7 @@ class AgroParserService {
             nombre: dato.nombre,
             idEspecie: (_b = dato.idEspecie) === null || _b === void 0 ? void 0 : _b.toHexString(),
             //
-            especie: dato.especie ? this.especie(dato.especie) : undefined,
+            especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -201,7 +201,7 @@ class AgroParserService {
     static razas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.raza(dato));
+            dto.push(AgroParserService.raza(dato));
         }
         return dto;
     }
@@ -215,7 +215,7 @@ class AgroParserService {
             edadMaxMeses: dato.edadMaxMeses,
             edadMinMeses: dato.edadMinMeses,
             //
-            especie: dato.especie ? this.especie(dato.especie) : undefined,
+            especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -223,7 +223,7 @@ class AgroParserService {
     static categorias(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.categoria(dato));
+            dto.push(AgroParserService.categoria(dato));
         }
         return dto;
     }
@@ -251,17 +251,17 @@ class AgroParserService {
             idRaza: (_m = dato.idRaza) === null || _m === void 0 ? void 0 : _m.toHexString(),
             sexo: dato.sexo,
             // Populate
-            baja: dato.baja ? this.baja(dato.baja) : undefined,
-            categoria: dato.categoria ? this.categoria(dato.categoria) : undefined,
-            corral: dato.corral ? this.corral(dato.corral) : undefined,
-            especie: dato.especie ? this.especie(dato.especie) : undefined,
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-            grupos: ((_o = dato.grupos) === null || _o === void 0 ? void 0 : _o.length) ? this.grupos(dato.grupos) : undefined,
-            lote: dato.lote ? this.loteAnimal(dato.lote) : undefined,
+            baja: dato.baja ? AgroParserService.baja(dato.baja) : undefined,
+            categoria: dato.categoria ? AgroParserService.categoria(dato.categoria) : undefined,
+            corral: dato.corral ? AgroParserService.corral(dato.corral) : undefined,
+            especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+            grupos: ((_o = dato.grupos) === null || _o === void 0 ? void 0 : _o.length) ? AgroParserService.grupos(dato.grupos) : undefined,
+            lote: dato.lote ? AgroParserService.loteAnimal(dato.lote) : undefined,
             madre,
             padre,
-            subcategoria: dato.subcategoria ? this.subcategoria(dato.subcategoria) : undefined,
-            raza: dato.raza ? this.raza(dato.raza) : undefined,
+            subcategoria: dato.subcategoria ? AgroParserService.subcategoria(dato.subcategoria) : undefined,
+            raza: dato.raza ? AgroParserService.raza(dato.raza) : undefined,
             //
             dispositivo,
             vacunaciones,
@@ -277,7 +277,7 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => dato.deveui === d.deveui);
-            dto.push(this.animal(dato, dispositivo));
+            dto.push(AgroParserService.animal(dato, dispositivo));
         }
         return dto;
     }
@@ -292,7 +292,7 @@ class AgroParserService {
     static tiposBajas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.tipoBaja(dato));
+            dto.push(AgroParserService.tipoBaja(dato));
         }
         return dto;
     }
@@ -303,7 +303,7 @@ class AgroParserService {
             idTipoBaja: dato.idTipoBaja,
             observaciones: dato.observaciones,
             // Populate
-            tipoBaja: dato.tipoBaja ? this.tipoBaja(dato.tipoBaja) : undefined,
+            tipoBaja: dato.tipoBaja ? AgroParserService.tipoBaja(dato.tipoBaja) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -311,7 +311,7 @@ class AgroParserService {
     static bajas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.baja(dato));
+            dto.push(AgroParserService.baja(dato));
         }
         return dto;
     }
@@ -321,7 +321,7 @@ class AgroParserService {
             nombre: dato.nombre,
             idEstablecimiento: dato.idEstablecimiento,
             //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -329,7 +329,7 @@ class AgroParserService {
     static lotesAnimales(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.loteAnimal(dato));
+            dto.push(AgroParserService.loteAnimal(dato));
         }
         return dto;
     }
@@ -343,7 +343,7 @@ class AgroParserService {
     static diagnosticos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.diagnostico(dato));
+            dto.push(AgroParserService.diagnostico(dato));
         }
         return dto;
     }
@@ -355,14 +355,14 @@ class AgroParserService {
             pesoMin: dato.pesoMin,
             idCategoria: dato.idCategoria,
             //
-            categoria: dato.categoria ? this.categoria(dato.categoria) : undefined,
+            categoria: dato.categoria ? AgroParserService.categoria(dato.categoria) : undefined,
         };
         return dto;
     }
     static subcategorias(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.subcategoria(dato));
+            dto.push(AgroParserService.subcategoria(dato));
         }
         return dto;
     }
@@ -376,7 +376,7 @@ class AgroParserService {
     static tipoTratamientos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.tipoTratamiento(dato));
+            dto.push(AgroParserService.tipoTratamiento(dato));
         }
         return dto;
     }
@@ -390,7 +390,7 @@ class AgroParserService {
     static tipoVacunas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.tipoVacuna(dato));
+            dto.push(AgroParserService.tipoVacuna(dato));
         }
         return dto;
     }
@@ -404,9 +404,9 @@ class AgroParserService {
             observaciones: dato.observaciones,
             producto: dato.producto,
             //
-            animal: dato.animal ? this.animal(dato.animal) : undefined,
-            diagnostico: dato.diagnostico ? this.diagnostico(dato.diagnostico) : undefined,
-            tipoTratamiento: dato.tipoTratamiento ? this.tipoTratamiento(dato.tipoTratamiento) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            diagnostico: dato.diagnostico ? AgroParserService.diagnostico(dato.diagnostico) : undefined,
+            tipoTratamiento: dato.tipoTratamiento ? AgroParserService.tipoTratamiento(dato.tipoTratamiento) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -414,7 +414,7 @@ class AgroParserService {
     static tratamientos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.tratamiento(dato));
+            dto.push(AgroParserService.tratamiento(dato));
         }
         return dto;
     }
@@ -428,15 +428,15 @@ class AgroParserService {
             observaciones: dato.observaciones,
             producto: dato.producto,
             //
-            tipoVacuna: dato.tipoVacuna ? this.tipoVacuna(dato.tipoVacuna) : undefined,
-            animal: dato.animal ? this.animal(dato.animal) : undefined,
+            tipoVacuna: dato.tipoVacuna ? AgroParserService.tipoVacuna(dato.tipoVacuna) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         return dto;
     }
     static vacunaciones(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.vacunacion(dato));
+            dto.push(AgroParserService.vacunacion(dato));
         }
         return dto;
     }
@@ -448,14 +448,14 @@ class AgroParserService {
             titulo: dato.titulo,
             observaciones: dato.observaciones,
             //
-            animal: dato.animal ? this.animal(dato.animal) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         return dto;
     }
     static eventosEspecificos(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.eventoEspecifico(dato));
+            dto.push(AgroParserService.eventoEspecifico(dato));
         }
         return dto;
     }
@@ -467,14 +467,14 @@ class AgroParserService {
             peso: dato.peso,
             observaciones: dato.observaciones,
             //
-            animal: dato.animal ? this.animal(dato.animal) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         return dto;
     }
     static pesajes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.pesaje(dato));
+            dto.push(AgroParserService.pesaje(dato));
         }
         return dto;
     }
@@ -486,14 +486,14 @@ class AgroParserService {
             inicio: dato.inicio,
             observaciones: dato.observaciones,
             //
-            animal: dato.animal ? this.animal(dato.animal) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         return dto;
     }
     static servicios(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.servicio(dato));
+            dto.push(AgroParserService.servicio(dato));
         }
         return dto;
     }
@@ -511,8 +511,8 @@ class AgroParserService {
             numero: dato.numero,
             producto: dato.producto,
             //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
-            lote: dato.lote ? this.loteSilobolsa(dato.lote) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? AgroParserService.loteSilobolsa(dato.lote) : undefined,
             dispositivos,
         };
         return dto;
@@ -521,7 +521,7 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             const dispositivosSilo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.filter(d => dato.deveuiDispositivos.includes(d.deveui));
-            dto.push(this.silobolsa(dato, dispositivosSilo));
+            dto.push(AgroParserService.silobolsa(dato, dispositivosSilo));
         }
         return dto;
     }
@@ -531,14 +531,14 @@ class AgroParserService {
             idEstablecimiento: dato.idEstablecimiento,
             nombre: dato.nombre,
             //
-            establecimiento: dato.establecimiento ? this.establecimiento(dato.establecimiento) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
     static loteSilobolsas(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(this.loteSilobolsa(dato));
+            dto.push(AgroParserService.loteSilobolsa(dato));
         }
         return dto;
     }
@@ -561,7 +561,7 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => d.deveui === dato.deveui);
-            dto.push(this.correctora(dato, dispositivo));
+            dto.push(AgroParserService.correctora(dato, dispositivo));
         }
         return dto;
     }
