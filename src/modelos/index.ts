@@ -6,3 +6,4 @@ export * from './oauth';
 export * from './shared';
 export * from './silobolsa';
 export * from './correctoras';
+export * from './tracker-silobolsa';
