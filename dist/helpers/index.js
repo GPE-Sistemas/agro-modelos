@@ -17,4 +17,5 @@ __exportStar(require("./parsers/oauth"), exports);
 __exportStar(require("./parsers/shared"), exports);
 __exportStar(require("./parsers/silobolsa"), exports);
 __exportStar(require("./parsers/correctora"), exports);
+__exportStar(require("./parsers/tracker-silobolsa"), exports);
 __exportStar(require("./helpers"), exports);

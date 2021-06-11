@@ -5,5 +5,6 @@ export * from './parsers/oauth';
 export * from './parsers/shared';
 export * from './parsers/silobolsa';
 export * from './parsers/correctora';
+export * from './parsers/tracker-silobolsa';
 export * from './helpers';
 //# sourceMappingURL=index.d.ts.map
