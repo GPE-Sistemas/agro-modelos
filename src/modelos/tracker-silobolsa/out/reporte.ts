@@ -6,7 +6,7 @@ export const IReporteTrackerSilobolsaDTOValidation = joi.object<IReporteTrackerS
     deveui: joi.string().required(),
     idSilobolsa: joi.string(),
     fecha: joi.date().required(),
-    alerta: joi.boolean().required(),
+    alarma: joi.boolean().required(),
 });
 
 export const IReporteTrackerSilobolsaDTOSwagger = j2s(IReporteTrackerSilobolsaDTOValidation).swagger;
@@ -16,5 +16,5 @@ export interface IReporteTrackerSilobolsaDTO {
     deveui: string;
     idSilobolsa?: string;
     fecha: string;
-    alerta: boolean,
+    alarma: boolean,
 }

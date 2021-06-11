@@ -6,6 +6,6 @@ export interface IReporteTrackerSilobolsaDTO {
     deveui: string;
     idSilobolsa?: string;
     fecha: string;
-    alerta: boolean;
+    alarma: boolean;
 }
 //# sourceMappingURL=reporte.d.ts.map
