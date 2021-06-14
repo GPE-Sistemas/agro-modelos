@@ -1,4 +1,24 @@
 import joi from 'joi';
+export declare const IEstadoAlertaValidation: joi.ObjectSchema<IEstadoAlerta>;
+export declare const IReporteAlertaValidation: joi.ObjectSchema<IReporteAlerta>;
+export declare const IComentarioAlertaValidation: joi.ObjectSchema<IComentarioAlerta>;
+export interface IComentarioAlerta {
+    fecha: string;
+    usuario: string;
+    comentario: string;
+}
+export interface IEstadoAlerta {
+    fecha: string;
+    usuario: string;
+    estado: string;
+}
+export interface IReporteAlerta {
+    deveui: string;
+    deviceName: string;
+    fecha: string;
+    medicion?: string;
+    valor?: number;
+}
 export declare const IAlertaValidation: joi.ObjectSchema<IAlerta>;
 export declare const IAlertaSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IAlerta {
@@ -16,29 +36,6 @@ export interface IAlerta {
      * 3 - grave
      * */
     nivel?: number;
-    /** Indica el tipo de alerta
-     * @example
-     * 'Temperatura elevada'
-     * 'CO2 elevado'
-     * 'Fuera del corral'
-     * */
-    mensaje: string;
-    /** Nombre corto de la alerta
-     * @example
-     * 'TEMP'
-     * 'CO2'
-     * 'FC'
-     */
-    mensajeCorto?: string;
-    /** Valor que genero la alerta
-     * @example
-     * '38 °C'
-     * '30 %'
-     * '{lat: -35.16516, lng: 55.2112}'
-    */
-    valor?: string;
-    deveui: string;
-    deviceName?: string;
     /** ID al que está asignado el dispositivo que originó la alerta */
     idAsignado?: string;
     /** Nombre para mostrar de la entidad asignada
@@ -47,18 +44,12 @@ export interface IAlerta {
      * 'Animal JC 0111 232'
      */
     nombreAsignado?: string;
-    archivada?: boolean;
-    comentarios?: {
-        fecha: string;
-        usuario: string;
-        comentario: string;
-    }[];
+    tipo?: 'tecnica' | 'seguridad' | 'reporte';
     fecha?: string;
     estadoActual?: string;
-    estados?: {
-        fecha: string;
-        usuario: string;
-        estado: string;
-    }[];
+    archivada?: boolean;
+    comentarios?: IComentarioAlerta[];
+    estados?: IEstadoAlerta[];
+    reportes?: IReporteAlerta[];
 }
 //# sourceMappingURL=alerta.d.ts.map

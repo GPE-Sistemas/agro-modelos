@@ -1,32 +1,63 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const IAlertaValidation = joi.object<IAlerta>({
-    aplicacion: joi.string(),
-    mensaje: joi.string(),
-    mensajeCorto: joi.string(),
-    nivel: joi.number(),
-    valor: joi.string(),
+export const IEstadoAlertaValidation = joi.object<IEstadoAlerta>({
+    fecha: joi.string(),
+    usuario: joi.string(),
+    estado: joi.string(),
+});
+
+export const IReporteAlertaValidation = joi.object<IReporteAlerta>({
     deveui: joi.string(),
     deviceName: joi.string(),
+    fecha: joi.string(),
+    medicion: joi.string(),
+    valor: joi.number(),
+});
+
+export const IComentarioAlertaValidation = joi.object<IComentarioAlerta>({
+    fecha: joi.string(),
+    usuario: joi.string(),
+    comentario: joi.string(),
+});
+
+export interface IComentarioAlerta {
+    fecha: string;
+    usuario: string;
+    comentario: string;
+}
+
+export interface IEstadoAlerta {
+    fecha: string;
+    usuario: string;
+    estado: string;
+}
+
+export interface IReporteAlerta {
+    deveui: string;
+    deviceName: string;
+    fecha: string;
+    medicion?: string;
+    valor?: number;
+}
+
+export const IAlertaValidation = joi.object<IAlerta>({
+    aplicacion: joi.string(),
+    nivel: joi.number(),
     idAsignado: joi.string(),
     nombreAsignado: joi.string(),
-    archivada: joi.boolean(),
-    comentarios: joi.array().items(joi.object({
-        fecha: joi.string(),
-        usuario: joi.string(),
-        comentario: joi.string(),
-    })),
+    tipo: joi.string().valid('tecnica', 'seguridad', 'reporte'),
     fecha: joi.date(),
     estadoActual: joi.string(),
-    estados: joi.array().items(joi.object({
-        fecha: joi.string(),
-        usuario: joi.string(),
-        estado: joi.string(),
-    })),
+    archivada: joi.boolean(),
+    comentarios: IComentarioAlertaValidation,
+    estados: IEstadoAlertaValidation,
+    reportes: IReporteAlertaValidation,
 });
 
 export const IAlertaSwagger = j2s(IAlertaValidation).swagger;
+
+
 
 export interface IAlerta {
     /**
@@ -43,29 +74,6 @@ export interface IAlerta {
      * 3 - grave
      * */
     nivel?: number;
-    /** Indica el tipo de alerta 
-     * @example
-     * 'Temperatura elevada' 
-     * 'CO2 elevado'
-     * 'Fuera del corral'
-     * */
-    mensaje: string;
-    /** Nombre corto de la alerta
-     * @example
-     * 'TEMP'
-     * 'CO2'
-     * 'FC'
-     */
-    mensajeCorto?: string
-    /** Valor que genero la alerta 
-     * @example
-     * '38 °C'
-     * '30 %'
-     * '{lat: -35.16516, lng: 55.2112}'
-    */
-    valor?: string;
-    deveui: string;
-    deviceName?: string;
     /** ID al que está asignado el dispositivo que originó la alerta */
     idAsignado?: string;
     /** Nombre para mostrar de la entidad asignada
@@ -74,17 +82,11 @@ export interface IAlerta {
      * 'Animal JC 0111 232'
      */
     nombreAsignado?: string;
-    archivada?: boolean;
-    comentarios?: {
-        fecha: string;
-        usuario: string;
-        comentario: string;
-    }[];
+    tipo?: 'tecnica' | 'seguridad' | 'reporte';
     fecha?: string;
     estadoActual?: string;
-    estados?: {
-        fecha: string;
-        usuario: string;
-        estado: string;
-    }[];
+    archivada?: boolean;
+    comentarios?: IComentarioAlerta[];
+    estados?: IEstadoAlerta[];
+    reportes?: IReporteAlerta[];
 }

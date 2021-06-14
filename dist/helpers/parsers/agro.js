@@ -58,29 +58,20 @@ class AgroParserService {
         return dto;
     }
     static alerta(dato) {
-        var _a, _b, _c, _d;
+        var _a;
         const dto = {
             _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            fecha: dato.fecha.toISOString(),
-            mensaje: dato.mensaje,
+            fecha: (_a = dato.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(),
             aplicacion: dato.aplicacion,
-            archivada: dato.archivada,
-            comentarios: ((_a = dato.comentarios) === null || _a === void 0 ? void 0 : _a.length) ? (_b = dato.comentarios) === null || _b === void 0 ? void 0 : _b.map(c => {
-                var _a;
-                return { fecha: (_a = c.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(), usuario: c.usuario, comentario: c.comentario };
-            }) : [],
-            deviceName: dato.deviceName,
-            estadoActual: dato.estadoActual,
-            estados: ((_c = dato.estados) === null || _c === void 0 ? void 0 : _c.length) ? (_d = dato.estados) === null || _d === void 0 ? void 0 : _d.map(e => {
-                var _a;
-                return { fecha: (_a = e.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(), usuario: e.usuario, estado: e.estado };
-            }) : [],
-            idAsignado: dato.idAsignado,
-            mensajeCorto: dato.mensajeCorto,
+            tipo: dato.tipo,
             nivel: dato.nivel,
+            idAsignado: dato.idAsignado,
             nombreAsignado: dato.nombreAsignado,
-            valor: dato.valor
+            estadoActual: dato.estadoActual,
+            archivada: dato.archivada,
+            comentarios: dato.comentarios || [],
+            estados: dato.estados || [],
+            reportes: dato.reportes || [],
         };
         return dto;
     }

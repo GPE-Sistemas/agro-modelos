@@ -60,24 +60,17 @@ export class AgroParserService {
     static alerta(dato: LeanDocument<IAlertaDb>): IAlertaDTO {
         const dto: IAlertaDTO = {
             _id: dato._id.toHexString(),
-            deveui: dato.deveui,
-            fecha: dato.fecha.toISOString(),
-            mensaje: dato.mensaje,
+            fecha: dato.fecha?.toISOString(),
             aplicacion: dato.aplicacion,
-            archivada: dato.archivada,
-            comentarios: dato.comentarios?.length ? dato.comentarios?.map( c => {
-                return { fecha: c.fecha?.toISOString(), usuario: c.usuario, comentario: c.comentario};
-            }) : [],
-            deviceName: dato.deviceName,
-            estadoActual: dato.estadoActual,
-            estados: dato.estados?.length ? dato.estados?.map(e => {
-                return { fecha: e.fecha?.toISOString(), usuario: e.usuario, estado: e.estado };
-            }) : [],
-            idAsignado: dato.idAsignado,
-            mensajeCorto: dato.mensajeCorto,
+            tipo: dato.tipo,
             nivel: dato.nivel,
+            idAsignado: dato.idAsignado,
             nombreAsignado: dato.nombreAsignado,
-            valor: dato.valor
+            estadoActual: dato.estadoActual,
+            archivada: dato.archivada,
+            comentarios: dato.comentarios || [],
+            estados: dato.estados || [],
+            reportes: dato.reportes || [],
         };
         return dto;
     }
