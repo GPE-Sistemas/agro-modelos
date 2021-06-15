@@ -539,7 +539,7 @@ export class AgroParserService {
         const dto: ISilobolsaDTO[] = [];
         for (const dato of datos) {
             const lanzasSilo = lanzas?.filter(d => dato.deveuiLanzas.includes(d.deveui));
-            const trackersSilo = trackers?.filter(d => dato.deveuiLanzas.includes(d.deveui));
+            const trackersSilo = trackers?.filter(d => dato.deveuiTrackers.includes(d.deveui));
             dto.push(AgroParserService.silobolsa(dato, lanzasSilo, trackersSilo));
         }
         return dto;

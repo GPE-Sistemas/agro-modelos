@@ -516,7 +516,7 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             const lanzasSilo = lanzas === null || lanzas === void 0 ? void 0 : lanzas.filter(d => dato.deveuiLanzas.includes(d.deveui));
-            const trackersSilo = trackers === null || trackers === void 0 ? void 0 : trackers.filter(d => dato.deveuiLanzas.includes(d.deveui));
+            const trackersSilo = trackers === null || trackers === void 0 ? void 0 : trackers.filter(d => dato.deveuiTrackers.includes(d.deveui));
             dto.push(AgroParserService.silobolsa(dato, lanzasSilo, trackersSilo));
         }
         return dto;
