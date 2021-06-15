@@ -1,22 +1,27 @@
 import joi from 'joi';
 import { IDispositivoSilobolsaDTO } from '../../silobolsa/out/dispositivo';
+import { IDispositivoTrackerSilobolsaDTO } from '../../tracker-silobolsa';
 import { IEstablecimientoDTO } from './establecimiento';
-import { ILoteSilobolsaDTO } from './lote-silobolsa';
+import { ILoteDTO } from './lote';
 export declare const ISilobolsaDTOValidation: joi.ObjectSchema<ISilobolsaDTO>;
 export declare const ISilobolsaDTOSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface ISilobolsaDTO {
     _id: string;
     idEstablecimiento: string;
     idLote: string;
-    deveuiDispositivos: string[];
+    deveuiLanzas: string[];
+    deveuiTrackers: string[];
     numero: string;
     metros: number;
     especie: string;
     cosecha: string;
     producto: string;
     fechaConfeccion: string;
-    dispositivos?: IDispositivoSilobolsaDTO[];
+    activa: boolean;
+    fechaDesmantelacion: string;
+    lanzas?: IDispositivoSilobolsaDTO[];
+    trackers?: IDispositivoTrackerSilobolsaDTO[];
     establecimiento?: IEstablecimientoDTO;
-    lote?: ILoteSilobolsaDTO;
+    lote?: ILoteDTO;
 }
 //# sourceMappingURL=silobolsa.d.ts.map

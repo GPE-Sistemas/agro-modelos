@@ -7,7 +7,7 @@ import { IEspecieDTO } from './especie';
 import { IEstablecimientoDTO } from './establecimiento';
 import { IEventoEspecificoDTO } from './eventoEspecifico';
 import { IGrupoDTO } from './grupo';
-import { ILoteAnimalDTO } from './lote-animal';
+import { ILoteDTO } from './lote';
 import { IPesajeDTO } from './pesaje';
 import { IRazaDTO } from './raza';
 import { IServicioDTO } from './servicio';
@@ -44,7 +44,7 @@ export interface IAnimalDTO {
     especie?: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
     grupos?: IGrupoDTO[];
-    lote?: ILoteAnimalDTO;
+    lote?: ILoteDTO;
     madre?: IAnimalDTO;
     padre?: IAnimalDTO;
     raza?: IRazaDTO;

@@ -1,39 +1,45 @@
 import { Document, Schema, Types } from 'mongoose';
 import { IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
-import { ILoteSilobolsaDb } from './lote-silobolsa';
+import { ILoteDb } from './lote';
 
 export interface ISilobolsaDb extends Document {
     _id: Types.ObjectId;
     idEstablecimiento: string;
     idLote: string;
-    deveuiDispositivos: string[];
+    deveuiLanzas: string[];
+    deveuiTrackers: string[];
     numero: string;
     metros: number;
     especie: string;
     cosecha: string;
     producto: string;
     fechaConfeccion: Date;
+    activa: boolean;
+    fechaDesmantelacion: Date;
     //
     establecimiento?: IEstablecimientoDb;
-    lote?: ILoteSilobolsaDb;
+    lote?: ILoteDb;
     dispositivos?: IDispositivoDb;
 }
 
 export const SSilobolsa = new Schema<ISilobolsaDb>({
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos', required: true },
     idLote: { type: Types.ObjectId, ref: 'lotes-silobolsas' },
-    deveuiDispositivos: [{ type: String, ref: 'dispositivos' }],
+    deveuiLanzas: [{ type: String, ref: 'dispositivos' }],
+    deveuiTrackers: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
     metros: { type: Number },
     especie: { type: String, required: true },
     cosecha: { type: String, required: true },
     producto: { type: String, required: true },
     fechaConfeccion: { type: Date, required: true },
+    activa: { type: Boolean },
+    fechaDesmantelacion: { type: Date },
 });
 
-SSilobolsa.index({ numero: 1 });
-SSilobolsa.index({ fechaConfeccion: -1 });
+SSilobolsa.index({ activa: 1, numero: 1 });
+SSilobolsa.index({ activa: 1, fechaConfeccion: -1 });
 
 SSilobolsa.virtual('establecimiento', {
     foreignField: '_id',
@@ -49,9 +55,16 @@ SSilobolsa.virtual('lote', {
     ref: 'lotes-silobolsas',
 });
 
-SSilobolsa.virtual('dispositivos', {
+SSilobolsa.virtual('lanzas', {
     foreignField: 'deveui',
     justOne: false,
-    localField: 'deveuiDispositivos',
+    localField: 'deveuiLanzas',
+    ref: 'dispositivos',
+});
+
+SSilobolsa.virtual('trackers', {
+    foreignField: 'deveui',
+    justOne: false,
+    localField: 'deveuiTrackers',
     ref: 'dispositivos',
 });

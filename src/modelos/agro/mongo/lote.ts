@@ -1,7 +1,7 @@
 import { Document, Schema, Types } from 'mongoose';
 import { IEstablecimientoDb } from './establecimiento';
 
-export interface ILoteAnimalDb extends Document {
+export interface ILoteDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
     idEstablecimiento: string;
@@ -9,12 +9,12 @@ export interface ILoteAnimalDb extends Document {
     establecimiento?: IEstablecimientoDb;
 }
 
-export const SLoteAnimal = new Schema<ILoteAnimalDb>({
+export const SLote = new Schema<ILoteDb>({
     nombre: { type: String, required: true, trim: true },
     idEstablecimiento: { type: Types.ObjectId, required: true, ref: 'establecimientos' },
 });
 
-SLoteAnimal.virtual('establecimiento', {
+SLote.virtual('establecimiento', {
     foreignField: '_id',
     justOne: true,
     localField: 'idEstablecimiento',

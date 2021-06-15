@@ -34,13 +34,9 @@ export * from './in/grupo';
 export * from './mongo/grupo';
 export * from './out/grupo';
 //
-export * from './in/lote-animal';
-export * from './mongo/lote-animal';
-export * from './out/lote-animal';
-//
-export * from './in/lote-silobolsa';
-export * from './mongo/lote-silobolsa';
-export * from './out/lote-silobolsa';
+export * from './in/lote';
+export * from './mongo/lote';
+export * from './out/lote';
 //
 export * from './in/pesaje';
 export * from './mongo/pesaje';

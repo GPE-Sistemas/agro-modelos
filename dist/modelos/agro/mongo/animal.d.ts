@@ -5,7 +5,7 @@ import { ICorralDb } from './corral';
 import { IEspecieDb } from './especie';
 import { IEstablecimientoDb } from './establecimiento';
 import { IGrupoDb } from './grupo';
-import { ILoteAnimalDb } from './lote-animal';
+import { ILoteDb } from './lote';
 import { IRazaDb } from './raza';
 import { ISubcategoriaDb } from './subcategoria';
 export interface IAnimalDb extends Document {
@@ -35,7 +35,7 @@ export interface IAnimalDb extends Document {
     especie: IEspecieDb;
     establecimiento?: IEstablecimientoDb;
     grupos?: IGrupoDb[];
-    lote?: ILoteAnimalDb;
+    lote?: ILoteDb;
     raza?: IRazaDb;
     subcategoria?: ISubcategoriaDb;
 }

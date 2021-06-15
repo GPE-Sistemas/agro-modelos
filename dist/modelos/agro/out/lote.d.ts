@@ -8,4 +8,4 @@ export interface ILoteDTO {
     idEstablecimiento: string;
     establecimiento?: IEstablecimientoDTO;
 }
-//# sourceMappingURL=lote-animal.d.ts.map
+//# sourceMappingURL=lote.d.ts.map

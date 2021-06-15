@@ -9,12 +9,15 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.ISilobolsaValidation = joi_1.default.object({
     idEstablecimiento: joi_1.default.string().required(),
     idLote: joi_1.default.string().allow(null),
-    deveuiDispositivos: joi_1.default.array().items(joi_1.default.string()),
+    deveuiLanzas: joi_1.default.array().items(joi_1.default.string()),
+    deveuiTrackers: joi_1.default.array().items(joi_1.default.string()),
     numero: joi_1.default.string().required(),
     metros: joi_1.default.number().required(),
     especie: joi_1.default.string().required(),
     cosecha: joi_1.default.string().required(),
     producto: joi_1.default.string().required(),
     fechaConfeccion: joi_1.default.date().required(),
+    activa: joi_1.default.boolean(),
+    fechaDesmantelacion: joi_1.default.date()
 });
 exports.ISilobolsaSwagger = joi_to_swagger_1.default(exports.ISilobolsaValidation).swagger;

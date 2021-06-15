@@ -13,7 +13,7 @@ const corral_1 = require("./corral");
 const especie_1 = require("./especie");
 const establecimiento_1 = require("./establecimiento");
 const grupo_1 = require("./grupo");
-const lote_animal_1 = require("./lote-animal");
+const lote_1 = require("./lote");
 const raza_1 = require("./raza");
 const subcategoria_1 = require("./subcategoria");
 exports.IAnimalDTOValidation = joi_1.default.object({
@@ -45,7 +45,7 @@ exports.IAnimalDTOValidation = joi_1.default.object({
     especie: especie_1.IEspecieDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     grupos: joi_1.default.array().items(grupo_1.IGrupoDTOValidation),
-    lote: lote_animal_1.ILoteAnimalDTOValidation,
+    lote: lote_1.ILoteDTOValidation,
     // madre: IAnimalDTOValidation,
     // padre: IAnimalDTOValidation,
     raza: raza_1.IRazaDTOValidation,

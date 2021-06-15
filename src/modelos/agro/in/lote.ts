@@ -1,14 +1,14 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
-export const ILoteSilobolsaValidation = joi.object<ILoteSilobolsa>().keys({
+export const ILoteValidation = joi.object<ILote>({
     nombre: joi.string().required(),
     idEstablecimiento: joi.string().required(),
 });
 
-export const ILoteSilobolsaSwagger = j2s(ILoteSilobolsaValidation).swagger;
+export const ILoteSwagger = j2s(ILoteValidation).swagger;
 
-export interface ILoteSilobolsa {
+export interface ILote {
     nombre: string;
     idEstablecimiento: string;
 }

@@ -1,12 +1,10 @@
 import { LeanDocument } from 'mongoose';
-import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteAnimalDb, ILoteAnimalDTO, ILoteSilobolsaDb, ILoteSilobolsaDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
+import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorralDb, ICorralDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IDispositivoTrackerSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteDb, ILoteDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 export declare class AgroParserService {
-    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
-    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
-    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
-    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
     static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO;
     static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[];
+    static lote(dato: LeanDocument<ILoteDb>): ILoteDTO;
+    static lotes(datos: LeanDocument<ILoteDb>[]): ILoteDTO[];
     static alerta(dato: LeanDocument<IAlertaDb>): IAlertaDTO;
     static alertas(datos: LeanDocument<IAlertaDb>[]): IAlertaDTO[];
     static dispositivo(dato: LeanDocument<IDispositivoDb>): IDispositivoDTO;
@@ -23,12 +21,12 @@ export declare class AgroParserService {
     static categorias(datos: LeanDocument<ICategoriaDb>[]): ICategoriaDTO[];
     static animal(dato: LeanDocument<IAnimalDb>, dispositivo?: IDispositivoCaravanaDTO, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[], eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[], madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO;
     static animales(datos: LeanDocument<IAnimalDb>[], dispositivos?: IDispositivoCaravanaDTO[]): IAnimalDTO[];
+    static corral(dato: LeanDocument<ICorralDb>): ICorralDTO;
+    static corrales(datos: LeanDocument<ICorralDb>[]): ICorralDTO[];
     static tipoBaja(dato: LeanDocument<ITipoBajaDb>): ITipoBajaDTO;
     static tiposBajas(datos: LeanDocument<ITipoBajaDb>[]): ITipoBajaDTO[];
     static baja(dato: LeanDocument<IBajaDb>): IBajaDTO;
     static bajas(datos: LeanDocument<IBajaDb>[]): IBajaDTO[];
-    static loteAnimal(dato: LeanDocument<ILoteAnimalDb>): ILoteAnimalDTO;
-    static lotesAnimales(datos: LeanDocument<ILoteAnimalDb>[]): ILoteAnimalDTO[];
     static diagnostico(dato: LeanDocument<IDiagnosticoDb>): IDiagnosticoDTO;
     static diagnosticos(datos: LeanDocument<IDiagnosticoDb>[]): IDiagnosticoDTO[];
     static subcategoria(dato: LeanDocument<ISubcategoriaDb>): ISubcategoriaDTO;
@@ -47,10 +45,10 @@ export declare class AgroParserService {
     static pesajes(datos: LeanDocument<IPesajeDb>[]): IPesajeDTO[];
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
     static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
-    static silobolsa(dato: LeanDocument<ISilobolsaDb>, dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO;
-    static silobolsas(datos: LeanDocument<ISilobolsaDb>[], dispositivos?: IDispositivoSilobolsaDTO[]): ISilobolsaDTO[];
-    static loteSilobolsa(dato: LeanDocument<ILoteSilobolsaDb>): ILoteSilobolsaDTO;
-    static loteSilobolsas(datos: LeanDocument<ILoteSilobolsaDb>[]): ILoteSilobolsaDTO[];
+    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
+    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
+    static silobolsa(dato: LeanDocument<ISilobolsaDb>, lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO;
+    static silobolsas(datos: LeanDocument<ISilobolsaDb>[], lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO[];
     static correctora(dato: LeanDocument<ICorrectoraDb>, dispositivo?: IDispositivoCorrectoraDTO): ICorrectoraDTO;
     static correctoras(datos: LeanDocument<ICorrectoraDb>[], dispositivos?: IDispositivoCorrectoraDTO[]): ICorrectoraDTO[];
     static horasAHexa(horas: string[]): string;

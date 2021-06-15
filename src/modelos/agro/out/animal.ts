@@ -9,7 +9,7 @@ import { IEspecieDTO, IEspecieDTOValidation } from './especie';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
 import { IEventoEspecificoDTO } from './eventoEspecifico';
 import { IGrupoDTO, IGrupoDTOValidation } from './grupo';
-import { ILoteAnimalDTO, ILoteAnimalDTOValidation } from './lote-animal';
+import { ILoteDTO, ILoteDTOValidation } from './lote';
 import { IPesajeDTO } from './pesaje';
 import { IRazaDTO, IRazaDTOValidation } from './raza';
 import { IServicioDTO } from './servicio';
@@ -46,7 +46,7 @@ export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
     especie: IEspecieDTOValidation,
     establecimiento: IEstablecimientoDTOValidation,
     grupos: joi.array().items(IGrupoDTOValidation),
-    lote: ILoteAnimalDTOValidation,
+    lote: ILoteDTOValidation,
     // madre: IAnimalDTOValidation,
     // padre: IAnimalDTOValidation,
     raza: IRazaDTOValidation,
@@ -90,7 +90,7 @@ export interface IAnimalDTO {
     especie?: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
     grupos?: IGrupoDTO[];
-    lote?: ILoteAnimalDTO;
+    lote?: ILoteDTO;
     madre?: IAnimalDTO;
     padre?: IAnimalDTO;
     raza?: IRazaDTO;

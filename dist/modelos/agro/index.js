@@ -46,13 +46,9 @@ __exportStar(require("./in/grupo"), exports);
 __exportStar(require("./mongo/grupo"), exports);
 __exportStar(require("./out/grupo"), exports);
 //
-__exportStar(require("./in/lote-animal"), exports);
-__exportStar(require("./mongo/lote-animal"), exports);
-__exportStar(require("./out/lote-animal"), exports);
-//
-__exportStar(require("./in/lote-silobolsa"), exports);
-__exportStar(require("./mongo/lote-silobolsa"), exports);
-__exportStar(require("./out/lote-silobolsa"), exports);
+__exportStar(require("./in/lote"), exports);
+__exportStar(require("./mongo/lote"), exports);
+__exportStar(require("./out/lote"), exports);
 //
 __exportStar(require("./in/pesaje"), exports);
 __exportStar(require("./mongo/pesaje"), exports);
