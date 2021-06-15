@@ -489,20 +489,21 @@ class AgroParserService {
     }
     // Silobolsa
     static silobolsa(dato, lanzas, trackers) {
+        var _a, _b;
         const dto = {
             _id: dato._id.toHexString(),
             cosecha: dato.cosecha,
             deveuiLanzas: dato.deveuiLanzas,
             deveuiTrackers: dato.deveuiTrackers,
             especie: dato.especie,
-            fechaConfeccion: dato.fechaConfeccion.toISOString(),
+            fechaConfeccion: (_a = dato.fechaConfeccion) === null || _a === void 0 ? void 0 : _a.toISOString(),
             idEstablecimiento: dato.idEstablecimiento,
             idLote: dato.idLote,
             metros: dato.metros,
             numero: dato.numero,
             producto: dato.producto,
             activa: dato.activa,
-            fechaDesmantelacion: dato.fechaDesmantelacion.toISOString(),
+            fechaDesmantelacion: (_b = dato.fechaDesmantelacion) === null || _b === void 0 ? void 0 : _b.toISOString(),
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
