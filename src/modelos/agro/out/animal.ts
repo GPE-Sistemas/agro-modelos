@@ -86,7 +86,6 @@ export interface IAnimalDTO {
     baja?: IBajaDTO;
     categoria?: ICategoriaDTO;
     corral?: ICorralDTO;
-    dispositivo?: IDispositivoCaravanaDTO;
     especie?: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
     grupos?: IGrupoDTO[];
@@ -101,4 +100,6 @@ export interface IAnimalDTO {
     eventosEspecificos?: IEventoEspecificoDTO[];
     pesajes?: IPesajeDTO[];
     servicios?: IServicioDTO[];
+    //
+    dispositivo?: IDispositivoCaravanaDTO;
 }

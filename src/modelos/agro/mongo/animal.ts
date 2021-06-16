@@ -46,12 +46,12 @@ export interface IAnimalDb extends Document {
 }
 
 export const SAnimal = new Schema<IBajaDb>({
-    activo: { type: Boolean },
+    activo: { type: Boolean, required: true },
     caravana: { type: String, required: true, unique: true },
+    fechaAlta: { type: Date, required: true },
     deveui: { type: String },
     dientes: { type: Number },
     fechaNacimiento: { type: Date },
-    fechaAlta: { type: Date , required: true },
     foto: { type: String },
     idBaja: { type: Types.ObjectId, ref: 'bajas' },
     idCategoria: { type: Types.ObjectId, ref: 'categorias' },
@@ -59,7 +59,7 @@ export const SAnimal = new Schema<IBajaDb>({
     idEspecie: { type: Types.ObjectId, ref: 'especies' },
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos' },
     idGrupos: [{ type: Types.ObjectId, ref: 'grupos' }],
-    idLote: { type: Types.ObjectId, ref: 'lotes-animales' },
+    idLote: { type: Types.ObjectId, ref: 'lotes' },
     idMadre: { type: Types.ObjectId, ref: 'animales' },
     idPadre: { type: Types.ObjectId, ref: 'animales' },
     idRaza: { type: Types.ObjectId, ref: 'razas' },
@@ -96,7 +96,7 @@ SAnimal.virtual('lote', {
     foreignField: '_id',
     justOne: true,
     localField: 'idLote',
-    ref: 'lotes-animales',
+    ref: 'lotes',
 });
 
 SAnimal.virtual('raza', {

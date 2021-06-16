@@ -26,7 +26,7 @@ export const IAnimalValidation = joi.object<IAnimal>({
 export const IAnimalSwagger = j2s(IAnimalValidation).swagger;
 
 export interface IAnimal {
-    activo: boolean;
+    activo?: boolean;
     caravana: string;
     deveui?: string;
     dientes?: number;
@@ -36,7 +36,7 @@ export interface IAnimal {
     idBaja?: string;
     idCategoria?: string;
     idCorral?: string;
-    idEspecie: string;
+    idEspecie?: string;
     idEstablecimiento?: string;
     idGrupos?: string[];
     idLote?: string;
