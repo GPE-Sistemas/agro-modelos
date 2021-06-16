@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SAnimal = void 0;
 const mongoose_1 = require("mongoose");
 exports.SAnimal = new mongoose_1.Schema({
-    activo: { type: Boolean },
+    activo: { type: Boolean, required: true },
     caravana: { type: String, required: true, unique: true },
+    fechaAlta: { type: Date, required: true },
     deveui: { type: String },
     dientes: { type: Number },
     fechaNacimiento: { type: Date },
-    fechaAlta: { type: Date, required: true },
     foto: { type: String },
     idBaja: { type: mongoose_1.Types.ObjectId, ref: 'bajas' },
     idCategoria: { type: mongoose_1.Types.ObjectId, ref: 'categorias' },
@@ -16,7 +16,7 @@ exports.SAnimal = new mongoose_1.Schema({
     idEspecie: { type: mongoose_1.Types.ObjectId, ref: 'especies' },
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
     idGrupos: [{ type: mongoose_1.Types.ObjectId, ref: 'grupos' }],
-    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes-animales' },
+    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes' },
     idMadre: { type: mongoose_1.Types.ObjectId, ref: 'animales' },
     idPadre: { type: mongoose_1.Types.ObjectId, ref: 'animales' },
     idRaza: { type: mongoose_1.Types.ObjectId, ref: 'razas' },
@@ -48,7 +48,7 @@ exports.SAnimal.virtual('lote', {
     foreignField: '_id',
     justOne: true,
     localField: 'idLote',
-    ref: 'lotes-animales',
+    ref: 'lotes',
 });
 exports.SAnimal.virtual('raza', {
     foreignField: '_id',

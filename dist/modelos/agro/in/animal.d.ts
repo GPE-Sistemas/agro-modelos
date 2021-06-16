@@ -2,7 +2,7 @@ import joi from 'joi';
 export declare const IAnimalValidation: joi.ObjectSchema<IAnimal>;
 export declare const IAnimalSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IAnimal {
-    activo: boolean;
+    activo?: boolean;
     caravana: string;
     deveui?: string;
     dientes?: number;
@@ -12,7 +12,7 @@ export interface IAnimal {
     idBaja?: string;
     idCategoria?: string;
     idCorral?: string;
-    idEspecie: string;
+    idEspecie?: string;
     idEstablecimiento?: string;
     idGrupos?: string[];
     idLote?: string;
