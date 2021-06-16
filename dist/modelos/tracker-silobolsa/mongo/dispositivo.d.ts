@@ -11,5 +11,5 @@ export interface IDispositivoTrackerSilobolsaDb extends Document, IDispositivoDb
     sensibilidad: number;
     ultimoReporte?: IReporteTrackerSilobolsaDb;
 }
-export declare const SDispositivoTrackerSilobolsa: Schema<IDispositivoTrackerSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivoTrackerSilobolsa: Schema<IDispositivoTrackerSilobolsaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

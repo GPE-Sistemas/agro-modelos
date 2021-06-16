@@ -5,5 +5,5 @@ export interface IEstablecimientoDb extends Document {
     nombre: string;
     coordenadas?: ICoordenadas[][];
 }
-export declare const SEstablecimiento: Schema<IEstablecimientoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SEstablecimiento: Schema<IEstablecimientoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=establecimiento.d.ts.map

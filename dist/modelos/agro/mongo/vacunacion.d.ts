@@ -12,5 +12,5 @@ export interface IVacunacionDb extends Document {
     animal?: IAnimalDb;
     tipoVacuna?: ITipoVacunaDb;
 }
-export declare const SVacunacion: Schema<IVacunacionDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SVacunacion: Schema<IVacunacionDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=vacunacion.d.ts.map

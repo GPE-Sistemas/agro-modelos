@@ -6,5 +6,5 @@ export interface IClientDb extends Document {
     grants: string[];
     redirectUris: string[];
 }
-export declare const SClient: Schema<IClientDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SClient: Schema<IClientDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=client.d.ts.map

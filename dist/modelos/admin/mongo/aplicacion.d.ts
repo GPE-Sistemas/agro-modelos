@@ -5,5 +5,5 @@ export interface IAplicacionDb extends Document {
     urlApiAplicacion: string;
     urlApiEntrada?: string;
 }
-export declare const SAplicacion: Schema<IAplicacionDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SAplicacion: Schema<IAplicacionDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=aplicacion.d.ts.map

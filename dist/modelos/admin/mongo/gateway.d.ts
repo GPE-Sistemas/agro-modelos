@@ -13,5 +13,5 @@ export interface IGatewayDb extends Document {
     gpsDiferencial: boolean;
     applicationServer: IApplicationServerDb;
 }
-export declare const SGateway: Schema<IGatewayDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SGateway: Schema<IGatewayDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=gateway.d.ts.map

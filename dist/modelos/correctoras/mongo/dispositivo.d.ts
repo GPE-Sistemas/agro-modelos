@@ -9,5 +9,5 @@ export interface IDispositivoCorrectoraDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     ultimoReporte: IReporteCorrectoraDb;
 }
-export declare const SDispositivoCorrectora: Schema<IDispositivoCorrectoraDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivoCorrectora: Schema<IDispositivoCorrectoraDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

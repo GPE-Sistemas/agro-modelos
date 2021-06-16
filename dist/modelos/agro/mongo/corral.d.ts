@@ -9,5 +9,5 @@ export interface ICorralDb extends Document {
     idEstablecimiento: string;
     establecimiento?: IEstablecimientoDb;
 }
-export declare const SCorral: Schema<ICorralDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SCorral: Schema<ICorralDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=corral.d.ts.map

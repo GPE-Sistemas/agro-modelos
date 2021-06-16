@@ -39,5 +39,5 @@ export interface IAnimalDb extends Document {
     raza?: IRazaDb;
     subcategoria?: ISubcategoriaDb;
 }
-export declare const SAnimal: Schema<IBajaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SAnimal: Schema<IBajaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=animal.d.ts.map

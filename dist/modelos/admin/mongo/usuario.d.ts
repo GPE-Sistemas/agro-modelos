@@ -19,5 +19,5 @@ export interface IUsuarioDb extends Document {
     telefono?: string;
     cliente?: IClienteDb;
 }
-export declare const SUsuario: Schema<IUsuarioDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SUsuario: Schema<IUsuarioDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=usuario.d.ts.map

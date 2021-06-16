@@ -6,5 +6,5 @@ export interface IGrupoDb extends Document {
     idEstablecimiento: string;
     establecimiento?: IEstablecimientoDb;
 }
-export declare const SGrupo: Schema<IGrupoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SGrupo: Schema<IGrupoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=grupo.d.ts.map

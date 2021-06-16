@@ -12,5 +12,5 @@ export interface IClienteDb extends Document {
     gatewayIds: string[];
     applicationServer?: IApplicationServerDb;
 }
-export declare const SCliente: Schema<IClienteDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SCliente: Schema<IClienteDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=cliente.d.ts.map

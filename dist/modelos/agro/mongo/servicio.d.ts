@@ -8,5 +8,5 @@ export interface IServicioDb extends Document {
     observaciones: string;
     animal?: IAnimalDb;
 }
-export declare const SServicio: Schema<IServicioDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SServicio: Schema<IServicioDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=servicio.d.ts.map

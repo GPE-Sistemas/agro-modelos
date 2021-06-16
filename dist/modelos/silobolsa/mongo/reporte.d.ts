@@ -17,5 +17,5 @@ export interface IReporteSilobolsaDb extends Document {
     alertaCo2?: number;
     alertaHumedad?: number;
 }
-export declare const SReporteSilobolsa: Schema<IReporteSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SReporteSilobolsa: Schema<IReporteSilobolsaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=reporte.d.ts.map

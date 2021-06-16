@@ -8,5 +8,5 @@ export interface ISubcategoriaDb extends Document {
     idCategoria: string;
     categoria?: ICategoriaDb;
 }
-export declare const SSubcategoria: Schema<ISubcategoriaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SSubcategoria: Schema<ISubcategoriaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=subcategoria.d.ts.map

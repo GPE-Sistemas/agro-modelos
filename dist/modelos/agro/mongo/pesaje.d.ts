@@ -8,5 +8,5 @@ export interface IPesajeDb extends Document {
     observaciones: string;
     animal?: IAnimalDb;
 }
-export declare const SPesaje: Schema<IPesajeDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SPesaje: Schema<IPesajeDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=pesaje.d.ts.map

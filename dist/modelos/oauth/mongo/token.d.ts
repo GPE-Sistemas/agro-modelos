@@ -11,5 +11,5 @@ export interface ITokenDb extends Document {
     client: IClientDb;
     user: IUsuarioDb;
 }
-export declare const SToken: Schema<ITokenDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SToken: Schema<ITokenDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=token.d.ts.map

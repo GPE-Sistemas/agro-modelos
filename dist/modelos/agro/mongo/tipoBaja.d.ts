@@ -3,5 +3,5 @@ export interface ITipoBajaDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
 }
-export declare const STipoBaja: Schema<ITipoBajaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const STipoBaja: Schema<ITipoBajaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=tipoBaja.d.ts.map

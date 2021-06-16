@@ -6,5 +6,5 @@ export interface IReporteTrackerSilobolsaDb extends Document {
     fecha: Date;
     alarma: boolean;
 }
-export declare const SReporteTrackerSilobolsa: Schema<IReporteTrackerSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SReporteTrackerSilobolsa: Schema<IReporteTrackerSilobolsaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=reporte.d.ts.map

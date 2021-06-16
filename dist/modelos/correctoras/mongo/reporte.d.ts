@@ -9,5 +9,5 @@ export interface IReporteCorrectoraDb extends Document {
     presion?: number;
     temperatura?: number;
 }
-export declare const SReporteCorrectora: Schema<IReporteCorrectoraDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SReporteCorrectora: Schema<IReporteCorrectoraDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=reporte.d.ts.map

@@ -7,5 +7,5 @@ export interface IBajaDb extends Document {
     observaciones: string;
     tipoBaja?: ITipoBajaDb;
 }
-export declare const SBaja: Schema<IBajaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SBaja: Schema<IBajaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=baja.d.ts.map

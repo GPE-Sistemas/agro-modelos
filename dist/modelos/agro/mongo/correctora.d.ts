@@ -7,5 +7,5 @@ export interface ICorrectoraDb extends Document {
     firmware: string;
     bateria: number;
 }
-export declare const SCorrectora: Schema<ICorrectoraDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SCorrectora: Schema<ICorrectoraDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=correctora.d.ts.map

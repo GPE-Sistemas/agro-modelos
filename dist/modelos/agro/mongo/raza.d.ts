@@ -6,5 +6,5 @@ export interface IRazaDb extends Document {
     idEspecie: Types.ObjectId;
     especie?: IEspecieDb;
 }
-export declare const SRaza: Schema<IRazaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SRaza: Schema<IRazaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=raza.d.ts.map

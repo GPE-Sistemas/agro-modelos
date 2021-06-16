@@ -19,5 +19,5 @@ export interface IComandoDb extends Document {
     valor?: string;
     aplicacion: string;
 }
-export declare const SComando: Schema<IComandoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SComando: Schema<IComandoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=comando.d.ts.map

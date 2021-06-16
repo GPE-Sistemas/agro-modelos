@@ -15,5 +15,5 @@ export interface IDispositivoDb extends Document {
     idUltimoComando: Types.ObjectId;
     ultimoComando: IComandoDb;
 }
-export declare const SDispositivo: Schema<IDispositivoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivo: Schema<IDispositivoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

@@ -25,5 +25,5 @@ export interface IApplicationServerDb extends Document {
         };
     };
 }
-export declare const SApplicationServer: Schema<IApplicationServerDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SApplicationServer: Schema<IApplicationServerDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=application-server.d.ts.map

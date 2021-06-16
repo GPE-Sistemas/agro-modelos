@@ -20,5 +20,5 @@ export interface ISilobolsaDb extends Document {
     lote?: ILoteDb;
     dispositivos?: IDispositivoDb;
 }
-export declare const SSilobolsa: Schema<ISilobolsaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SSilobolsa: Schema<ISilobolsaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=silobolsa.d.ts.map

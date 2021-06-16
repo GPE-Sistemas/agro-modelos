@@ -9,5 +9,5 @@ export interface IReporteCaravanaDb extends Document {
     dentroCorral?: boolean;
     dentroEstablecimiento?: boolean;
 }
-export declare const SReporteCaravana: Schema<IReporteCaravanaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SReporteCaravana: Schema<IReporteCaravanaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=reporte.d.ts.map

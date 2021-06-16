@@ -11,5 +11,5 @@ export interface IDispositivoSilobolsaDb extends Document, IDispositivoDb {
     alerta: number;
     ultimoReporte?: IReporteSilobolsaDb;
 }
-export declare const SDispositivoSilobolsa: Schema<IDispositivoSilobolsaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivoSilobolsa: Schema<IDispositivoSilobolsaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

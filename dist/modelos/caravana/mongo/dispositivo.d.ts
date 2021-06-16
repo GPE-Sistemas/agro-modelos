@@ -11,5 +11,5 @@ export interface IDispositivoCaravanaDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     ultimoReporte: IReporteCaravanaDb;
 }
-export declare const SDispositivoCaravana: Schema<IDispositivoCaravanaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivoCaravana: Schema<IDispositivoCaravanaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

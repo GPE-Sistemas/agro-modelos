@@ -11,5 +11,5 @@ export interface ILogDispositivoDb extends Document {
     deviceName: string;
     aplicacion: string;
 }
-export declare const SLog: Schema<ILogDispositivoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SLog: Schema<ILogDispositivoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=log-dispositivo.d.ts.map

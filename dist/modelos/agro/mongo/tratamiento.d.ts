@@ -14,5 +14,5 @@ export interface ITratamientoDb extends Document {
     diagnostico?: IDiagnosticoDb;
     tipoTratamiento?: ITipoTratamientoDb;
 }
-export declare const STratamiento: Schema<ITratamientoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const STratamiento: Schema<ITratamientoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=tratamiento.d.ts.map

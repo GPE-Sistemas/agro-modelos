@@ -6,5 +6,5 @@ export interface ILoteDb extends Document {
     idEstablecimiento: string;
     establecimiento?: IEstablecimientoDb;
 }
-export declare const SLote: Schema<ILoteDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SLote: Schema<ILoteDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=lote.d.ts.map

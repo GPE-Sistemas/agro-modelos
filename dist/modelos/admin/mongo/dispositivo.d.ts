@@ -16,5 +16,5 @@ export interface IDispositivoAdminDb extends Document {
     lote?: ILoteDispositivoDb;
     cliente?: IClienteDb;
 }
-export declare const SDispositivoAdmin: Schema<IDispositivoAdminDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SDispositivoAdmin: Schema<IDispositivoAdminDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=dispositivo.d.ts.map

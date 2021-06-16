@@ -9,5 +9,5 @@ export interface ICategoriaDb extends Document {
     edadMaxMeses?: number;
     especie?: IEspecieDb;
 }
-export declare const SCategoria: Schema<ICategoriaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SCategoria: Schema<ICategoriaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=categoria.d.ts.map

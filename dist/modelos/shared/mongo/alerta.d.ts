@@ -14,5 +14,5 @@ export interface IAlertaDb extends Document {
     estados: IEstadoAlerta[];
     reportes: IReporteAlerta[];
 }
-export declare const SAlerta: Schema<IAlertaDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SAlerta: Schema<IAlertaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=alerta.d.ts.map

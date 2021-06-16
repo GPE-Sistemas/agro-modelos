@@ -8,5 +8,5 @@ export interface IEventoEspecificoDb extends Document {
     observaciones: string;
     animal?: IAnimalDb;
 }
-export declare const SEventoEspecifico: Schema<IEventoEspecificoDb, import("mongoose").Model<any, any>, undefined>;
+export declare const SEventoEspecifico: Schema<IEventoEspecificoDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=eventoEspecifico.d.ts.map
