@@ -1,13 +1,16 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IIcono } from '../in/icono';
 import { IEspecieDb } from './especie';
+import { SIcono } from './icono';
 
 export interface ICategoriaDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
     idEspecie: Types.ObjectId;
     sexo?: boolean;
-    edadMinMeses?: number;
-    edadMaxMeses?: number;
+    icono: IIcono,
+    iconoFueraCorral: IIcono,
+    iconoFueraEstablecimiento: IIcono,
     //
     especie?: IEspecieDb;
 }
@@ -16,8 +19,9 @@ export const SCategoria = new Schema<ICategoriaDb>({
     nombre: { type: String, required: true },
     idEspecie: { type: Types.ObjectId, required: true, ref: 'especies' },
     sexo: { type: Boolean },
-    edadMinMeses: { type: Number },
-    edadMaxMeses: { type: Number },
+    icono: SIcono,
+    iconoFueraCorral: SIcono,
+    iconoFueraEstablecimiento: SIcono,
 });
 
 SCategoria.virtual('especie', {

@@ -144,7 +144,10 @@ class AgroParserService {
         var _a;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            nombre: dato.nombre
+            nombre: dato.nombre,
+            icono: dato.icono,
+            iconoFueraCorral: dato.iconoFueraCorral,
+            iconoFueraEstablecimiento: dato.iconoFueraEstablecimiento
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -182,8 +185,9 @@ class AgroParserService {
             nombre: dato.nombre,
             idEspecie: (_b = dato.idEspecie) === null || _b === void 0 ? void 0 : _b.toHexString(),
             sexo: dato.sexo,
-            edadMaxMeses: dato.edadMaxMeses,
-            edadMinMeses: dato.edadMinMeses,
+            icono: dato.icono,
+            iconoFueraCorral: dato.iconoFueraCorral,
+            iconoFueraEstablecimiento: dato.iconoFueraEstablecimiento,
             //
             especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
         };

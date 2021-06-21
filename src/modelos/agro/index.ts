@@ -1,3 +1,6 @@
+export * from './in/icono';
+export * from './mongo/icono';
+//
 export * from './in/animal';
 export * from './mongo/animal';
 export * from './out/animal';

@@ -1,0 +1,1 @@
+{"version":3,"file":"icono.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/in/icono.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,gBAAgB,0BAI3B,CAAC;AAEH,eAAO,MAAM,aAAa,wCAAgC,CAAC;AAE3D,MAAM,WAAW,MAAM;IACnB,MAAM,EAAE,MAAM,CAAC;IACf,WAAW,EAAE,MAAM,CAAC;IACpB,SAAS,EAAE,MAAM,CAAC;CACrB"}

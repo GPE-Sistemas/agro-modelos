@@ -151,7 +151,10 @@ export class AgroParserService {
     static especie(dato: LeanDocument<IEspecieDb>): IEspecieDTO {
         const dto: IEspecieDTO = {
             _id: dato._id?.toHexString(),
-            nombre: dato.nombre
+            nombre: dato.nombre,
+            icono: dato.icono,
+            iconoFueraCorral: dato.iconoFueraCorral,
+            iconoFueraEstablecimiento: dato.iconoFueraEstablecimiento
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
@@ -189,8 +192,9 @@ export class AgroParserService {
             nombre: dato.nombre,
             idEspecie: dato.idEspecie?.toHexString(),
             sexo: dato.sexo,
-            edadMaxMeses: dato.edadMaxMeses,
-            edadMinMeses: dato.edadMinMeses,
+            icono: dato.icono,
+            iconoFueraCorral: dato.iconoFueraCorral,
+            iconoFueraEstablecimiento: dato.iconoFueraEstablecimiento,
             //
             especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
         };

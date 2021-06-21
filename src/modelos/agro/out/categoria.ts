@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { IIcono, IIconoValidation } from '../in/icono';
 import { IEspecieDTO, IEspecieDTOValidation } from './especie';
 
 export const ICategoriaDTOValidation = joi.object<ICategoriaDTO>({
@@ -7,8 +8,9 @@ export const ICategoriaDTOValidation = joi.object<ICategoriaDTO>({
     nombre: joi.string(),
     idEspecie: joi.string(),
     sexo: joi.boolean(),
-    edadMinMeses: joi.number(),
-    edadMaxMeses: joi.number(),
+    icono: IIconoValidation,
+    iconoFueraCorral: IIconoValidation,
+    iconoFueraEstablecimiento: IIconoValidation,
     //
     especie: IEspecieDTOValidation
 });
@@ -20,8 +22,9 @@ export interface ICategoriaDTO {
     nombre: string;
     idEspecie: string;
     sexo?: boolean;
-    edadMinMeses?: number;
-    edadMaxMeses?: number;
+    icono: IIcono;
+    iconoFueraCorral: IIcono;
+    iconoFueraEstablecimiento: IIcono;
     //
     especie?: IEspecieDTO;
 }
