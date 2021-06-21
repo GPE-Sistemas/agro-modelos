@@ -17,7 +17,7 @@ export interface ICategoria {
     nombre: string;
     idEspecie: string;
     sexo?: boolean;
-    icono: IIcono;
-    iconoFueraCorral: IIcono;
-    iconoFueraEstablecimiento: IIcono;
+    icono?: IIcono;
+    iconoFueraCorral?: IIcono;
+    iconoFueraEstablecimiento?: IIcono;
 }

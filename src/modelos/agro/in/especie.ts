@@ -13,7 +13,7 @@ export const IEspecieSwagger = j2s(IEspecieValidation).swagger;
 
 export interface IEspecie {
     nombre: string;
-    icono: IIcono;
-    iconoFueraCorral: IIcono;
-    iconoFueraEstablecimiento: IIcono;
+    icono?: IIcono;
+    iconoFueraCorral?: IIcono;
+    iconoFueraEstablecimiento?: IIcono;
 }
