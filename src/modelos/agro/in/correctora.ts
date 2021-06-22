@@ -21,9 +21,9 @@ export interface ICorrectora {
     numeroSerie?: string;
     deveui?: string;
     modelo?: string;
-    fechaAsignacion: string;
+    fechaAsignacion?: string;
     firmware?: string;
-    bateria: number;
+    bateria?: number;
     activa?: boolean;
     ubicacion?: ICoordenadas;
     idEstablecimiento?: string;
