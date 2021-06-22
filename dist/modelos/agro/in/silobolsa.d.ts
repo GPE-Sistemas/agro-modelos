@@ -1,4 +1,5 @@
 import joi from 'joi';
+import { ICoordenadas } from '../../shared';
 export declare const ISilobolsaValidation: joi.ObjectSchema<ISilobolsa>;
 export declare const ISilobolsaSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface ISilobolsa {
@@ -14,5 +15,6 @@ export interface ISilobolsa {
     fechaConfeccion: string;
     activa?: boolean;
     fechaDesmantelacion?: string;
+    ubicacion?: ICoordenadas;
 }
 //# sourceMappingURL=silobolsa.d.ts.map

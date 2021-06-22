@@ -493,7 +493,7 @@ class AgroParserService {
     }
     // Silobolsa
     static silobolsa(dato, lanzas, trackers) {
-        var _a, _b;
+        var _a, _b, _c, _d;
         const dto = {
             _id: dato._id.toHexString(),
             cosecha: dato.cosecha,
@@ -501,13 +501,14 @@ class AgroParserService {
             deveuiTrackers: dato.deveuiTrackers,
             especie: dato.especie,
             fechaConfeccion: (_a = dato.fechaConfeccion) === null || _a === void 0 ? void 0 : _a.toISOString(),
-            idEstablecimiento: dato.idEstablecimiento,
-            idLote: dato.idLote,
+            idEstablecimiento: (_b = dato.idEstablecimiento) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idLote: (_c = dato.idLote) === null || _c === void 0 ? void 0 : _c.toHexString(),
             metros: dato.metros,
             numero: dato.numero,
             producto: dato.producto,
             activa: dato.activa,
-            fechaDesmantelacion: (_b = dato.fechaDesmantelacion) === null || _b === void 0 ? void 0 : _b.toISOString(),
+            fechaDesmantelacion: (_d = dato.fechaDesmantelacion) === null || _d === void 0 ? void 0 : _d.toISOString(),
+            ubicacion: dato.ubicacion,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
@@ -527,6 +528,7 @@ class AgroParserService {
     }
     // Correctoras
     static correctora(dato, dispositivo) {
+        var _a, _b;
         const dto = {
             _id: dato._id.toHexString(),
             bateria: dato.bateria,
@@ -535,8 +537,14 @@ class AgroParserService {
             firmware: dato.firmware,
             modelo: dato.modelo,
             numeroSerie: dato.numeroSerie,
+            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            idLote: (_b = dato.idLote) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            activa: dato.activa,
+            ubicacion: dato.ubicacion,
             //
             dispositivo,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
         };
         return dto;
     }

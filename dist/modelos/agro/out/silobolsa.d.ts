@@ -1,4 +1,5 @@
 import joi from 'joi';
+import { ICoordenadas } from '../../shared';
 import { IDispositivoSilobolsaDTO } from '../../silobolsa/out/dispositivo';
 import { IDispositivoTrackerSilobolsaDTO } from '../../tracker-silobolsa';
 import { IEstablecimientoDTO } from './establecimiento';
@@ -19,6 +20,7 @@ export interface ISilobolsaDTO {
     fechaConfeccion: string;
     activa: boolean;
     fechaDesmantelacion: string;
+    ubicacion: ICoordenadas;
     lanzas?: IDispositivoSilobolsaDTO[];
     trackers?: IDispositivoTrackerSilobolsaDTO[];
     establecimiento?: IEstablecimientoDTO;

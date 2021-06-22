@@ -4,7 +4,7 @@ exports.SSilobolsa = void 0;
 const mongoose_1 = require("mongoose");
 exports.SSilobolsa = new mongoose_1.Schema({
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos', required: true },
-    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes-silobolsas' },
+    idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes' },
     deveuiLanzas: [{ type: String, ref: 'dispositivos' }],
     deveuiTrackers: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
@@ -15,6 +15,10 @@ exports.SSilobolsa = new mongoose_1.Schema({
     fechaConfeccion: { type: Date, required: true },
     activa: { type: Boolean },
     fechaDesmantelacion: { type: Date },
+    ubicacion: {
+        lat: { type: Number, required: true },
+        lng: { type: Number, required: true },
+    },
 });
 exports.SSilobolsa.index({ activa: 1, numero: 1 });
 exports.SSilobolsa.index({ activa: 1, fechaConfeccion: -1 });
@@ -28,17 +32,5 @@ exports.SSilobolsa.virtual('lote', {
     foreignField: '_id',
     justOne: true,
     localField: 'idLote',
-    ref: 'lotes-silobolsas',
-});
-exports.SSilobolsa.virtual('lanzas', {
-    foreignField: 'deveui',
-    justOne: false,
-    localField: 'deveuiLanzas',
-    ref: 'dispositivos',
-});
-exports.SSilobolsa.virtual('trackers', {
-    foreignField: 'deveui',
-    justOne: false,
-    localField: 'deveuiTrackers',
-    ref: 'dispositivos',
+    ref: 'lotes',
 });

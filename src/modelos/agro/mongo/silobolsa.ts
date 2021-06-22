@@ -1,12 +1,12 @@
 import { Document, Schema, Types } from 'mongoose';
-import { IDispositivoDb } from '../../shared';
+import { ICoordenadas, IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
 import { ILoteDb } from './lote';
 
 export interface ISilobolsaDb extends Document {
     _id: Types.ObjectId;
-    idEstablecimiento: string;
-    idLote: string;
+    idEstablecimiento: Types.ObjectId;
+    idLote: Types.ObjectId;
     deveuiLanzas: string[];
     deveuiTrackers: string[];
     numero: string;
@@ -17,6 +17,7 @@ export interface ISilobolsaDb extends Document {
     fechaConfeccion: Date;
     activa: boolean;
     fechaDesmantelacion: Date;
+    ubicacion: ICoordenadas;
     //
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
@@ -25,7 +26,7 @@ export interface ISilobolsaDb extends Document {
 
 export const SSilobolsa = new Schema<ISilobolsaDb>({
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos', required: true },
-    idLote: { type: Types.ObjectId, ref: 'lotes-silobolsas' },
+    idLote: { type: Types.ObjectId, ref: 'lotes' },
     deveuiLanzas: [{ type: String, ref: 'dispositivos' }],
     deveuiTrackers: [{ type: String, ref: 'dispositivos' }],
     numero: { type: String, required: true },
@@ -36,6 +37,10 @@ export const SSilobolsa = new Schema<ISilobolsaDb>({
     fechaConfeccion: { type: Date, required: true },
     activa: { type: Boolean },
     fechaDesmantelacion: { type: Date },
+    ubicacion: {
+        lat: { type: Number, required: true },
+        lng: { type: Number, required: true },
+    },
 });
 
 SSilobolsa.index({ activa: 1, numero: 1 });
@@ -52,19 +57,5 @@ SSilobolsa.virtual('lote', {
     foreignField: '_id',
     justOne: true,
     localField: 'idLote',
-    ref: 'lotes-silobolsas',
-});
-
-SSilobolsa.virtual('lanzas', {
-    foreignField: 'deveui',
-    justOne: false,
-    localField: 'deveuiLanzas',
-    ref: 'dispositivos',
-});
-
-SSilobolsa.virtual('trackers', {
-    foreignField: 'deveui',
-    justOne: false,
-    localField: 'deveuiTrackers',
-    ref: 'dispositivos',
+    ref: 'lotes',
 });

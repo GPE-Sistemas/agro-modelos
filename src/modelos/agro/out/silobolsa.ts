@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { ICoordenadas, ICoordenadasValidation } from '../../shared';
 import { IDispositivoSilobolsaDTO, IDispositivoSilobolsaDTOValidation } from '../../silobolsa/out/dispositivo';
 import { IDispositivoTrackerSilobolsaDTO, IDispositivoTrackerSilobolsaDTOValidation } from '../../tracker-silobolsa';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
@@ -19,6 +20,7 @@ export const ISilobolsaDTOValidation = joi.object<ISilobolsaDTO>({
     fechaConfeccion: joi.date().required(),
     activa: joi.boolean(),
     fechaDesmantelacion: joi.date(),
+    ubicacion: ICoordenadasValidation,
     //
     lanzas: joi.array().items(IDispositivoSilobolsaDTOValidation),
     trackers: joi.array().items(IDispositivoTrackerSilobolsaDTOValidation),
@@ -42,6 +44,7 @@ export interface ISilobolsaDTO {
     fechaConfeccion: string;
     activa: boolean;
     fechaDesmantelacion: string;
+    ubicacion: ICoordenadas;
     //
     lanzas?: IDispositivoSilobolsaDTO[];
     trackers?: IDispositivoTrackerSilobolsaDTO[];

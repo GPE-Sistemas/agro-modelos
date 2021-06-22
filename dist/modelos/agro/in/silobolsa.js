@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ISilobolsaSwagger = exports.ISilobolsaValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const shared_1 = require("../../shared");
 exports.ISilobolsaValidation = joi_1.default.object({
     idEstablecimiento: joi_1.default.string().required(),
     idLote: joi_1.default.string().allow(null),
@@ -18,6 +19,7 @@ exports.ISilobolsaValidation = joi_1.default.object({
     producto: joi_1.default.string().required(),
     fechaConfeccion: joi_1.default.date().required(),
     activa: joi_1.default.boolean(),
-    fechaDesmantelacion: joi_1.default.date()
+    fechaDesmantelacion: joi_1.default.date(),
+    ubicacion: shared_1.ICoordenadasValidation,
 });
 exports.ISilobolsaSwagger = joi_to_swagger_1.default(exports.ISilobolsaValidation).swagger;

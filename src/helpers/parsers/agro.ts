@@ -524,13 +524,14 @@ export class AgroParserService {
             deveuiTrackers: dato.deveuiTrackers,
             especie: dato.especie,
             fechaConfeccion: dato.fechaConfeccion?.toISOString(),
-            idEstablecimiento: dato.idEstablecimiento,
-            idLote: dato.idLote,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
+            idLote: dato.idLote?.toHexString(),
             metros: dato.metros,
             numero: dato.numero,
             producto: dato.producto,
             activa: dato.activa,
             fechaDesmantelacion: dato.fechaDesmantelacion?.toISOString(),
+            ubicacion: dato.ubicacion,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
@@ -560,8 +561,14 @@ export class AgroParserService {
             firmware: dato.firmware,
             modelo: dato.modelo,
             numeroSerie: dato.numeroSerie,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
+            idLote: dato.idLote?.toHexString(),
+            activa: dato.activa,
+            ubicacion: dato.ubicacion,
             //
             dispositivo,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined, 
         };
         return dto;
     }

@@ -1,11 +1,11 @@
 import { Document, Schema, Types } from 'mongoose';
-import { IDispositivoDb } from '../../shared';
+import { ICoordenadas, IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
 import { ILoteDb } from './lote';
 export interface ISilobolsaDb extends Document {
     _id: Types.ObjectId;
-    idEstablecimiento: string;
-    idLote: string;
+    idEstablecimiento: Types.ObjectId;
+    idLote: Types.ObjectId;
     deveuiLanzas: string[];
     deveuiTrackers: string[];
     numero: string;
@@ -16,6 +16,7 @@ export interface ISilobolsaDb extends Document {
     fechaConfeccion: Date;
     activa: boolean;
     fechaDesmantelacion: Date;
+    ubicacion: ICoordenadas;
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
     dispositivos?: IDispositivoDb;

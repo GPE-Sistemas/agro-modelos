@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { ICoordenadas, ICoordenadasValidation } from '../../shared';
 
 export const ISilobolsaValidation = joi.object<ISilobolsa>({
     idEstablecimiento: joi.string().required(),
@@ -13,7 +14,8 @@ export const ISilobolsaValidation = joi.object<ISilobolsa>({
     producto: joi.string().required(),
     fechaConfeccion: joi.date().required(),
     activa: joi.boolean(),
-    fechaDesmantelacion: joi.date()
+    fechaDesmantelacion: joi.date(),
+    ubicacion: ICoordenadasValidation,
 });
 
 export const ISilobolsaSwagger = j2s(ISilobolsaValidation).swagger;
@@ -31,4 +33,5 @@ export interface ISilobolsa {
     fechaConfeccion: string;
     activa?: boolean;
     fechaDesmantelacion?: string;
+    ubicacion?: ICoordenadas;
 }

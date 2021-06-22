@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ISilobolsaDTOSwagger = exports.ISilobolsaDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const shared_1 = require("../../shared");
 const dispositivo_1 = require("../../silobolsa/out/dispositivo");
 const tracker_silobolsa_1 = require("../../tracker-silobolsa");
 const establecimiento_1 = require("./establecimiento");
@@ -24,6 +25,7 @@ exports.ISilobolsaDTOValidation = joi_1.default.object({
     fechaConfeccion: joi_1.default.date().required(),
     activa: joi_1.default.boolean(),
     fechaDesmantelacion: joi_1.default.date(),
+    ubicacion: shared_1.ICoordenadasValidation,
     //
     lanzas: joi_1.default.array().items(dispositivo_1.IDispositivoSilobolsaDTOValidation),
     trackers: joi_1.default.array().items(tracker_silobolsa_1.IDispositivoTrackerSilobolsaDTOValidation),
