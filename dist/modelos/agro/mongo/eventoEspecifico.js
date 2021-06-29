@@ -11,6 +11,6 @@ exports.SEventoEspecifico = new mongoose_1.Schema({
 exports.SEventoEspecifico.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });

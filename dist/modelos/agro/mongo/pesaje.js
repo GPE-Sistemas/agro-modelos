@@ -11,6 +11,6 @@ exports.SPesaje = new mongoose_1.Schema({
 exports.SPesaje.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });

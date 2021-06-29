@@ -26,7 +26,7 @@ export const SVacunacion = new Schema<IVacunacionDb>({
 SVacunacion.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });
 

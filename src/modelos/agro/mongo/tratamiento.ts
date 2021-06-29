@@ -29,7 +29,7 @@ export const STratamiento = new Schema<ITratamientoDb>({
 STratamiento.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });
 

@@ -13,7 +13,7 @@ exports.SVacunacion = new mongoose_1.Schema({
 exports.SVacunacion.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });
 exports.SVacunacion.virtual('tipoVacuna', {

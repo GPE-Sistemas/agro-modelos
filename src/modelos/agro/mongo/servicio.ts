@@ -21,6 +21,6 @@ export const SServicio = new Schema<IServicioDb>({
 SServicio.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });

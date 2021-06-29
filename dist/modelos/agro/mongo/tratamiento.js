@@ -13,7 +13,7 @@ exports.STratamiento = new mongoose_1.Schema({
 exports.STratamiento.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });
 exports.STratamiento.virtual('diagnostico', {

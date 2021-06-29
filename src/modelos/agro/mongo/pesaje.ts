@@ -21,6 +21,6 @@ export const SPesaje = new Schema<IPesajeDb>({
 SPesaje.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });

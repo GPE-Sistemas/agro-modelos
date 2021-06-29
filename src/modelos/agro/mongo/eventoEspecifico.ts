@@ -21,6 +21,6 @@ export const SEventoEspecifico = new Schema<IEventoEspecificoDb>({
 SEventoEspecifico.virtual('animal', {
     foreignField: '_id',
     justOne: true,
-    localField: 'idAniaml',
+    localField: 'idAnimal',
     ref: 'animales',
 });
