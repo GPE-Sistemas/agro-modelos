@@ -4,7 +4,8 @@ exports.SBaja = void 0;
 const mongoose_1 = require("mongoose");
 exports.SBaja = new mongoose_1.Schema({
     fecha: { type: Date, required: true },
-    idTipoBaja: { type: mongoose_1.Types.ObjectId, required: true },
+    idTipoBaja: { type: mongoose_1.Types.ObjectId, required: true, ref: 'tiposBajas' },
+    idAnimal: { type: mongoose_1.Types.ObjectId, required: true, ref: 'animales' },
     observaciones: { type: String },
 });
 exports.SBaja.virtual('tipoBaja', {
@@ -12,4 +13,10 @@ exports.SBaja.virtual('tipoBaja', {
     justOne: true,
     localField: 'idTipoBaja',
     ref: 'tiposBajas',
+});
+exports.SBaja.virtual('animal', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idAnimal',
+    ref: 'animales',
 });

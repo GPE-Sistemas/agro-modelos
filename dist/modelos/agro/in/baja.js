@@ -8,6 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IBajaValidation = joi_1.default.object({
     fecha: joi_1.default.date(),
+    idAnimal: joi_1.default.string(),
     idTipoBaja: joi_1.default.string(),
     observaciones: joi_1.default.string(),
 });

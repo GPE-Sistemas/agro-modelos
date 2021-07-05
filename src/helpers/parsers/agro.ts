@@ -306,10 +306,12 @@ export class AgroParserService {
         const dto: IBajaDTO = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idTipoBaja: dato.idTipoBaja,
+            idTipoBaja: dato.idTipoBaja?.toHexString(),
+            idAnimal: dato.idAnimal?.toHexString(),
             observaciones: dato.observaciones,
             // Populate
             tipoBaja: dato.tipoBaja ? AgroParserService.tipoBaja(dato.tipoBaja) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;

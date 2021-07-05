@@ -291,13 +291,16 @@ class AgroParserService {
         return dto;
     }
     static baja(dato) {
+        var _a, _b;
         const dto = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idTipoBaja: dato.idTipoBaja,
+            idTipoBaja: (_a = dato.idTipoBaja) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            idAnimal: (_b = dato.idAnimal) === null || _b === void 0 ? void 0 : _b.toHexString(),
             observaciones: dato.observaciones,
             // Populate
             tipoBaja: dato.tipoBaja ? AgroParserService.tipoBaja(dato.tipoBaja) : undefined,
+            animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;

@@ -11,6 +11,7 @@ exports.IBajaDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     fecha: joi_1.default.date(),
     idTipoBaja: joi_1.default.string(),
+    idAnimal: joi_1.default.string(),
     observaciones: joi_1.default.string(),
     //
     tipoBaja: tipoBaja_1.ITipoBajaDTOValidation,
