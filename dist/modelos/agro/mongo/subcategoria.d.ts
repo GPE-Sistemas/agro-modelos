@@ -5,7 +5,7 @@ export interface ISubcategoriaDb extends Document {
     nombre: string;
     pesoMin?: number;
     pesoMax?: number;
-    idCategoria: string;
+    idCategoria: Types.ObjectId;
     categoria?: ICategoriaDb;
 }
 export declare const SSubcategoria: Schema<ISubcategoriaDb, import("mongoose").Model<any, any, any>, undefined>;

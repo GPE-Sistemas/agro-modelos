@@ -6,7 +6,7 @@ export interface ISubcategoriaDb extends Document {
     nombre: string;
     pesoMin?: number;
     pesoMax?: number;
-    idCategoria: string;
+    idCategoria: Types.ObjectId;
     //
     categoria?: ICategoriaDb;
 }

@@ -31,7 +31,7 @@ export class AgroParserService {
     static lote(dato: LeanDocument<ILoteDb>): ILoteDTO {
         const dto: ILoteDTO = {
             _id: dato._id.toHexString(),
-            idEstablecimiento: dato.idEstablecimiento,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             nombre: dato.nombre,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
@@ -271,7 +271,7 @@ export class AgroParserService {
             color: dato.color,
             coordenadas: dato.coordenadas,
             nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
@@ -345,7 +345,7 @@ export class AgroParserService {
             nombre: dato.nombre,
             pesoMax: dato.pesoMax,
             pesoMin: dato.pesoMin,
-            idCategoria: dato.idCategoria,
+            idCategoria: dato.idCategoria?.toHexString(),
             //
             categoria: dato.categoria ? AgroParserService.categoria(dato.categoria) : undefined,
         };
@@ -393,9 +393,9 @@ export class AgroParserService {
         const dto: ITratamientoDTO = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idAnimal: dato.idAnimal,
-            idDiagnostico: dato.idDiagnostico,
-            idTipoTratamiento: dato.idTipoTratamiento,
+            idAnimal: dato.idAnimal?.toHexString(),
+            idDiagnostico: dato.idDiagnostico?.toHexString(),
+            idTipoTratamiento: dato.idTipoTratamiento?.toHexString(),
             observaciones: dato.observaciones,
             producto: dato.producto,
             //
@@ -419,8 +419,8 @@ export class AgroParserService {
             _id: dato._id.toHexString(),
             dosis: dato.dosis,
             fecha: dato.fecha,
-            idAnimal: dato.idAnimal,
-            idTipoVacuna: dato.idTipoVacuna,
+            idAnimal: dato.idAnimal?.toHexString(),
+            idTipoVacuna: dato.idTipoVacuna?.toHexString(),
             observaciones: dato.observaciones,
             producto: dato.producto,
             //
@@ -441,7 +441,7 @@ export class AgroParserService {
         const dto: IEventoEspecificoDTO = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idAnimal: dato.idAnimal,
+            idAnimal: dato.idAnimal?.toHexString(),
             titulo: dato.titulo,
             observaciones: dato.observaciones,
             //
@@ -461,7 +461,7 @@ export class AgroParserService {
         const dto: IPesajeDTO = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idAnimal: dato.idAnimal,
+            idAnimal: dato.idAnimal?.toHexString(),
             peso: dato.peso,
             observaciones: dato.observaciones,
             //
@@ -481,7 +481,7 @@ export class AgroParserService {
         const dto: IServicioDTO = {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
-            idAnimal: dato.idAnimal,
+            idAnimal: dato.idAnimal?.toHexString(),
             inicio: dato.inicio,
             observaciones: dato.observaciones,
             //
@@ -501,7 +501,7 @@ export class AgroParserService {
         const dto: IGrupoDTO = {
             _id: dato._id.toHexString(),
             nombre: dato.nombre,
-            idEstablecimiento: dato.idEstablecimiento,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };

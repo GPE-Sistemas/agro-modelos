@@ -7,7 +7,7 @@ export interface ICorralDb extends Document {
     color: string;
     nombre: string;
     coordenadas: ICoordenadas[];
-    idEstablecimiento: string;
+    idEstablecimiento: Types.ObjectId;
     //
     establecimiento?: IEstablecimientoDb;
 }

@@ -6,7 +6,7 @@ export interface ICorralDb extends Document {
     color: string;
     nombre: string;
     coordenadas: ICoordenadas[];
-    idEstablecimiento: string;
+    idEstablecimiento: Types.ObjectId;
     establecimiento?: IEstablecimientoDb;
 }
 export declare const SCorral: Schema<ICorralDb, import("mongoose").Model<any, any, any>, undefined>;

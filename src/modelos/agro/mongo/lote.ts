@@ -4,7 +4,7 @@ import { IEstablecimientoDb } from './establecimiento';
 export interface ILoteDb extends Document {
     _id: Types.ObjectId;
     nombre: string;
-    idEstablecimiento: string;
+    idEstablecimiento: Types.ObjectId;
     //
     establecimiento?: IEstablecimientoDb;
 }

@@ -3,8 +3,8 @@ import { IAnimalDb } from './animal';
 import { ITipoVacunaDb } from './tipoVacuna';
 export interface IVacunacionDb extends Document {
     _id: Types.ObjectId;
-    idAnimal: string;
-    idTipoVacuna: string;
+    idAnimal: Types.ObjectId;
+    idTipoVacuna: Types.ObjectId;
     fecha: string;
     dosis: string;
     producto: string;

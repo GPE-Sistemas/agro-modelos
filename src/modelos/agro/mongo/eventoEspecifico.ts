@@ -3,7 +3,7 @@ import { IAnimalDb } from './animal';
 
 export interface IEventoEspecificoDb extends Document {
     _id: Types.ObjectId;
-    idAnimal: string;
+    idAnimal: Types.ObjectId;
     fecha: string;
     titulo: string;
     observaciones: string;

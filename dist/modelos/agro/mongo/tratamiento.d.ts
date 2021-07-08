@@ -4,9 +4,9 @@ import { IDiagnosticoDb } from './diagnostico';
 import { ITipoTratamientoDb } from './tipoTratamiento';
 export interface ITratamientoDb extends Document {
     _id: Types.ObjectId;
-    idAnimal: string;
-    idDiagnostico: string;
-    idTipoTratamiento: string;
+    idAnimal: Types.ObjectId;
+    idDiagnostico: Types.ObjectId;
+    idTipoTratamiento: Types.ObjectId;
     fecha: string;
     producto: string;
     observaciones: string;
