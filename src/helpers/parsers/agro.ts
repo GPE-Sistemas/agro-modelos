@@ -5,13 +5,30 @@ import {
     IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO,
     IDispositivoSilobolsaDTO, IDispositivoTrackerSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb,
     IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb,
-    ILogDispositivoDTO, ILoteDb, ILoteDTO, IPesajeDb, IPesajeDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb,
+    ILogDispositivoDTO, ILoteDb, ILoteDTO, IPesajeDb, IPesajeDTO, IPuntoInteresDb, IPuntoInteresDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb,
     ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO,
     ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO
 } from '../../modelos';
 import { getEstadoComando } from '../helpers';
 
 export class AgroParserService {
+
+    static puntoInteres(dato: LeanDocument<IPuntoInteresDb>): IPuntoInteresDTO {
+        const dto: IPuntoInteresDTO = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            icono: dato.icono,
+            coordenadas: dato.coordenadas
+        };
+        return dto;
+    }
+    static puntosInteres(datos: LeanDocument<IPuntoInteresDb>[]): IPuntoInteresDTO[] {
+        const dto: IPuntoInteresDTO[] = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.puntoInteres(dato));
+        }
+        return dto;
+    }
 
     static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO {
         const dto: IEstablecimientoDTO = {

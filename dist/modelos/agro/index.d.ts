@@ -63,4 +63,7 @@ export * from './out/vacunacion';
 export * from './in/correctora';
 export * from './mongo/correctora';
 export * from './out/correctora';
+export * from './in/puntoInteres';
+export * from './mongo/puntoInteres';
+export * from './out/puntoInteres';
 //# sourceMappingURL=index.d.ts.map

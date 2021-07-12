@@ -3,6 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgroParserService = void 0;
 const helpers_1 = require("../helpers");
 class AgroParserService {
+    static puntoInteres(dato) {
+        const dto = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            icono: dato.icono,
+            coordenadas: dato.coordenadas
+        };
+        return dto;
+    }
+    static puntosInteres(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.puntoInteres(dato));
+        }
+        return dto;
+    }
     static establecimiento(dato) {
         var _a;
         const dto = {

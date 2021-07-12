@@ -97,3 +97,7 @@ __exportStar(require("./in/correctora"), exports);
 __exportStar(require("./mongo/correctora"), exports);
 __exportStar(require("./out/correctora"), exports);
 //
+__exportStar(require("./in/puntoInteres"), exports);
+__exportStar(require("./mongo/puntoInteres"), exports);
+__exportStar(require("./out/puntoInteres"), exports);
+//
