@@ -4,7 +4,6 @@ import j2s from 'joi-to-swagger';
 import { IDispositivoCaravanaDTO, IDispositivoCaravanaDTOValidation } from '../../caravana/out/dispositivo';
 import { IBajaDTO, IBajaDTOValidation } from './baja';
 import { ICategoriaDTO, ICategoriaDTOValidation } from './categoria';
-import { ICorralDTO, ICorralDTOValidation } from './corral';
 import { IEspecieDTO, IEspecieDTOValidation } from './especie';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
 import { IEventoEspecificoDTO } from './eventoEspecifico';
@@ -28,10 +27,9 @@ export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
     foto: joi.string(),
     idBaja: joi.string(),
     idCategoria: joi.string(),
-    idCorral: joi.string(),
     idEspecie: joi.string(),
     idEstablecimiento: joi.string(),
-    idGrupos: joi.array().items(joi.string()),
+    idGrupo: joi.string(),
     idLote: joi.string(),
     idMadre: joi.string(),
     idPadre: joi.string(),
@@ -41,11 +39,10 @@ export const IAnimalDTOValidation = joi.object<IAnimalDTO>({
     // Populate
     baja: IBajaDTOValidation,
     categoria: ICategoriaDTOValidation,
-    corral: ICorralDTOValidation,
     dispositivo: IDispositivoCaravanaDTOValidation,
     especie: IEspecieDTOValidation,
     establecimiento: IEstablecimientoDTOValidation,
-    grupos: joi.array().items(IGrupoDTOValidation),
+    grupo: IGrupoDTOValidation,
     lote: ILoteDTOValidation,
     // madre: IAnimalDTOValidation,
     // padre: IAnimalDTOValidation,
@@ -72,10 +69,9 @@ export interface IAnimalDTO {
     foto?: string;
     idBaja?: string;
     idCategoria?: string;
-    idCorral?: string;
     idEspecie?: string;
     idEstablecimiento?: string;
-    idGrupos?: string[];
+    idGrupo?: string;
     idLote?: string;
     idMadre?: string;
     idPadre?: string;
@@ -85,10 +81,9 @@ export interface IAnimalDTO {
     // Populate
     baja?: IBajaDTO;
     categoria?: ICategoriaDTO;
-    corral?: ICorralDTO;
     especie?: IEspecieDTO;
     establecimiento?: IEstablecimientoDTO;
-    grupos?: IGrupoDTO[];
+    grupo?: IGrupoDTO;
     lote?: ILoteDTO;
     madre?: IAnimalDTO;
     padre?: IAnimalDTO;

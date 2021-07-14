@@ -35,24 +35,6 @@ class AgroParserService {
         }
         return dto;
     }
-    static lote(dato) {
-        var _a;
-        const dto = {
-            _id: dato._id.toHexString(),
-            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            nombre: dato.nombre,
-            //
-            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
-        };
-        return dto;
-    }
-    static lotes(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(AgroParserService.lote(dato));
-        }
-        return dto;
-    }
     static alerta(dato) {
         var _a;
         const dto = {
@@ -219,7 +201,7 @@ class AgroParserService {
         return dto;
     }
     static animal(dato, dispositivo, vacunaciones, tratamientos, eventosEspecificos, pesajes, servicios, madre, padre) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             activo: dato.activo,
@@ -231,23 +213,21 @@ class AgroParserService {
             foto: dato.foto,
             idBaja: (_b = dato.idBaja) === null || _b === void 0 ? void 0 : _b.toHexString(),
             idCategoria: (_c = dato.idCategoria) === null || _c === void 0 ? void 0 : _c.toHexString(),
-            idCorral: (_d = dato.idCorral) === null || _d === void 0 ? void 0 : _d.toHexString(),
-            idEspecie: (_e = dato.idEspecie) === null || _e === void 0 ? void 0 : _e.toHexString(),
-            idEstablecimiento: (_f = dato.idEstablecimiento) === null || _f === void 0 ? void 0 : _f.toHexString(),
-            idGrupos: (_g = dato.idGrupos) === null || _g === void 0 ? void 0 : _g.map(e => e === null || e === void 0 ? void 0 : e.toHexString()),
-            idLote: (_h = dato.idLote) === null || _h === void 0 ? void 0 : _h.toHexString(),
-            idMadre: (_j = dato.idMadre) === null || _j === void 0 ? void 0 : _j.toHexString(),
-            idPadre: (_k = dato.idPadre) === null || _k === void 0 ? void 0 : _k.toHexString(),
-            idSubcategoria: (_l = dato.idSubcategoria) === null || _l === void 0 ? void 0 : _l.toHexString(),
-            idRaza: (_m = dato.idRaza) === null || _m === void 0 ? void 0 : _m.toHexString(),
+            idEspecie: (_d = dato.idEspecie) === null || _d === void 0 ? void 0 : _d.toHexString(),
+            idEstablecimiento: (_e = dato.idEstablecimiento) === null || _e === void 0 ? void 0 : _e.toHexString(),
+            idGrupo: (_f = dato.idGrupo) === null || _f === void 0 ? void 0 : _f.toHexString(),
+            idLote: (_g = dato.idLote) === null || _g === void 0 ? void 0 : _g.toHexString(),
+            idMadre: (_h = dato.idMadre) === null || _h === void 0 ? void 0 : _h.toHexString(),
+            idPadre: (_j = dato.idPadre) === null || _j === void 0 ? void 0 : _j.toHexString(),
+            idSubcategoria: (_k = dato.idSubcategoria) === null || _k === void 0 ? void 0 : _k.toHexString(),
+            idRaza: (_l = dato.idRaza) === null || _l === void 0 ? void 0 : _l.toHexString(),
             sexo: dato.sexo,
             // Populate
             baja: dato.baja ? AgroParserService.baja(dato.baja) : undefined,
             categoria: dato.categoria ? AgroParserService.categoria(dato.categoria) : undefined,
-            corral: dato.corral ? AgroParserService.corral(dato.corral) : undefined,
             especie: dato.especie ? AgroParserService.especie(dato.especie) : undefined,
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
-            grupos: ((_o = dato.grupos) === null || _o === void 0 ? void 0 : _o.length) ? AgroParserService.grupos(dato.grupos) : undefined,
+            grupo: dato.grupo ? AgroParserService.grupo(dato.grupo) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
             madre,
             padre,
@@ -272,7 +252,7 @@ class AgroParserService {
         }
         return dto;
     }
-    static corral(dato) {
+    static lote(dato) {
         var _a;
         const dto = {
             _id: dato._id.toHexString(),
@@ -286,10 +266,10 @@ class AgroParserService {
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
     }
-    static corrales(datos) {
+    static lotes(datos) {
         const dto = [];
         for (const dato of datos) {
-            dto.push(AgroParserService.corral(dato));
+            dto.push(AgroParserService.lote(dato));
         }
         return dto;
     }

@@ -6,11 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ILoteDTOSwagger = exports.ILoteDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const coordenadas_1 = require("../../shared/coordenadas");
 const establecimiento_1 = require("./establecimiento");
 exports.ILoteDTOValidation = joi_1.default.object({
-    _id: joi_1.default.string().required(),
-    nombre: joi_1.default.string().required(),
-    idEstablecimiento: joi_1.default.string().required(),
+    _id: joi_1.default.string(),
+    color: joi_1.default.string(),
+    nombre: joi_1.default.string(),
+    coordenadas: joi_1.default.array().items(coordenadas_1.ICoordenadasValidation),
+    idEstablecimiento: joi_1.default.string(),
     //
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });

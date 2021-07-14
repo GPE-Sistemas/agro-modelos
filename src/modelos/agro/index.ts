@@ -13,9 +13,9 @@ export * from './in/categoria';
 export * from './mongo/categoria';
 export * from './out/categoria';
 //
-export * from './in/corral';
-export * from './mongo/corral';
-export * from './out/corral';
+export * from './in/lote';
+export * from './mongo/lote';
+export * from './out/lote';
 //
 export * from './in/diagnostico';
 export * from './mongo/diagnostico';

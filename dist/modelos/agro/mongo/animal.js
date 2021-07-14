@@ -12,10 +12,9 @@ exports.SAnimal = new mongoose_1.Schema({
     foto: { type: String },
     idBaja: { type: mongoose_1.Types.ObjectId, ref: 'bajas' },
     idCategoria: { type: mongoose_1.Types.ObjectId, ref: 'categorias' },
-    idCorral: { type: mongoose_1.Types.ObjectId, ref: 'corrales' },
     idEspecie: { type: mongoose_1.Types.ObjectId, ref: 'especies' },
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
-    idGrupos: [{ type: mongoose_1.Types.ObjectId, ref: 'grupos' }],
+    idGrupo: { type: mongoose_1.Types.ObjectId, ref: 'grupos' },
     idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes' },
     idMadre: { type: mongoose_1.Types.ObjectId, ref: 'animales' },
     idPadre: { type: mongoose_1.Types.ObjectId, ref: 'animales' },
@@ -37,12 +36,6 @@ exports.SAnimal.virtual('categoria', {
     justOne: true,
     localField: 'idCategoria',
     ref: 'categorias',
-});
-exports.SAnimal.virtual('corral', {
-    foreignField: '_id',
-    justOne: true,
-    localField: 'idCorral',
-    ref: 'corrales',
 });
 exports.SAnimal.virtual('lote', {
     foreignField: '_id',
@@ -74,10 +67,10 @@ exports.SAnimal.virtual('establecimiento', {
     localField: 'idEstablecimiento',
     ref: 'establecimientos',
 });
-exports.SAnimal.virtual('grupos', {
+exports.SAnimal.virtual('grupo', {
     foreignField: '_id',
-    justOne: false,
-    localField: 'idGrupos',
+    justOne: true,
+    localField: 'idGrupo',
     ref: 'grupos',
 });
 exports.SAnimal.virtual('madre', {

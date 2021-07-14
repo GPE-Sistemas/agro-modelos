@@ -1,7 +1,6 @@
 import { Document, Schema, Types } from 'mongoose';
 import { IBajaDb } from './baja';
 import { ICategoriaDb } from './categoria';
-import { ICorralDb } from './corral';
 import { IEspecieDb } from './especie';
 import { IEstablecimientoDb } from './establecimiento';
 import { IGrupoDb } from './grupo';
@@ -20,10 +19,9 @@ export interface IAnimalDb extends Document {
     foto?: string;
     idBaja?: Types.ObjectId;
     idCategoria?: Types.ObjectId;
-    idCorral?: Types.ObjectId;
     idEspecie: Types.ObjectId;
     idEstablecimiento?: Types.ObjectId;
-    idGrupos?: Types.ObjectId[];
+    idGrupo?: Types.ObjectId;
     idLote?: Types.ObjectId;
     idMadre?: Types.ObjectId;
     idPadre?: Types.ObjectId;
@@ -33,11 +31,10 @@ export interface IAnimalDb extends Document {
     //
     baja?: IBajaDb;
     categoria?: ICategoriaDb;
-    corral?: ICorralDb;
     // dispositivo?: IDispositivoCaravanaDb;
     especie: IEspecieDb;
     establecimiento?: IEstablecimientoDb;
-    grupos?: IGrupoDb[];
+    grupo?: IGrupoDb;
     lote?: ILoteDb;
     // madre?: IAnimalDb;
     // padre?: IAnimalDb;
@@ -55,10 +52,9 @@ export const SAnimal = new Schema<IBajaDb>({
     foto: { type: String },
     idBaja: { type: Types.ObjectId, ref: 'bajas' },
     idCategoria: { type: Types.ObjectId, ref: 'categorias' },
-    idCorral: { type: Types.ObjectId, ref: 'corrales' },
     idEspecie: { type: Types.ObjectId, ref: 'especies' },
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos' },
-    idGrupos: [{ type: Types.ObjectId, ref: 'grupos' }],
+    idGrupo: { type: Types.ObjectId, ref: 'grupos' },
     idLote: { type: Types.ObjectId, ref: 'lotes' },
     idMadre: { type: Types.ObjectId, ref: 'animales' },
     idPadre: { type: Types.ObjectId, ref: 'animales' },
@@ -83,13 +79,6 @@ SAnimal.virtual('categoria', {
     justOne: true,
     localField: 'idCategoria',
     ref: 'categorias',
-});
-
-SAnimal.virtual('corral', {
-    foreignField: '_id',
-    justOne: true,
-    localField: 'idCorral',
-    ref: 'corrales',
 });
 
 SAnimal.virtual('lote', {
@@ -127,10 +116,10 @@ SAnimal.virtual('establecimiento', {
     ref: 'establecimientos',
 });
 
-SAnimal.virtual('grupos', {
+SAnimal.virtual('grupo', {
     foreignField: '_id',
-    justOne: false,
-    localField: 'idGrupos',
+    justOne: true,
+    localField: 'idGrupo',
     ref: 'grupos',
 });
 

@@ -1,7 +1,6 @@
 import { Document, Schema, Types } from 'mongoose';
 import { IBajaDb } from './baja';
 import { ICategoriaDb } from './categoria';
-import { ICorralDb } from './corral';
 import { IEspecieDb } from './especie';
 import { IEstablecimientoDb } from './establecimiento';
 import { IGrupoDb } from './grupo';
@@ -19,10 +18,9 @@ export interface IAnimalDb extends Document {
     foto?: string;
     idBaja?: Types.ObjectId;
     idCategoria?: Types.ObjectId;
-    idCorral?: Types.ObjectId;
     idEspecie: Types.ObjectId;
     idEstablecimiento?: Types.ObjectId;
-    idGrupos?: Types.ObjectId[];
+    idGrupo?: Types.ObjectId;
     idLote?: Types.ObjectId;
     idMadre?: Types.ObjectId;
     idPadre?: Types.ObjectId;
@@ -31,10 +29,9 @@ export interface IAnimalDb extends Document {
     sexo?: boolean;
     baja?: IBajaDb;
     categoria?: ICategoriaDb;
-    corral?: ICorralDb;
     especie: IEspecieDb;
     establecimiento?: IEstablecimientoDb;
-    grupos?: IGrupoDb[];
+    grupo?: IGrupoDb;
     lote?: ILoteDb;
     raza?: IRazaDb;
     subcategoria?: ISubcategoriaDb;

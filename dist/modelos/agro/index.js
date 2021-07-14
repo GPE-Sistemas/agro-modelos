@@ -25,9 +25,9 @@ __exportStar(require("./in/categoria"), exports);
 __exportStar(require("./mongo/categoria"), exports);
 __exportStar(require("./out/categoria"), exports);
 //
-__exportStar(require("./in/corral"), exports);
-__exportStar(require("./mongo/corral"), exports);
-__exportStar(require("./out/corral"), exports);
+__exportStar(require("./in/lote"), exports);
+__exportStar(require("./mongo/lote"), exports);
+__exportStar(require("./out/lote"), exports);
 //
 __exportStar(require("./in/diagnostico"), exports);
 __exportStar(require("./mongo/diagnostico"), exports);
