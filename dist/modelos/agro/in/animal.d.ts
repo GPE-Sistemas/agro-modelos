@@ -11,10 +11,9 @@ export interface IAnimal {
     foto?: string;
     idBaja?: string;
     idCategoria?: string;
-    idCorral?: string;
     idEspecie?: string;
     idEstablecimiento?: string;
-    idGrupos?: string[];
+    idGrupo?: string;
     idLote?: string;
     idMadre?: string;
     idPadre?: string;

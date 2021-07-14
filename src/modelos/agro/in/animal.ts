@@ -11,10 +11,9 @@ export const IAnimalValidation = joi.object<IAnimal>({
     foto: joi.string(),
     idBaja: joi.string(),
     idCategoria: joi.string(),
-    idCorral: joi.string(),
     idEspecie: joi.string().required(),
     idEstablecimiento: joi.string(),
-    idGrupos: joi.array().items(joi.string()),
+    idGrupo: joi.string(),
     idLote: joi.string(),
     idMadre: joi.string(),
     idPadre: joi.string(),
@@ -35,10 +34,9 @@ export interface IAnimal {
     foto?: string;
     idBaja?: string;
     idCategoria?: string;
-    idCorral?: string;
     idEspecie?: string;
     idEstablecimiento?: string;
-    idGrupos?: string[];
+    idGrupo?: string;
     idLote?: string;
     idMadre?: string;
     idPadre?: string;
