@@ -10,6 +10,7 @@ const shared_1 = require("../../shared");
 const icono_1 = require("./icono");
 exports.IPuntoInteresValidation = joi_1.default.object({
     nombre: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     coordenadas: shared_1.ICoordenadasValidation,
     icono: icono_1.IIconoValidation,
 });

@@ -5,6 +5,7 @@ import { IIcono, IIconoValidation } from './icono';
 
 export const IPuntoInteresValidation = joi.object<IPuntoInteres>({
     nombre: joi.string(),
+    idEstablecimiento: joi.string(),
     coordenadas: ICoordenadasValidation,
     icono: IIconoValidation,
 });
@@ -13,6 +14,7 @@ export const IPuntoInteresSwagger = j2s(IPuntoInteresValidation).swagger;
 
 export interface IPuntoInteres {
     nombre?: string;
+    idEstablecimiento?: string;
     coordenadas?: ICoordenadas;
     icono?: IIcono;
 }

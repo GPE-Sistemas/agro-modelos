@@ -1,10 +1,12 @@
 import { LeanDocument } from 'mongoose';
 import { IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO, IComandoDb, IComandoDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO, IDispositivoSilobolsaDTO, IDispositivoTrackerSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb, IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb, ILogDispositivoDTO, ILoteDb, ILoteDTO, IPesajeDb, IPesajeDTO, IPuntoInteresDb, IPuntoInteresDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO, ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO } from '../../modelos';
 export declare class AgroParserService {
-    static puntoInteres(dato: LeanDocument<IPuntoInteresDb>): IPuntoInteresDTO;
-    static puntosInteres(datos: LeanDocument<IPuntoInteresDb>[]): IPuntoInteresDTO[];
     static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO;
     static establecimientos(datos: LeanDocument<IEstablecimientoDb>[]): IEstablecimientoDTO[];
+    static puntoInteres(dato: LeanDocument<IPuntoInteresDb>): IPuntoInteresDTO;
+    static puntosInteres(datos: LeanDocument<IPuntoInteresDb>[]): IPuntoInteresDTO[];
+    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
+    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
     static alerta(dato: LeanDocument<IAlertaDb>): IAlertaDTO;
     static alertas(datos: LeanDocument<IAlertaDb>[]): IAlertaDTO[];
     static dispositivo(dato: LeanDocument<IDispositivoDb>): IDispositivoDTO;
@@ -13,6 +15,8 @@ export declare class AgroParserService {
     static logsDispositivos(datos: LeanDocument<ILogDispositivoDb>[]): ILogDispositivoDTO[];
     static comando(dato: LeanDocument<IComandoDb>): IComandoDTO;
     static comandos(datos: LeanDocument<IComandoDb>[]): IComandoDTO[];
+    static lote(dato: LeanDocument<ILoteDb>): ILoteDTO;
+    static lotes(datos: LeanDocument<ILoteDb>[]): ILoteDTO[];
     static especie(dato: LeanDocument<IEspecieDb>): IEspecieDTO;
     static especies(datos: LeanDocument<IEspecieDb>[]): IEspecieDTO[];
     static raza(dato: LeanDocument<IRazaDb>): IRazaDTO;
@@ -21,8 +25,6 @@ export declare class AgroParserService {
     static categorias(datos: LeanDocument<ICategoriaDb>[]): ICategoriaDTO[];
     static animal(dato: LeanDocument<IAnimalDb>, dispositivo?: IDispositivoCaravanaDTO, vacunaciones?: IVacunacionDTO[], tratamientos?: ITratamientoDTO[], eventosEspecificos?: IEventoEspecificoDTO[], pesajes?: IPesajeDTO[], servicios?: IServicioDTO[], madre?: IAnimalDTO, padre?: IAnimalDTO): IAnimalDTO;
     static animales(datos: LeanDocument<IAnimalDb>[], dispositivos?: IDispositivoCaravanaDTO[]): IAnimalDTO[];
-    static lote(dato: LeanDocument<ILoteDb>): ILoteDTO;
-    static lotes(datos: LeanDocument<ILoteDb>[]): ILoteDTO[];
     static tipoBaja(dato: LeanDocument<ITipoBajaDb>): ITipoBajaDTO;
     static tiposBajas(datos: LeanDocument<ITipoBajaDb>[]): ITipoBajaDTO[];
     static baja(dato: LeanDocument<IBajaDb>): IBajaDTO;
@@ -45,8 +47,6 @@ export declare class AgroParserService {
     static pesajes(datos: LeanDocument<IPesajeDb>[]): IPesajeDTO[];
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
     static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
-    static grupo(dato: LeanDocument<IGrupoDb>): IGrupoDTO;
-    static grupos(datos: LeanDocument<IGrupoDb>[]): IGrupoDTO[];
     static silobolsa(dato: LeanDocument<ISilobolsaDb>, lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO;
     static silobolsas(datos: LeanDocument<ISilobolsaDb>[], lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO[];
     static correctora(dato: LeanDocument<ICorrectoraDb>, dispositivo?: IDispositivoCorrectoraDTO): ICorrectoraDTO;

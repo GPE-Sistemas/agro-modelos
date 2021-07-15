@@ -3,22 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgroParserService = void 0;
 const helpers_1 = require("../helpers");
 class AgroParserService {
-    static puntoInteres(dato) {
-        const dto = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            icono: dato.icono,
-            coordenadas: dato.coordenadas
-        };
-        return dto;
-    }
-    static puntosInteres(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(AgroParserService.puntoInteres(dato));
-        }
-        return dto;
-    }
     static establecimiento(dato) {
         var _a;
         const dto = {
@@ -32,6 +16,45 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(AgroParserService.establecimiento(dato));
+        }
+        return dto;
+    }
+    static puntoInteres(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            icono: dato.icono,
+            coordenadas: dato.coordenadas,
+            //
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+        };
+        return dto;
+    }
+    static puntosInteres(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.puntoInteres(dato));
+        }
+        return dto;
+    }
+    static grupo(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            nombre: dato.nombre,
+            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            //
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static grupos(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.grupo(dato));
         }
         return dto;
     }
@@ -135,6 +158,27 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(AgroParserService.comando(dato));
+        }
+        return dto;
+    }
+    static lote(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            color: dato.color,
+            coordenadas: dato.coordenadas,
+            nombre: dato.nombre,
+            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            //
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+        };
+        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
+        return dto;
+    }
+    static lotes(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.lote(dato));
         }
         return dto;
     }
@@ -252,27 +296,7 @@ class AgroParserService {
         }
         return dto;
     }
-    static lote(dato) {
-        var _a;
-        const dto = {
-            _id: dato._id.toHexString(),
-            color: dato.color,
-            coordenadas: dato.coordenadas,
-            nombre: dato.nombre,
-            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            //
-            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
-        return dto;
-    }
-    static lotes(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(AgroParserService.lote(dato));
-        }
-        return dto;
-    }
+    // Eventos
     static tipoBaja(dato) {
         const dto = {
             _id: dato._id.toHexString(),
@@ -477,25 +501,6 @@ class AgroParserService {
         const dto = [];
         for (const dato of datos) {
             dto.push(AgroParserService.servicio(dato));
-        }
-        return dto;
-    }
-    static grupo(dato) {
-        var _a;
-        const dto = {
-            _id: dato._id.toHexString(),
-            nombre: dato.nombre,
-            idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            //
-            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
-        };
-        Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
-        return dto;
-    }
-    static grupos(datos) {
-        const dto = [];
-        for (const dato of datos) {
-            dto.push(AgroParserService.grupo(dato));
         }
         return dto;
     }

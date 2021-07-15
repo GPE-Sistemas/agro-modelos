@@ -5,6 +5,7 @@ export declare const IPuntoInteresValidation: joi.ObjectSchema<IPuntoInteres>;
 export declare const IPuntoInteresSwagger: import("joi-to-swagger").SwaggerSchema;
 export interface IPuntoInteres {
     nombre?: string;
+    idEstablecimiento?: string;
     coordenadas?: ICoordenadas;
     icono?: IIcono;
 }
