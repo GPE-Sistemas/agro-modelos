@@ -1,0 +1,1 @@
+{"version":3,"file":"reporte.d.ts","sourceRoot":"","sources":["../../../../src/modelos/sensor-nivel/out/reporte.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAGtB,eAAO,MAAM,gCAAgC,0CAK3C,CAAC;AAEH,eAAO,MAAM,6BAA6B,wCAAgD,CAAC;AAE3F,MAAM,WAAW,sBAAsB;IACnC,GAAG,EAAE,MAAM,CAAC;IACZ,MAAM,EAAE,MAAM,CAAC;IACf,KAAK,EAAE,MAAM,CAAC;IACd,SAAS,EAAE,MAAM,CAAC;CACrB"}

@@ -7,4 +7,5 @@ export * from './shared';
 export * from './silobolsa';
 export * from './correctoras';
 export * from './tracker-silobolsa';
+export * from './sensor-nivel';
 //# sourceMappingURL=index.d.ts.map

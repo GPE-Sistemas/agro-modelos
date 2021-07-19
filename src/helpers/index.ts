@@ -6,4 +6,5 @@ export * from './parsers/shared';
 export * from './parsers/silobolsa';
 export * from './parsers/correctora';
 export * from './parsers/tracker-silobolsa';
+export * from './parsers/sensor-nivel';
 export * from './helpers';
