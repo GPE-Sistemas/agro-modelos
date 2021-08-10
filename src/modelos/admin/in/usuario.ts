@@ -2,9 +2,9 @@ import joi from 'joi';
 import j2s from 'joi-to-swagger';
 
 export const IUsuarioValidation = joi.object<IUsuario>({
-    usuario: joi.string().required(),
+    usuario: joi.string(),
     clave: joi.string(),
-    idCliente: joi.string().required(),
+    idCliente: joi.string(),
     nombre: joi.string(),
     apellido: joi.string(),
     notificacionesActivas: joi.boolean(),
@@ -23,11 +23,11 @@ export const IUsuarioSwagger = j2s(IUsuarioValidation).swagger;
 
 export interface IUsuario {
     activo?: boolean;
-    usuario: string;
+    usuario?: string;
     clave?: string;
-    idCliente: string;
-    nombre: string;
-    apellido: string;
+    idCliente?: string;
+    nombre?: string;
+    apellido?: string;
     notificacionesActivas?: boolean;
     notificaciones?: {
         telegram?: string[];
