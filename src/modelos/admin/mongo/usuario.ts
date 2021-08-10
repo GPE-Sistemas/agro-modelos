@@ -14,6 +14,7 @@ export interface IUsuarioDb extends Document {
         telegram?: string[];
         whatsapp?: string[];
         email?: string[];
+        sms?: string[];
     };
     telegramChatId?: string;
     email?: string;
@@ -34,6 +35,7 @@ export const SUsuario = new Schema<IUsuarioDb>({
         telegram: [{ type: String }],
         whatsapp: [{ type: String }],
         email: [{ type: String }],
+        sms: [{ type: String }],
     },
     telegramChatId: { type: String },
     email: { type: String },

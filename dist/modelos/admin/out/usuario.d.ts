@@ -15,6 +15,7 @@ export interface IUsuarioDTO {
         telegram?: string[];
         whatsapp?: string[];
         email?: string[];
+        sms?: string[];
     };
     telegramChatId?: string;
     email?: string;

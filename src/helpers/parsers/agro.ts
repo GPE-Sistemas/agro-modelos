@@ -1,18 +1,34 @@
 import { LeanDocument } from 'mongoose';
 import {
     IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO,
-    IComandoDb, IComandoDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb,
-    IDiagnosticoDTO, IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO,
+    IComandoDb, IComandoDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO,
+    IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO,
     IDispositivoSilobolsaDTO, IDispositivoTrackerSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb,
     IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb,
-    ILogDispositivoDTO, ILoteDb, ILoteDTO, IPesajeDb, IPesajeDTO, IPuntoInteresDb, IPuntoInteresDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb,
-    ISilobolsaDTO, ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO,
+    ILogDispositivoDTO, ILoteDb, ILoteDTO, IOperarioDb, IOperarioDTO, IPesajeDb, IPesajeDTO, IPuntoInteresDb,
+    IPuntoInteresDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO,
+    ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO,
     ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO
 } from '../../modelos';
 import { getEstadoComando } from '../helpers';
 
 export class AgroParserService {
 
+    static operario(dato: LeanDocument<IOperarioDb>): IOperarioDTO {
+        const dto: IOperarioDTO = {
+            _id: dato._id.toHexString(),
+            idUsuario: dato.idUsuario?.toHexString(),
+            permisos: dato.permisos,
+        };
+        return dto;
+    }
+    static operarios(datos: LeanDocument<IOperarioDb>[]): IOperarioDTO[] {
+        const dto: IOperarioDTO[] = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.operario(dato));
+        }
+        return dto;
+    }
     static establecimiento(dato: LeanDocument<IEstablecimientoDb>): IEstablecimientoDTO {
         const dto: IEstablecimientoDTO = {
             _id: dato._id.toHexString(),

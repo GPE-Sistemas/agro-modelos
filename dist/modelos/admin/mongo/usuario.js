@@ -14,6 +14,7 @@ exports.SUsuario = new mongoose_1.Schema({
         telegram: [{ type: String }],
         whatsapp: [{ type: String }],
         email: [{ type: String }],
+        sms: [{ type: String }],
     },
     telegramChatId: { type: String },
     email: { type: String },

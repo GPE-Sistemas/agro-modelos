@@ -19,6 +19,7 @@ exports.IUsuarioDTOValidation = joi_1.default.object({
         telegram: joi_1.default.string(),
         whatsapp: joi_1.default.boolean(),
         email: joi_1.default.boolean(),
+        sms: joi_1.default.boolean(),
     },
     email: joi_1.default.string(),
     telefono: joi_1.default.string(),

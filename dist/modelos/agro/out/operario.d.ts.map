@@ -1,0 +1,1 @@
+{"version":3,"file":"operario.d.ts","sourceRoot":"","sources":["../../../../src/modelos/agro/out/operario.ts"],"names":[],"mappings":"AAAA,OAAO,GAAG,MAAM,KAAK,CAAC;AAEtB,OAAO,EAAE,QAAQ,EAAsB,MAAM,gBAAgB,CAAC;AAE9D,eAAO,MAAM,sBAAsB,gCAIjC,CAAC;AAEH,eAAO,MAAM,mBAAmB,wCAAsC,CAAC;AAEvE,MAAM,WAAW,YAAY;IACzB,GAAG,EAAE,MAAM,CAAC;IACZ,SAAS,EAAE,MAAM,CAAC;IAClB,QAAQ,EAAE,QAAQ,CAAC;CACtB"}

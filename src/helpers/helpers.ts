@@ -3,7 +3,7 @@ import got from 'got';
 import bcrypt from 'bcryptjs';
 import { ObjectSchema, ValidationResult } from 'joi';
 import { Types } from 'mongoose';
-import { IAck, IDownlink, IFiltro, IUplink } from '../modelos';
+import { IAck, IDownlink, IFiltro, IParsedQuery, IQueryParams, IUplink } from '../modelos';
 import { Options, Method } from 'got/dist/source/core';
 
 export function validateSchema(dato: any, schema: ObjectSchema): void {
@@ -17,6 +17,56 @@ export function validateSchema(dato: any, schema: ObjectSchema): void {
             mensaje: result.error?.details?.[0]?.message
         };
     }
+}
+
+export function parseQueryFilters(queryParams?: IQueryParams): IParsedQuery {
+    const parsedQuery: IParsedQuery = {
+        page: +(queryParams?.page || 0),
+        limit: +(queryParams?.limit || 0),
+        sort: queryParams?.sort?.toString() || '-fecha',
+        skip: +(queryParams?.page || 0) * +(queryParams?.limit || 0),
+        filter: {},
+    };
+    if (queryParams) {
+        const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'dateField', 'search', 'searchFields'];
+        // Busqueda por _id
+        if (queryParams?._id) {
+            parsedQuery.filter._id = new Types.ObjectId(queryParams._id);
+        }
+        // Busqueda por rango de fechas
+        if (queryParams.desde && queryParams.hasta) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde, $lte: queryParams.hasta };
+        } else if (queryParams.desde) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde };
+        } else if (queryParams.hasta) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $lte: queryParams.hasta };
+        }
+        // Busqueda por regExp
+        if (queryParams.search && queryParams.searchFields) {
+            const searchFieldsArray: string[] = JSON.parse(queryParams.searchFields);
+            parsedQuery.filter.$or = [];
+            for (const searchField of searchFieldsArray) {
+                parsedQuery.filter.$or.push({ [searchField]: { $regex: queryParams.search, $options: 'i' } });
+            }
+        }
+        // Busqueda por campos especificos
+        for (const key in queryParams) {
+            if (!keysIgnorar.includes(key)) {
+                try {
+                    queryParams[key] = JSON.parse(queryParams[key]);
+                } catch (err) {
+                    // nada
+                }
+                // Campos ObjectId
+                if (key.substr(0, 2) === 'id') {
+                    parsedQuery.filter[key] = Types.ObjectId(queryParams[key]);
+                } else {
+                    parsedQuery.filter[key] = queryParams[key];
+                }
+            }
+        }
+    }
+    return parsedQuery;
 }
 
 export function getFiltroFromQuery(queryParams: any) {

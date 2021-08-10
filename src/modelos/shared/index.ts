@@ -5,6 +5,8 @@ export * from './metadatos';
 export * from './coordenadas';
 export * from './filtro';
 export * from './socketMessage';
+export * from './parsedQuery';
+export * from './queryParams';
 //
 export * from './in/dispositivo';
 export * from './mongo/dispositivo';

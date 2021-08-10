@@ -66,4 +66,8 @@ export * from './out/correctora';
 export * from './in/puntoInteres';
 export * from './mongo/puntoInteres';
 export * from './out/puntoInteres';
+export * from './in/puntoInteres';
+export * from './in/operario';
+export * from './mongo/operario';
+export * from './out/operario';
 //# sourceMappingURL=index.d.ts.map

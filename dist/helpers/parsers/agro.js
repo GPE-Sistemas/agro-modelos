@@ -3,6 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgroParserService = void 0;
 const helpers_1 = require("../helpers");
 class AgroParserService {
+    static operario(dato) {
+        var _a;
+        const dto = {
+            _id: dato._id.toHexString(),
+            idUsuario: (_a = dato.idUsuario) === null || _a === void 0 ? void 0 : _a.toHexString(),
+            permisos: dato.permisos,
+        };
+        return dto;
+    }
+    static operarios(datos) {
+        const dto = [];
+        for (const dato of datos) {
+            dto.push(AgroParserService.operario(dato));
+        }
+        return dto;
+    }
     static establecimiento(dato) {
         var _a;
         const dto = {

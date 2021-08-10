@@ -101,3 +101,8 @@ __exportStar(require("./in/puntoInteres"), exports);
 __exportStar(require("./mongo/puntoInteres"), exports);
 __exportStar(require("./out/puntoInteres"), exports);
 //
+__exportStar(require("./in/puntoInteres"), exports);
+//
+__exportStar(require("./in/operario"), exports);
+__exportStar(require("./mongo/operario"), exports);
+__exportStar(require("./out/operario"), exports);

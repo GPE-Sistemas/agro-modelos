@@ -17,6 +17,7 @@ exports.IUsuarioValidation = joi_1.default.object({
         telegram: joi_1.default.array().items(joi_1.default.string()),
         whatsapp: joi_1.default.array().items(joi_1.default.string()),
         email: joi_1.default.array().items(joi_1.default.string()),
+        sms: joi_1.default.array().items(joi_1.default.string()),
     },
     telegramChatId: joi_1.default.string().allow(''),
     email: joi_1.default.string().allow(''),

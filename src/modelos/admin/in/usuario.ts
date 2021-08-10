@@ -12,6 +12,7 @@ export const IUsuarioValidation = joi.object<IUsuario>({
         telegram: joi.array().items(joi.string()),
         whatsapp: joi.array().items(joi.string()),
         email: joi.array().items(joi.string()),
+        sms: joi.array().items(joi.string()),
     },
     telegramChatId: joi.string().allow(''),
     email: joi.string().allow(''),
@@ -32,6 +33,7 @@ export interface IUsuario {
         telegram?: string[];
         whatsapp?: string[];
         email?: string[];
+        sms?: string[];
     };
     telegramChatId?: string;
     email?: string;

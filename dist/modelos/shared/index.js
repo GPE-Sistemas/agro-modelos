@@ -17,6 +17,8 @@ __exportStar(require("./metadatos"), exports);
 __exportStar(require("./coordenadas"), exports);
 __exportStar(require("./filtro"), exports);
 __exportStar(require("./socketMessage"), exports);
+__exportStar(require("./parsedQuery"), exports);
+__exportStar(require("./queryParams"), exports);
 //
 __exportStar(require("./in/dispositivo"), exports);
 __exportStar(require("./mongo/dispositivo"), exports);

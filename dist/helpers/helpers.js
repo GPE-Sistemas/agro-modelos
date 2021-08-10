@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getEstadoComando = exports.deveuiValido = exports.compareClave = exports.hashClave = exports.httpRequest = exports.crearTokenChirpstack = exports.downlinkLabels = exports.ackLabels = exports.uplinkLabels = exports.filtroBusqueda = exports.getFiltroFromQuery = exports.validateSchema = void 0;
+exports.getEstadoComando = exports.deveuiValido = exports.compareClave = exports.hashClave = exports.httpRequest = exports.crearTokenChirpstack = exports.downlinkLabels = exports.ackLabels = exports.uplinkLabels = exports.filtroBusqueda = exports.getFiltroFromQuery = exports.parseQueryFilters = exports.validateSchema = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const got_1 = __importDefault(require("got"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
@@ -32,6 +32,61 @@ function validateSchema(dato, schema) {
     }
 }
 exports.validateSchema = validateSchema;
+function parseQueryFilters(queryParams) {
+    var _a;
+    const parsedQuery = {
+        page: +((queryParams === null || queryParams === void 0 ? void 0 : queryParams.page) || 0),
+        limit: +((queryParams === null || queryParams === void 0 ? void 0 : queryParams.limit) || 0),
+        sort: ((_a = queryParams === null || queryParams === void 0 ? void 0 : queryParams.sort) === null || _a === void 0 ? void 0 : _a.toString()) || '-fecha',
+        skip: +((queryParams === null || queryParams === void 0 ? void 0 : queryParams.page) || 0) * +((queryParams === null || queryParams === void 0 ? void 0 : queryParams.limit) || 0),
+        filter: {},
+    };
+    if (queryParams) {
+        const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'dateField', 'search', 'searchFields'];
+        // Busqueda por _id
+        if (queryParams === null || queryParams === void 0 ? void 0 : queryParams._id) {
+            parsedQuery.filter._id = new mongoose_1.Types.ObjectId(queryParams._id);
+        }
+        // Busqueda por rango de fechas
+        if (queryParams.desde && queryParams.hasta) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde, $lte: queryParams.hasta };
+        }
+        else if (queryParams.desde) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde };
+        }
+        else if (queryParams.hasta) {
+            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $lte: queryParams.hasta };
+        }
+        // Busqueda por regExp
+        if (queryParams.search && queryParams.searchFields) {
+            const searchFieldsArray = JSON.parse(queryParams.searchFields);
+            parsedQuery.filter.$or = [];
+            for (const searchField of searchFieldsArray) {
+                parsedQuery.filter.$or.push({ [searchField]: { $regex: queryParams.search, $options: 'i' } });
+            }
+        }
+        // Busqueda por campos especificos
+        for (const key in queryParams) {
+            if (!keysIgnorar.includes(key)) {
+                try {
+                    queryParams[key] = JSON.parse(queryParams[key]);
+                }
+                catch (err) {
+                    // nada
+                }
+                // Campos ObjectId
+                if (key.substr(0, 2) === 'id') {
+                    parsedQuery.filter[key] = mongoose_1.Types.ObjectId(queryParams[key]);
+                }
+                else {
+                    parsedQuery.filter[key] = queryParams[key];
+                }
+            }
+        }
+    }
+    return parsedQuery;
+}
+exports.parseQueryFilters = parseQueryFilters;
 function getFiltroFromQuery(queryParams) {
     var _a, _b;
     const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'search', 'searchFields'];
