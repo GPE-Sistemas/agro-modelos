@@ -3,7 +3,7 @@ import j2s from 'joi-to-swagger';
 import { IUsuario, IUsuarioValidation } from '../../admin';
 import { IPermiso, IPermisoValidation } from './permisos';
 
-export const IOperarioValidation = (IUsuarioValidation as joi.ObjectSchema<IOperario>).keys({
+export const IOperarioValidation = (IUsuarioValidation as joi.ObjectSchema<IUsuario & IOperario>).keys({
     idUsuario: joi.string(),
     permisos: IPermisoValidation,
 });
