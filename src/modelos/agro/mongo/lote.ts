@@ -13,10 +13,12 @@ export interface ILoteDb extends Document {
 }
 export const SLote = new Schema<ILoteDb>({
     color: { type: String },
-    nombre: { type: String, required: true, unique: true },
+    nombre: { type: String, required: true },
     coordenadas: [{ type: Object, required: true }],
     idEstablecimiento: { type: Types.ObjectId, required: true, ref: 'establecimientos' },
 });
+
+SLote.index({ nombre: 1, idEstablecimiento: 1 }, { unique: true });
 
 SLote.virtual('establecimiento', {
     foreignField: '_id',

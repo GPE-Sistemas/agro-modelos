@@ -14,6 +14,8 @@ export const SGrupo = new Schema<IGrupoDb>({
     idEstablecimiento: { type: Types.ObjectId, required: true, ref: 'establecimientos' },
 });
 
+SGrupo.index({ nombre: 1, idEstablecimiento: 1 }, { unique: true });
+
 SGrupo.virtual('establecimiento', {
     foreignField: '_id',
     justOne: true,

@@ -8,6 +8,7 @@ exports.SSubcategoria = new mongoose_1.Schema({
     pesoMax: { type: Number },
     idCategoria: { type: mongoose_1.Types.ObjectId, required: true, ref: 'categorias' },
 });
+exports.SSubcategoria.index({ nombre: 1, idCategoria: 1 }, { unique: true });
 exports.SSubcategoria.virtual('categoria', {
     foreignField: '_id',
     justOne: true,

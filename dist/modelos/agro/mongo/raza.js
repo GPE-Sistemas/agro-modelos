@@ -6,6 +6,7 @@ exports.SRaza = new mongoose_1.Schema({
     nombre: { type: String, required: true },
     idEspecie: { type: mongoose_1.Types.ObjectId, required: true, ref: 'especies' },
 });
+exports.SRaza.index({ nombre: 1, idEspecie: 1 }, { unique: true });
 exports.SRaza.virtual('especie', {
     foreignField: '_id',
     justOne: true,

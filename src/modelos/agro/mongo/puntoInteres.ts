@@ -16,13 +16,13 @@ export interface IPuntoInteresDb extends Document {
 }
 
 export const SPuntoInteres = new Schema<IBajaDb>({
-    nombre: { type: String, required: true, unique: true },
+    nombre: { type: String, required: true },
     idEstablecimiento: { type: Types.ObjectId },
     coordenadas: { type: Object },
     icono: SIcono,
 });
 
-SPuntoInteres.index({ nombre: 1 });
+SPuntoInteres.index({ nombre: 1, idEstablecimiento: 1 }, { unique: true });
 
 SPuntoInteres.virtual('establecimiento', {
     foreignField: '_id',

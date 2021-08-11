@@ -11,6 +11,7 @@ exports.SCategoria = new mongoose_1.Schema({
     iconoFueraCorral: icono_1.SIcono,
     iconoFueraEstablecimiento: icono_1.SIcono,
 });
+exports.SCategoria.index({ nombre: 1, idEspecie: 1 }, { unique: true });
 exports.SCategoria.virtual('especie', {
     foreignField: '_id',
     justOne: true,

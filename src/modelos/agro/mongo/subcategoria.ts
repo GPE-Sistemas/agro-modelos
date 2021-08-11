@@ -18,6 +18,8 @@ export const SSubcategoria = new Schema<ISubcategoriaDb>({
     idCategoria: { type: Types.ObjectId, required: true, ref: 'categorias' },
 });
 
+SSubcategoria.index({ nombre: 1, idCategoria: 1 }, { unique: true });
+
 SSubcategoria.virtual('categoria', {
     foreignField: '_id',
     justOne: true,

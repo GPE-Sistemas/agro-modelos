@@ -24,6 +24,8 @@ export const SCategoria = new Schema<ICategoriaDb>({
     iconoFueraEstablecimiento: SIcono,
 });
 
+SCategoria.index({ nombre: 1, idEspecie: 1 }, { unique: true });
+
 SCategoria.virtual('especie', {
     foreignField: '_id',
     justOne: true,

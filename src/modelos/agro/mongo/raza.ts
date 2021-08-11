@@ -14,6 +14,8 @@ export const SRaza = new Schema<IRazaDb>({
     idEspecie: { type: Types.ObjectId, required: true, ref: 'especies' },
 });
 
+SRaza.index({ nombre: 1, idEspecie: 1 }, { unique: true });
+
 SRaza.virtual('especie', {
     foreignField: '_id',
     justOne: true,
