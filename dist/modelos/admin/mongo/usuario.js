@@ -6,6 +6,7 @@ exports.SUsuario = new mongoose_1.Schema({
     activo: { type: Boolean },
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
+    rol: { type: String },
     idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
     nombre: { type: String },
     apellido: { type: String },

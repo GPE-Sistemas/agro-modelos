@@ -6,6 +6,7 @@ export interface IUsuario {
     usuario?: string;
     clave?: string;
     idCliente?: string;
+    rol?: string;
     nombre?: string;
     apellido?: string;
     notificacionesActivas?: boolean;

@@ -8,6 +8,7 @@ export interface IUsuarioDTO {
     usuario: string;
     clave?: string;
     idCliente: string;
+    rol: string;
     nombre: string;
     apellido: string;
     notificacionesActivas?: boolean;

@@ -7,6 +7,7 @@ export const IUsuarioDTOValidation = joi.object<IUsuarioDTO>({
     activo: joi.boolean(),
     usuario: joi.string().required(),
     idCliente: joi.string().required(),
+    rol: joi.string(),
     nombre: joi.string(),
     apellido: joi.string(),
     notificacionesActivas: joi.boolean(),
@@ -30,6 +31,7 @@ export interface IUsuarioDTO {
     usuario: string;
     clave?: string;
     idCliente: string;
+    rol: string;
     nombre: string;
     apellido: string;
     notificacionesActivas?: boolean;

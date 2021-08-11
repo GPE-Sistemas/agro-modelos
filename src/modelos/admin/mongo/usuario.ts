@@ -5,7 +5,8 @@ export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
     activo: boolean;
     usuario: string;
-    clave?: string;
+    clave: string;
+    rol: string;
     idCliente: Types.ObjectId;
     nombre: string;
     apellido: string;
@@ -27,6 +28,7 @@ export const SUsuario = new Schema<IUsuarioDb>({
     activo: { type: Boolean },
     usuario: { type: String, required: true, unique: true },
     clave: { type: String, required: true },
+    rol: { type: String },
     idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
     nombre: { type: String },
     apellido: { type: String },

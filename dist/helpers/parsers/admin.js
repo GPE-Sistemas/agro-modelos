@@ -16,6 +16,7 @@ class AdminParserService {
             notificacionesActivas: dato.notificacionesActivas,
             telefono: dato.telefono,
             telegramChatId: dato.telegramChatId,
+            rol: dato.rol,
             //
             cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
         };

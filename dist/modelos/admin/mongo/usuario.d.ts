@@ -4,7 +4,8 @@ export interface IUsuarioDb extends Document {
     _id: Types.ObjectId;
     activo: boolean;
     usuario: string;
-    clave?: string;
+    clave: string;
+    rol: string;
     idCliente: Types.ObjectId;
     nombre: string;
     apellido: string;
