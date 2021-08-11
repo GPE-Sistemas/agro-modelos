@@ -7,7 +7,7 @@ export interface IIconoDb extends Document {
 }
 
 export const SIcono = new Schema<IIconoDb>({
-    nombre: { type: String, required: true, unique: true },
+    nombre: { type: String },
     strokeColor: { type: String },
     fillColor: { type: String },
 });
