@@ -24,6 +24,8 @@ exports.IDispositivoSensorNivelDTOValidation = joi_1.default.object({
     idUltimoReporte: joi_1.default.string(),
     ubicacion: shared_1.ICoordenadasValidation,
     firmware: joi_1.default.string(),
+    fechaAsignacion: joi_1.default.date(),
+    idAsignado: joi_1.default.string(),
     //
     ultimoReporte: reporte_1.IReporteSensorNivelDTOValidation,
 });

@@ -22,5 +22,7 @@ exports.IDispositivoSensorNivelValidation = joi_1.default.object({
     idUltimoReporte: joi_1.default.string(),
     ubicacion: shared_1.ICoordenadasValidation,
     firmware: joi_1.default.string(),
+    fechaAsignacion: joi_1.default.date(),
+    idAsignado: joi_1.default.string(),
 });
 exports.IDispositivoSensorNivelSwagger = joi_to_swagger_1.default(exports.IDispositivoSensorNivelValidation).swagger;

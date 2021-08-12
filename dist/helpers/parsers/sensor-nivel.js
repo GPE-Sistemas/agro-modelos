@@ -20,7 +20,7 @@ class SensorNivelParserService {
         return dto;
     }
     static dispositivo(dato) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
         const dto = {
             // Base
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
@@ -36,6 +36,8 @@ class SensorNivelParserService {
             idUltimoReporte: (_c = dato.idUltimoReporte) === null || _c === void 0 ? void 0 : _c.toHexString(),
             ubicacion: dato.ubicacion,
             firmware: dato.firmware,
+            fechaAsignacion: (_d = dato.fechaAsignacion) === null || _d === void 0 ? void 0 : _d.toISOString(),
+            idAsignado: dato.idAsignado,
             // Populate
             ultimoReporte: dato.ultimoReporte ? SensorNivelParserService.reporte(dato.ultimoReporte) : undefined,
         };

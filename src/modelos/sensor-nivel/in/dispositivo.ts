@@ -18,6 +18,8 @@ export const IDispositivoSensorNivelValidation = joi.object<IDispositivoSensorNi
     idUltimoReporte: joi.string(),
     ubicacion: ICoordenadasValidation,
     firmware: joi.string(),
+    fechaAsignacion: joi.date(),
+    idAsignado: joi.string(),
 });
 
 export const IDispositivoSensorNivelSwagger = j2s(IDispositivoSensorNivelValidation).swagger;
@@ -26,4 +28,6 @@ export interface IDispositivoSensorNivel extends IDispositivo {
     idUltimoReporte?: string;
     ubicacion?: ICoordenadas;
     firmware?: string;
+    fechaAsignacion?: string;
+    idAsignado?: string;
 }

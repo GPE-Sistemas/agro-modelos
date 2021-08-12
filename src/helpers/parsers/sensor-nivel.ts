@@ -36,6 +36,8 @@ export class SensorNivelParserService {
             idUltimoReporte: dato.idUltimoReporte?.toHexString(),
             ubicacion: dato.ubicacion,
             firmware: dato.firmware,
+            fechaAsignacion: dato.fechaAsignacion?.toISOString(),
+            idAsignado: dato.idAsignado,
             // Populate
             ultimoReporte: dato.ultimoReporte ? SensorNivelParserService.reporte(dato.ultimoReporte) : undefined,
         };

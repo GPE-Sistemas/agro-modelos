@@ -7,6 +7,8 @@ export interface IDispositivoSensorNivelDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     ubicacion: ICoordenadas;
     firmware: string;
+    fechaAsignacion: Date;
+    idAsignado: string;
     ultimoReporte?: IReporteSensorNivelDb;
 }
 export declare const SDispositivoSensorNivel: Schema<IDispositivoSensorNivelDb, import("mongoose").Model<any, any, any>, undefined>;

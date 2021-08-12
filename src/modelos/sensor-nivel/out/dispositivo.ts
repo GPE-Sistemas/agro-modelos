@@ -20,6 +20,8 @@ export const IDispositivoSensorNivelDTOValidation = joi.object<IDispositivoSenso
     idUltimoReporte: joi.string(),
     ubicacion: ICoordenadasValidation,
     firmware: joi.string(),
+    fechaAsignacion: joi.date(),
+    idAsignado: joi.string(),
     //
     ultimoReporte: IReporteSensorNivelDTOValidation,
 });
@@ -27,9 +29,11 @@ export const IDispositivoSensorNivelDTOValidation = joi.object<IDispositivoSenso
 export const IDispositivoSensorNivelDTOSwagger = j2s(IDispositivoSensorNivelDTOValidation).swagger;
 
 export interface IDispositivoSensorNivelDTO extends IDispositivoDTO {
-    idUltimoReporte?: string;
-    ubicacion?: ICoordenadas;
-    firmware?: string;
+    idUltimoReporte: string;
+    ubicacion: ICoordenadas;
+    firmware: string;
+    fechaAsignacion: string;
+    idAsignado: string;
     // Populate
     ultimoReporte?: IReporteSensorNivelDTO;
 }

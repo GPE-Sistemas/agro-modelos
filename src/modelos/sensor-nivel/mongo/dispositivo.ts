@@ -9,6 +9,8 @@ export interface IDispositivoSensorNivelDb extends Document, IDispositivoDb {
     idUltimoReporte: Types.ObjectId;
     ubicacion: ICoordenadas;
     firmware: string;
+    fechaAsignacion: Date,
+    idAsignado: string,
     // Populate
     ultimoReporte?: IReporteSensorNivelDb;
 }
@@ -30,6 +32,8 @@ export const SDispositivoSensorNivel = new Schema<IDispositivoSensorNivelDb>({
         lng: { type: Number, required: true },
     },
     firmware: { type: String },
+    fechaAsignacion: { type: Date },
+    idAsignado: { type: String },
 });
 
 SDispositivoSensorNivel.index({ deveui: 1 });

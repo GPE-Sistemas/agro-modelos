@@ -7,5 +7,7 @@ export interface IDispositivoSensorNivel extends IDispositivo {
     idUltimoReporte?: string;
     ubicacion?: ICoordenadas;
     firmware?: string;
+    fechaAsignacion?: string;
+    idAsignado?: string;
 }
 //# sourceMappingURL=dispositivo.d.ts.map

@@ -19,6 +19,8 @@ exports.SDispositivoSensorNivel = new mongoose_1.Schema({
         lng: { type: Number, required: true },
     },
     firmware: { type: String },
+    fechaAsignacion: { type: Date },
+    idAsignado: { type: String },
 });
 exports.SDispositivoSensorNivel.index({ deveui: 1 });
 exports.SDispositivoSensorNivel.virtual('ultimoReporte', {
