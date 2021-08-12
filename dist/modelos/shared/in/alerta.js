@@ -35,5 +35,6 @@ exports.IAlertaValidation = joi_1.default.object({
     comentarios: exports.IComentarioAlertaValidation,
     estados: exports.IEstadoAlertaValidation,
     reportes: exports.IReporteAlertaValidation,
+    idEstablecimiento: joi_1.default.string(),
 });
 exports.IAlertaSwagger = joi_to_swagger_1.default(exports.IAlertaValidation).swagger;

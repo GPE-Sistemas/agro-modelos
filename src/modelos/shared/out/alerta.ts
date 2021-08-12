@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from '../../agro';
 import { IComentarioAlerta, IComentarioAlertaValidation, IEstadoAlerta, IEstadoAlertaValidation, IReporteAlerta, IReporteAlertaValidation } from '../in/alerta';
 
 export const IAlertaDTOValidation = joi.object<IAlertaDTO>({
@@ -15,6 +16,9 @@ export const IAlertaDTOValidation = joi.object<IAlertaDTO>({
     comentarios: IComentarioAlertaValidation,
     estados: IEstadoAlertaValidation,
     reportes: IReporteAlertaValidation,
+    idEstablecimiento: joi.string(),
+    //
+    establecimiento: IEstablecimientoDTOValidation
 });
 
 export const IAlertaDTOSwagger = j2s(IAlertaDTOValidation).swagger;
@@ -32,4 +36,7 @@ export interface IAlertaDTO {
     comentarios: IComentarioAlerta[];
     estados: IEstadoAlerta[];
     reportes: IReporteAlerta[];
+    idEstablecimiento: string;
+    //
+    establecimiento?: IEstablecimientoDTO;
 }

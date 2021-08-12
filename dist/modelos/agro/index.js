@@ -106,3 +106,7 @@ __exportStar(require("./in/puntoInteres"), exports);
 __exportStar(require("./in/operario"), exports);
 __exportStar(require("./mongo/operario"), exports);
 __exportStar(require("./out/operario"), exports);
+//
+__exportStar(require("./in/sensorNivel"), exports);
+__exportStar(require("./mongo/sensorNivel"), exports);
+__exportStar(require("./out/sensorNivel"), exports);

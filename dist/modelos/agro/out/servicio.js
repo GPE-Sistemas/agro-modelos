@@ -7,13 +7,16 @@ exports.IServicioDTOSchema = exports.IServicioDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 const animal_1 = require("./animal");
+const establecimiento_1 = require("./establecimiento");
 exports.IServicioDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     idAnimal: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     fecha: joi_1.default.date(),
     inicio: joi_1.default.boolean(),
     observaciones: joi_1.default.string(),
     //
-    animal: animal_1.IAnimalDTOValidation
+    animal: animal_1.IAnimalDTOValidation,
+    establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
 exports.IServicioDTOSchema = joi_to_swagger_1.default(exports.IServicioDTOValidation).swagger;

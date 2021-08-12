@@ -3,10 +3,11 @@ import {
     IAlertaDb, IAlertaDTO, IAnimalDb, IAnimalDTO, IBajaDb, IBajaDTO, ICategoriaDb, ICategoriaDTO,
     IComandoDb, IComandoDTO, ICorrectoraDb, ICorrectoraDTO, IDiagnosticoDb, IDiagnosticoDTO,
     IDispositivoCaravanaDTO, IDispositivoCorrectoraDTO, IDispositivoDb, IDispositivoDTO,
+    IDispositivoSensorNivelDTO,
     IDispositivoSilobolsaDTO, IDispositivoTrackerSilobolsaDTO, IEspecieDb, IEspecieDTO, IEstablecimientoDb,
     IEstablecimientoDTO, IEventoEspecificoDb, IEventoEspecificoDTO, IGrupoDb, IGrupoDTO, ILogDispositivoDb,
     ILogDispositivoDTO, ILoteDb, ILoteDTO, IOperarioDb, IOperarioDTO, IPesajeDb, IPesajeDTO, IPuntoInteresDb,
-    IPuntoInteresDTO, IRazaDb, IRazaDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO,
+    IPuntoInteresDTO, IRazaDb, IRazaDTO, ISensorNivelDb, ISensorNivelDTO, IServicioDb, IServicioDTO, ISilobolsaDb, ISilobolsaDTO,
     ISubcategoriaDb, ISubcategoriaDTO, ITipoBajaDb, ITipoBajaDTO, ITipoTratamientoDb, ITipoTratamientoDTO,
     ITipoVacunaDb, ITipoVacunaDTO, ITratamientoDb, ITratamientoDTO, IVacunacionDb, IVacunacionDTO
 } from '../../modelos';
@@ -95,6 +96,9 @@ export class AgroParserService {
             comentarios: dato.comentarios || [],
             estados: dato.estados || [],
             reportes: dato.reportes || [],
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
+            //
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
@@ -339,9 +343,11 @@ export class AgroParserService {
             idTipoBaja: dato.idTipoBaja?.toHexString(),
             idAnimal: dato.idAnimal?.toHexString(),
             observaciones: dato.observaciones,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             // Populate
             tipoBaja: dato.tipoBaja ? AgroParserService.tipoBaja(dato.tipoBaja) : undefined,
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
@@ -423,10 +429,12 @@ export class AgroParserService {
             idTipoTratamiento: dato.idTipoTratamiento?.toHexString(),
             observaciones: dato.observaciones,
             producto: dato.producto,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
             diagnostico: dato.diagnostico ? AgroParserService.diagnostico(dato.diagnostico) : undefined,
             tipoTratamiento: dato.tipoTratamiento ? AgroParserService.tipoTratamiento(dato.tipoTratamiento) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
@@ -447,9 +455,11 @@ export class AgroParserService {
             idTipoVacuna: dato.idTipoVacuna?.toHexString(),
             observaciones: dato.observaciones,
             producto: dato.producto,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             tipoVacuna: dato.tipoVacuna ? AgroParserService.tipoVacuna(dato.tipoVacuna) : undefined,
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
@@ -467,8 +477,10 @@ export class AgroParserService {
             idAnimal: dato.idAnimal?.toHexString(),
             titulo: dato.titulo,
             observaciones: dato.observaciones,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
@@ -486,8 +498,10 @@ export class AgroParserService {
             idAnimal: dato.idAnimal?.toHexString(),
             peso: dato.peso,
             observaciones: dato.observaciones,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
@@ -505,8 +519,10 @@ export class AgroParserService {
             idAnimal: dato.idAnimal?.toHexString(),
             inicio: dato.inicio,
             observaciones: dato.observaciones,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
         return dto;
     }
@@ -514,6 +530,33 @@ export class AgroParserService {
         const dto: IServicioDTO[] = [];
         for (const dato of datos) {
             dto.push(AgroParserService.servicio(dato));
+        }
+        return dto;
+    }
+
+    //
+
+    static sensorNivel(dato: LeanDocument<ISensorNivelDb>, dispositivo?: IDispositivoSensorNivelDTO): ISensorNivelDTO {
+        const dto: ISensorNivelDTO = {
+            _id: dato._id.toHexString(),
+            activo: dato.activo,
+            deveui: dato.deveui,
+            fechaAsignacion: dato.fechaAsignacion?.toISOString(),
+            ubicacion: dato.ubicacion,
+            idEstablecimiento: dato.idEstablecimiento?.toHexString(),
+            idLote: dato.idLote?.toHexString(),
+            //
+            establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
+            lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
+            dispositivo,
+        };
+        return dto;
+    }
+    static sensoresNivel(datos: LeanDocument<ISensorNivelDb>[], dispositivos?: IDispositivoSensorNivelDTO[]): ISensorNivelDTO[] {
+        const dto: ISensorNivelDTO[] = [];
+        for (const dato of datos) {
+            const dispositivo = dispositivos?.find(d => dato.deveui = d.deveui);
+            dto.push(AgroParserService.sensorNivel(dato, dispositivo));
         }
         return dto;
     }

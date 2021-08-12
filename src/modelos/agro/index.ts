@@ -94,3 +94,7 @@ export * from './in/puntoInteres';
 export * from './in/operario';
 export * from './mongo/operario';
 export * from './out/operario';
+//
+export * from './in/sensorNivel';
+export * from './mongo/sensorNivel';
+export * from './out/sensorNivel';

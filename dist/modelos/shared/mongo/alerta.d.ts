@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IEstablecimientoDb } from '../../agro';
 import { IComentarioAlerta, IEstadoAlerta, IReporteAlerta } from '../in/alerta';
 export interface IAlertaDb extends Document {
     _id: Types.ObjectId;
@@ -13,6 +14,8 @@ export interface IAlertaDb extends Document {
     comentarios: IComentarioAlerta[];
     estados: IEstadoAlerta[];
     reportes: IReporteAlerta[];
+    idEstablecimiento: Types.ObjectId;
+    establecimiento?: IEstablecimientoDb;
 }
 export declare const SAlerta: Schema<IAlertaDb, import("mongoose").Model<any, any, any>, undefined>;
 //# sourceMappingURL=alerta.d.ts.map

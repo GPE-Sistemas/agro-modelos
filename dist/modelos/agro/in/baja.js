@@ -10,6 +10,7 @@ exports.IBajaValidation = joi_1.default.object({
     fecha: joi_1.default.date(),
     idAnimal: joi_1.default.string(),
     idTipoBaja: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     observaciones: joi_1.default.string(),
 });
 exports.IBajaSwagger = joi_to_swagger_1.default(exports.IBajaValidation).swagger;

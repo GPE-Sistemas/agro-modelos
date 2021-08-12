@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SAlerta = void 0;
 const mongoose_1 = require("mongoose");
 exports.SAlerta = new mongoose_1.Schema({
+    idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
     aplicacion: { type: String },
     nivel: { type: Number },
     idAsignado: { type: String },
@@ -33,3 +34,9 @@ exports.SAlerta.index({ archivada: 1, fecha: -1 });
 exports.SAlerta.index({ archivada: 1, estadoActual: 1, fecha: -1 });
 exports.SAlerta.index({ archivada: 1, aplicacion: 1, fecha: -1 });
 exports.SAlerta.index({ archivada: 1, idAsignado: 1, tipo: 1 });
+exports.SAlerta.virtual('establecimiento', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idEstablecimiento',
+    ref: 'establecimientos',
+});

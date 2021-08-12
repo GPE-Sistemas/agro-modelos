@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IAlertaDTOSwagger = exports.IAlertaDTOValidation = void 0;
 const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
+const agro_1 = require("../../agro");
 const alerta_1 = require("../in/alerta");
 exports.IAlertaDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
@@ -20,5 +21,8 @@ exports.IAlertaDTOValidation = joi_1.default.object({
     comentarios: alerta_1.IComentarioAlertaValidation,
     estados: alerta_1.IEstadoAlertaValidation,
     reportes: alerta_1.IReporteAlertaValidation,
+    idEstablecimiento: joi_1.default.string(),
+    //
+    establecimiento: agro_1.IEstablecimientoDTOValidation
 });
 exports.IAlertaDTOSwagger = joi_to_swagger_1.default(exports.IAlertaDTOValidation).swagger;

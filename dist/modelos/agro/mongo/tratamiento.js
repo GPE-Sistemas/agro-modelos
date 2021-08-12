@@ -6,6 +6,7 @@ exports.STratamiento = new mongoose_1.Schema({
     idAnimal: { type: mongoose_1.Types.ObjectId, required: true, ref: 'animales' },
     idDiagnostico: { type: mongoose_1.Types.ObjectId, required: true, ref: 'diagnosticos' },
     idTipoTratamiento: { type: mongoose_1.Types.ObjectId, required: true, ref: 'tiposTratamientos' },
+    idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
     fecha: { type: Date, required: true },
     producto: { type: String },
     observaciones: { type: String },
@@ -27,4 +28,10 @@ exports.STratamiento.virtual('tipoTratamiento', {
     justOne: true,
     localField: 'idTipoTratamiento',
     ref: 'tiposTratamientos',
+});
+exports.STratamiento.virtual('establecimiento', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idEstablecimiento',
+    ref: 'establecimientos',
 });

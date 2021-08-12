@@ -9,6 +9,7 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IVacunacionValidation = joi_1.default.object({
     idAnimal: joi_1.default.string(),
     idTipoVacuna: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     fecha: joi_1.default.date(),
     producto: joi_1.default.string(),
     dosis: joi_1.default.string(),

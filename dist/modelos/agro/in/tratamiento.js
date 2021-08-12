@@ -10,6 +10,7 @@ exports.ITratamientoValidation = joi_1.default.object({
     idAnimal: joi_1.default.string(),
     idDiagnostico: joi_1.default.string(),
     idTipoTratamiento: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     fecha: joi_1.default.date(),
     producto: joi_1.default.string(),
     observaciones: joi_1.default.string(),

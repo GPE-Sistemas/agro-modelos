@@ -53,6 +53,7 @@ export const IAlertaValidation = joi.object<IAlerta>({
     comentarios: IComentarioAlertaValidation,
     estados: IEstadoAlertaValidation,
     reportes: IReporteAlertaValidation,
+    idEstablecimiento: joi.string(),
 });
 
 export const IAlertaSwagger = j2s(IAlertaValidation).swagger;
@@ -89,4 +90,5 @@ export interface IAlerta {
     comentarios?: IComentarioAlerta[];
     estados?: IEstadoAlerta[];
     reportes?: IReporteAlerta[];
+    idEstablecimiento?: string;
 }

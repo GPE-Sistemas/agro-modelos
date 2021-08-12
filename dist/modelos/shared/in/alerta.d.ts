@@ -51,5 +51,6 @@ export interface IAlerta {
     comentarios?: IComentarioAlerta[];
     estados?: IEstadoAlerta[];
     reportes?: IReporteAlerta[];
+    idEstablecimiento?: string;
 }
 //# sourceMappingURL=alerta.d.ts.map

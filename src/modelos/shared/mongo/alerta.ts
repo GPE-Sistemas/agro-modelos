@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IEstablecimientoDb } from '../../agro';
 import { IComentarioAlerta, IEstadoAlerta, IReporteAlerta } from '../in/alerta';
 
 export interface IAlertaDb extends Document {
@@ -14,9 +15,13 @@ export interface IAlertaDb extends Document {
     comentarios: IComentarioAlerta[];
     estados: IEstadoAlerta[];
     reportes: IReporteAlerta[];
+    idEstablecimiento: Types.ObjectId;
+    //
+    establecimiento?: IEstablecimientoDb;
 }
 
 export const SAlerta = new Schema<IAlertaDb>({
+    idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos' },
     aplicacion: { type: String },
     nivel: { type: Number },
     idAsignado: { type: String },
@@ -48,3 +53,10 @@ SAlerta.index({ archivada: 1, fecha: -1 });
 SAlerta.index({ archivada: 1, estadoActual: 1, fecha: -1 });
 SAlerta.index({ archivada: 1, aplicacion: 1, fecha: -1 });
 SAlerta.index({ archivada: 1, idAsignado: 1, tipo: 1 });
+
+SAlerta.virtual('establecimiento', {
+    foreignField: '_id',
+    justOne: true,
+    localField: 'idEstablecimiento',
+    ref: 'establecimientos',
+});

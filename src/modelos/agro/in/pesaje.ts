@@ -3,6 +3,7 @@ import j2s from 'joi-to-swagger';
 
 export const IPesajeValidation = joi.object<IPesaje>({
     idAnimal: joi.string(),
+    idEstablecimiento: joi.string(),
     fecha: joi.date(),
     peso: joi.number(),
     observaciones: joi.string(),
@@ -11,8 +12,9 @@ export const IPesajeValidation = joi.object<IPesaje>({
 export const IPesajeSwagger = j2s(IPesajeValidation).swagger;
 
 export interface IPesaje {
-    idAnimal: string;
-    fecha: string;
-    peso: number;
-    observaciones: string;
+    idAnimal?: string;
+    idEstablecimiento?: string;
+    fecha?: string;
+    peso?: number;
+    observaciones?: string;
 }

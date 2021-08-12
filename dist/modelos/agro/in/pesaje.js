@@ -8,6 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IPesajeValidation = joi_1.default.object({
     idAnimal: joi_1.default.string(),
+    idEstablecimiento: joi_1.default.string(),
     fecha: joi_1.default.date(),
     peso: joi_1.default.number(),
     observaciones: joi_1.default.string(),
