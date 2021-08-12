@@ -545,6 +545,7 @@ export class AgroParserService {
             ubicacion: dato.ubicacion,
             idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             idLote: dato.idLote?.toHexString(),
+            nombre: dato.nombre,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,

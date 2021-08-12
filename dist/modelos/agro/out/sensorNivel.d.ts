@@ -13,6 +13,7 @@ export interface ISensorNivelDTO {
     ubicacion: ICoordenadas;
     idEstablecimiento: string;
     idLote: string;
+    nombre: string;
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
     dispositivo?: IDispositivoSensorNivelDTO;

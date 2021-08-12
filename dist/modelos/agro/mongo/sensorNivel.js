@@ -12,6 +12,7 @@ exports.SSensorNivel = new mongoose_1.Schema({
     },
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
     idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes' },
+    nombre: { type: String },
 });
 exports.SSensorNivel.virtual('establecimiento', {
     foreignField: '_id',

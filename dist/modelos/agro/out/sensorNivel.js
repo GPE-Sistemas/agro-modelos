@@ -17,6 +17,7 @@ exports.ISensorNivelDTOValidation = joi_1.default.object({
     ubicacion: shared_1.ICoordenadasValidation,
     idEstablecimiento: joi_1.default.string(),
     idLote: joi_1.default.string(),
+    nombre: joi_1.default.string(),
     //
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     lote: lote_1.ILoteDTOValidation

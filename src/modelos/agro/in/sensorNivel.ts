@@ -9,6 +9,7 @@ export const ISensorNivelValidation = joi.object<ISensorNivel>({
     ubicacion: ICoordenadasValidation,
     idEstablecimiento: joi.string(),
     idLote: joi.string(),
+    nombre: joi.string(),
 });
 
 export const ISensorNivelSwagger = j2s(ISensorNivelValidation).swagger;
@@ -20,4 +21,5 @@ export interface ISensorNivel {
     ubicacion?: ICoordenadas;
     idEstablecimiento?: string;
     idLote?: string;
+    nombre?: string;
 }

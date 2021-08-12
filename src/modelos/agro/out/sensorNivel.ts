@@ -13,6 +13,7 @@ export const ISensorNivelDTOValidation = joi.object<ISensorNivelDTO>({
     ubicacion: ICoordenadasValidation,
     idEstablecimiento: joi.string(),
     idLote: joi.string(),
+    nombre: joi.string(),
     //
     establecimiento: IEstablecimientoDTOValidation,
     lote: ILoteDTOValidation
@@ -28,6 +29,7 @@ export interface ISensorNivelDTO {
     ubicacion: ICoordenadas;
     idEstablecimiento: string;
     idLote: string;
+    nombre: string;
     // Populate
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;

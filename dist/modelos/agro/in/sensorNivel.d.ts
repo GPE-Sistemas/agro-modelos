@@ -9,5 +9,6 @@ export interface ISensorNivel {
     ubicacion?: ICoordenadas;
     idEstablecimiento?: string;
     idLote?: string;
+    nombre?: string;
 }
 //# sourceMappingURL=sensorNivel.d.ts.map
