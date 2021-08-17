@@ -10,5 +10,6 @@ export interface ISensorNivel {
     idEstablecimiento?: string;
     idLote?: string;
     nombre?: string;
+    offset?: number;
 }
 //# sourceMappingURL=sensorNivel.d.ts.map

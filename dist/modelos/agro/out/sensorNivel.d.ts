@@ -14,6 +14,7 @@ export interface ISensorNivelDTO {
     idEstablecimiento: string;
     idLote: string;
     nombre: string;
+    offset: number;
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
     dispositivo?: IDispositivoSensorNivelDTO;

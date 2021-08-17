@@ -15,5 +15,6 @@ exports.ISensorNivelValidation = joi_1.default.object({
     idEstablecimiento: joi_1.default.string(),
     idLote: joi_1.default.string(),
     nombre: joi_1.default.string(),
+    offset: joi_1.default.number(),
 });
 exports.ISensorNivelSwagger = joi_to_swagger_1.default(exports.ISensorNivelValidation).swagger;

@@ -14,6 +14,7 @@ export const ISensorNivelDTOValidation = joi.object<ISensorNivelDTO>({
     idEstablecimiento: joi.string(),
     idLote: joi.string(),
     nombre: joi.string(),
+    offset: joi.number(),
     //
     establecimiento: IEstablecimientoDTOValidation,
     lote: ILoteDTOValidation
@@ -30,6 +31,7 @@ export interface ISensorNivelDTO {
     idEstablecimiento: string;
     idLote: string;
     nombre: string;
+    offset: number;
     // Populate
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;

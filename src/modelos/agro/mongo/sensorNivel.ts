@@ -11,6 +11,7 @@ export interface ISensorNivelDb extends Document {
     idEstablecimiento: Types.ObjectId;
     idLote: Types.ObjectId;
     nombre: string;
+    offset: number;
     //
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
@@ -27,6 +28,7 @@ export const SSensorNivel = new Schema<ISensorNivelDb>({
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos' },
     idLote: { type: Types.ObjectId, ref: 'lotes' },
     nombre: { type: String },
+    offset: { type: Number },
 });
 
 SSensorNivel.virtual('establecimiento', {

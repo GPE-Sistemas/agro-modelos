@@ -18,6 +18,7 @@ exports.ISensorNivelDTOValidation = joi_1.default.object({
     idEstablecimiento: joi_1.default.string(),
     idLote: joi_1.default.string(),
     nombre: joi_1.default.string(),
+    offset: joi_1.default.number(),
     //
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     lote: lote_1.ILoteDTOValidation

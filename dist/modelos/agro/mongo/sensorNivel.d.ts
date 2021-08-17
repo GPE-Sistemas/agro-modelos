@@ -10,6 +10,7 @@ export interface ISensorNivelDb extends Document {
     idEstablecimiento: Types.ObjectId;
     idLote: Types.ObjectId;
     nombre: string;
+    offset: number;
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
 }

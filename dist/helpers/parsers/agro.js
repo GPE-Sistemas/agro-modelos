@@ -547,6 +547,7 @@ class AgroParserService {
             idEstablecimiento: (_b = dato.idEstablecimiento) === null || _b === void 0 ? void 0 : _b.toHexString(),
             idLote: (_c = dato.idLote) === null || _c === void 0 ? void 0 : _c.toHexString(),
             nombre: dato.nombre,
+            offset: dato.offset,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
