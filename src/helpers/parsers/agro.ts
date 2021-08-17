@@ -557,7 +557,7 @@ export class AgroParserService {
     static sensoresNivel(datos: LeanDocument<ISensorNivelDb>[], dispositivos?: IDispositivoSensorNivelDTO[]): ISensorNivelDTO[] {
         const dto: ISensorNivelDTO[] = [];
         for (const dato of datos) {
-            const dispositivo = dispositivos?.find(d => dato.deveui = d.deveui);
+            const dispositivo = dispositivos?.find(d => dato.deveui === d.deveui);
             dto.push(AgroParserService.sensorNivel(dato, dispositivo));
         }
         return dto;
