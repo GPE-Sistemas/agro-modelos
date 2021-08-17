@@ -6,6 +6,7 @@ export interface ICliente {
     activo?: boolean;
     nombre: string;
     idApplicationServer?: string;
+    idAplicaciones?: string[];
     networkServerId?: string;
     organizationId?: string;
     serviceProfileId?: string;

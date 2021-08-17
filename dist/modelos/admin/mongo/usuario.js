@@ -8,6 +8,7 @@ exports.SUsuario = new mongoose_1.Schema({
     clave: { type: String, required: true },
     rol: { type: String },
     idCliente: { type: mongoose_1.Types.ObjectId, required: true, ref: 'clientes' },
+    idAplicaciones: [{ type: mongoose_1.Types.ObjectId, ref: 'aplicaciones' }],
     nombre: { type: String },
     apellido: { type: String },
     notificacionesActivas: { type: Boolean },
@@ -26,4 +27,10 @@ exports.SUsuario.virtual('cliente', {
     justOne: true,
     localField: 'idCliente',
     ref: 'clientes',
+});
+exports.SUsuario.virtual('aplicaciones', {
+    foreignField: '_id',
+    justOne: false,
+    localField: 'idAplicaciones',
+    ref: 'aplicaciones',
 });

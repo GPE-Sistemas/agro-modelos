@@ -8,6 +8,7 @@ const joi_1 = __importDefault(require("joi"));
 const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.IClienteValidation = joi_1.default.object({
     nombre: joi_1.default.string().required(),
+    idAplicaciones: joi_1.default.array().items(joi_1.default.string()),
     idApplicationServer: joi_1.default.string().allow(null),
     networkServerId: joi_1.default.string().allow(''),
     organizationId: joi_1.default.string().allow(''),

@@ -1,4 +1,5 @@
 import { Document, Schema, Types } from 'mongoose';
+import { IAplicacionDb } from './aplicacion';
 import { IClienteDb } from './cliente';
 
 export interface IUsuarioDb extends Document {
@@ -8,6 +9,7 @@ export interface IUsuarioDb extends Document {
     clave: string;
     rol: string;
     idCliente: Types.ObjectId;
+    idAplicaciones: Types.ObjectId[];
     nombre: string;
     apellido: string;
     notificacionesActivas?: boolean;
@@ -22,6 +24,7 @@ export interface IUsuarioDb extends Document {
     telefono?: string;
     //
     cliente?: IClienteDb;
+    aplicaciones: IAplicacionDb[];
 }
 
 export const SUsuario = new Schema<IUsuarioDb>({
@@ -30,6 +33,7 @@ export const SUsuario = new Schema<IUsuarioDb>({
     clave: { type: String, required: true },
     rol: { type: String },
     idCliente: { type: Types.ObjectId, required: true, ref: 'clientes' },
+    idAplicaciones: [{ type: Types.ObjectId, ref: 'aplicaciones' }],
     nombre: { type: String },
     apellido: { type: String },
     notificacionesActivas: { type: Boolean },
@@ -49,4 +53,11 @@ SUsuario.virtual('cliente', {
     justOne: true,
     localField: 'idCliente',
     ref: 'clientes',
+});
+
+SUsuario.virtual('aplicaciones', {
+    foreignField: '_id',
+    justOne: false,
+    localField: 'idAplicaciones',
+    ref: 'aplicaciones',
 });

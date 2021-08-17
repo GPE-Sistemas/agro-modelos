@@ -5,6 +5,7 @@ export const IUsuarioValidation = joi.object<IUsuario>({
     usuario: joi.string(),
     clave: joi.string(),
     idCliente: joi.string(),
+    idAplicaciones: joi.string(),
     rol: joi.string(),
     nombre: joi.string(),
     apellido: joi.string(),
@@ -27,6 +28,7 @@ export interface IUsuario {
     usuario?: string;
     clave?: string;
     idCliente?: string;
+    idAplicaciones?: string[];
     rol?: string
     nombre?: string;
     apellido?: string;

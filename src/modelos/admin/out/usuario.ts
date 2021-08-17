@@ -1,5 +1,6 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
+import { IAplicacionDTO, IAplicacionDTOValidation } from './aplicacion';
 import { IClienteDTO, IClienteDTOValidation } from './cliente';
 
 export const IUsuarioDTOValidation = joi.object<IUsuarioDTO>({
@@ -21,6 +22,7 @@ export const IUsuarioDTOValidation = joi.object<IUsuarioDTO>({
     telefono: joi.string(),
     //
     cliente: IClienteDTOValidation,
+    aplicaciones: IAplicacionDTOValidation,
 });
 
 export const IUsuarioDTOSwagger = j2s(IUsuarioDTOValidation).swagger;
@@ -31,6 +33,7 @@ export interface IUsuarioDTO {
     usuario: string;
     clave?: string;
     idCliente: string;
+    idAplicaciones: string[];
     rol: string;
     nombre: string;
     apellido: string;
@@ -46,4 +49,5 @@ export interface IUsuarioDTO {
     telefono?: string;
     //
     cliente?: IClienteDTO;
+    aplicaciones?: IAplicacionDTO[];
 }

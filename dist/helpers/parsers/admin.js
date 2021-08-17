@@ -3,11 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminParserService = void 0;
 class AdminParserService {
     static usuario(dato) {
-        var _a, _b;
+        var _a, _b, _c;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             activo: dato.activo,
             idCliente: (_b = dato.idCliente) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idAplicaciones: (_c = dato.idAplicaciones) === null || _c === void 0 ? void 0 : _c.map(id => id.toHexString()),
             usuario: dato.usuario,
             apellido: dato.apellido,
             nombre: dato.nombre,
@@ -19,6 +20,7 @@ class AdminParserService {
             rol: dato.rol,
             //
             cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
+            aplicaciones: dato.aplicaciones ? AdminParserService.aplicaciones(dato.aplicaciones) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;
@@ -31,12 +33,13 @@ class AdminParserService {
         return dto;
     }
     static cliente(dato) {
-        var _a, _b;
+        var _a, _b, _c;
         const dto = {
             _id: (_a = dato._id) === null || _a === void 0 ? void 0 : _a.toHexString(),
             activo: dato.activo,
             admin: dato.admin,
             idApplicationServer: (_b = dato.idApplicationServer) === null || _b === void 0 ? void 0 : _b.toHexString(),
+            idAplicaciones: (_c = dato.idAplicaciones) === null || _c === void 0 ? void 0 : _c.map(id => id.toHexString()),
             nombre: dato.nombre,
             networkServerId: dato.networkServerId,
             organizationId: dato.organizationId,
@@ -44,6 +47,7 @@ class AdminParserService {
             gatewayIds: dato.gatewayIds,
             //
             applicationServer: dato.applicationServer ? AdminParserService.applicationServer(dato.applicationServer) : undefined,
+            aplicaciones: dato.aplicaciones ? AdminParserService.aplicaciones(dato.aplicaciones) : undefined,
         };
         Object.keys(dto).forEach(key => !dto[key] ? delete dto[key] : {});
         return dto;

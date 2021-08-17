@@ -3,6 +3,7 @@ import j2s from 'joi-to-swagger';
 
 export const IClienteValidation = joi.object<ICliente>({
     nombre: joi.string().required(),
+    idAplicaciones: joi.array().items(joi.string()),
     idApplicationServer: joi.string().allow(null),
     networkServerId: joi.string().allow(''),
     organizationId: joi.string().allow(''),
@@ -17,6 +18,7 @@ export interface ICliente {
     activo?: boolean;
     nombre: string;
     idApplicationServer?: string;
+    idAplicaciones?: string[];
     networkServerId?: string;
     organizationId?: string;
     serviceProfileId?: string;

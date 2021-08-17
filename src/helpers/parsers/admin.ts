@@ -8,6 +8,7 @@ export class AdminParserService {
             _id: dato._id?.toHexString(),
             activo: dato.activo,
             idCliente: dato.idCliente?.toHexString(),
+            idAplicaciones: dato.idAplicaciones?.map( id => id.toHexString()),
             usuario: dato.usuario,
             apellido: dato.apellido,
             nombre: dato.nombre,
@@ -19,6 +20,7 @@ export class AdminParserService {
             rol: dato.rol,
             //
             cliente: dato.cliente ? AdminParserService.cliente(dato.cliente) : undefined,
+            aplicaciones: dato.aplicaciones? AdminParserService.aplicaciones(dato.aplicaciones) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
@@ -37,6 +39,7 @@ export class AdminParserService {
             activo: dato.activo,
             admin: dato.admin,
             idApplicationServer: dato.idApplicationServer?.toHexString(),
+            idAplicaciones: dato.idAplicaciones?.map( id => id.toHexString()),
             nombre: dato.nombre,
             networkServerId: dato.networkServerId,
             organizationId: dato.organizationId,
@@ -44,6 +47,7 @@ export class AdminParserService {
             gatewayIds: dato.gatewayIds,
             //
             applicationServer: dato.applicationServer? AdminParserService.applicationServer(dato.applicationServer) : undefined,
+            aplicaciones: dato.aplicaciones? AdminParserService.aplicaciones(dato.aplicaciones) : undefined,
         };
         Object.keys(dto).forEach(key => !(dto as any)[key] ? delete (dto as any)[key] : {});
         return dto;
