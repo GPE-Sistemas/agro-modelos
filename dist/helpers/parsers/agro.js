@@ -558,7 +558,7 @@ class AgroParserService {
     static sensoresNivel(datos, dispositivos) {
         const dto = [];
         for (const dato of datos) {
-            const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => dato.deveui = d.deveui);
+            const dispositivo = dispositivos === null || dispositivos === void 0 ? void 0 : dispositivos.find(d => dato.deveui === d.deveui);
             dto.push(AgroParserService.sensorNivel(dato, dispositivo));
         }
         return dto;
