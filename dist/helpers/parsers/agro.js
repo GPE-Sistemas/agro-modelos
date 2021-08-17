@@ -542,7 +542,7 @@ class AgroParserService {
             _id: dato._id.toHexString(),
             activo: dato.activo,
             deveui: dato.deveui,
-            fechaAsignacion: (_a = dato.fechaAsignacion) === null || _a === void 0 ? void 0 : _a.toISOString(),
+            fechaCreacion: (_a = dato.fechaCreacion) === null || _a === void 0 ? void 0 : _a.toISOString(),
             ubicacion: dato.ubicacion,
             idEstablecimiento: (_b = dato.idEstablecimiento) === null || _b === void 0 ? void 0 : _b.toHexString(),
             idLote: (_c = dato.idLote) === null || _c === void 0 ? void 0 : _c.toHexString(),

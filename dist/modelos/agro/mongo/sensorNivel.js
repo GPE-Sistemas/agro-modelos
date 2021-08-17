@@ -5,7 +5,7 @@ const mongoose_1 = require("mongoose");
 exports.SSensorNivel = new mongoose_1.Schema({
     activo: { type: Boolean, default: true },
     deveui: { type: String },
-    fechaAsignacion: { type: Date },
+    fechaCreacion: { type: Date },
     ubicacion: {
         lat: { type: Number, required: true },
         lng: { type: Number, required: true },

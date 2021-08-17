@@ -541,7 +541,7 @@ export class AgroParserService {
             _id: dato._id.toHexString(),
             activo: dato.activo,
             deveui: dato.deveui,
-            fechaAsignacion: dato.fechaAsignacion?.toISOString(),
+            fechaCreacion: dato.fechaCreacion?.toISOString(),
             ubicacion: dato.ubicacion,
             idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             idLote: dato.idLote?.toHexString(),

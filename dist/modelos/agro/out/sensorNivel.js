@@ -13,7 +13,7 @@ exports.ISensorNivelDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     activo: joi_1.default.boolean(),
     deveui: joi_1.default.string(),
-    fechaAsignacion: joi_1.default.date(),
+    fechaCreacion: joi_1.default.date(),
     ubicacion: shared_1.ICoordenadasValidation,
     idEstablecimiento: joi_1.default.string(),
     idLote: joi_1.default.string(),

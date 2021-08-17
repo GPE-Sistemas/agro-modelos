@@ -9,7 +9,7 @@ export interface ISensorNivelDTO {
     _id: string;
     activo: boolean;
     deveui: string;
-    fechaAsignacion: string;
+    fechaCreacion: string;
     ubicacion: ICoordenadas;
     idEstablecimiento: string;
     idLote: string;

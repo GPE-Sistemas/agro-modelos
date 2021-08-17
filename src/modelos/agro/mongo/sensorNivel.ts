@@ -6,7 +6,7 @@ import { ILoteDb } from './lote';
 export interface ISensorNivelDb extends Document {
     activo: boolean;
     deveui: string;
-    fechaAsignacion: Date;
+    fechaCreacion: Date;
     ubicacion: ICoordenadas;
     idEstablecimiento: Types.ObjectId;
     idLote: Types.ObjectId;
@@ -20,7 +20,7 @@ export interface ISensorNivelDb extends Document {
 export const SSensorNivel = new Schema<ISensorNivelDb>({
     activo: { type: Boolean, default: true },
     deveui: { type: String },
-    fechaAsignacion: { type: Date },
+    fechaCreacion: { type: Date },
     ubicacion: {
         lat: { type: Number, required: true },
         lng: { type: Number, required: true },

@@ -5,7 +5,7 @@ import { ILoteDb } from './lote';
 export interface ISensorNivelDb extends Document {
     activo: boolean;
     deveui: string;
-    fechaAsignacion: Date;
+    fechaCreacion: Date;
     ubicacion: ICoordenadas;
     idEstablecimiento: Types.ObjectId;
     idLote: Types.ObjectId;

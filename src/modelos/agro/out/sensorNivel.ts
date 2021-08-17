@@ -9,7 +9,7 @@ export const ISensorNivelDTOValidation = joi.object<ISensorNivelDTO>({
     _id: joi.string(),
     activo: joi.boolean(),
     deveui: joi.string(),
-    fechaAsignacion: joi.date(),
+    fechaCreacion: joi.date(),
     ubicacion: ICoordenadasValidation,
     idEstablecimiento: joi.string(),
     idLote: joi.string(),
@@ -26,7 +26,7 @@ export interface ISensorNivelDTO {
     _id: string;
     activo: boolean;
     deveui: string;
-    fechaAsignacion: string;
+    fechaCreacion: string;
     ubicacion: ICoordenadas;
     idEstablecimiento: string;
     idLote: string;
