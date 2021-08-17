@@ -5,7 +5,7 @@ export const IUsuarioValidation = joi.object<IUsuario>({
     usuario: joi.string(),
     clave: joi.string(),
     idCliente: joi.string(),
-    idAplicaciones: joi.string(),
+    idAplicaciones: joi.array().items(joi.string()),
     rol: joi.string(),
     nombre: joi.string(),
     apellido: joi.string(),

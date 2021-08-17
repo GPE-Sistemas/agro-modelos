@@ -10,7 +10,7 @@ exports.IUsuarioValidation = joi_1.default.object({
     usuario: joi_1.default.string(),
     clave: joi_1.default.string(),
     idCliente: joi_1.default.string(),
-    idAplicaciones: joi_1.default.string(),
+    idAplicaciones: joi_1.default.array().items(joi_1.default.string()),
     rol: joi_1.default.string(),
     nombre: joi_1.default.string(),
     apellido: joi_1.default.string(),

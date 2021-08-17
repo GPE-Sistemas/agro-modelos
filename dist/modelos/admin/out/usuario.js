@@ -13,6 +13,7 @@ exports.IUsuarioDTOValidation = joi_1.default.object({
     activo: joi_1.default.boolean(),
     usuario: joi_1.default.string().required(),
     idCliente: joi_1.default.string().required(),
+    idAplicaciones: joi_1.default.array().items(joi_1.default.string()),
     rol: joi_1.default.string(),
     nombre: joi_1.default.string(),
     apellido: joi_1.default.string(),
