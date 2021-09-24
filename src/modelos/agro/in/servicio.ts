@@ -5,6 +5,7 @@ export const IServicioValidation = joi.object<IServicio>({
     idAnimal: joi.string(),
     idEstablecimiento: joi.string(),
     fecha: joi.date(),
+    fechaFin: joi.date(),
     inicio: joi.boolean(),
     observaciones: joi.string(),
 });
@@ -15,6 +16,7 @@ export interface IServicio {
     idAnimal?: string;
     idEstablecimiento?: string;
     fecha?: string;
+    fechaFin?: string;
     inicio?: boolean;
     observaciones?: string;
 }
