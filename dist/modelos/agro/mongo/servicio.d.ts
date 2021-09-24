@@ -5,8 +5,8 @@ export interface IServicioDb extends Document {
     _id: Types.ObjectId;
     idAnimal: Types.ObjectId;
     idEstablecimiento: Types.ObjectId;
-    fecha: string;
-    inicio: boolean;
+    fechaInicio: string;
+    fechaFin: string;
     observaciones: string;
     animal?: IAnimalDb;
     establecimiento?: IEstablecimientoDb;

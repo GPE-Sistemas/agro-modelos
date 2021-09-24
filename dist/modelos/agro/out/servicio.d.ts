@@ -7,8 +7,8 @@ export interface IServicioDTO {
     _id: string;
     idAnimal: string;
     idEstablecimiento: string;
-    fecha: string;
-    inicio: boolean;
+    fechaInicio: string;
+    fechaFin: string;
     observaciones: string;
     animal?: IAnimalDTO;
     establecimiento?: IEstablecimientoDTO;

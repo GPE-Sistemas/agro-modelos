@@ -4,8 +4,8 @@ import j2s from 'joi-to-swagger';
 export const IServicioValidation = joi.object<IServicio>({
     idAnimal: joi.string(),
     idEstablecimiento: joi.string(),
-    fecha: joi.date(),
-    inicio: joi.boolean(),
+    fechaInicio: joi.date(),
+    fechaFin: joi.date(),
     observaciones: joi.string(),
 });
 
@@ -14,7 +14,7 @@ export const IServicioSchema = j2s(IServicioValidation).swagger;
 export interface IServicio {
     idAnimal?: string;
     idEstablecimiento?: string;
-    fecha?: string;
-    inicio?: boolean;
+    fechaInicio?: string;
+    fechaFin?: string;
     observaciones?: string;
 }
