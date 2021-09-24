@@ -4,8 +4,8 @@ export declare const IServicioSchema: import("joi-to-swagger").SwaggerSchema;
 export interface IServicio {
     idAnimal?: string;
     idEstablecimiento?: string;
-    fecha?: string;
-    inicio?: boolean;
+    fechaInicio?: string;
+    fechaFin?: string;
     observaciones?: string;
 }
 //# sourceMappingURL=servicio.d.ts.map

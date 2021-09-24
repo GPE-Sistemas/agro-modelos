@@ -47,5 +47,11 @@ exports.IAnimalDTOValidation = joi_1.default.object({
     // padre: IAnimalDTOValidation,
     raza: raza_1.IRazaDTOValidation,
     subcategoria: subcategoria_1.ISubcategoriaDTOValidation,
+    // Eventos
+    // vacunaciones: joi.array().items(IVacunacionDTOValidation),
+    // tratamientos: joi.array().items(ITratamientoDTOValidation),
+    // eventosEspecificos: joi.array().items(IEventoEspecificoDTOValidation),
+    // pesajes: joi.array().items(IPesajeDTOValidation),
+    // servicios: joi.array().items(IServicioDTOValidation),
 });
 exports.IAnimalDTOSwagger = joi_to_swagger_1.default(exports.IAnimalDTOValidation).swagger;

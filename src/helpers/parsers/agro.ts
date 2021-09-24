@@ -552,10 +552,9 @@ export class AgroParserService {
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO {
         return {
             _id: dato._id.toHexString(),
-            fecha: dato.fecha,
+            fechaInicio: dato.fechaInicio,
             fechaFin: dato.fechaFin,
             idAnimal: dato.idAnimal?.toHexString(),
-            inicio: dato.inicio,
             observaciones: dato.observaciones,
             idEstablecimiento: dato.idEstablecimiento?.toHexString(),
             //

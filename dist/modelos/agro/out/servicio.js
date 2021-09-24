@@ -12,8 +12,8 @@ exports.IServicioDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     idAnimal: joi_1.default.string(),
     idEstablecimiento: joi_1.default.string(),
-    fecha: joi_1.default.date(),
-    inicio: joi_1.default.boolean(),
+    fechaInicio: joi_1.default.date(),
+    fechaFin: joi_1.default.date(),
     observaciones: joi_1.default.string(),
     //
     animal: animal_1.IAnimalDTOValidation,

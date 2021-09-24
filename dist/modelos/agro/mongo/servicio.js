@@ -5,8 +5,8 @@ const mongoose_1 = require("mongoose");
 exports.SServicio = new mongoose_1.Schema({
     idAnimal: { type: mongoose_1.Types.ObjectId, required: true, ref: 'animales' },
     idEstablecimiento: { type: mongoose_1.Types.ObjectId, ref: 'establecimientos' },
-    fecha: { type: Date, required: true },
-    inicio: { type: Boolean },
+    fechaInicio: { type: Date, required: true },
+    fechaFin: { type: Date, required: true },
     observaciones: { type: String },
 });
 exports.SServicio.virtual('animal', {

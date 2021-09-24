@@ -7,9 +7,8 @@ export const IServicioDTOValidation = joi.object<IServicioDTO>({
     _id: joi.string(),
     idAnimal: joi.string(),
     idEstablecimiento: joi.string(),
-    fecha: joi.date(),
+    fechaInicio: joi.date(),
     fechaFin: joi.date(),
-    inicio: joi.boolean(),
     observaciones: joi.string(),
     //
     animal: IAnimalDTOValidation,
@@ -22,9 +21,8 @@ export interface IServicioDTO {
     _id: string;
     idAnimal: string;
     idEstablecimiento: string;
-    fecha: string;
+    fechaInicio: string;
     fechaFin: string;
-    inicio: boolean;
     observaciones: string;
     //
     animal?: IAnimalDTO;

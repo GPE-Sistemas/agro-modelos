@@ -5,12 +5,11 @@ const helpers_1 = require("../helpers");
 class AgroParserService {
     static operario(dato) {
         var _a;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             idUsuario: (_a = dato.idUsuario) === null || _a === void 0 ? void 0 : _a.toHexString(),
             permisos: dato.permisos,
         };
-        return dto;
     }
     static operarios(datos) {
         const dto = [];
@@ -21,12 +20,11 @@ class AgroParserService {
     }
     static establecimiento(dato) {
         var _a;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre,
             coordenadas: (_a = dato.coordenadas) === null || _a === void 0 ? void 0 : _a.map(c1 => c1 === null || c1 === void 0 ? void 0 : c1.map(c2 => c2)),
         };
-        return dto;
     }
     static establecimientos(datos) {
         const dto = [];
@@ -37,7 +35,7 @@ class AgroParserService {
     }
     static puntoInteres(dato) {
         var _a;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre,
             idEstablecimiento: (_a = dato.idEstablecimiento) === null || _a === void 0 ? void 0 : _a.toHexString(),
@@ -46,7 +44,6 @@ class AgroParserService {
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static puntosInteres(datos) {
         const dto = [];
@@ -76,7 +73,7 @@ class AgroParserService {
     }
     static alerta(dato) {
         var _a, _b;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             fecha: (_a = dato.fecha) === null || _a === void 0 ? void 0 : _a.toISOString(),
             aplicacion: dato.aplicacion,
@@ -93,7 +90,6 @@ class AgroParserService {
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static alertas(datos) {
         const dto = [];
@@ -104,7 +100,7 @@ class AgroParserService {
     }
     static dispositivo(dato) {
         var _a;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             deveui: dato.deveui,
             adr: dato.adr,
@@ -119,7 +115,6 @@ class AgroParserService {
             //
             ultimoComando: dato.ultimoComando ? AgroParserService.comando(dato.ultimoComando) : undefined,
         };
-        return dto;
     }
     static dispositivos(datos) {
         const dto = [];
@@ -356,11 +351,10 @@ class AgroParserService {
         return dto;
     }
     static diagnostico(dato) {
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre
         };
-        return dto;
     }
     static diagnosticos(datos) {
         const dto = [];
@@ -371,7 +365,7 @@ class AgroParserService {
     }
     static subcategoria(dato) {
         var _a;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre,
             pesoMax: dato.pesoMax,
@@ -380,7 +374,6 @@ class AgroParserService {
             //
             categoria: dato.categoria ? AgroParserService.categoria(dato.categoria) : undefined,
         };
-        return dto;
     }
     static subcategorias(datos) {
         const dto = [];
@@ -390,11 +383,10 @@ class AgroParserService {
         return dto;
     }
     static tipoTratamiento(dato) {
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre
         };
-        return dto;
     }
     static tipoTratamientos(datos) {
         const dto = [];
@@ -404,11 +396,10 @@ class AgroParserService {
         return dto;
     }
     static tipoVacuna(dato) {
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             nombre: dato.nombre
         };
-        return dto;
     }
     static tipoVacunas(datos) {
         const dto = [];
@@ -446,7 +437,7 @@ class AgroParserService {
     }
     static vacunacion(dato) {
         var _a, _b, _c;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             dosis: dato.dosis,
             fecha: dato.fecha,
@@ -460,7 +451,6 @@ class AgroParserService {
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static vacunaciones(datos) {
         const dto = [];
@@ -471,7 +461,7 @@ class AgroParserService {
     }
     static eventoEspecifico(dato) {
         var _a, _b;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
             idAnimal: (_a = dato.idAnimal) === null || _a === void 0 ? void 0 : _a.toHexString(),
@@ -482,7 +472,6 @@ class AgroParserService {
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static eventosEspecificos(datos) {
         const dto = [];
@@ -493,7 +482,7 @@ class AgroParserService {
     }
     static pesaje(dato) {
         var _a, _b;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             fecha: dato.fecha,
             idAnimal: (_a = dato.idAnimal) === null || _a === void 0 ? void 0 : _a.toHexString(),
@@ -504,7 +493,6 @@ class AgroParserService {
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static pesajes(datos) {
         const dto = [];
@@ -515,18 +503,17 @@ class AgroParserService {
     }
     static servicio(dato) {
         var _a, _b;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
-            fecha: dato.fecha,
+            fechaInicio: dato.fechaInicio,
+            fechaFin: dato.fechaFin,
             idAnimal: (_a = dato.idAnimal) === null || _a === void 0 ? void 0 : _a.toHexString(),
-            inicio: dato.inicio,
             observaciones: dato.observaciones,
             idEstablecimiento: (_b = dato.idEstablecimiento) === null || _b === void 0 ? void 0 : _b.toHexString(),
             //
             animal: dato.animal ? AgroParserService.animal(dato.animal) : undefined,
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
         };
-        return dto;
     }
     static servicios(datos) {
         const dto = [];
@@ -538,7 +525,7 @@ class AgroParserService {
     //
     static sensorNivel(dato, dispositivo) {
         var _a, _b, _c;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             activo: dato.activo,
             deveui: dato.deveui,
@@ -553,7 +540,6 @@ class AgroParserService {
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
             dispositivo,
         };
-        return dto;
     }
     static sensoresNivel(datos, dispositivos) {
         const dto = [];
@@ -566,7 +552,7 @@ class AgroParserService {
     // Silobolsa
     static silobolsa(dato, lanzas, trackers) {
         var _a, _b, _c, _d;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             cosecha: dato.cosecha,
             deveuiLanzas: dato.deveuiLanzas,
@@ -587,7 +573,6 @@ class AgroParserService {
             lanzas,
             trackers
         };
-        return dto;
     }
     static silobolsas(datos, lanzas, trackers) {
         const dto = [];
@@ -601,7 +586,7 @@ class AgroParserService {
     // Correctoras
     static correctora(dato, dispositivo) {
         var _a, _b;
-        const dto = {
+        return {
             _id: dato._id.toHexString(),
             bateria: dato.bateria,
             fechaAsignacion: dato.fechaAsignacion.toISOString(),
@@ -618,7 +603,6 @@ class AgroParserService {
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
         };
-        return dto;
     }
     static correctoras(datos, dispositivos) {
         const dto = [];
@@ -680,8 +664,7 @@ class AgroParserService {
             if (mensajesEnviados) {
                 // tslint:disable-next-line: max-line-length
                 const reportesPorFrecuencia = [1681, 2899, 3823, 4547, 5125, 5610, 6006, 6352, 6642, 6900, 7117, 7321, 7488, 7644, 7800, 7920, 8041, 8136, 8246, 8320, 8421, 8492, 8556, 8638];
-                const bateria = Math.trunc(100 - (mensajesEnviados * 100 / reportesPorFrecuencia[cantReportesDiarios - 1]));
-                return bateria;
+                return Math.trunc(100 - (mensajesEnviados * 100 / reportesPorFrecuencia[cantReportesDiarios - 1]));
             }
             else {
                 return;

@@ -6,9 +6,8 @@ export interface IServicioDb extends Document {
     _id: Types.ObjectId;
     idAnimal: Types.ObjectId;
     idEstablecimiento: Types.ObjectId;
-    fecha: string;
+    fechaInicio: string;
     fechaFin: string;
-    inicio: boolean;
     observaciones: string;
     //
     animal?: IAnimalDb;
@@ -18,9 +17,8 @@ export interface IServicioDb extends Document {
 export const SServicio = new Schema<IServicioDb>({
     idAnimal: { type: Types.ObjectId, required: true, ref: 'animales' },
     idEstablecimiento: { type: Types.ObjectId, ref: 'establecimientos' },
-    fecha: { type: Date, required: true },
+    fechaInicio: { type: Date, required: true },
     fechaFin: { type: Date, required: true },
-    inicio: { type: Boolean },
     observaciones: { type: String },
 });
 
