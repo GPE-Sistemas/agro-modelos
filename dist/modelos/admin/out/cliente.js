@@ -23,4 +23,4 @@ exports.IClienteDTOValidation = joi_1.default.object({
     applicationServer: application_server_1.IApplicationServerDTOValidation,
     aplicaciones: aplicacion_1.IAplicacionDTOValidation,
 });
-exports.IClienteDTOSwagger = joi_to_swagger_1.default(exports.IClienteDTOValidation).swagger;
+exports.IClienteDTOSwagger = (0, joi_to_swagger_1.default)(exports.IClienteDTOValidation).swagger;

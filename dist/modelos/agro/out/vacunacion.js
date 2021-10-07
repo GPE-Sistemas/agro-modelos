@@ -23,4 +23,4 @@ exports.IVacunacionDTOValidation = joi_1.default.object({
     tipoVacuna: tipoVacuna_1.ITipoVacunaDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.IVacunacionDTOSwagger = joi_to_swagger_1.default(exports.IVacunacionDTOValidation).swagger;
+exports.IVacunacionDTOSwagger = (0, joi_to_swagger_1.default)(exports.IVacunacionDTOValidation).swagger;

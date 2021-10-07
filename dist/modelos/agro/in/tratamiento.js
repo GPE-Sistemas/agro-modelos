@@ -15,4 +15,4 @@ exports.ITratamientoValidation = joi_1.default.object({
     producto: joi_1.default.string(),
     observaciones: joi_1.default.string(),
 });
-exports.ITratamientoSwagger = joi_to_swagger_1.default(exports.ITratamientoValidation).swagger;
+exports.ITratamientoSwagger = (0, joi_to_swagger_1.default)(exports.ITratamientoValidation).swagger;

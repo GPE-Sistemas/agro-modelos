@@ -19,4 +19,4 @@ exports.IPesajeDTOValidation = joi_1.default.object({
     animal: animal_1.IAnimalDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.IPesajeDTOSwagger = joi_to_swagger_1.default(exports.IPesajeDTOValidation).swagger;
+exports.IPesajeDTOSwagger = (0, joi_to_swagger_1.default)(exports.IPesajeDTOValidation).swagger;

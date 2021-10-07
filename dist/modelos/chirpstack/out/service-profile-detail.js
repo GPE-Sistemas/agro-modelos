@@ -35,4 +35,4 @@ exports.IServiceProfileDetailChirpstackDTOValidation = joi_1.default.object({
         ulRatePolicy: joi_1.default.string().valid('DROP', 'MARK'),
     }),
 });
-exports.IServiceProfileDetailChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IServiceProfileDetailChirpstackDTOValidation).swagger;
+exports.IServiceProfileDetailChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IServiceProfileDetailChirpstackDTOValidation).swagger;

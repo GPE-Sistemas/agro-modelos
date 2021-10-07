@@ -22,4 +22,4 @@ exports.IPermisoValidation = joi_1.default.object({
         }),
     }),
 });
-exports.IPermisoSwagger = joi_to_swagger_1.default(exports.IPermisoValidation).swagger;
+exports.IPermisoSwagger = (0, joi_to_swagger_1.default)(exports.IPermisoValidation).swagger;

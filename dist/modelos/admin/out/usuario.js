@@ -30,4 +30,4 @@ exports.IUsuarioDTOValidation = joi_1.default.object({
     cliente: cliente_1.IClienteDTOValidation,
     aplicaciones: aplicacion_1.IAplicacionDTOValidation,
 });
-exports.IUsuarioDTOSwagger = joi_to_swagger_1.default(exports.IUsuarioDTOValidation).swagger;
+exports.IUsuarioDTOSwagger = (0, joi_to_swagger_1.default)(exports.IUsuarioDTOValidation).swagger;

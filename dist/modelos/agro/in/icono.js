@@ -11,4 +11,4 @@ exports.IIconoValidation = joi_1.default.object({
     strokeColor: joi_1.default.string(),
     fillColor: joi_1.default.string(),
 });
-exports.IIconoSwagger = joi_to_swagger_1.default(exports.IIconoValidation).swagger;
+exports.IIconoSwagger = (0, joi_to_swagger_1.default)(exports.IIconoValidation).swagger;

@@ -15,4 +15,4 @@ exports.ICategoriaValidation = joi_1.default.object({
     iconoFueraCorral: icono_1.IIconoValidation,
     iconoFueraEstablecimiento: icono_1.IIconoValidation,
 });
-exports.ICategoriaSchema = joi_to_swagger_1.default(exports.ICategoriaValidation).swagger;
+exports.ICategoriaSchema = (0, joi_to_swagger_1.default)(exports.ICategoriaValidation).swagger;

@@ -26,4 +26,4 @@ exports.IAnimalValidation = joi_1.default.object({
     idSubcategoria: joi_1.default.string(),
     sexo: joi_1.default.boolean(),
 });
-exports.IAnimalSwagger = joi_to_swagger_1.default(exports.IAnimalValidation).swagger;
+exports.IAnimalSwagger = (0, joi_to_swagger_1.default)(exports.IAnimalValidation).swagger;

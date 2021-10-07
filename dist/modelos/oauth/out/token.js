@@ -17,4 +17,4 @@ exports.ITokenDTOValidation = joi_1.default.object({
     client: client_1.IClientDTOValidation,
     user: admin_1.IUsuarioDTOValidation,
 });
-exports.ITokenDTOSwagger = joi_to_swagger_1.default(exports.ITokenDTOValidation).swagger;
+exports.ITokenDTOSwagger = (0, joi_to_swagger_1.default)(exports.ITokenDTOValidation).swagger;

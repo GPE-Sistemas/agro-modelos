@@ -12,4 +12,4 @@ exports.IClientValidation = joi_1.default.object({
     grants: joi_1.default.array().items(joi_1.default.string()),
     redirectUris: joi_1.default.array().items(joi_1.default.string()),
 });
-exports.IClientSwagger = joi_to_swagger_1.default(exports.IClientValidation).swagger;
+exports.IClientSwagger = (0, joi_to_swagger_1.default)(exports.IClientValidation).swagger;

@@ -19,4 +19,4 @@ exports.IDispositivoValidation = joi_1.default.object({
     tipo: joi_1.default.string(),
     idUltimoComando: joi_1.default.string(),
 });
-exports.IDispositivoSwagger = joi_to_swagger_1.default(exports.IDispositivoValidation).swagger;
+exports.IDispositivoSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoValidation).swagger;

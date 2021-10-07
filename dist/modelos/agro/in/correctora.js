@@ -19,4 +19,4 @@ exports.ICorrectoraValidation = joi_1.default.object().keys({
     idEstablecimiento: joi_1.default.string(),
     idLote: joi_1.default.string().allow(null),
 });
-exports.ICorrectoraSchema = joi_to_swagger_1.default(exports.ICorrectoraValidation).swagger;
+exports.ICorrectoraSchema = (0, joi_to_swagger_1.default)(exports.ICorrectoraValidation).swagger;

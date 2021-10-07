@@ -42,4 +42,4 @@ exports.IDeviceProfileDetailChirpstackDTOValidation = joi_1.default.object({
         uplinkInterval: joi_1.default.string(),
     }),
 });
-exports.IDeviceProfileDetailChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IDeviceProfileDetailChirpstackDTOValidation).swagger;
+exports.IDeviceProfileDetailChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceProfileDetailChirpstackDTOValidation).swagger;

@@ -27,4 +27,4 @@ exports.IDispositivoCorrectoraDTOValidation = joi_1.default.object({
     //
     ultimoReporte: reporte_1.IReporteCorrectoraDTOValidation,
 });
-exports.IDispositivoCorrectoraDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoCorrectoraDTOValidation).swagger;
+exports.IDispositivoCorrectoraDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoCorrectoraDTOValidation).swagger;

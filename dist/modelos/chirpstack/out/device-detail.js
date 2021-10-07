@@ -25,4 +25,4 @@ exports.IDeviceDetailChirpstackDTOValidation = joi_1.default.object({
     lastSeenAt: joi_1.default.string(),
     location: gateway_1.ICommonLocationValidation
 });
-exports.IDeviceDetailChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IDeviceDetailChirpstackDTOValidation).swagger;
+exports.IDeviceDetailChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceDetailChirpstackDTOValidation).swagger;

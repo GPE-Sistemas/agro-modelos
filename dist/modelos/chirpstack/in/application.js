@@ -18,4 +18,4 @@ exports.IApplicationChirpstackValidation = joi_1.default.object({
         serviceProfileID: joi_1.default.string(),
     }),
 });
-exports.IApplicationChirpstackSwagger = joi_to_swagger_1.default(exports.IApplicationChirpstackValidation).swagger;
+exports.IApplicationChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IApplicationChirpstackValidation).swagger;

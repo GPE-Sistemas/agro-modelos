@@ -16,4 +16,4 @@ exports.IOrganizationChirpstackValidation = joi_1.default.object({
         name: joi_1.default.string(),
     }),
 });
-exports.IOrganizationChirpstackSwagger = joi_to_swagger_1.default(exports.IOrganizationChirpstackValidation).swagger;
+exports.IOrganizationChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IOrganizationChirpstackValidation).swagger;

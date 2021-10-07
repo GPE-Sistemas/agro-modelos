@@ -17,4 +17,4 @@ exports.IApplicationChirpstackDTOValidation = joi_1.default.object({
     }),
     totalCount: joi_1.default.string(),
 });
-exports.IApplicationChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IApplicationChirpstackDTOValidation).swagger;
+exports.IApplicationChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IApplicationChirpstackDTOValidation).swagger;

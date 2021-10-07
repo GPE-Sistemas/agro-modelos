@@ -14,4 +14,4 @@ exports.IPuntoInteresValidation = joi_1.default.object({
     coordenadas: shared_1.ICoordenadasValidation,
     icono: icono_1.IIconoValidation,
 });
-exports.IPuntoInteresSwagger = joi_to_swagger_1.default(exports.IPuntoInteresValidation).swagger;
+exports.IPuntoInteresSwagger = (0, joi_to_swagger_1.default)(exports.IPuntoInteresValidation).swagger;

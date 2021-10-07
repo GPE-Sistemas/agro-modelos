@@ -25,4 +25,4 @@ exports.IDispositivoSensorNivelValidation = joi_1.default.object({
     fechaAsignacion: joi_1.default.date(),
     idAsignado: joi_1.default.string(),
 });
-exports.IDispositivoSensorNivelSwagger = joi_to_swagger_1.default(exports.IDispositivoSensorNivelValidation).swagger;
+exports.IDispositivoSensorNivelSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoSensorNivelValidation).swagger;

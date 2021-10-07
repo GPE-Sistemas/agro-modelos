@@ -22,4 +22,4 @@ exports.ISilobolsaValidation = joi_1.default.object({
     fechaDesmantelacion: joi_1.default.date(),
     ubicacion: shared_1.ICoordenadasValidation,
 });
-exports.ISilobolsaSwagger = joi_to_swagger_1.default(exports.ISilobolsaValidation).swagger;
+exports.ISilobolsaSwagger = (0, joi_to_swagger_1.default)(exports.ISilobolsaValidation).swagger;

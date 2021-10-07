@@ -163,7 +163,7 @@ class AgroParserService {
             descripcion: dato.descripcion,
             valor: dato.valor,
             // Calculado
-            estado: helpers_1.getEstadoComando(dato.ejecutado, dato.error),
+            estado: (0, helpers_1.getEstadoComando)(dato.ejecutado, dato.error),
         };
         Object.keys(dto).forEach(key => dto[key] === null ? delete dto[key] : {});
         return dto;

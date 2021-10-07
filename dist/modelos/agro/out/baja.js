@@ -19,4 +19,4 @@ exports.IBajaDTOValidation = joi_1.default.object({
     tipoBaja: tipoBaja_1.ITipoBajaDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.IBajaDTOSwagger = joi_to_swagger_1.default(exports.IBajaDTOValidation).swagger;
+exports.IBajaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IBajaDTOValidation).swagger;

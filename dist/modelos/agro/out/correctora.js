@@ -27,4 +27,4 @@ exports.ICorrectoraDTOValidation = joi_1.default.object().keys({
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     lote: lote_1.ILoteDTOValidation,
 });
-exports.ICorrectoraDTOSchema = joi_to_swagger_1.default(exports.ICorrectoraDTOValidation).swagger;
+exports.ICorrectoraDTOSchema = (0, joi_to_swagger_1.default)(exports.ICorrectoraDTOValidation).swagger;

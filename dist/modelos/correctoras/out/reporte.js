@@ -16,4 +16,4 @@ exports.IReporteCorrectoraDTOValidation = joi_1.default.object({
     presion: joi_1.default.number(),
     temperatura: joi_1.default.number(),
 });
-exports.IReporteCorrectoraDTOSwagger = joi_to_swagger_1.default(exports.IReporteCorrectoraDTOValidation).swagger;
+exports.IReporteCorrectoraDTOSwagger = (0, joi_to_swagger_1.default)(exports.IReporteCorrectoraDTOValidation).swagger;

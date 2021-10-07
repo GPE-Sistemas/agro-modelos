@@ -25,4 +25,4 @@ exports.IDispositivoSilobolsaValidation = joi_1.default.object({
     posicion: joi_1.default.number(),
     alerta: joi_1.default.number(),
 });
-exports.IDispositivoSilobolsaSwagger = joi_to_swagger_1.default(exports.IDispositivoSilobolsaValidation).swagger;
+exports.IDispositivoSilobolsaSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoSilobolsaValidation).swagger;

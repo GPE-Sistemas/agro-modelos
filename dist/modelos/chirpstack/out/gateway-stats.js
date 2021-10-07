@@ -15,4 +15,4 @@ exports.IGatewayStatsChirpstackDTOValidation = joi_1.default.object({
         txPacketsReceived: joi_1.default.number(),
     })
 });
-exports.IGatewayStatsChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IGatewayStatsChirpstackDTOValidation).swagger;
+exports.IGatewayStatsChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IGatewayStatsChirpstackDTOValidation).swagger;

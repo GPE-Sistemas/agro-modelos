@@ -13,4 +13,4 @@ exports.IPedidoReporteDTOValidation = joi_1.default.object().keys({
     aplicado: joi_1.default.boolean().required(),
     fechaCreacion: joi_1.default.date().required(),
 });
-exports.IPedidoReporteDTOSchema = joi_to_swagger_1.default(exports.IPedidoReporteDTOValidation).swagger;
+exports.IPedidoReporteDTOSchema = (0, joi_to_swagger_1.default)(exports.IPedidoReporteDTOValidation).swagger;

@@ -1,9 +1,7 @@
 import { ObjectSchema } from 'joi';
-import { IAck, IDownlink, IFiltro, IParsedQuery, IQueryParams, IUplink } from '../modelos';
+import { IAck, IDownlink, IParsedQuery, IQueryParams, IUplink } from '../modelos';
 export declare function validateSchema(dato: any, schema: ObjectSchema): void;
 export declare function parseQueryFilters(queryParams?: IQueryParams): IParsedQuery;
-export declare function getFiltroFromQuery(queryParams: any): IFiltro;
-export declare function filtroBusqueda(filtro?: IFiltro): any;
 export declare function uplinkLabels(uplink: IUplink): {
     aplicacion: string;
     deveui: string;

@@ -14,4 +14,4 @@ exports.IDeviceKeysChirpstackValidation = joi_1.default.object({
         nwkKey: joi_1.default.string(),
     }),
 });
-exports.IDeviceKeysChirpstackSwagger = joi_to_swagger_1.default(exports.IDeviceKeysChirpstackValidation).swagger;
+exports.IDeviceKeysChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceKeysChirpstackValidation).swagger;

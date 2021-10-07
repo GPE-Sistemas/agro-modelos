@@ -23,4 +23,4 @@ exports.INetworkServerChirpstackValidation = joi_1.default.object({
         tlsKey: joi_1.default.string(),
     }),
 });
-exports.INetworkServerChirpstackSwagger = joi_to_swagger_1.default(exports.INetworkServerChirpstackValidation).swagger;
+exports.INetworkServerChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.INetworkServerChirpstackValidation).swagger;

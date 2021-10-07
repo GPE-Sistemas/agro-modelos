@@ -12,4 +12,4 @@ exports.IOperarioDTOValidation = joi_1.default.object({
     idUsuario: joi_1.default.string(),
     permisos: permisos_1.IPermisoValidation,
 });
-exports.IOperarioDTOSwagger = joi_to_swagger_1.default(exports.IOperarioDTOValidation).swagger;
+exports.IOperarioDTOSwagger = (0, joi_to_swagger_1.default)(exports.IOperarioDTOValidation).swagger;

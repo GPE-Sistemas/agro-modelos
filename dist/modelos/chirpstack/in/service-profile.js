@@ -33,4 +33,4 @@ exports.IServiceProfileChirpstackValidation = joi_1.default.object({
         ulRatePolicy: joi_1.default.string().valid('DROP', 'MARK'),
     }),
 });
-exports.IServiceProfileChirpstackSwagger = joi_to_swagger_1.default(exports.IServiceProfileChirpstackValidation).swagger;
+exports.IServiceProfileChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IServiceProfileChirpstackValidation).swagger;

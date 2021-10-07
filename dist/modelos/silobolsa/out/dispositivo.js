@@ -29,4 +29,4 @@ exports.IDispositivoSilobolsaDTOValidation = joi_1.default.object({
     //
     ultimoReporte: reporte_1.IReporteSilobolsaDTOValidation,
 });
-exports.IDispositivoSilobolsaDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoSilobolsaDTOValidation).swagger;
+exports.IDispositivoSilobolsaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoSilobolsaDTOValidation).swagger;

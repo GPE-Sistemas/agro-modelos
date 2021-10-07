@@ -11,4 +11,4 @@ exports.ILoteDispositivoDTOValidation = joi_1.default.object({
     nombre: joi_1.default.string(),
     key: joi_1.default.string(),
 });
-exports.ILoteDispositivoDTOSwagger = joi_to_swagger_1.default(exports.ILoteDispositivoDTOValidation).swagger;
+exports.ILoteDispositivoDTOSwagger = (0, joi_to_swagger_1.default)(exports.ILoteDispositivoDTOValidation).swagger;

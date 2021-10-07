@@ -12,4 +12,4 @@ exports.IApplicationServerValidation = joi_1.default.object({
     tipo: joi_1.default.string().required().valid('Chirpstack', 'Orbiwise', 'Actility', 'WMC'),
     config: joi_1.default.object(),
 });
-exports.IApplicationServerSwagger = joi_to_swagger_1.default(exports.IApplicationServerValidation).swagger;
+exports.IApplicationServerSwagger = (0, joi_to_swagger_1.default)(exports.IApplicationServerValidation).swagger;

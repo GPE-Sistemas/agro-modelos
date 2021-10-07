@@ -21,4 +21,4 @@ exports.IGatewayDTOValidation = joi_1.default.object({
     //
     applicationServer: application_server_1.IApplicationServerDTOValidation,
 });
-exports.IGatewayDTOSwagger = joi_to_swagger_1.default(exports.IGatewayDTOValidation).swagger;
+exports.IGatewayDTOSwagger = (0, joi_to_swagger_1.default)(exports.IGatewayDTOValidation).swagger;

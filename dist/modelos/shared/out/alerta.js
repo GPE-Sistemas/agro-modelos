@@ -25,4 +25,4 @@ exports.IAlertaDTOValidation = joi_1.default.object({
     //
     establecimiento: agro_1.IEstablecimientoDTOValidation
 });
-exports.IAlertaDTOSwagger = joi_to_swagger_1.default(exports.IAlertaDTOValidation).swagger;
+exports.IAlertaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IAlertaDTOValidation).swagger;

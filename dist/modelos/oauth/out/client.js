@@ -11,4 +11,4 @@ exports.IClientDTOValidation = joi_1.default.object({
     grants: joi_1.default.array().items(joi_1.default.string()),
     redirectUris: joi_1.default.array().items(joi_1.default.string()),
 });
-exports.IClientDTOSwagger = joi_to_swagger_1.default(exports.IClientDTOValidation).swagger;
+exports.IClientDTOSwagger = (0, joi_to_swagger_1.default)(exports.IClientDTOValidation).swagger;

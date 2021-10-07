@@ -19,4 +19,4 @@ exports.ICategoriaDTOValidation = joi_1.default.object({
     //
     especie: especie_1.IEspecieDTOValidation
 });
-exports.ICategoriaDTOSchema = joi_to_swagger_1.default(exports.ICategoriaDTOValidation).swagger;
+exports.ICategoriaDTOSchema = (0, joi_to_swagger_1.default)(exports.ICategoriaDTOValidation).swagger;

@@ -13,4 +13,4 @@ exports.IEspecieValidation = joi_1.default.object({
     iconoFueraCorral: icono_1.IIconoValidation,
     iconoFueraEstablecimiento: icono_1.IIconoValidation,
 });
-exports.IEspecieSwagger = joi_to_swagger_1.default(exports.IEspecieValidation).swagger;
+exports.IEspecieSwagger = (0, joi_to_swagger_1.default)(exports.IEspecieValidation).swagger;

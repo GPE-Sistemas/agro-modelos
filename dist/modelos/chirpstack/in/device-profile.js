@@ -40,4 +40,4 @@ exports.IDeviceProfileChirpstackValidation = joi_1.default.object({
         uplinkInterval: joi_1.default.string(),
     }),
 });
-exports.IDeviceProfileChirpstackSwagger = joi_to_swagger_1.default(exports.IDeviceProfileChirpstackValidation).swagger;
+exports.IDeviceProfileChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceProfileChirpstackValidation).swagger;

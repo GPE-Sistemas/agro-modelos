@@ -14,4 +14,4 @@ exports.IGrupoDTOValidation = joi_1.default.object({
     //
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.IGrupoDTOSwagger = joi_to_swagger_1.default(exports.IGrupoDTOValidation).swagger;
+exports.IGrupoDTOSwagger = (0, joi_to_swagger_1.default)(exports.IGrupoDTOValidation).swagger;

@@ -22,4 +22,4 @@ exports.IGatewayProfileChirpstackValidation = joi_1.default.object({
         statsInterval: joi_1.default.string(),
     }),
 });
-exports.IGatewayProfileChirpstackSwagger = joi_to_swagger_1.default(exports.IGatewayProfileChirpstackValidation).swagger;
+exports.IGatewayProfileChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IGatewayProfileChirpstackValidation).swagger;

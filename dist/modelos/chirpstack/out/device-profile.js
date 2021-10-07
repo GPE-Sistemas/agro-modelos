@@ -18,4 +18,4 @@ exports.IDeviceProfileChirpstackDTOValidation = joi_1.default.object({
     }),
     totalCount: joi_1.default.string(),
 });
-exports.IDeviceProfileChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IDeviceProfileChirpstackDTOValidation).swagger;
+exports.IDeviceProfileChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceProfileChirpstackDTOValidation).swagger;

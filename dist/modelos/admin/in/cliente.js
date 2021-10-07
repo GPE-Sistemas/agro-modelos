@@ -15,4 +15,4 @@ exports.IClienteValidation = joi_1.default.object({
     serviceProfileId: joi_1.default.string().allow(''),
     gatewayIds: joi_1.default.array().items(joi_1.default.string()),
 });
-exports.IClienteSwagger = joi_to_swagger_1.default(exports.IClienteValidation).swagger;
+exports.IClienteSwagger = (0, joi_to_swagger_1.default)(exports.IClienteValidation).swagger;

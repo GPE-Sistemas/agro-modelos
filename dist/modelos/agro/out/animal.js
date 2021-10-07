@@ -54,4 +54,4 @@ exports.IAnimalDTOValidation = joi_1.default.object({
     // pesajes: joi.array().items(IPesajeDTOValidation),
     // servicios: joi.array().items(IServicioDTOValidation),
 });
-exports.IAnimalDTOSwagger = joi_to_swagger_1.default(exports.IAnimalDTOValidation).swagger;
+exports.IAnimalDTOSwagger = (0, joi_to_swagger_1.default)(exports.IAnimalDTOValidation).swagger;

@@ -16,4 +16,4 @@ exports.INetworkServerChirpstackDTOValidation = joi_1.default.object({
     }),
     totalCount: joi_1.default.string(),
 });
-exports.INetworkServerChirpstackDTOSwagger = joi_to_swagger_1.default(exports.INetworkServerChirpstackDTOValidation).swagger;
+exports.INetworkServerChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.INetworkServerChirpstackDTOValidation).swagger;

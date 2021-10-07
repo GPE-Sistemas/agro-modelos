@@ -24,4 +24,4 @@ exports.IDispositivoAdminDTOValidation = joi_1.default.object({
     lote: lote_dispositivo_1.ILoteDispositivoDTOValidation,
     cliente: cliente_1.IClienteDTOValidation,
 });
-exports.IDispositivoAdminDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoAdminDTOValidation).swagger;
+exports.IDispositivoAdminDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoAdminDTOValidation).swagger;

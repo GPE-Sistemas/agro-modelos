@@ -13,4 +13,4 @@ exports.IPesajeValidation = joi_1.default.object({
     peso: joi_1.default.number(),
     observaciones: joi_1.default.string(),
 });
-exports.IPesajeSwagger = joi_to_swagger_1.default(exports.IPesajeValidation).swagger;
+exports.IPesajeSwagger = (0, joi_to_swagger_1.default)(exports.IPesajeValidation).swagger;

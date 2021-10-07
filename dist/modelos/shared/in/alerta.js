@@ -37,4 +37,4 @@ exports.IAlertaValidation = joi_1.default.object({
     reportes: exports.IReporteAlertaValidation,
     idEstablecimiento: joi_1.default.string(),
 });
-exports.IAlertaSwagger = joi_to_swagger_1.default(exports.IAlertaValidation).swagger;
+exports.IAlertaSwagger = (0, joi_to_swagger_1.default)(exports.IAlertaValidation).swagger;

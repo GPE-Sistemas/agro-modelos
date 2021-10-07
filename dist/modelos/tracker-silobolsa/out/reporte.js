@@ -13,4 +13,4 @@ exports.IReporteTrackerSilobolsaDTOValidation = joi_1.default.object({
     fecha: joi_1.default.date().required(),
     alarma: joi_1.default.boolean().required(),
 });
-exports.IReporteTrackerSilobolsaDTOSwagger = joi_to_swagger_1.default(exports.IReporteTrackerSilobolsaDTOValidation).swagger;
+exports.IReporteTrackerSilobolsaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IReporteTrackerSilobolsaDTOValidation).swagger;

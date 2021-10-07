@@ -23,4 +23,4 @@ exports.ISensorNivelDTOValidation = joi_1.default.object({
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
     lote: lote_1.ILoteDTOValidation
 });
-exports.ISensorNivelDTOSwagger = joi_to_swagger_1.default(exports.ISensorNivelDTOValidation).swagger;
+exports.ISensorNivelDTOSwagger = (0, joi_to_swagger_1.default)(exports.ISensorNivelDTOValidation).swagger;

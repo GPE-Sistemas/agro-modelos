@@ -12,4 +12,4 @@ exports.ISubcategoriaValidation = joi_1.default.object({
     pesoMax: joi_1.default.number(),
     idCategoria: joi_1.default.string(),
 });
-exports.ISubcategoriaSchema = joi_to_swagger_1.default(exports.ISubcategoriaValidation).swagger;
+exports.ISubcategoriaSchema = (0, joi_to_swagger_1.default)(exports.ISubcategoriaValidation).swagger;

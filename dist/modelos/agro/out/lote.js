@@ -17,4 +17,4 @@ exports.ILoteDTOValidation = joi_1.default.object({
     //
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.ILoteDTOSwagger = joi_to_swagger_1.default(exports.ILoteDTOValidation).swagger;
+exports.ILoteDTOSwagger = (0, joi_to_swagger_1.default)(exports.ILoteDTOValidation).swagger;

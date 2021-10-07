@@ -30,4 +30,4 @@ exports.IGatewayChirpstackValidation = joi_1.default.object({
         tags: joi_1.default.object(),
     }),
 });
-exports.IGatewayChirpstackSwagger = joi_to_swagger_1.default(exports.IGatewayChirpstackValidation).swagger;
+exports.IGatewayChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IGatewayChirpstackValidation).swagger;

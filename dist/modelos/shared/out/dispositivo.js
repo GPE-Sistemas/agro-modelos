@@ -23,4 +23,4 @@ exports.IDispositivoDTOValidation = joi_1.default.object({
     // Populate
     ultimoComando: comando_1.IComandoDTOValidation,
 });
-exports.IDispositivoDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoDTOValidation).swagger;
+exports.IDispositivoDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoDTOValidation).swagger;

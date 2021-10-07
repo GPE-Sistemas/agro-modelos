@@ -24,4 +24,4 @@ exports.IReporteSilobolsaValidation = joi_1.default.object({
     alertaCo2: joi_1.default.number(),
     alertaHumedad: joi_1.default.number(),
 });
-exports.IReporteSilobolsaSwagger = joi_to_swagger_1.default(exports.IReporteSilobolsaValidation).swagger;
+exports.IReporteSilobolsaSwagger = (0, joi_to_swagger_1.default)(exports.IReporteSilobolsaValidation).swagger;

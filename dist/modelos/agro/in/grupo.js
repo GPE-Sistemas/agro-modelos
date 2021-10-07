@@ -10,4 +10,4 @@ exports.IGrupoValidation = joi_1.default.object({
     nombre: joi_1.default.string(),
     idEstablecimiento: joi_1.default.string(),
 });
-exports.IGrupoSwagger = joi_to_swagger_1.default(exports.IGrupoValidation).swagger;
+exports.IGrupoSwagger = (0, joi_to_swagger_1.default)(exports.IGrupoValidation).swagger;

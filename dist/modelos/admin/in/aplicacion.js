@@ -11,4 +11,4 @@ exports.IAplicacionValidation = joi_1.default.object({
     urlApiAplicacion: joi_1.default.string(),
     urlApiEntrada: joi_1.default.string()
 });
-exports.IAplicacionSwagger = joi_to_swagger_1.default(exports.IAplicacionValidation).swagger;
+exports.IAplicacionSwagger = (0, joi_to_swagger_1.default)(exports.IAplicacionValidation).swagger;

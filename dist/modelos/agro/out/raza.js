@@ -14,4 +14,4 @@ exports.IRazaDTOValidation = joi_1.default.object({
     //
     especie: especie_1.IEspecieDTOValidation
 });
-exports.IRazaDTOSchema = joi_to_swagger_1.default(exports.IRazaDTOValidation).swagger;
+exports.IRazaDTOSchema = (0, joi_to_swagger_1.default)(exports.IRazaDTOValidation).swagger;

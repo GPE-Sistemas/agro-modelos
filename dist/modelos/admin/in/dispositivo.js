@@ -17,4 +17,4 @@ exports.IDispositivoAdminValidation = joi_1.default.object({
     idCliente: joi_1.default.string().allow(''),
     deviceProfileId: joi_1.default.string().allow(''),
 });
-exports.IDispositivoAdminSwagger = joi_to_swagger_1.default(exports.IDispositivoAdminValidation).swagger;
+exports.IDispositivoAdminSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoAdminValidation).swagger;

@@ -29,4 +29,4 @@ exports.IDispositivoSensorNivelDTOValidation = joi_1.default.object({
     //
     ultimoReporte: reporte_1.IReporteSensorNivelDTOValidation,
 });
-exports.IDispositivoSensorNivelDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoSensorNivelDTOValidation).swagger;
+exports.IDispositivoSensorNivelDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoSensorNivelDTOValidation).swagger;

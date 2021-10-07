@@ -18,4 +18,4 @@ exports.IServiceProfileChirpstackDTOValidation = joi_1.default.object({
     }),
     totalCount: joi_1.default.string(),
 });
-exports.IServiceProfileChirpstackDTOSwagger = joi_to_swagger_1.default(exports.IServiceProfileChirpstackDTOValidation).swagger;
+exports.IServiceProfileChirpstackDTOSwagger = (0, joi_to_swagger_1.default)(exports.IServiceProfileChirpstackDTOValidation).swagger;

@@ -9,4 +9,4 @@ const joi_to_swagger_1 = __importDefault(require("joi-to-swagger"));
 exports.ITipoVacunaValidation = joi_1.default.object({
     nombre: joi_1.default.string(),
 });
-exports.ITipoVacunaSwagger = joi_to_swagger_1.default(exports.ITipoVacunaValidation).swagger;
+exports.ITipoVacunaSwagger = (0, joi_to_swagger_1.default)(exports.ITipoVacunaValidation).swagger;

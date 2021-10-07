@@ -25,4 +25,4 @@ exports.IComandoValidation = joi_1.default.object({
     valor: joi_1.default.string(),
     aplicacion: joi_1.default.string(),
 });
-exports.IComandoSwagger = joi_to_swagger_1.default(exports.IComandoValidation).swagger;
+exports.IComandoSwagger = (0, joi_to_swagger_1.default)(exports.IComandoValidation).swagger;

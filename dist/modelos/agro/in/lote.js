@@ -13,4 +13,4 @@ exports.ILoteValidation = joi_1.default.object({
     coordenadas: joi_1.default.array().items(coordenadas_1.ICoordenadasValidation),
     idEstablecimiento: joi_1.default.string(),
 });
-exports.ILoteSwagger = joi_to_swagger_1.default(exports.ILoteValidation).swagger;
+exports.ILoteSwagger = (0, joi_to_swagger_1.default)(exports.ILoteValidation).swagger;

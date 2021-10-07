@@ -17,4 +17,4 @@ exports.IGatewayValidation = joi_1.default.object({
     coordenadas: shared_1.ICoordenadasValidation,
     gpsDiferencial: joi_1.default.boolean(),
 });
-exports.IGatewaySwagger = joi_to_swagger_1.default(exports.IGatewayValidation).swagger;
+exports.IGatewaySwagger = (0, joi_to_swagger_1.default)(exports.IGatewayValidation).swagger;

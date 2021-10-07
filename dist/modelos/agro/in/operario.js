@@ -12,4 +12,4 @@ exports.IOperarioValidation = admin_1.IUsuarioValidation.keys({
     idUsuario: joi_1.default.string(),
     permisos: permisos_1.IPermisoValidation,
 });
-exports.IOperarioSwagger = joi_to_swagger_1.default(exports.IOperarioValidation).swagger;
+exports.IOperarioSwagger = (0, joi_to_swagger_1.default)(exports.IOperarioValidation).swagger;

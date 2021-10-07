@@ -12,4 +12,4 @@ exports.IEstablecimientoDTOValidation = joi_1.default.object().keys({
     nombre: joi_1.default.string().required(),
     coordenadas: joi_1.default.array().items(joi_1.default.array().items(coordenadas_1.ICoordenadasValidation)),
 });
-exports.IEstablecimientoDTOSwagger = joi_to_swagger_1.default(exports.IEstablecimientoDTOValidation).swagger;
+exports.IEstablecimientoDTOSwagger = (0, joi_to_swagger_1.default)(exports.IEstablecimientoDTOValidation).swagger;

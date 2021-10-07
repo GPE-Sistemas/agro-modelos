@@ -12,4 +12,4 @@ exports.IReporteSensorNivelDTOValidation = joi_1.default.object({
     fecha: joi_1.default.date().required(),
     distancia: joi_1.default.number(),
 });
-exports.IReporteSensorNivelDTOSwagger = joi_to_swagger_1.default(exports.IReporteSensorNivelDTOValidation).swagger;
+exports.IReporteSensorNivelDTOSwagger = (0, joi_to_swagger_1.default)(exports.IReporteSensorNivelDTOValidation).swagger;

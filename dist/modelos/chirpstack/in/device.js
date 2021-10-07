@@ -20,4 +20,4 @@ exports.IDeviceChirpstackValidation = joi_1.default.object({
         variables: joi_1.default.object(),
     }),
 });
-exports.IDeviceChirpstackSwagger = joi_to_swagger_1.default(exports.IDeviceChirpstackValidation).swagger;
+exports.IDeviceChirpstackSwagger = (0, joi_to_swagger_1.default)(exports.IDeviceChirpstackValidation).swagger;

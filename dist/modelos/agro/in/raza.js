@@ -10,4 +10,4 @@ exports.IRazaValidation = joi_1.default.object({
     nombre: joi_1.default.string(),
     idEspecie: joi_1.default.string(),
 });
-exports.IRazaSchema = joi_to_swagger_1.default(exports.IRazaValidation).swagger;
+exports.IRazaSchema = (0, joi_to_swagger_1.default)(exports.IRazaValidation).swagger;

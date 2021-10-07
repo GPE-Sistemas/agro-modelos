@@ -18,4 +18,4 @@ exports.ILogDispositivoDTOValidation = joi_1.default.object({
     deviceName: joi_1.default.string(),
     aplicacion: joi_1.default.string(),
 });
-exports.ILogDispositivoDTOSwagger = joi_to_swagger_1.default(exports.ILogDispositivoDTOValidation).swagger;
+exports.ILogDispositivoDTOSwagger = (0, joi_to_swagger_1.default)(exports.ILogDispositivoDTOValidation).swagger;

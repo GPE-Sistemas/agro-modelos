@@ -11,4 +11,4 @@ exports.IEstablecimientoValidation = joi_1.default.object().keys({
     nombre: joi_1.default.string().required(),
     coordenadas: joi_1.default.array().items(joi_1.default.array().items(coordenadas_1.ICoordenadasValidation)),
 });
-exports.IEstablecimientoSwagger = joi_to_swagger_1.default(exports.IEstablecimientoValidation).swagger;
+exports.IEstablecimientoSwagger = (0, joi_to_swagger_1.default)(exports.IEstablecimientoValidation).swagger;

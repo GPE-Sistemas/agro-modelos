@@ -31,4 +31,4 @@ exports.IDispositivoCaravanaDTOValidation = joi_1.default.object({
     bateria: joi_1.default.number(),
     horasReporte: joi_1.default.array().items(joi_1.default.string()),
 });
-exports.IDispositivoCaravanaDTOSwagger = joi_to_swagger_1.default(exports.IDispositivoCaravanaDTOValidation).swagger;
+exports.IDispositivoCaravanaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoCaravanaDTOValidation).swagger;

@@ -16,4 +16,4 @@ exports.ISubcategoriaDTOValidation = joi_1.default.object({
     //
     categoria: categoria_1.ICategoriaDTOValidation
 });
-exports.ISubcategoriaDTOSchema = joi_to_swagger_1.default(exports.ISubcategoriaDTOValidation).swagger;
+exports.ISubcategoriaDTOSchema = (0, joi_to_swagger_1.default)(exports.ISubcategoriaDTOValidation).swagger;

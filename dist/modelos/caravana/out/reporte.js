@@ -16,4 +16,4 @@ exports.IReporteCaravanaDTOValidation = joi_1.default.object({
     dentroCorral: joi_1.default.boolean(),
     dentroEstablecimiento: joi_1.default.boolean(),
 });
-exports.IReporteCaravanaDTOSwagger = joi_to_swagger_1.default(exports.IReporteCaravanaDTOValidation).swagger;
+exports.IReporteCaravanaDTOSwagger = (0, joi_to_swagger_1.default)(exports.IReporteCaravanaDTOValidation).swagger;

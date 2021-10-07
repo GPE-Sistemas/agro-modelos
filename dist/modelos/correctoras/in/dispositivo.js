@@ -23,4 +23,4 @@ exports.IDispositivoCorrectoraValidation = joi_1.default.object({
     numeroSerieCorrectora: joi_1.default.string(),
     idUltimoReporte: joi_1.default.string(),
 });
-exports.IDispositivoCorrectoraSwagger = joi_to_swagger_1.default(exports.IDispositivoCorrectoraValidation).swagger;
+exports.IDispositivoCorrectoraSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoCorrectoraValidation).swagger;

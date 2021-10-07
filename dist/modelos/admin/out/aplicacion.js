@@ -12,4 +12,4 @@ exports.IAplicacionDTOValidation = joi_1.default.object({
     urlApiAplicacion: joi_1.default.string(),
     urlApiEntrada: joi_1.default.object(),
 });
-exports.IAplicacionDTOSwagger = joi_to_swagger_1.default(exports.IAplicacionDTOValidation).swagger;
+exports.IAplicacionDTOSwagger = (0, joi_to_swagger_1.default)(exports.IAplicacionDTOValidation).swagger;

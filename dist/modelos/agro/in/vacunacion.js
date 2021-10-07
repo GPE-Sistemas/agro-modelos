@@ -15,4 +15,4 @@ exports.IVacunacionValidation = joi_1.default.object({
     dosis: joi_1.default.string(),
     observaciones: joi_1.default.string(),
 });
-exports.IVacunacionSwagger = joi_to_swagger_1.default(exports.IVacunacionValidation).swagger;
+exports.IVacunacionSwagger = (0, joi_to_swagger_1.default)(exports.IVacunacionValidation).swagger;

@@ -10,4 +10,4 @@ exports.IDiagnosticoDTOValidation = joi_1.default.object({
     _id: joi_1.default.string(),
     nombre: joi_1.default.string(),
 });
-exports.IDiagnosticoDTOSwagger = joi_to_swagger_1.default(exports.IDiagnosticoDTOValidation).swagger;
+exports.IDiagnosticoDTOSwagger = (0, joi_to_swagger_1.default)(exports.IDiagnosticoDTOValidation).swagger;

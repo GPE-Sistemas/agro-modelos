@@ -13,4 +13,4 @@ exports.IServicioValidation = joi_1.default.object({
     fechaFin: joi_1.default.date(),
     observaciones: joi_1.default.string(),
 });
-exports.IServicioSchema = joi_to_swagger_1.default(exports.IServicioValidation).swagger;
+exports.IServicioSchema = (0, joi_to_swagger_1.default)(exports.IServicioValidation).swagger;

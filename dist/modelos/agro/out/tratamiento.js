@@ -25,4 +25,4 @@ exports.ITratamientoDTOValidation = joi_1.default.object({
     tipoTratamiento: tipoTratamiento_1.ITipoTratamientoDTOValidation,
     establecimiento: establecimiento_1.IEstablecimientoDTOValidation,
 });
-exports.ITratamientoDTOSwagger = joi_to_swagger_1.default(exports.ITratamientoDTOValidation).swagger;
+exports.ITratamientoDTOSwagger = (0, joi_to_swagger_1.default)(exports.ITratamientoDTOValidation).swagger;

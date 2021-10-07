@@ -25,4 +25,4 @@ exports.IUsuarioValidation = joi_1.default.object({
     email: joi_1.default.string().allow(''),
     telefono: joi_1.default.string().allow(''),
 });
-exports.IUsuarioSwagger = joi_to_swagger_1.default(exports.IUsuarioValidation).swagger;
+exports.IUsuarioSwagger = (0, joi_to_swagger_1.default)(exports.IUsuarioValidation).swagger;

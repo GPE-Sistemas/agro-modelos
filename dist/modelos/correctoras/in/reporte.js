@@ -15,4 +15,4 @@ exports.IReporteCorrectoraValidation = joi_1.default.object({
     presion: joi_1.default.number(),
     temperatura: joi_1.default.number(),
 });
-exports.IReporteCorrectoraSwagger = joi_to_swagger_1.default(exports.IReporteCorrectoraValidation).swagger;
+exports.IReporteCorrectoraSwagger = (0, joi_to_swagger_1.default)(exports.IReporteCorrectoraValidation).swagger;

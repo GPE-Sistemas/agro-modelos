@@ -32,4 +32,4 @@ exports.IApplicationServerDTOValidation = joi_1.default.object({
         }),
     }),
 });
-exports.IApplicationServerDTOSwagger = joi_to_swagger_1.default(exports.IApplicationServerDTOValidation).swagger;
+exports.IApplicationServerDTOSwagger = (0, joi_to_swagger_1.default)(exports.IApplicationServerDTOValidation).swagger;

@@ -24,4 +24,4 @@ exports.IDispositivoCaravanaValidation = joi_1.default.object({
     idAnimal: joi_1.default.string(),
     idUltimoReporte: joi_1.default.string(),
 });
-exports.IDispositivoCaravanaSwagger = joi_to_swagger_1.default(exports.IDispositivoCaravanaValidation).swagger;
+exports.IDispositivoCaravanaSwagger = (0, joi_to_swagger_1.default)(exports.IDispositivoCaravanaValidation).swagger;

@@ -17,4 +17,4 @@ exports.IMetadatosValidation = joi_1.default.object({
         longitude: joi_1.default.number(),
     }),
 });
-exports.IMetadatosSchema = joi_to_swagger_1.default(exports.IMetadatosValidation).swagger;
+exports.IMetadatosSchema = (0, joi_to_swagger_1.default)(exports.IMetadatosValidation).swagger;
