@@ -3,7 +3,7 @@ import got from 'got';
 import bcrypt from 'bcryptjs';
 import { ObjectSchema, ValidationResult } from 'joi';
 import { Types } from 'mongoose';
-import { IAck, IDownlink, IFiltro, IParsedQuery, IQueryParams, IUplink } from '../modelos';
+import { IAck, IDownlink, IParsedQuery, IQueryParams, IUplink } from '../modelos';
 import { Options, Method } from 'got/dist/source/core';
 
 export function validateSchema(dato: any, schema: ObjectSchema): void {
@@ -19,114 +19,54 @@ export function validateSchema(dato: any, schema: ObjectSchema): void {
     }
 }
 
+function getFilterValue(type: 'number' | 'string' | 'boolean' | 'date' | 'object' | 'regex' | 'objectid', value: any) {
+    if (type === 'string') {
+        return value;
+    } else if (type === 'date') {
+        return new Date(value);
+    } else if (type === 'number') {
+        return +value;
+    } else if (type === 'boolean' || type === 'object') {
+        try {
+            return JSON.parse(value);
+        } catch (err) {
+            return value;
+        }
+    } else if (type === 'regex') {
+        return { $regex: value, $options: 'i' };
+    } else {
+        return new Types.ObjectId(value);
+    }
+}
+
 export function parseQueryFilters(queryParams?: IQueryParams): IParsedQuery {
     const parsedQuery: IParsedQuery = {
-        page: +(queryParams?.page || 0),
         limit: +(queryParams?.limit || 0),
         sort: queryParams?.sort?.toString() || '-fecha',
         skip: +(queryParams?.page || 0) * +(queryParams?.limit || 0),
         filter: {},
     };
-    if (queryParams) {
-        const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'dateField', 'search', 'searchFields'];
-        // Busqueda por _id
-        if (queryParams?._id) {
-            parsedQuery.filter._id = new Types.ObjectId(queryParams._id);
+    if (typeof queryParams?.filter === 'string') {
+        try {
+            queryParams.filter = JSON.parse(queryParams.filter);
+        } catch (err) {
+            // nada
         }
-        // Busqueda por rango de fechas
-        if (queryParams.desde && queryParams.hasta) {
-            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde, $lte: queryParams.hasta };
-        } else if (queryParams.desde) {
-            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $gte: queryParams.desde };
-        } else if (queryParams.hasta) {
-            parsedQuery.filter[queryParams.dateField || 'fecha'] = { $lte: queryParams.hasta };
-        }
-        // Busqueda por regExp
-        if (queryParams.search && queryParams.searchFields) {
-            const searchFieldsArray: string[] = JSON.parse(queryParams.searchFields);
-            parsedQuery.filter.$or = [];
-            for (const searchField of searchFieldsArray) {
-                parsedQuery.filter.$or.push({ [searchField]: { $regex: queryParams.search, $options: 'i' } });
-            }
-        }
-        // Busqueda por campos especificos
-        for (const key in queryParams) {
-            if (!keysIgnorar.includes(key)) {
-                try {
-                    queryParams[key] = JSON.parse(queryParams[key]);
-                } catch (err) {
-                    // nada
-                }
-                // Campos ObjectId
-                if (key.substr(0, 2) === 'id') {
-                    parsedQuery.filter[key] = Types.ObjectId(queryParams[key]);
-                } else {
-                    parsedQuery.filter[key] = queryParams[key];
+    }
+    if (typeof queryParams?.filter === 'object') {
+        for (const filtro of queryParams.filter) {
+            if (typeof filtro.field === 'string') {
+                parsedQuery.filter[filtro.field] = getFilterValue(filtro.type, filtro.value);
+            } else {
+                parsedQuery.filter.$or = [];
+                for (const field of filtro.field) {
+                    parsedQuery.filter.$or.push({ [field]: getFilterValue(filtro.type, filtro.value) });
                 }
             }
         }
     }
+    
     return parsedQuery;
-}
-
-export function getFiltroFromQuery(queryParams: any) {
-    const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'search', 'searchFields'];
-    const filtro: IFiltro = {
-        _id: queryParams._id,
-        desde: +queryParams.desde,
-        hasta: +queryParams.hasta,
-        page: +queryParams.page || 0,
-        limit: +queryParams.limit || 0,
-        sort: queryParams.sort?.toString() || '-fecha',
-        search: queryParams.search?.toString(),
-        searchFields: queryParams.searchFields ? JSON.parse(queryParams.searchFields) : [],
-    };
-    for (const key in queryParams) {
-        if (!keysIgnorar.includes(key)) {
-            filtro[key] = queryParams[key];
-        }
-    }
-    return filtro;
-}
-
-export function filtroBusqueda(filtro?: IFiltro) {
-    const filtroDb: any = {};
-    if (filtro) {
-        const keysIgnorar = ['_id', 'page', 'limit', 'sort', 'desde', 'hasta', 'search', 'searchFields'];
-        if (filtro?._id) {
-            filtroDb._id = new Types.ObjectId(filtro._id);
-            return filtroDb;
-        }
-        if (filtro.desde && filtro.hasta) {
-            filtroDb.fecha = { $gte: filtro.desde, $lte: filtro.hasta };
-        } else if (filtro.desde) {
-            filtroDb.fecha = { $gte: filtro.desde };
-        } else if (filtro.hasta) {
-            filtroDb.fecha = { $lte: filtro.hasta };
-        }
-        if (filtro.search && filtro.searchFields?.length) {
-            filtroDb.$or = [];
-            for (const searchField of filtro.searchFields) {
-                filtroDb.$or.push({ [searchField]: { $regex: filtro.search, $options: 'i' } });
-            }
-        }
-        for (const key in filtro) {
-            if (!keysIgnorar.includes(key)) {
-                if (key.substr(0, 2) === 'id') {
-                    filtroDb[key] = Types.ObjectId(filtro[key]);
-                } else {
-                    if (filtro[key] === 'true') {
-                        filtroDb[key] = true;
-                    } else if (filtro[key] === 'false') {
-                        filtroDb[key] = false;
-                    } else {
-                        filtroDb[key] = filtro[key];
-                    }
-                }
-            }
-        }
-    }
-    return filtroDb;
 }
 
 export function uplinkLabels(uplink: IUplink) {
@@ -227,7 +167,7 @@ export async function httpRequest<T>(url: string, method: string, queryParams?: 
                 mensaje: parsedBody.mensaje || parsedBody.message || response.statusMessage
             };
         }
-    } catch (err) {
+    } catch (err: any) {
         switch (err.code) {
             case 'ETIMEDOUT': {
                 throw {
