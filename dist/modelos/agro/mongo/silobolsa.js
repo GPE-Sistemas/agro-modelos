@@ -13,6 +13,7 @@ exports.SSilobolsa = new mongoose_1.Schema({
     cosecha: { type: String, required: true },
     producto: { type: String, required: true },
     fechaConfeccion: { type: Date, required: true },
+    humedadConfeccion: { type: Number },
     activa: { type: Boolean },
     fechaDesmantelacion: { type: Date },
     ubicacion: {

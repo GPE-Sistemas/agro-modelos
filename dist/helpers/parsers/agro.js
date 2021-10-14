@@ -550,7 +550,7 @@ class AgroParserService {
         return dto;
     }
     // Silobolsa
-    static silobolsa(dato, lanzas, trackers) {
+    static silobolsa(dato, lanzas, trackers, reporteLanza, reportesLanza, reporteTracker, reportesTracker) {
         var _a, _b, _c, _d;
         return {
             _id: dato._id.toHexString(),
@@ -567,11 +567,17 @@ class AgroParserService {
             activa: dato.activa,
             fechaDesmantelacion: (_d = dato.fechaDesmantelacion) === null || _d === void 0 ? void 0 : _d.toISOString(),
             ubicacion: dato.ubicacion,
-            //
+            humedadConfeccion: dato.humedadConfeccion,
+            // Populate
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
             lanzas,
-            trackers
+            trackers,
+            // Aggregate
+            reporteLanza,
+            reportesLanza,
+            reporteTracker,
+            reportesTracker
         };
     }
     static silobolsas(datos, lanzas, trackers) {

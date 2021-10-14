@@ -1,6 +1,8 @@
 import joi from 'joi';
 import { ICoordenadas } from '../../shared';
 import { IDispositivoSilobolsaDTO } from '../../silobolsa/out/dispositivo';
+import { IReporteSilobolsaDTO } from '../../silobolsa/out/reporte';
+import { IReporteTrackerSilobolsaDTO } from '../../tracker-silobolsa/out/reporte';
 import { IDispositivoTrackerSilobolsaDTO } from '../../tracker-silobolsa';
 import { IEstablecimientoDTO } from './establecimiento';
 import { ILoteDTO } from './lote';
@@ -18,6 +20,7 @@ export interface ISilobolsaDTO {
     cosecha: string;
     producto: string;
     fechaConfeccion: string;
+    humedadConfeccion: number;
     activa: boolean;
     fechaDesmantelacion: string;
     ubicacion: ICoordenadas;
@@ -25,5 +28,9 @@ export interface ISilobolsaDTO {
     trackers?: IDispositivoTrackerSilobolsaDTO[];
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
+    reporteLanza?: IReporteSilobolsaDTO;
+    reportesLanza?: IReporteSilobolsaDTO[];
+    reporteTracker?: IReporteTrackerSilobolsaDTO;
+    reportesTracker?: IReporteTrackerSilobolsaDTO[];
 }
 //# sourceMappingURL=silobolsa.d.ts.map

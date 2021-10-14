@@ -2,6 +2,8 @@ import joi from 'joi';
 import j2s from 'joi-to-swagger';
 import { ICoordenadas, ICoordenadasValidation } from '../../shared';
 import { IDispositivoSilobolsaDTO, IDispositivoSilobolsaDTOValidation } from '../../silobolsa/out/dispositivo';
+import { IReporteSilobolsaDTO } from '../../silobolsa/out/reporte';
+import { IReporteTrackerSilobolsaDTO } from '../../tracker-silobolsa/out/reporte';
 import { IDispositivoTrackerSilobolsaDTO, IDispositivoTrackerSilobolsaDTOValidation } from '../../tracker-silobolsa';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
 import { ILoteDTO, ILoteDTOValidation } from './lote';
@@ -18,6 +20,7 @@ export const ISilobolsaDTOValidation = joi.object<ISilobolsaDTO>({
     cosecha: joi.string().required(),
     producto: joi.string().required(),
     fechaConfeccion: joi.date().required(),
+    humedadConfeccion: joi.number(),
     activa: joi.boolean(),
     fechaDesmantelacion: joi.date(),
     ubicacion: ICoordenadasValidation,
@@ -42,12 +45,18 @@ export interface ISilobolsaDTO {
     cosecha: string;
     producto: string;
     fechaConfeccion: string;
+    humedadConfeccion: number;
     activa: boolean;
     fechaDesmantelacion: string;
     ubicacion: ICoordenadas;
-    //
+    // Populate
     lanzas?: IDispositivoSilobolsaDTO[];
     trackers?: IDispositivoTrackerSilobolsaDTO[];
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
+    // Aggregate
+    reporteLanza?: IReporteSilobolsaDTO;
+    reportesLanza?: IReporteSilobolsaDTO[];
+    reporteTracker?: IReporteTrackerSilobolsaDTO;
+    reportesTracker?: IReporteTrackerSilobolsaDTO[];
 }

@@ -1,4 +1,4 @@
-import {LeanDocument} from 'mongoose';
+import { LeanDocument } from 'mongoose';
 import {
     IAlertaDb,
     IAlertaDTO,
@@ -58,9 +58,11 @@ import {
     ITratamientoDb,
     ITratamientoDTO,
     IVacunacionDb,
-    IVacunacionDTO
+    IVacunacionDTO,
+    IReporteSilobolsaDTO,
+    IReporteTrackerSilobolsaDTO
 } from '../../modelos';
-import {getEstadoComando} from '../helpers';
+import { getEstadoComando } from '../helpers';
 
 export class AgroParserService {
 
@@ -600,7 +602,15 @@ export class AgroParserService {
 
     // Silobolsa
 
-    static silobolsa(dato: LeanDocument<ISilobolsaDb>, lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO {
+    static silobolsa(
+        dato: LeanDocument<ISilobolsaDb>,
+        lanzas?: IDispositivoSilobolsaDTO[],
+        trackers?: IDispositivoTrackerSilobolsaDTO[],
+        reporteLanza?: IReporteSilobolsaDTO,
+        reportesLanza?: IReporteSilobolsaDTO[],
+        reporteTracker?: IReporteTrackerSilobolsaDTO,
+        reportesTracker?: IReporteTrackerSilobolsaDTO[]
+    ): ISilobolsaDTO {
         return {
             _id: dato._id.toHexString(),
             cosecha: dato.cosecha,
@@ -616,11 +626,17 @@ export class AgroParserService {
             activa: dato.activa,
             fechaDesmantelacion: dato.fechaDesmantelacion?.toISOString(),
             ubicacion: dato.ubicacion,
-            //
+            humedadConfeccion: dato.humedadConfeccion,
+            // Populate
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
             lanzas,
-            trackers
+            trackers,
+            // Aggregate
+            reporteLanza,
+            reportesLanza,
+            reporteTracker,
+            reportesTracker
         };
     }
     static silobolsas(datos: LeanDocument<ISilobolsaDb>[], lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO[] {

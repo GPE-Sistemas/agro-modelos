@@ -13,6 +13,7 @@ export const ISilobolsaValidation = joi.object<ISilobolsa>({
     cosecha: joi.string().required(),
     producto: joi.string().required(),
     fechaConfeccion: joi.date().required(),
+    humedadConfeccion: joi.number(),
     activa: joi.boolean(),
     fechaDesmantelacion: joi.date(),
     ubicacion: ICoordenadasValidation,
@@ -21,16 +22,17 @@ export const ISilobolsaValidation = joi.object<ISilobolsa>({
 export const ISilobolsaSwagger = j2s(ISilobolsaValidation).swagger;
 
 export interface ISilobolsa {
-    idEstablecimiento: string;
+    idEstablecimiento?: string;
     idLote?: string;
     deveuiLanzas?: string[];
     deveuiTrackers?: string[];
-    numero: string;
-    metros: number;
-    especie: string;
-    cosecha: string;
-    producto: string;
-    fechaConfeccion: string;
+    numero?: string;
+    metros?: number;
+    especie?: string;
+    cosecha?: string;
+    producto?: string;
+    fechaConfeccion?: string;
+    humedadConfeccion?: number;
     activa?: boolean;
     fechaDesmantelacion?: string;
     ubicacion?: ICoordenadas;

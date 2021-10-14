@@ -42,3 +42,9 @@ export interface IReporteSilobolsaDTO {
     alertaCo2?: number;
     alertaHumedad?: number;
 }
+
+export interface IReporteSilobolsaDTOAggregateRango {
+    _id: string;
+    idSilobolsa: string;
+    reportes: IReporteSilobolsaDTO[];
+}

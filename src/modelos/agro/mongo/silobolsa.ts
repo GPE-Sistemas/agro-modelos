@@ -15,6 +15,7 @@ export interface ISilobolsaDb extends Document {
     cosecha: string;
     producto: string;
     fechaConfeccion: Date;
+    humedadConfeccion: number;
     activa: boolean;
     fechaDesmantelacion: Date;
     ubicacion: ICoordenadas;
@@ -35,6 +36,7 @@ export const SSilobolsa = new Schema<ISilobolsaDb>({
     cosecha: { type: String, required: true },
     producto: { type: String, required: true },
     fechaConfeccion: { type: Date, required: true },
+    humedadConfeccion: { type: Number },
     activa: { type: Boolean },
     fechaDesmantelacion: { type: Date },
     ubicacion: {

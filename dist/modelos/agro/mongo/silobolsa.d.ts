@@ -14,6 +14,7 @@ export interface ISilobolsaDb extends Document {
     cosecha: string;
     producto: string;
     fechaConfeccion: Date;
+    humedadConfeccion: number;
     activa: boolean;
     fechaDesmantelacion: Date;
     ubicacion: ICoordenadas;
