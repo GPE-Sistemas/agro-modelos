@@ -17,5 +17,6 @@ export interface ISilobolsa {
     activa?: boolean;
     fechaDesmantelacion?: string;
     ubicacion?: ICoordenadas;
+    tas?: number;
 }
 //# sourceMappingURL=silobolsa.d.ts.map

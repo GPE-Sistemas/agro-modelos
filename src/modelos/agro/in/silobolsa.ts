@@ -17,6 +17,7 @@ export const ISilobolsaValidation = joi.object<ISilobolsa>({
     activa: joi.boolean(),
     fechaDesmantelacion: joi.date(),
     ubicacion: ICoordenadasValidation,
+    tas: joi.number(),
 });
 
 export const ISilobolsaSwagger = j2s(ISilobolsaValidation).swagger;
@@ -36,4 +37,5 @@ export interface ISilobolsa {
     activa?: boolean;
     fechaDesmantelacion?: string;
     ubicacion?: ICoordenadas;
+    tas?: number;
 }

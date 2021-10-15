@@ -20,6 +20,7 @@ exports.SSilobolsa = new mongoose_1.Schema({
         lat: { type: Number, required: true },
         lng: { type: Number, required: true },
     },
+    tas: { type: Number },
 });
 exports.SSilobolsa.index({ activa: 1, numero: 1 });
 exports.SSilobolsa.index({ activa: 1, fechaConfeccion: -1 });

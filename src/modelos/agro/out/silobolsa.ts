@@ -24,6 +24,7 @@ export const ISilobolsaDTOValidation = joi.object<ISilobolsaDTO>({
     activa: joi.boolean(),
     fechaDesmantelacion: joi.date(),
     ubicacion: ICoordenadasValidation,
+    tas: joi.number(),
     //
     lanzas: joi.array().items(IDispositivoSilobolsaDTOValidation),
     trackers: joi.array().items(IDispositivoTrackerSilobolsaDTOValidation),
@@ -49,6 +50,7 @@ export interface ISilobolsaDTO {
     activa: boolean;
     fechaDesmantelacion: string;
     ubicacion: ICoordenadas;
+    tas: number;
     // Populate
     lanzas?: IDispositivoSilobolsaDTO[];
     trackers?: IDispositivoTrackerSilobolsaDTO[];

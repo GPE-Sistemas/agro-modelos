@@ -18,6 +18,7 @@ export interface ISilobolsaDb extends Document {
     activa: boolean;
     fechaDesmantelacion: Date;
     ubicacion: ICoordenadas;
+    tas: number;
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
     dispositivos?: IDispositivoDb;

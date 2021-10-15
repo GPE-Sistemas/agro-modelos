@@ -19,6 +19,7 @@ export interface ISilobolsaDb extends Document {
     activa: boolean;
     fechaDesmantelacion: Date;
     ubicacion: ICoordenadas;
+    tas: number;
     //
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
@@ -43,6 +44,7 @@ export const SSilobolsa = new Schema<ISilobolsaDb>({
         lat: { type: Number, required: true },
         lng: { type: Number, required: true },
     },
+    tas: { type: Number },
 });
 
 SSilobolsa.index({ activa: 1, numero: 1 });

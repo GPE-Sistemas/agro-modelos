@@ -27,6 +27,7 @@ exports.ISilobolsaDTOValidation = joi_1.default.object({
     activa: joi_1.default.boolean(),
     fechaDesmantelacion: joi_1.default.date(),
     ubicacion: shared_1.ICoordenadasValidation,
+    tas: joi_1.default.number(),
     //
     lanzas: joi_1.default.array().items(dispositivo_1.IDispositivoSilobolsaDTOValidation),
     trackers: joi_1.default.array().items(tracker_silobolsa_1.IDispositivoTrackerSilobolsaDTOValidation),

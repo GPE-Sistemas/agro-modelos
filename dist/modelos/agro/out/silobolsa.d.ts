@@ -24,6 +24,7 @@ export interface ISilobolsaDTO {
     activa: boolean;
     fechaDesmantelacion: string;
     ubicacion: ICoordenadas;
+    tas: number;
     lanzas?: IDispositivoSilobolsaDTO[];
     trackers?: IDispositivoTrackerSilobolsaDTO[];
     establecimiento?: IEstablecimientoDTO;

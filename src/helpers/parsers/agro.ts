@@ -627,6 +627,7 @@ export class AgroParserService {
             fechaDesmantelacion: dato.fechaDesmantelacion?.toISOString(),
             ubicacion: dato.ubicacion,
             humedadConfeccion: dato.humedadConfeccion,
+            tas: dato.tas,
             // Populate
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,

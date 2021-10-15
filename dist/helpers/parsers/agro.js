@@ -568,6 +568,7 @@ class AgroParserService {
             fechaDesmantelacion: (_d = dato.fechaDesmantelacion) === null || _d === void 0 ? void 0 : _d.toISOString(),
             ubicacion: dato.ubicacion,
             humedadConfeccion: dato.humedadConfeccion,
+            tas: dato.tas,
             // Populate
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
