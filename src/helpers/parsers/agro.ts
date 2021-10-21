@@ -574,7 +574,7 @@ export class AgroParserService {
 
     //
 
-    static sensorNivel(dato: LeanDocument<ISensorNivelDb>, dispositivo?: IDispositivoSensorNivelDTO): ISensorNivelDTO {
+    static sensorNivel(dato: LeanDocument<ISensorNivelDb>, dispositivoEspecifico?: IDispositivoSensorNivelDTO): ISensorNivelDTO {
         return {
             _id: dato._id.toHexString(),
             activo: dato.activo,
@@ -585,10 +585,13 @@ export class AgroParserService {
             idLote: dato.idLote?.toHexString(),
             nombre: dato.nombre,
             offset: dato.offset,
+            ultimoReporte: dato.ultimoReporte,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
-            dispositivo,
+            dispositivo: dato.dispositivo ? AgroParserService.dispositivo(dato.dispositivo) : undefined,
+            //
+            dispositivoEspecifico,
         };
     }
     static sensoresNivel(datos: LeanDocument<ISensorNivelDb>[], dispositivos?: IDispositivoSensorNivelDTO[]): ISensorNivelDTO[] {

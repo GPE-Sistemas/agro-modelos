@@ -1,6 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
 import { ICoordenadas, ICoordenadasValidation } from '../../shared';
+import { IReporteSensorNivel, IReporteSensorNivelValidation } from '../../sensor-nivel';
 
 export const ISensorNivelValidation = joi.object<ISensorNivel>({
     activo: joi.boolean(),
@@ -11,6 +12,7 @@ export const ISensorNivelValidation = joi.object<ISensorNivel>({
     idLote: joi.string(),
     nombre: joi.string(),
     offset: joi.number(),
+    ultimoReporte: IReporteSensorNivelValidation,
 });
 
 export const ISensorNivelSwagger = j2s(ISensorNivelValidation).swagger;
@@ -24,4 +26,5 @@ export interface ISensorNivel {
     idLote?: string;
     nombre?: string;
     offset?: number;
+    ultimoReporte?: IReporteSensorNivel;
 }

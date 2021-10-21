@@ -523,7 +523,7 @@ class AgroParserService {
         return dto;
     }
     //
-    static sensorNivel(dato, dispositivo) {
+    static sensorNivel(dato, dispositivoEspecifico) {
         var _a, _b, _c;
         return {
             _id: dato._id.toHexString(),
@@ -535,10 +535,13 @@ class AgroParserService {
             idLote: (_c = dato.idLote) === null || _c === void 0 ? void 0 : _c.toHexString(),
             nombre: dato.nombre,
             offset: dato.offset,
+            ultimoReporte: dato.ultimoReporte,
             //
             establecimiento: dato.establecimiento ? AgroParserService.establecimiento(dato.establecimiento) : undefined,
             lote: dato.lote ? AgroParserService.lote(dato.lote) : undefined,
-            dispositivo,
+            dispositivo: dato.dispositivo ? AgroParserService.dispositivo(dato.dispositivo) : undefined,
+            //
+            dispositivoEspecifico,
         };
     }
     static sensoresNivel(datos, dispositivos) {

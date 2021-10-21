@@ -14,6 +14,7 @@ exports.SSensorNivel = new mongoose_1.Schema({
     idLote: { type: mongoose_1.Types.ObjectId, ref: 'lotes' },
     nombre: { type: String },
     offset: { type: Number },
+    ultimoReporte: { type: Object },
 });
 exports.SSensorNivel.virtual('establecimiento', {
     foreignField: '_id',
@@ -26,4 +27,10 @@ exports.SSensorNivel.virtual('lote', {
     justOne: true,
     localField: 'idLote',
     ref: 'lotes',
+});
+exports.SSensorNivel.virtual('dispositivo', {
+    foreignField: 'deveui',
+    justOne: true,
+    localField: 'deveui',
+    ref: 'dispositivos',
 });

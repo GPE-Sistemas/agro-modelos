@@ -1,7 +1,7 @@
 import joi from 'joi';
 import j2s from 'joi-to-swagger';
-import { IDispositivoSensorNivelDTO } from '../../sensor-nivel';
-import { ICoordenadas, ICoordenadasValidation } from '../../shared';
+import { IDispositivoSensorNivelDTO, IReporteSensorNivelDTO, IReporteSensorNivelDTOValidation, IDispositivoSensorNivelDTOValidation } from '../../sensor-nivel';
+import { ICoordenadas, ICoordenadasValidation, IDispositivoDTO, IDispositivoDTOValidation } from '../../shared';
 import { IEstablecimientoDTO, IEstablecimientoDTOValidation } from './establecimiento';
 import { ILoteDTO, ILoteDTOValidation } from './lote';
 
@@ -15,9 +15,13 @@ export const ISensorNivelDTOValidation = joi.object<ISensorNivelDTO>({
     idLote: joi.string(),
     nombre: joi.string(),
     offset: joi.number(),
-    //
+    ultimoReporte: IReporteSensorNivelDTOValidation,
+    // Populate
     establecimiento: IEstablecimientoDTOValidation,
-    lote: ILoteDTOValidation
+    lote: ILoteDTOValidation,
+    dispositivo: IDispositivoDTOValidation,
+    // De otra db
+    dispositivoEspecifico: IDispositivoSensorNivelDTOValidation
 });
 
 export const ISensorNivelDTOSwagger = j2s(ISensorNivelDTOValidation).swagger;
@@ -32,9 +36,11 @@ export interface ISensorNivelDTO {
     idLote: string;
     nombre: string;
     offset: number;
+    ultimoReporte: IReporteSensorNivelDTO;
     // Populate
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
-    //
-    dispositivo?: IDispositivoSensorNivelDTO;
+    dispositivo?: IDispositivoDTO;
+    // De otra db
+    dispositivoEspecifico?: IDispositivoSensorNivelDTO;
 }

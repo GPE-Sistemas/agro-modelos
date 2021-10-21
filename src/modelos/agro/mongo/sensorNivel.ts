@@ -1,5 +1,6 @@
 import { Document, Schema, Types } from 'mongoose';
-import { ICoordenadas } from '../../shared';
+import { IReporteSensorNivelDTO } from '../..';
+import { ICoordenadas, IDispositivoDb } from '../../shared';
 import { IEstablecimientoDb } from './establecimiento';
 import { ILoteDb } from './lote';
 
@@ -12,9 +13,11 @@ export interface ISensorNivelDb extends Document {
     idLote: Types.ObjectId;
     nombre: string;
     offset: number;
+    ultimoReporte: IReporteSensorNivelDTO;
     //
     establecimiento?: IEstablecimientoDb;
     lote?: ILoteDb;
+    dispositivo?: IDispositivoDb;
 }
 
 export const SSensorNivel = new Schema<ISensorNivelDb>({
@@ -29,6 +32,7 @@ export const SSensorNivel = new Schema<ISensorNivelDb>({
     idLote: { type: Types.ObjectId, ref: 'lotes' },
     nombre: { type: String },
     offset: { type: Number },
+    ultimoReporte: { type: Object },
 });
 
 SSensorNivel.virtual('establecimiento', {
@@ -43,4 +47,11 @@ SSensorNivel.virtual('lote', {
     justOne: true,
     localField: 'idLote',
     ref: 'lotes',
+});
+
+SSensorNivel.virtual('dispositivo', {
+    foreignField: 'deveui',
+    justOne: true,
+    localField: 'deveui',
+    ref: 'dispositivos',
 });

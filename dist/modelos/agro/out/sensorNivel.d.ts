@@ -1,6 +1,6 @@
 import joi from 'joi';
-import { IDispositivoSensorNivelDTO } from '../../sensor-nivel';
-import { ICoordenadas } from '../../shared';
+import { IDispositivoSensorNivelDTO, IReporteSensorNivelDTO } from '../../sensor-nivel';
+import { ICoordenadas, IDispositivoDTO } from '../../shared';
 import { IEstablecimientoDTO } from './establecimiento';
 import { ILoteDTO } from './lote';
 export declare const ISensorNivelDTOValidation: joi.ObjectSchema<ISensorNivelDTO>;
@@ -15,8 +15,10 @@ export interface ISensorNivelDTO {
     idLote: string;
     nombre: string;
     offset: number;
+    ultimoReporte: IReporteSensorNivelDTO;
     establecimiento?: IEstablecimientoDTO;
     lote?: ILoteDTO;
-    dispositivo?: IDispositivoSensorNivelDTO;
+    dispositivo?: IDispositivoDTO;
+    dispositivoEspecifico?: IDispositivoSensorNivelDTO;
 }
 //# sourceMappingURL=sensorNivel.d.ts.map

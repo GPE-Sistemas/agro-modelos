@@ -49,7 +49,7 @@ export declare class AgroParserService {
     static pesajes(datos: LeanDocument<IPesajeDb>[]): IPesajeDTO[];
     static servicio(dato: LeanDocument<IServicioDb>): IServicioDTO;
     static servicios(datos: LeanDocument<IServicioDb>[]): IServicioDTO[];
-    static sensorNivel(dato: LeanDocument<ISensorNivelDb>, dispositivo?: IDispositivoSensorNivelDTO): ISensorNivelDTO;
+    static sensorNivel(dato: LeanDocument<ISensorNivelDb>, dispositivoEspecifico?: IDispositivoSensorNivelDTO): ISensorNivelDTO;
     static sensoresNivel(datos: LeanDocument<ISensorNivelDb>[], dispositivos?: IDispositivoSensorNivelDTO[]): ISensorNivelDTO[];
     static silobolsa(dato: LeanDocument<ISilobolsaDb>, lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[], reporteLanza?: IReporteSilobolsaDTO, reportesLanza?: IReporteSilobolsaDTO[], reporteTracker?: IReporteTrackerSilobolsaDTO, reportesTracker?: IReporteTrackerSilobolsaDTO[]): ISilobolsaDTO;
     static silobolsas(datos: LeanDocument<ISilobolsaDb>[], lanzas?: IDispositivoSilobolsaDTO[], trackers?: IDispositivoTrackerSilobolsaDTO[]): ISilobolsaDTO[];
